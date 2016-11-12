@@ -7,5 +7,5 @@ class User < ApplicationRecord
   belongs_to :userable, polymorphic: true
 
   has_many :posts
-  # has_many :surveys
+  has_many :surveys
 end
