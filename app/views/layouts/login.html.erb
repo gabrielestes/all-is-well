@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <meta charset='UTF-8'>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <title></title>
+        <link rel="stylesheet" href="/app/assets/stylesheets/main.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+
+
+        <main>
+
+          <div class="login-content">
+            <h1>Welcome</h1>
+            <div class="form-wrap">
+                <div class="tabs">
+                    <h3 class="login-tab">
+                        <a class="active" id="login-tab-content">Login</a>
+                    </h3>
+                    <h3 class="signup-tab">
+                        <a id="signup-tab-content">Sign Up</a>
+                    </h3>
+                </div>
+                <div class="tabs-content">
+                    <div class="active" id="login-tab-content">
+                        <div class="login-form">
+                            <!-- <form> -->
+                            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+                            <%= f.text :email, "Name" %>
+                            <%= f.password :password, "Password" %>
+                            <%= f.submit %>
+                                <!-- <input type="text" class="input" placeholder="Name"></input>
+                                <input type="password" class="input" placeholder="Password"></input>
+                                <input type="submit" class="button"></input> -->
+                            <!-- </form> -->
+                            <% end %>
+                            <div class="tab-content-footer"><p>Forgot Your Password?</p></div>
+                        </div>
+                    </div>
+                    <div id="signup-tab-content">
+                        <div class="signup-form">
+                            <form>
+                                <input type="text" class="input" placeholder="Name"></input>
+                                <input type="text" class="input" placeholder="Email"></input>
+                                <input type="password" class="input" placeholder="Password"></input>
+                                <input type="submit" class="button"></input>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+        </main>
+
+
+        <script src="/app/assets/javascripts/vendor/vendor.min.js"></script>
+        <script src="/app/assets/javascripts/login.js"></script>
+
+    </body>
+
+</html>

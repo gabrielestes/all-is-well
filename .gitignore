@@ -15,3 +15,10 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+
+
+
+.sass-cache/
+*.css.map
+.DS_Store
+*.map
