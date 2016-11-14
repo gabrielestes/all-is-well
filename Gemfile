@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Styling frameworks
 gem 'bourbon'
 gem 'neat'
 group :development, :test do
