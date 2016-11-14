@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20161112215158) do
   enable_extension "plpgsql"
 
   create_table "clients", force: :cascade do |t|
+    t.integer  "therapist_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "initial"
@@ -23,8 +24,9 @@ ActiveRecord::Schema.define(version: 20161112215158) do
     t.string   "phone"
     t.json     "emergency"
     t.integer  "wellness"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.index ["therapist_id"], name: "index_clients_on_therapist_id", using: :btree
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -77,4 +79,5 @@ ActiveRecord::Schema.define(version: 20161112215158) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "clients", "therapists"
 end
