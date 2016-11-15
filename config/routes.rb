@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'therapists/index'
+  get 'therapist/:id' => 'therapists#index'
 
   devise_for :users
 end

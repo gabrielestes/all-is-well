@@ -19,6 +19,9 @@ gem 'coffee-rails', '~> 4.2'
 # Rack-based authentication for users
 gem 'devise'
 
+# Generates filler information to populate database
+gem 'ffaker'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
