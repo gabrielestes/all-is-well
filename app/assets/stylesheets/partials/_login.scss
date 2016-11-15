@@ -1,4 +1,4 @@
-$seagreenL: #05FFCD;
+
 $seagreen: rgb(55, 207, 176);
 $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenM: rgb(35, 188, 158);
@@ -21,28 +21,47 @@ $deepest-jade: #28A48B;
 $seagreenT: rgba(55, 207, 176, 0.4);
 
 .login-content {
+    height: 100%;
+    font-family: 'Quicksand', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 
     h1 {
-      margin: 40px 0;
+      margin-bottom: 20px;
       font-size: 3em;
       color: #000;
     }
 
     .form-wrap {
+
         width: 400px;
         margin: 20px auto;
+        background-color: $seagreenT;
+        padding: 2em;
 
-        input {
+        label {
+          display: none;
+        }
+
+        label.checkbox-label {
+          display: inline;
+          float: left;
+        }
+
+        input.checkbox {
+          float: left;
+          margin-right: 8px;
+        }
+
+        input.input {
           font-family: inherit;
           font-size: 1.2em;
           border: 1px solid #fff;
           border-radius: 2px;
           text-align: center;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
           padding: 10px;
           width: 100%;
           transition: all .2s ease;
@@ -54,9 +73,15 @@ $seagreenT: rgba(55, 207, 176, 0.4);
 
         }
 
-        .button {
+         input.button {
+          font-family: inherit;
+          font-size: 1.2em;
           color: #000;
           border: 0;
+          border-radius: 2px;
+          text-align: center;
+          margin: 15px 0;
+          padding: 10px;
           width: 100%;
           background-color: shade($seagreenT, 5%);
           cursor: pointer;
@@ -67,49 +92,11 @@ $seagreenT: rgba(55, 207, 176, 0.4);
         }
     }
 
-    .form-wrap .tabs {
-        overflow: hidden;
-    }
-
-    .form-wrap .tabs h3 {
-        float: left;
-        width: 50%;
-    }
-
-    .form-wrap .tabs h3 a {
-        padding: 0.7em 0;
-        text-align: center;
-        font-weight: 300;
-        background-color: tint($seagreenT, 20%);
-        display: block;
-        color: #000;
-        font-size: 1.3em;
-    }
-
-    .form-wrap .tabs h3 a.active {
-        background-color: $seagreenT;
-
-    }
-
-    .form-wrap .tabs-content {
-        background-color: $seagreenT;
-        padding: 1.7em;
-    }
-
-    .form-wrap .tabs-content div[id$="tab-content"] {
-        display: none;
-    }
-
-    .form-wrap .tabs-content .active {
-        display: block !important;
-    }
-
-    .form-wrap .tabs-content .tab-content-footer {
+    .form-wrap  .tab-content-footer {
       text-align: center;
-      &:hover {
-        color: #fff;
-      }
+
     }
+
 
 
 }

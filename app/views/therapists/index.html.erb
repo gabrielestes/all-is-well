@@ -14,7 +14,7 @@
               <i class="material-icons">perm_media</i>
             </div>
             <div class="user-welcome">
-              <p>Welcome, DR. SNEEDFUNKEL</p>
+              <p>Welcome, <%= @therapist.first_name %> <%= @therapist.last_name %></p>
             </div>
             <div class="menu-icon">
                 <i class="material-icons">menu</i>
@@ -34,13 +34,14 @@
               <a href="#" class="sort_urgent">Sort by name</a>
               <a href="#" class="sort_name active">Sort by activity</a>
             </div>
-
-          <div class="patient_card">
-              <p class="id_number">ID#</p>
-              <p class="pt_name">CLIENT NUMBER ONE</p>
-              <i class="material-icons show">error</i>
-          </div>
-          <div class="patient_card">
+          <% @clients.each do |c| %>
+            <div class="patient_card">
+                <p class="id_number"><%= c.id %></p>
+                <p class="pt_name"><%= c.first_name %> <%= c.last_name %></p>
+                <i class="material-icons show">error</i>
+            </div>
+          <% end %>
+          <!-- <div class="patient_card">
               <p class="id_number">ID#</p>
               <p class="pt_name">CLIENT NUMBER TWO</p>
               <i class="material-icons show">error</i>
@@ -69,7 +70,7 @@
               <p class="id_number">ID#</p>
               <p class="pt_name">CLIENT NUMBER SEVEN</p>
               <i class="material-icons hide">error</i>
-          </div>
+          </div> -->
         </div>
         </main>
 
