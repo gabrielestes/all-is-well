@@ -26,7 +26,7 @@ def rand_cred
   ["LCSW, MA", "LCSW", "MSW, LCSW"].sample
 end
 
-count = 1
+# count = 1
 5.times do
   t = Therapist.create(
     first_name: FFaker::Name.first_name,
