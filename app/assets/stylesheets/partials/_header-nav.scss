@@ -4,15 +4,6 @@ $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenM: rgb(35, 188, 158);
 $seagreenD: #0A382F;
 
-.hide {
-  opacity: 0;
-}
-.show {
-  opacity: 1;
-}
-* {
-  font-family: 'Quicksand', sans-serif;
-}
 
 .header-container {
   font-family: 'Quicksand', sans-serif;
@@ -76,31 +67,5 @@ nav {
         color: #fff;
       }
 
-
     }
 }
-
-a {
-  color: $seagreenD;
-  text-decoration: none;
-  &:active, &:hover {
-    color: $seagreenM;
-  }
-}
-
-main {
-  margin-top: 50px;
-  height: 100%;
-  display: block;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-footer {
-  font-family: 'Quicksand', sans-serif !important;
-  display: flex;
-  justify-content: center;
-  height: 50px;
-  background: $seagreenT;
-  align-items: center;
-  }
