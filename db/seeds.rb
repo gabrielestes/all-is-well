@@ -77,6 +77,7 @@ count = 1
     )
   end
   count += 1
+end
 
 def event_type
   types = ["positive", "negative"].sample
