@@ -1,7 +1,6 @@
 (function($) {
   "use strict";
-
-  $('header').on('click', '.menu-icon', function() {
+  $(document).on('click', '.menu-icon', function() {
     $('nav').slideToggle();
 
   });
