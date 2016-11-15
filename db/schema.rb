@@ -50,11 +50,13 @@ ActiveRecord::Schema.define(version: 20161115190231) do
 
   create_table "notes", force: :cascade do |t|
     t.integer  "therapist_id"
+    t.integer  "client_id"
     t.string   "title"
     t.text     "message"
     t.boolean  "shared"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.index ["client_id"], name: "index_notes_on_client_id", using: :btree
     t.index ["therapist_id"], name: "index_notes_on_therapist_id", using: :btree
   end
 
@@ -101,5 +103,6 @@ ActiveRecord::Schema.define(version: 20161115190231) do
 
   add_foreign_key "clients", "therapists"
   add_foreign_key "events", "clients"
+  add_foreign_key "notes", "clients"
   add_foreign_key "notes", "therapists"
 end

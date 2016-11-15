@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+#
 def rand_num
   [*1..10].sample
 end
@@ -69,10 +69,10 @@ count = 1
 5.times do
   4.times do
     n = Note.create(
-      therapist_id: count
-      client_id: count
-      title: FFaker::Book.title
-      message: FFaker::Lorem.sentence
+      therapist_id: count,
+      client_id: count,
+      title: FFaker::Book.title,
+      message: FFaker::Lorem.sentence,
       shared: true
     )
   end
