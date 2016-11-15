@@ -10,7 +10,7 @@ class TherapistsController < ApplicationController
 
   #therapist's view of the event calendar "list"
   def calendar
-
+    @events = Event.where(client_id: params[:id])
   end
 
   def t_profile

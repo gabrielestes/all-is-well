@@ -1,0 +1,12 @@
+
+<% @events.each do |e| %>
+  <h3>
+    <%= e.event_type %>
+  </h3>
+    <p>
+      <%= e.description %>
+    </p>
+    <p>
+      <%= e.date %>
+    </p>
+<% end %>
