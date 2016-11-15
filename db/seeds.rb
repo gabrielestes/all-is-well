@@ -64,3 +64,29 @@ end
     u.save
   end
 end
+
+def event_type
+  types = ["positive", "negative"].sample
+end
+
+def date
+  day = [*10..30].sample
+  "2016-11-#{day}"
+end
+
+count = 1
+5.times do
+  3.times do
+
+    event = Event.create(
+
+      client_id: count,
+      event_type: event_type,
+      date: date,
+      description: FFaker::CheesyLingo.sentence
+
+    )
+  end
+  count += 1
+
+end

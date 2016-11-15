@@ -10,6 +10,7 @@ class TherapistsController < ApplicationController
 
   #therapist's view of the event calendar "list"
   def calendar
+
   end
 
   def t_profile
