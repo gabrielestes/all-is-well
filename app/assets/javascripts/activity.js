@@ -1,12 +1,12 @@
-(function($){
-  $('.filter_title').
-
-
-
-
-
-
-
-
-
-})(JQuery);
+// (function($){
+//   $('.filter_title').
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// })(JQuery);
