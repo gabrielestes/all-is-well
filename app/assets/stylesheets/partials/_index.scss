@@ -1,3 +1,4 @@
+
 $seagreen: rgb(55, 207, 176);
 $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenM: rgb(35, 188, 158);
@@ -50,18 +51,25 @@ header {
 
 nav {
   background-color: $seagreen;
-  width: 20%;
+  width: 100%;
   float: right;
   display: none;
+  position: relative;
   font-family: 'Quicksand', sans-serif !important;
 
 
     div {
+      border-top: 0.25px solid $seagreenM;
       padding: 20px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media (min-width: 700px){
+        display:inline-flex;
+        width: 32%;
+        border: none;
+      }
       &:hover {
         cursor: pointer;
         background-color: tint($seagreen, 25%);
@@ -83,7 +91,7 @@ a {
 main {
   margin-top: 50px;
   height: 100%;
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: flex-start;
 }
