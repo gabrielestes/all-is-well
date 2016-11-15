@@ -64,3 +64,17 @@ end
     u.save
   end
 end
+
+count = 1
+5.times do
+  4.times do
+    n = Note.create(
+      therapist_id: count
+      client_id: count
+      title: FFaker::Book.title
+      message: FFaker::Lorem.sentence
+      shared: true
+    )
+  end
+  count += 1
+end
