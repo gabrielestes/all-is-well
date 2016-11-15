@@ -5,3 +5,24 @@ $seagreenM: rgb(35, 188, 158);
 $seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
 $dark: #333333;
+
+.c-activity {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 66px;
+  .filter_title {
+    display: flex;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    width: 70%;
+  }
+  p {
+    display: inline-flex;
+    width: 30%;
+    justify-content: flex-start;
+    align-items: center;
+    margin-right: 1%;
+  }
+}

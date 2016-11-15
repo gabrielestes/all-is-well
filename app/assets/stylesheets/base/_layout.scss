@@ -53,8 +53,13 @@ main {
 footer {
   font-family: 'Quicksand', sans-serif !important;
   display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
   justify-content: center;
-  height: 50px;
-  background: $seagreenT;
+  height: 30px;
+  background: $seagreen;
   align-items: center;
+  margin-top: 4%;
   }
