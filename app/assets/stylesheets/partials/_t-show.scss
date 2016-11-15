@@ -1,0 +1,69 @@
+$pale-jade: #CEF3EC;
+$light-jade: #BDEFE5;
+$jade: #6BDBC5;
+$medium-jade: #4AD3B8;
+$dark-jade: #37CFB0;
+$deep-jade: #30C5A7;
+$deepest-jade: #28A48B;
+
+
+.t-show-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.t-dashboard {
+
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+
+  div.t-dashboard-opt {
+    color: #fff;
+    font-size: 1.5em;
+    height: 200px;
+    width: 200px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+      &:hover {
+      font-size: 1.6em;
+      }
+  }
+
+  div.t-dashboard-opt:nth-child(1) {
+    background-color: $jade;
+      &:hover {
+      background-color: tint($jade, 5%);
+      }
+  }
+
+  div.t-dashboard-opt:nth-child(2) {
+    background-color: $medium-jade;
+    &:hover {
+    background-color: tint($medium-jade, 5%);
+    }
+  }
+
+  div.t-dashboard-opt:nth-child(3) {
+    background-color: $dark-jade;
+    &:hover {
+    background-color: tint($dark-jade, 5%);
+    }
+  }
+
+  div.t-dashboard-opt:nth-child(4) {
+    background-color: $deep-jade;
+    &:hover {
+    background-color: tint($deep-jade, 5%);
+    }
+  }
+
+}

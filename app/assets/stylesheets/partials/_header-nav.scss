@@ -43,9 +43,9 @@ header {
 nav {
   background-color: $seagreen;
   width: 100%;
-  float: right;
+  position: fixed;
+  top: 50px;
   display: none;
-  position: relative;
   font-family: 'Quicksand', sans-serif !important;
 
 
