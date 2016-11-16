@@ -1,7 +1,16 @@
-class ClientController < ApplicationController
+class ClientsController < ApplicationController
+
+  def index
+    @client = Client.find(1)
+  end
+
   def new
     @client = Client.new client_params
+    if @client.save
+      render :index
+    end
   end
+
 
   private
 

@@ -2,6 +2,10 @@ Rails.application.routes.draw do
 
   get 'client/new'
 
+  get 'client/:id' => 'clients#index'
+
+  post 'client/:id' => 'clients#new'
+
   get '/new' => 'registrations#new'
 
   get '/index' => 'registrations#index'

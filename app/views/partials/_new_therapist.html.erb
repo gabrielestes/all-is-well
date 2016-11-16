@@ -1,8 +1,19 @@
 <%= form_for Therapist.new, url: {action: "new"} do |f| %>
-  <%= f.text_field :first_name %>
-  <%= f.text_field :last_name %>
-  <%= f.text_field :cred %>
-  <%= f.text_field :phone %>
-  <%= f.text_field :email %>
+
+  <%= f.label :first_name %><br/>
+  <%= f.text_field :first_name %><br/>
+
+  <%= f.label :last_name %><br/>
+  <%= f.text_field :last_name %><br/>
+
+  <%= f.label :cred %><br/>
+  <%= f.text_field :cred %><br/>
+
+  <%= f.label :phone %><br/>
+  <%= f.text_field :phone %><br/>
+
+  <%= f.label :email %><br/>
+  <%= f.text_field :email %><br/>
+
   <%= f.submit "New Therapist Account" %>
 <% end %>
