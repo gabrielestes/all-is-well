@@ -14,7 +14,7 @@ Rails.application.routes.draw do
 
   post 'client/:id' => 'clients#new'
 
-  get '/new' => 'registrations#new'
+  get '/new' => 'registrations#new', as: 'new_user'
 
   get '/index' => 'registrations#index'
 
@@ -22,9 +22,9 @@ Rails.application.routes.draw do
     get 'sign_in', to: 'devise/sessions#new'
   end
 
-  devise_scope :user do
-    get 'therapist/sign_up', to: 'devise/registrations#new'
-  end
+  # devise_scope :user do
+  #   get 'therapist/sign_up', to: 'devise/registrations#new'
+  # end
 
   get 'therapist/:id' => 'therapists#index'
 
