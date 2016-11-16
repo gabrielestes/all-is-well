@@ -6,8 +6,12 @@ class ClientsController < ApplicationController
 
   def new
     @client = Client.new client_params
-    if @client.save
-      render :index
+    if @client.save!
+      @user = User.new user_params
+      # @user.email = @client.email
+      @user.userable = @client
+      @user.save!
+      sign_in @user # some devise thing
     end
   end
 
@@ -23,5 +27,9 @@ class ClientsController < ApplicationController
       :birth_date,
       :phone
     )
+  end
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
   end
 end
