@@ -2,11 +2,13 @@
 
     <div class="c-activity">
       <div class="filter_title">
-        <a href="#" class="filter_events">Events</a>
-        <a href="#" class="filter_entries active">Entries</a>
+        <a href="#" class="filter_event">Events</a>
+        <a href="#" class="filter_entry">Entries</a>
         <a href="#" class="filter_mood">Mood</a>
-        <a href="#" class="filter_all">All</a>
+        <a href="#" class="filter_all active">All</a>
       </div>
       <%= render :partial => "partials/activity" %>
     </div>
+    <%= render 'partials/footer' %>
+
   </main>
