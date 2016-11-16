@@ -8,28 +8,27 @@ $dark: #333333;
 
 
 
-  .c-profile {
+  .profile {
     background: rgba(55, 207, 176, 0.7);
     height: 90%;
-    padding: 2%;
     width: 85%;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     display: flex;
-    .c-data {
+    .data {
       display: flex;
       flex-direction: column;
-
+      width: 100%;
       .data-block {
         display: flex;
         flex-direction: column;
         align-items: center;
 
-
         h3 {
           font-size: 36px;
           color: $seagreenD;
+          padding: 3%;
           @media (max-width: 760px){
               font-size: 4vw;
           }
@@ -37,6 +36,7 @@ $dark: #333333;
         span {
           display: block;
           font-size: 30px;
+          padding: 3%;
           margin: 5% 0;
           color: #fff;
           @media (max-width: 760px){
@@ -45,5 +45,39 @@ $dark: #333333;
       }
     }
 
+  }
+}
+.profile {
+
+  section.edit {
+    .data-block {
+      width: 100%;
+      &:hover {
+        background: $seagreen !important;
+      }
+      &:nth-child(odd){
+      background: $seagreenT;
+      }
+      &:nth-child(even){
+      background: $seagreenTb;
+      }
+      h3 {
+        font-size: 3vw;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+      }
+    span {
+      font-size: 3vw;
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      width: 100%;
+      }
+      a {
+        font-size: 2vw;
+        cursor: pointer;
+      }
+    }
   }
 }
