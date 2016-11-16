@@ -21,25 +21,29 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 .t-view-dashboard {
 
   font-family: 'Quicksand', sans-serif;
-
-  width: 20%;
-  height: 100%;
-  display: flex;
-  position: fixed;
-  padding-top: 50px;
   transition: all .5s ease-in-out;
 
-      &.scrunch {
-        padding-top: 98px;
-      }
 
-      &.t-dashboard-active {
+  @media (min-width: 700px) {
         width: 0;
-        div.t-dashboard-opt h3 {
-          color: transparent;
-        }
+        height: 100%;
+        display: flex;
+        position: fixed;
+        padding-top: 50px;
 
-      }
+            &.scrunch {
+              padding-top: 98px;
+            }
+
+            &.t-dashboard-active {
+              width: 20%;
+                div.t-dashboard-opt h3 {
+                  color: #000;
+                }
+            }
+
+  }
+
 }
 
 
@@ -47,56 +51,57 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   height: 100%;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
 
+    @media (min-width: 700px) {
+      flex-wrap: wrap;
+  }
 
-  div.t-dashboard-opt {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-        h3 {
-          color: #000;
-          font-size: 1.2em;
-          transition: all .3s ease-in-out;
-        }
+}
 
-      &:hover {
-        h3 {
-      color: #fff;
-      font-size: 1.3em;
-        }
+div.t-dashboard-opt {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+      h3 {
+        color: transparent;
+        font-size: 1.2em;
+        transition: all .3s ease-in-out;
       }
-  }
-
-  div.t-dashboard-opt:nth-child(1) {
-    background-color: $jadeTb;
-      &:hover {
-      background-color: $jade;
+  &:hover {
+      h3 {
+    color: #fff;
+    font-size: 1.3em;
       }
-  }
-
-  div.t-dashboard-opt:nth-child(2) {
-    background-color: $medium-jadeTb;
-    &:hover {
-    background-color: $medium-jade;
     }
-  }
+}
 
-  div.t-dashboard-opt:nth-child(3) {
-    background-color: $seagreenTb;
+div.t-dashboard-opt:nth-child(1) {
+  background-color: $jadeTb;
     &:hover {
-    background-color: $seagreen;
+    background-color: $jade;
     }
-  }
+}
 
-  div.t-dashboard-opt:nth-child(4) {
-    background-color: $deep-jadeTb;
-    &:hover {
-    background-color: $deep-jade;
-    }
+div.t-dashboard-opt:nth-child(2) {
+  background-color: $medium-jadeTb;
+  &:hover {
+  background-color: $medium-jade;
   }
+}
 
+div.t-dashboard-opt:nth-child(3) {
+  background-color: $seagreenTb;
+  &:hover {
+  background-color: $seagreen;
+  }
+}
+
+div.t-dashboard-opt:nth-child(4) {
+  background-color: $deep-jadeTb;
+  &:hover {
+  background-color: $deep-jade;
+  }
 }
 
 
@@ -105,7 +110,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 .t-view-content {
   font-family: 'Quicksand', sans-serif;
 
-  width: 80%;
+  width: 100%;
   min-height: 100%;
   float: right;
   display: flex;
@@ -113,13 +118,17 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   padding-top: 50px;
   transition: all .5s ease-in-out;
 
+
+    @media (min-width: 700px) {
+
       &.scrunch {
         padding-top: 98px;
       }
 
       &.t-dashboard-active {
-        width: 100%;
+        width: 80%;
       }
+    }
 }
 
 
@@ -139,7 +148,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
   display: flex;
   position: fixed;
-  width: 80%;
+  width: 100%;
   height: 50px;
   padding-bottom: 10px;
   background: tint($jade, 20%);
@@ -147,17 +156,23 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   justify-content: center;
   transition: all .5s ease-in-out;
 
-    &.t-dashboard-active {
-      width: 100%;
-    }
+    @media (min-width: 700px) {
 
+        &.t-dashboard-active {
+          width: 80%;
+        }
+    }
 
     i.t-view-dashboard-icon {
       position: absolute;
-      left: 5px;
-      &.t-dashboard-active {
-        transform: rotate(180deg);
-      }
+      padding: 5px;
+      left: 0;
+
+        @media (min-width: 700px) {
+          &.t-dashboard-active {
+            transform: rotate(180deg);
+          }
+        }
     }
 
 }
