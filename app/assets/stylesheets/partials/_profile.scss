@@ -50,6 +50,10 @@ $dark: #333333;
 .profile {
 
   section.edit {
+    aside {
+      display: flex;
+      justify-content: space-around;
+    }
     .data-block {
       width: 100%;
       &:hover {
@@ -77,6 +81,9 @@ $dark: #333333;
       a {
         font-size: 2vw;
         cursor: pointer;
+        &.active {
+          color: white;
+        }
       }
     }
   }
