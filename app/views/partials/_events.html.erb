@@ -1,8 +1,7 @@
-<main>
+
   <h1><%= @events.first.client.first_name %> <%= @events.first.client.last_name %></h1>
   <% @events.each do |e| %>
       <p><%= e.event_type %></p>
       <p><%= e.description %></p>
       <p><%= e.date %></p>
   <% end %>
-</main>

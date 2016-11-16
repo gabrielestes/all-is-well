@@ -2,7 +2,8 @@
   "use strict";
   $(document).on('click', '.menu-icon', function() {
     $('nav').slideToggle(500, 'linear');
-    $('.t-show-content').toggleClass('scrunch');
+    $('.t-view-dashboard').toggleClass('scrunch');
+    $('.t-view-content').toggleClass('scrunch');
   });
 
 })(jQuery);

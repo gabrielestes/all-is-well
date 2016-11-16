@@ -1,22 +1,48 @@
-$pale-jade: #CEF3EC;
-$light-jade: #BDEFE5;
-$jade: #6BDBC5;
+
+$jade: #7cdfcb;
 $medium-jade: #4AD3B8;
-$dark-jade: #37CFB0;
+$seagreen: #37CFB0;
 $deep-jade: #30C5A7;
-$deepest-jade: #28A48B;
+
+
+$jadeTb: rgba(124, 223, 203, 0.7);
+$medium-jadeTb: rgba(74, 211, 184, 0.7);
+$seagreenTb: rgba(55, 207, 176, 0.7);
+$deep-jadeTb: rgba(48, 197, 167, 0.7);
+
 
 @function tint($color, $percent) {
   @return mix(#fff, $color, $percent);
 }
 
-.t-show-content {
+
+.t-view-content {
+  font-family: 'Quicksand', sans-serif;
+
+  width: 80%;
+  min-height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  padding-top: 70px;
+  padding-left: 20px;
+  transition: all .5s ease-in-out;
+
+      &.scrunch {
+        padding-top: 138px;
+      }
+}
+
+
+
+.t-view-dashboard {
 
   font-family: 'Quicksand', sans-serif;
 
-  width: 100%;
+  width: 20%;
   height: 100%;
   display: flex;
+  position: fixed;
   padding-top: 50px;
   transition: all .5s ease-in-out;
 
@@ -28,54 +54,52 @@ $deepest-jade: #28A48B;
 
 .t-dashboard {
   height: 100%;
-  width: 200px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 
 
   div.t-dashboard-opt {
     color: #000;
-    font-size: 1.5em;
-    width: 200px;
+    font-size: 1.2em;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: .6;
 
 
       &:hover {
       color: #fff;
-      font-size: 1.6em;
-      opacity: 1;
+      font-size: 1.3em;
       }
   }
 
   div.t-dashboard-opt:nth-child(1) {
-    background-color: $jade;
-      // &:hover {
-      // background-color: tint($jade, 5%);
-      // }
+    background-color: $jadeTb;
+      &:hover {
+      background-color: $jade;
+      }
   }
 
   div.t-dashboard-opt:nth-child(2) {
+    background-color: $medium-jadeTb;
+    &:hover {
     background-color: $medium-jade;
-    // &:hover {
-    // background-color: tint($medium-jade, 5%);
-    // }
+    }
   }
 
   div.t-dashboard-opt:nth-child(3) {
-    background-color: $dark-jade;
-    // &:hover {
-    // background-color: tint($dark-jade, 5%);
-    // }
+    background-color: $seagreenTb;
+    &:hover {
+    background-color: $seagreen;
+    }
   }
 
   div.t-dashboard-opt:nth-child(4) {
+    background-color: $deep-jadeTb;
+    &:hover {
     background-color: $deep-jade;
-    // &:hover {
-    // background-color: tint($deep-jade, 5%);
-    // }
+    }
   }
 
 }
