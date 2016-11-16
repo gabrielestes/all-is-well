@@ -5,6 +5,7 @@
     $('.t-view-header').toggleClass('t-dashboard-active');
     $('.t-view-content').toggleClass('t-dashboard-active');
     $('.t-view-dashboard-icon').toggleClass('t-dashboard-active');
+
   });
 
 })(jQuery);
