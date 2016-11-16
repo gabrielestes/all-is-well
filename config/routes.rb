@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'therapist/sign_up', to: 'devise/registrations#new'
   end
->>>>>>> user_register
 
   get 'therapist/:id' => 'therapists#index'
 
