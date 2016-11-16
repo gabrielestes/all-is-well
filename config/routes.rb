@@ -8,6 +8,25 @@ Rails.application.routes.draw do
 
   get 'notes/delete'
 
+  get 'client/new'
+
+  get 'client/:id' => 'clients#index'
+
+  post 'client/:id' => 'clients#new'
+
+  get '/new' => 'registrations#new'
+
+  get '/index' => 'registrations#index'
+
+  devise_scope :user do
+    get 'sign_in', to: 'devise/sessions#new'
+  end
+
+  devise_scope :user do
+    get 'therapist/sign_up', to: 'devise/registrations#new'
+  end
+>>>>>>> user_register
+
   get 'therapist/:id' => 'therapists#index'
 
 # T- client page, id is id of the client
@@ -21,7 +40,7 @@ Rails.application.routes.draw do
 
 # Therapist profile, id is therapist
   get 'therapist/t_profile/:id' => 'therapists#t_profile'
-  
+
 # Client profile, id is client's id
   get 'therapist/c_profile/:id' => 'therapists#c_profile'
 
