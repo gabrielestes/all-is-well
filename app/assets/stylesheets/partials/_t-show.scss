@@ -24,13 +24,49 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   float: right;
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
-  padding-left: 20px;
+  padding-top: 50px;
   transition: all .5s ease-in-out;
 
       &.scrunch {
-        padding-top: 138px;
+        padding-top: 98px;
       }
+
+      &.t-dashboard-active {
+        width: 100%;
+      }
+}
+
+.t-view-main {
+  padding-left: 20px;
+  padding-top: 40px;
+}
+
+.t-view-header {
+
+  display: flex;
+  position: fixed;
+  width: 80%;
+  height: 50px;
+  padding-bottom: 10px;
+  background: tint($jade, 20%);
+  align-items: flex-end;
+  justify-content: center;
+
+    &.t-dashboard-active {
+      width: 100%;
+    }
+
+
+    i.t-view-dashboard-icon {
+      position: absolute;
+      left: 5px;
+      &.t-dashboard-active {
+        transform: rotate(180deg);
+      }
+    }
+
+
+
 }
 
 
@@ -49,6 +85,14 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
       &.scrunch {
         padding-top: 98px;
       }
+
+      &.t-dashboard-active {
+        width: 0;
+        div.t-dashboard-opt h3 {
+          color: transparent;
+        }
+
+      }
 }
 
 
@@ -60,17 +104,21 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
 
   div.t-dashboard-opt {
-    color: #000;
-    font-size: 1.2em;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-
+        h3 {
+          color: #000;
+          font-size: 1.2em;
+          transition: all .3s ease-in-out;
+        }
 
       &:hover {
+        h3 {
       color: #fff;
       font-size: 1.3em;
+        }
       }
   }
 
