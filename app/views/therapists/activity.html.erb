@@ -1,5 +1,10 @@
-  <main>
+<%= render :partial => "partials/t-dashboard" %>
+<div class="t-view-content">
+<%= render :partial => "partials/t-view-header" %>
+<div class="t-view-main">
 
+
+    <!-- PUT THERAPIST VIEW PAGE CONTENT BELOW HERE -->
     <div class="c-activity">
       <div class="filter_title">
         <a href="#" class="filter_event">Events</a>
@@ -8,7 +13,10 @@
         <a href="#" class="filter_all active">All</a>
       </div>
       <%= render :partial => "partials/activity" %>
+      <div="footer"><a href="#">Return to Top</a></div>
     </div>
-    <%= render 'partials/footer' %>
 
-  </main>
+    <!-- END THERAPIST VIEW PAGE CONTENT -->
+
+</div>
+</div>
