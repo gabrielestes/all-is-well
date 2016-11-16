@@ -1,9 +1,22 @@
+<%= render :partial => "partials/t-dashboard" %>
+<div class="t-view-content">
+<%= render :partial => "partials/t-view-header" %>
+<div class="t-view-main">
 
-    <div class="t-view-dashboard">
-        <div class="t-dashboard">
-            <div class="t-dashboard-opt">All Activity</div>
-            <div class="t-dashboard-opt">Calendar</div>
-            <div class="t-dashboard-opt">Client Profile</div>
-            <div class="t-dashboard-opt">Notes</div>
-        </div>
+
+    <!-- PUT THERAPIST VIEW PAGE CONTENT BELOW HERE -->
+    <div class="c-activity">
+      <div class="filter_title">
+        <a href="#" class="filter_event">Events</a>
+        <a href="#" class="filter_entry">Entries</a>
+        <a href="#" class="filter_mood">Mood</a>
+        <a href="#" class="filter_all active">All</a>
+      </div>
+      <%= render :partial => "partials/activity" %>
+      <div="footer"><a href="#">Return to Top</a></div>
     </div>
+
+    <!-- END THERAPIST VIEW PAGE CONTENT -->
+
+</div>
+</div>
