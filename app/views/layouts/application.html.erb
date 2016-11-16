@@ -17,9 +17,9 @@
 
   <body>
 
-
+  <% if current_user != nil %>
     <%= render 'partials/header' %>
-
+  <% end %>
 
     <%= yield %>
 
