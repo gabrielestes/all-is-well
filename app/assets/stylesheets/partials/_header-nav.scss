@@ -23,6 +23,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  z-index: 1;
+  
         div {
           margin: 0 10px;
         }
@@ -46,6 +48,7 @@ nav {
   position: fixed;
   top: 50px;
   display: none;
+  z-index: 1;
   font-family: 'Quicksand', sans-serif !important;
 
 
