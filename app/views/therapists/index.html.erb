@@ -6,13 +6,7 @@
               <a href="#" class="sort_urgent">Sort by name</a>
               <a href="#" class="sort_name active">Sort by activity</a>
             </div>
-          <% @clients.each do |c| %>
-            <div class="patient_card">
-                <p class="id_number"><%= c.id %></p>
-                <p class="pt_name"><%= c.first_name %> <%= c.last_name %></p>
-                <i class="material-icons show">error</i>
-            </div>
-          <% end %>
+            <%= render :partial => "partials/patient-card" %>
 
         </div>
         </main>

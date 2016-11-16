@@ -1,73 +1,14 @@
   <main>
+
     <div class="c-activity">
       <div class="filter_title">
-        <a href="#" class="filter_events">Events</a>
-        <a href="#" class="filter_entries active">Entries</a>
+        <a href="#" class="filter_event">Events</a>
+        <a href="#" class="filter_entry">Entries</a>
         <a href="#" class="filter_mood">Mood</a>
-        <a href="#" class="filter_all">All</a>
+        <a href="#" class="filter_all active">All</a>
       </div>
-
-      <div class="patient_card event">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">EVENT</p>
-      </div>
-      <div class="patient_card entry">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">ENTRY</p>
-      </div>
-      <div class="patient_card mood">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">MOOD</p>
-      </div>
-      <div class="patient_card mood">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">MOOD</p>
-      </div>
-      <div class="patient_card event">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">EVENT</p>
-      </div>
-      <div class="patient_card entry">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">ENTRY</p>
-      </div>
-      <div class="patient_card mood">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">MOOD</p>
-      </div>
-      <div class="patient_card mood">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">MOOD</p>
-      </div>
-      <div class="patient_card event">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">EVENT</p>
-      </div>
-      <div class="patient_card entry">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">ENTRY</p>
-      </div>
-      <div class="patient_card mood">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">MOOD</p>
-      </div>
-      <div class="patient_card mood">
-        <p class="date">MM/DD/YYYY</p>
-        <p class="time">HH:MM</p>
-        <p class="activity-type">MOOD</p>
-      </div>
-
+      <%= render :partial => "partials/activity" %>
     </div>
+    <%= render 'partials/footer' %>
+
   </main>
-  <footer><a href="#">Return to Top</a></footer>
