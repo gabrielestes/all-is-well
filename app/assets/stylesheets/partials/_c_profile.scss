@@ -30,8 +30,8 @@ $dark: #333333;
         h3 {
           font-size: 36px;
           color: $seagreenD;
-          @media (max-width: 605px){
-              font-size: 6vw;
+          @media (max-width: 760px){
+              font-size: 4vw;
           }
         }
         span {
@@ -39,8 +39,8 @@ $dark: #333333;
           font-size: 30px;
           margin: 5% 0;
           color: #fff;
-          @media (max-width: 605px){
-              font-size: 6vw;
+          @media (max-width: 760px){
+              font-size: 4vw;
         }
       }
     }
