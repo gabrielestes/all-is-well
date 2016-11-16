@@ -9,6 +9,7 @@
     $(event.target).toggleClass('active');
     event.preventDefault();
     var classes = $(event.target).attr('class');
+    //the activity type must be the second class named for this to work.
     var activity = classes.split(/[_ ]/)[1];
     $('.patient_card').each(function(){
       if($(this).hasClass(activity)) {
