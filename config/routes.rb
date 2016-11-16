@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'notes/index'
+
+  get 'notes/create'
+
+  get 'notes/update'
+
+  get 'notes/delete'
+
   get 'therapist/:id' => 'therapists#index'
 
 # T- client page, id is id of the client
