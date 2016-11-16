@@ -15,5 +15,15 @@
   <%= f.label :email %><br/>
   <%= f.text_field :email %><br/>
 
-  <%= f.submit "New Therapist Account" %>
+  <%= form_for :user do |u| %>
+    <%= u.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+    <%= u.password_field :password, autocomplete: "off" %>
+
+    <%= u.label :password_confirmation %><br />
+    <%= u.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.submit "New Therapist Account" %>
+  <% end %>
 <% end %>

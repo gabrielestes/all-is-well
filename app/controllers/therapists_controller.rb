@@ -11,6 +11,11 @@ class TherapistsController < ApplicationController
   def new
     @therapist = Therapist.new therapist_params
     if @therapist.save
+      @user = User.new user_params
+      @user.email = @therapist.email
+      @user.userable = @therapist
+      @user.save
+      sign_in @user # some devise thing
       render :index
     else
       render :new
@@ -36,6 +41,10 @@ class TherapistsController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
+  end
 
   def therapist_params
     params.require(:therapist).permit(:first_name, :last_name, :cred, :phone, :email)

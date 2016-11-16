@@ -4,11 +4,11 @@
 
 <%= radio_button_tag(:userable_type, 'Client') %>
 <%= label_tag('Client') %>
-
+<% @therapist = nil %>
 <%= render partial: 'partials/new_therapist' %>
 <%= render partial: 'partials/new_client' %>
 
-<%= form_for @user, url: {action: 'new'} do |f| %>
+<%= form_for [@user, User.new], url: {action: 'new'} do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -30,4 +30,5 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
