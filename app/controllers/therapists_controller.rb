@@ -9,13 +9,17 @@ class TherapistsController < ApplicationController
   end
 
   def new
-    @therapist = Therapist.new # therapist_params
-    render :partial => 'partials/new_therapist'
-    # if @therapist.save
-    #   201
-    # else
-    #   render :new
-    # end
+    @therapist = Therapist.new therapist_params
+    if @therapist.save
+      @user = User.new user_params
+      @user.email = @therapist.email
+      @user.userable = @therapist
+      @user.save
+      sign_in @user # some devise thing
+      render :index
+    else
+      render :new
+    end
   end
 
   #therapist's view of the event calendar "list"
@@ -37,6 +41,10 @@ class TherapistsController < ApplicationController
   end
 
   private
+
+  def user_params
+    params.require(:user).permit(:email, :password, :password_confirmation)
+  end
 
   def therapist_params
     params.require(:therapist).permit(:first_name, :last_name, :cred, :phone, :email)

@@ -1,4 +1,4 @@
-<%= form_for Client.new, url: {action: "new"} do |f| %>
+<%= form_for Client.new, url: new_client_path, method: :post do |f| %>
   <%= f.label :first_name %><br/>
   <%= f.text_field :first_name %><br/>
 
@@ -11,5 +11,19 @@
   <%= f.label :therapist_id %><br/>
   <%= f.collection_select :therapist_id, Therapist.all.order(:last_name), :id, :last_name %><br/>
 
-  <%= f.submit "New Client Account" %><br/>
+  <%= form_for :user do |u| %>
+    <%= u.label :email %><br />
+    <%= u.email_field :email %>
+
+    <%= u.label :password %>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+    <%= u.password_field :password, autocomplete: "off" %>
+
+    <%= u.label :password_confirmation %><br />
+    <%= u.password_field :password_confirmation, autocomplete: "off" %><br />
+    <%= f.submit "New Client Account" %><br/>
+
+  <% end %>
 <% end %>
