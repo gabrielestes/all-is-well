@@ -19,11 +19,11 @@
     <%= u.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
+      <% end %><br/>
     <%= u.password_field :password, autocomplete: "off" %>
 
     <%= u.label :password_confirmation %><br />
-    <%= u.password_field :password_confirmation, autocomplete: "off" %>
-    <%= f.submit "New Therapist Account" %>
+    <%= u.password_field :password_confirmation, autocomplete: "off" %><br />
+    <%= f.submit "New Therapist Account" %><br />
   <% end %>
 <% end %>

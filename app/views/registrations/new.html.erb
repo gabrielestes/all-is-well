@@ -1,9 +1,3 @@
-<!-- <input type="radio" name="user-type" value="Therapist"> Therapist<br> -->
-<%= radio_button_tag(:userable_type, 'Therapist') %>
-<%= label_tag('Therapist') %>
-
-<%= radio_button_tag(:userable_type, 'Client') %>
-<%= label_tag('Client') %>
 <% @therapist = nil %>
 <%= render partial: 'partials/new_therapist' %>
 <%= render partial: 'partials/new_client' %>
