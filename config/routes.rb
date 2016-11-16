@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   get 'notes/index'
 
-  get 'notes/create'
+  post 'notes/create'
 
-  get 'notes/update'
+  patch 'notes/update'
 
-  get 'notes/delete'
+  delete 'notes/delete'
 
   get 'client/new'
 
@@ -25,7 +25,6 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'therapist/sign_up', to: 'devise/registrations#new'
   end
->>>>>>> user_register
 
   get 'therapist/:id' => 'therapists#index'
 
