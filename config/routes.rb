@@ -14,7 +14,9 @@ Rails.application.routes.draw do
 
   post 'client/:id' => 'clients#new'
 
-  get '/new' => 'registrations#new', as: 'new_user'
+  get 'register' => 'registrations#new', as: 'register_user'
+
+  post 'register' => 'registrations#new'
 
   get '/index' => 'registrations#index'
 
@@ -27,6 +29,8 @@ Rails.application.routes.draw do
   end
 
   get 'therapist/:id' => 'therapists#index'
+
+  post 'therapist' => 'therapists#new', as: 'new_therapist'
 
 # T- client page, id is id of the client
   get 'therapist/client/:id'    => 'therapists#show'

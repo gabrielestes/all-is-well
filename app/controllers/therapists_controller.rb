@@ -9,13 +9,12 @@ class TherapistsController < ApplicationController
   end
 
   def new
-    @therapist = Therapist.new # therapist_params
-    render :partial => 'partials/new_therapist'
-    # if @therapist.save
-    #   201
-    # else
-    #   render :new
-    # end
+    @therapist = Therapist.new therapist_params
+    if @therapist.save
+      render :index
+    else
+      render :new
+    end
   end
 
   #therapist's view of the event calendar "list"
