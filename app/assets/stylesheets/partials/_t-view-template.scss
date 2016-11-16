@@ -16,60 +16,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 }
 
 
-.t-view-content {
-  font-family: 'Quicksand', sans-serif;
-
-  width: 80%;
-  min-height: 100%;
-  float: right;
-  display: flex;
-  flex-direction: column;
-  padding-top: 50px;
-  transition: all .5s ease-in-out;
-
-      &.scrunch {
-        padding-top: 98px;
-      }
-
-      &.t-dashboard-active {
-        width: 100%;
-      }
-}
-
-.t-view-main {
-  padding-left: 20px;
-  padding-top: 40px;
-}
-
-.t-view-header {
-
-  display: flex;
-  position: fixed;
-  width: 80%;
-  height: 50px;
-  padding-bottom: 10px;
-  background: tint($jade, 20%);
-  align-items: flex-end;
-  justify-content: center;
-
-    &.t-dashboard-active {
-      width: 100%;
-    }
-
-
-    i.t-view-dashboard-icon {
-      position: absolute;
-      left: 5px;
-      &.t-dashboard-active {
-        transform: rotate(180deg);
-      }
-    }
-
-
-
-}
-
-
+// ****** THERAPIST VIEW DASHBOARD PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
 .t-view-dashboard {
 
@@ -149,5 +96,68 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
     background-color: $deep-jade;
     }
   }
+
+}
+
+
+// ****** THERAPIST VIEW CONTENT PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
+
+.t-view-content {
+  font-family: 'Quicksand', sans-serif;
+
+  width: 80%;
+  min-height: 100%;
+  float: right;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50px;
+  transition: all .5s ease-in-out;
+
+      &.scrunch {
+        padding-top: 98px;
+      }
+
+      &.t-dashboard-active {
+        width: 100%;
+      }
+}
+
+
+// ****** THERAPIST VIEW MAIN STYLING - APPLIES ACROSS MANY PAGES ***** //
+// ****** VARIOUS PAGE VIEW CONTENT LIVES WITHIN THIS DIV ***** //
+
+.t-view-main {
+  padding-left: 20px;
+  padding-top: 70px;
+}
+
+
+
+// ****** THERAPIST VIEW HEADER PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
+
+.t-view-header {
+
+  display: flex;
+  position: fixed;
+  width: 80%;
+  height: 50px;
+  padding-bottom: 10px;
+  background: tint($jade, 20%);
+  align-items: flex-end;
+  justify-content: center;
+  transition: all .5s ease-in-out;
+
+    &.t-dashboard-active {
+      width: 100%;
+    }
+
+
+    i.t-view-dashboard-icon {
+      position: absolute;
+      left: 5px;
+      &.t-dashboard-active {
+        transform: rotate(180deg);
+      }
+    }
 
 }
