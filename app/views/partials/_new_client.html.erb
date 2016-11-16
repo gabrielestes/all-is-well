@@ -1,0 +1,15 @@
+<%= form_for Client.new, url: {action: "new"} do |f| %>
+  <%= f.label :first_name %><br/>
+  <%= f.text_field :first_name %><br/>
+
+  <%= f.label :last_name %><br/>
+  <%= f.text_field :last_name %><br/>
+
+  <%= f.label :phone %><br/>
+  <%= f.text_field :phone %><br/>
+
+  <%= f.label :therapist_id %><br/>
+  <%= f.collection_select :therapist_id, Therapist.all.order(:last_name), :id, :last_name %><br/>
+
+  <%= f.submit "New Client Account" %><br/>
+<% end %>
