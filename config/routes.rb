@@ -2,11 +2,11 @@ Rails.application.routes.draw do
 
   get 'notes/index'
 
-  get 'notes/create'
+  post 'notes/create'
 
-  get 'notes/update'
+  patch 'notes/update'
 
-  get 'notes/delete'
+  delete 'notes/delete'
 
   get 'client/new'
 
