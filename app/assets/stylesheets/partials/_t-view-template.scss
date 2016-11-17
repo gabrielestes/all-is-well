@@ -24,11 +24,11 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   transition: all .5s ease-in-out;
   visibility: hidden;
   position: fixed;
-  padding-top: 100px;
+  padding-top: 80px;
   width: 100%;
   height: 0;
   overflow: hidden;
-  cursor: default;
+  cursor: pointer;
 
   &.t-dashboard-active {
     visibility: visible;
@@ -40,13 +40,10 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   @media (min-width: 700px) {
         width: 0;
         height: 100%;
-        padding-top: 50px;
+        padding-top: 30px;
         overflow: visible;
 
 
-            &.scrunch {
-              padding-top: 98px;
-            }
 
             &.t-dashboard-active {
               width: 20%;
@@ -155,7 +152,7 @@ div.t-dashboard-opt:nth-child(4) {
   float: right;
   display: flex;
   flex-direction: column;
-  padding-top: 50px;
+  padding-top: 30px;
   transition: all .5s ease-in-out;
 
 
@@ -207,6 +204,7 @@ div.t-dashboard-opt:nth-child(4) {
       position: absolute;
       padding: 5px;
       left: 0;
+      cursor: pointer;
 
 
           &.t-dashboard-active {

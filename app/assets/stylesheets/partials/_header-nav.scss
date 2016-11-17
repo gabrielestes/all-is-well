@@ -12,51 +12,74 @@ header {
   top: 0;
   width: 100%;
   background-color: $seagreen;
-  height: 50px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 3;
 
-        .user-welcome {
-          font-size: 1.1em;
-        }
-
-        .menu-icon {
-          &:hover {
-            color: #fff;
-            cursor: pointer;
-          }
-        }
 
 }
 
 nav {
+  transition: all .5s ease-in-out;
   background-color: $seagreen;
   width: 100%;
   position: fixed;
-  top: 50px;
+  top: 30px;
   display: none;
   z-index: 3;
   font-family: 'Quicksand', sans-serif !important;
 
-
-    div {
-      border-top: 0.25px solid $seagreenM;
-      padding: 10px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      @media (min-width: 700px){
-        float: left;
-        width: calc(100%/3);
-        border: none;
-      }
-      &:hover {
-        cursor: pointer;
-        background-color: tint($seagreen, 25%);
-        color: #fff;
+      &.header-nav-active {
+        display: block;
       }
 
+  @media (min-width: 600px) {
+    position: relative;
+    top: 0;
+    display: block;
+    width: auto;
+  }
+
+}
+
+#header-nav-icon {
+  @media (min-width: 600px) {
+    display: none;
+  }
+}
+
+
+
+
+
+.header-nav-opt {
+  border-top: 0.25px solid $seagreenM;
+  padding: 10px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    &:last-child {
+      border-bottom: 0.25px solid $seagreenM;
     }
+    &:hover {
+      cursor: pointer;
+      background-color: tint($seagreen, 25%);
+      color: #fff;
+    }
+
+
+  @media (min-width: 600px){
+    float: left;
+    width: calc(100%/3);
+    border: none;
+    &:hover {
+      cursor: pointer;
+      background-color: $seagreen;
+      color: #fff;
+    }
+  }
+
 }
