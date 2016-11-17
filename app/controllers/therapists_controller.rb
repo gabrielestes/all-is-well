@@ -8,6 +8,9 @@ class TherapistsController < ApplicationController
   def show
   end
 
+  def t_profile
+  end
+  
   def new
     @therapist = Therapist.new therapist_params
     if @therapist.save
