@@ -3,32 +3,24 @@
       <div class="site-logo">
         <h3>AllIsWell</h3>
       </div>
-<<<<<<< HEAD
+
 
       <!-- <div class="user-welcome">
         <p>Welcome, User</p>
       </div> -->
-
-      <nav class="header-nav">
-          <div class="header-nav-opt">Home</div>
-          <div class="header-nav-opt">Account</div>
-          <div class="header-nav-opt">Logout</div>
-      </nav>
 
     <div id="header-nav-icon">
         <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
 
   </header>
-=======
+
       <div class="user-welcome">
         <p>Welcome, <%= current_user.userable.first_name %> <%= current_user.userable.last_name %></p>
       </div>
-      <div class="menu-icon">
-          <i class="material-icons">menu</i>
-      </div>
+
   </header>
-</div>
+
 
   <nav class="therapist">
     <%= link_to "/#{current_user.userable_type.downcase}/#{current_user.userable.id}" do %>
@@ -41,4 +33,3 @@
       <div>Logout</div>
     <% end %>
   </nav>
->>>>>>> master
