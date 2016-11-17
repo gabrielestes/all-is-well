@@ -7,13 +7,13 @@ $seagreenD: #0A382F;
 
 .t-index {
   display: flex;
-  width: 95%;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   .sort {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 95%;
     margin: 11px 0;
     background: $seagreenMT;
     a {
@@ -30,7 +30,7 @@ $seagreenD: #0A382F;
   text-align: right;
 }
 a {
-  width: 70%;
+  width: 95%;
   .patient_card{
     display: flex;
     justify-content: space-between;
