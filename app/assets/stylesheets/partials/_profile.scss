@@ -24,7 +24,6 @@ $seagreenLb: rgb(107, 213, 192);
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 95%;
     max-width: 600px;
     .data {
       background: $seagreenLb;
@@ -37,21 +36,22 @@ $seagreenLb: rgb(107, 213, 192);
         align-items: center;
 
         h3 {
-          font-size: 36px;
+          font-size: 1.2em;
           color: $seagreenD;
           padding: 3%;
-          @media (max-width: 760px){
-              font-size: 4vw;
+          @media (max-width: 470px){
+              font-size: 16px;
           }
         }
         span {
-          display: block;
+          display: flex;
+          justify-content: center;
           font-size: 30px;
           padding: 3%;
-          margin: 5% 0;
           color: #fff;
-          @media (max-width: 760px){
-              font-size: 4vw;
+          width: 100%;
+          @media (max-width: 470px){
+              font-size: 16px;
         }
       }
     }
