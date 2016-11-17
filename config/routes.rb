@@ -1,13 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'notes/index'
-
-  post 'notes/create'
-
-  patch 'notes/update'
-
-  delete 'notes/delete'
-
   get 'client/new'
 
   get 'client/:id' => 'clients#index'
@@ -20,13 +12,13 @@ Rails.application.routes.draw do
 
   get '/index' => 'registrations#index'
 
-  devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new', as: 'sign_in'
+  authenticated :user do
+    root :to => 'therapists#index'
   end
 
-  # devise_scope :user do
-  #   get 'therapist/sign_up', to: 'devise/registrations#new'
-  # end
+  devise_scope :user do
+    get '/', to: 'devise/sessions#new', as: 'sign_in'
+  end
 
   get 'therapist/:id' => 'therapists#index'
 
