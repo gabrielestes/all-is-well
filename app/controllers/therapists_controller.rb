@@ -1,4 +1,5 @@
 class TherapistsController < ApplicationController
+  before_action :authenticate_user!
   def index
     @therapist = Therapist.find(params[:id])
     @clients = Client.where(therapist_id: @therapist.id)
@@ -6,6 +7,9 @@ class TherapistsController < ApplicationController
 
   #page that shows 4 option link to clients stuff T-client page
   def show
+  end
+
+  def t_profile
   end
 
   def new

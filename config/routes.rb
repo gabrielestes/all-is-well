@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/index' => 'registrations#index'
 
   devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new'
+    get 'sign_in', to: 'devise/sessions#new', as: 'sign_in'
   end
 
   # devise_scope :user do
@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   get 'therapist/activity/:id'  => 'therapists#activity'
 
 # Therapist profile, id is therapist
-  get 'therapist/t_profile/:id' => 'therapists#t_profile'
+  get '/therapist/profile/:id' => 'therapists#t_profile'
 
 # Client profile, id is client's id
   get 'therapist/c_profile/:id' => 'therapists#c_profile'
