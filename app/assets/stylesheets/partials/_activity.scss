@@ -18,6 +18,10 @@ $red: rgba(234,6,6,0.65);
     margin: 11px auto;
     width: 85%;
     background: $seagreenMT;
+    @media (max-width: 570px){
+      width: 100%;
+    }
+
       a {
         text-align: center;
         width: 25%;
@@ -32,6 +36,9 @@ $red: rgba(234,6,6,0.65);
   .patient_card {
     width: 85%;
     margin: 0 auto;
+    @media (max-width: 570px){
+      width: 100%;
+    }
     p {
       display: inline-flex;
       width: 30%;
