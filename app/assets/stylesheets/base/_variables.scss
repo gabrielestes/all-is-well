@@ -23,3 +23,14 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
 // Typography
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+
+// Functions
+
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
