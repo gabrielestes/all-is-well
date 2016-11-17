@@ -1,10 +1,8 @@
-<input type="radio" name="user-type" value="Therapist"> Therapist<br>
-<input type="radio" name="user-type" value="Client" checked> Client<br>
-
+<% @therapist = nil %>
 <%= render partial: 'partials/new_therapist' %>
 <%= render partial: 'partials/new_client' %>
 
-<%= form_for @user, url: {action: 'new'} do |f| %>
+<%= form_for [@user, User.new], url: {action: 'new'} do |f| %>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -26,4 +24,5 @@
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
+
 <% end %>
