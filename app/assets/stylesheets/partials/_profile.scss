@@ -5,6 +5,7 @@ $seagreenM: rgb(35, 188, 158);
 $seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
 $dark: #333333;
+$seagreenLb: rgb(107, 213, 192);
 
 @function shade($color, $percent) {
   @return mix(#000, $color, $percent);
@@ -26,7 +27,7 @@ $dark: #333333;
     width: 95%;
     max-width: 600px;
     .data {
-      background: $seagreenTb;
+      background: $seagreenLb;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -65,13 +66,17 @@ $dark: #333333;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      background: $seagreenMT;
+      background: $seagreen;
       &.disappear {
         display: none;
       }
       div {
         display: flex;
         justify-content: center;
+        @media (max-width: 540px){
+          flex-direction: column;
+        }
+
         input {
           &:focus {
             outline-color: $seagreenD;
