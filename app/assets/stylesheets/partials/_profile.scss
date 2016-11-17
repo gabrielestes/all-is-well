@@ -8,6 +8,7 @@ $dark: #333333;
 
 
 
+
   .profile {
     background: rgba(55, 207, 176, 0.7);
     height: 90%;
@@ -55,6 +56,9 @@ $dark: #333333;
       justify-content: space-around;
       align-items: center;
       height: 24vh;
+      &.disappear {
+        display: none;
+      }
       div {
         input {
           line-height: 2em;
