@@ -17,9 +17,9 @@
 
   <body>
 
-
-    <%= render 'partials/header' %>
-
+      <% if current_user %>
+        <%= render :partial =>'partials/header' %>
+      <% end %>
 
     <%= yield %>
 

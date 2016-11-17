@@ -1,4 +1,5 @@
 class TherapistsController < ApplicationController
+  before_action :authenticate_user!, except: [:new, :index]
   def index
     @therapist = Therapist.find(params[:id])
     @clients = Client.where(therapist_id: @therapist.id)
@@ -10,7 +11,7 @@ class TherapistsController < ApplicationController
 
   def t_profile
   end
-  
+
   def new
     @therapist = Therapist.new therapist_params
     if @therapist.save
