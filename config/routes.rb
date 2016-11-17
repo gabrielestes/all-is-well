@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   get '/index' => 'registrations#index'
 
   devise_scope :user do
-    get 'sign_in', to: 'devise/sessions#new'
+    get 'sign_in', to: 'devise/sessions#new', as: 'sign_in'
   end
 
   # devise_scope :user do
