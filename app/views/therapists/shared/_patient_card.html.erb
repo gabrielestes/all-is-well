@@ -1,7 +1,9 @@
 <% @clients.each do |c| %>
-  <div class="patient_card" data-id="<%= c.updated_at %>">
-      <p class="id_number"><%= c.id %></p>
-      <p class="pt_name"><%= c.first_name %> <%= c.last_name %></p>
-      <i class="material-icons show">error</i>
-  </div>
+  <%= link_to "/client/#{c.id}" do %>
+    <div class="patient_card" data-id="<%= c.updated_at %>">
+        <p class="id_number"><%= c.id %></p>
+        <p class="pt_name"><%= c.first_name %> <%= c.last_name %></p>
+        <i class="material-icons show">error</i>
+    </div>
+  <% end %>
 <% end %>

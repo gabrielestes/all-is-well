@@ -42,7 +42,7 @@ Rails.application.routes.draw do
   get 'therapist/activity/:id'  => 'therapists#activity'
 
 # Therapist profile, id is therapist
-  get 'therapist/t_profile/:id' => 'therapists#t_profile'
+  get '/therapist/profile/:id' => 'therapists#t_profile'
 
 # Client profile, id is client's id
   get 'therapist/c_profile/:id' => 'therapists#c_profile'
