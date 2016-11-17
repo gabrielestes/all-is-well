@@ -2,12 +2,12 @@
 <!-- if user is a therapist, edit should be included as a class in outer section. -->
   <section class="t-data data edit">
 
-    <div class="data-block name"><h3>Client&nbsp;Name: </h3><span>FIRSTNAME I. LASTNAME<a class="edit">Edit</a></span></div>
+    <div class="data-block name"><h3>Therapist&nbsp;Name: </h3><span>FIRSTNAME I. LASTNAME<a class="edit">Edit</a></span></div>
       <aside class="name disappear">
         <div>
-          <input class="edit-data" id="first_name" placeholder="FIRSTNAME"/>
-          <input class="edit-data" id="initial" placeholder="I"/>
-          <input class="edit-data" id="last_name" placeholder="LASTNAME"/>
+          <input class="edit-data" type="text" id="first_name" placeholder="FIRSTNAME"/>
+          <input class="edit-data" type="text" id="initial" placeholder="I"/>
+          <input class="edit-data" type="text" id="last_name" placeholder="LASTNAME"/>
         </div>
           <input class="button" type="submit" value="Submit"/>
       </aside>
@@ -15,9 +15,9 @@
     <div class="data-block dob"><h3>Date&nbsp;of&nbsp;Birth: </h3><span>MM/DD/YYYY<a class="edit">Edit</a></span></div>
       <aside class="dob disappear">
         <div>
-          <input class="edit-data" id="month" placeholder="MM"/>
-          <input class="edit-data" id="date" placeholder="DD"/>
-          <input class="edit-data" id="year" placeholder="YYYY"/>
+          <input class="edit-data" type="number" id="month" placeholder="MM"/>
+          <input class="edit-data" type="number" id="date" placeholder="DD"/>
+          <input class="edit-data" type="number" id="year" placeholder="YYYY"/>
         </div>
         <input class="button" type="submit" value="Submit"/>
     </aside>
@@ -25,7 +25,7 @@
     <div class="data-block phone"><h3>Primary&nbsp;Phone&nbsp;Number: </h3><span>123-456-7890<a class="edit">Edit</a></span></div>
       <aside class="phone disappear">
         <div>
-          <input class="edit-data" id="phone" placeholder="123-456-7890"/>
+          <input class="edit-data" type="text" id="phone" placeholder="123-456-7890"/>
         </div>
         <input class="button" type="submit" value="Submit"/>
       </aside>
@@ -33,8 +33,9 @@
     <div class="data-block em_phone"><h3>Emergency&nbsp;Phone&nbsp;Number: </h3><span>098-765-4321<a class="edit">Edit</a></span></div>
       <aside class="em_phone disappear">
         <div>
-          <input class="edit-data" id="em_phone" placeholder="098-765-4321"/>
+          <input class="edit-data" type="text" id="em_phone" placeholder="098-765-4321"/>
         </div>
+        <input class="button" type="submit" value="Submit"/>
       </aside>
 
   </section>

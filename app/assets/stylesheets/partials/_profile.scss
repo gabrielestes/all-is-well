@@ -5,19 +5,28 @@ $seagreenM: rgb(35, 188, 158);
 $seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
 $dark: #333333;
+$seagreenLb: rgb(107, 213, 192);
+
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+
 
 
 
 
   .profile {
-    background: rgba(55, 207, 176, 0.7);
-    height: 90%;
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     display: flex;
-    width: 95%;
+    max-width: 600px;
     .data {
+      background: $seagreenLb;
       display: flex;
       flex-direction: column;
       width: 100%;
@@ -27,21 +36,22 @@ $dark: #333333;
         align-items: center;
 
         h3 {
-          font-size: 36px;
+          font-size: 1.2em;
           color: $seagreenD;
           padding: 3%;
-          @media (max-width: 760px){
-              font-size: 4vw;
+          @media (max-width: 470px){
+              font-size: 16px;
           }
         }
         span {
-          display: block;
+          display: flex;
+          justify-content: center;
           font-size: 30px;
           padding: 3%;
-          margin: 5% 0;
           color: #fff;
-          @media (max-width: 760px){
-              font-size: 4vw;
+          width: 100%;
+          @media (max-width: 470px){
+              font-size: 16px;
         }
       }
     }
@@ -56,16 +66,31 @@ $dark: #333333;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      height: 24vh;
-      background: $seagreenMT;
+      background: $seagreen;
       &.disappear {
         display: none;
       }
       div {
+        display: flex;
+        justify-content: center;
+        @media (max-width: 540px){
+          flex-direction: column;
+        }
+
         input {
+          &:focus {
+            outline-color: $seagreenD;
+          }
           line-height: 2em;
           width: 25vw;
+          min-width: 160px;
+          max-width: 194px;
           text-align: center;
+          margin: 1%;
+          @media (max-width: 540px){
+            display: block;
+          }
+
         }
 
       }
@@ -77,24 +102,31 @@ $dark: #333333;
       &:hover {
         background: $seagreen !important;
       }
+      &.name {
+        border-top: 0.25px solid $seagreenM;
+      }
+
       h3 {
-        font-size: 3.5vh;
+        font-size: 1.2em;
         display: flex;
         align-items: flex-start;
         width: 100%;
       }
     span {
-      font-size: 3vh;
+      font-size: 1em;
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       width: 100%;
       }
       a {
-        font-size: 2.5vh;
+        font-size: 1em;
         cursor: pointer;
         &.active {
           color: white;
+        }
+        &:hover {
+          color: shade($seagreenM, 10%);
         }
       }
     }
@@ -109,11 +141,16 @@ input.button {
  text-align: center;
  margin: 15px 0;
  padding: 10px;
- width: 20%;
- background-color: $seagreenMT;
+ width: 100px;
+ height: 44px;
+ background-color: $seagreenM;
  cursor: pointer;
  &:hover {
    color: #fff;
-   background-color: $seagreenT;
+   background-color: shade($seagreenM, 10%);
  }
+ &:focus {
+   outline: 0;
+ }
+
 }
