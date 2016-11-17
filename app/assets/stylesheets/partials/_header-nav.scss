@@ -18,10 +18,6 @@ header {
   justify-content: space-between;
   z-index: 3;
 
-        // div {
-        //   margin: 0 10px;
-        // }
-
         .user-welcome {
           font-size: 1.1em;
         }
@@ -47,9 +43,8 @@ nav {
 
     div {
       border-top: 0.25px solid $seagreenM;
-      padding: 20px;
+      padding: 10px;
       display: flex;
-      flex-direction: column;
       justify-content: center;
       align-items: center;
       @media (min-width: 700px){
