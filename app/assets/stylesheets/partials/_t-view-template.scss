@@ -190,6 +190,7 @@ div.t-dashboard-opt:nth-child(4) {
   width: 100%;
   height: 50px;
   background: tint($jade, 20%);
+  border-top: .25px solid shade($jade, 10%);
   align-items: center;
   justify-content: center;
   transition: all .5s ease-in-out;
