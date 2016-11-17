@@ -29,24 +29,33 @@ $seagreenD: #0A382F;
 .sort_name {
   text-align: right;
 }
-
-.patient_card{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 64px;
-  align-items: center;
-  padding: 5px;
-  background: $seagreenT;
-  font-size: 18px;
+a {
   width: 70%;
-  &:hover {
-    color: #fff;
-    background: $seagreenTb;
+  .patient_card{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-between;
+    // height: 64px;
+    // align-items: center;
+    // padding: 5px;
+    background: $seagreenT;
+    // font-size: 18px;
+    // width: 70%;
+    &:hover {
+      color: #fff;
+      background: $seagreenTb;
 
-  }
-  i {
-    color: #fff;
-    text-shadow: 1px 1px 1px $seagreenD;
+    }
+    i {
+      color: #fff;
+      text-shadow: 1px 1px 1px $seagreenD;
+      opacity: 0;
+      &.show {
+        opacity: 1;
+      }
+    }
   }
 }
