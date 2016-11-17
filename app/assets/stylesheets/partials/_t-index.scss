@@ -8,8 +8,10 @@ $seagreenD: #0A382F;
 .t-index {
   display: flex;
   width: 100%;
+  max-width: 860px;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   .sort {
     display: flex;
     justify-content: space-between;
@@ -35,19 +37,16 @@ a {
     display: flex;
     justify-content: space-between;
     padding: 2%;
-    // display: flex;
-    // flex-direction: row;
-    // justify-content: space-between;
-    // height: 64px;
-    // align-items: center;
-    // padding: 5px;
     background: $seagreenT;
-    // font-size: 18px;
-    // width: 70%;
     &:hover {
       color: #fff;
       background: $seagreenTb;
-
+    }
+    p {
+      font-size: 1em;
+      @media (min-width: 570px) {
+        font-size: 1.2em;
+      }
     }
     i {
       color: #fff;
