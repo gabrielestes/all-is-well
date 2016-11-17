@@ -16,6 +16,7 @@ $dark: #333333;
     justify-content: center;
     align-items: center;
     display: flex;
+    width: 95%;
     .data {
       display: flex;
       flex-direction: column;
@@ -56,13 +57,14 @@ $dark: #333333;
       justify-content: space-around;
       align-items: center;
       height: 24vh;
+      background: $seagreenMT;
       &.disappear {
         display: none;
       }
       div {
         input {
           line-height: 2em;
-          width: 30vw;
+          width: 25vw;
           text-align: center;
         }
 
@@ -70,30 +72,26 @@ $dark: #333333;
     }
     .data-block {
       width: 100%;
+      height: 20vh;
+      border-bottom: 0.25px solid $seagreenM;
       &:hover {
         background: $seagreen !important;
       }
-      &:nth-child(odd){
-      background: $seagreenT;
-      }
-      &:nth-child(even){
-      background: $seagreenTb;
-      }
       h3 {
-        font-size: 3vw;
+        font-size: 3.5vh;
         display: flex;
         align-items: flex-start;
         width: 100%;
       }
     span {
-      font-size: 3vw;
+      font-size: 3vh;
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       width: 100%;
       }
       a {
-        font-size: 2vw;
+        font-size: 2.5vh;
         cursor: pointer;
         &.active {
           color: white;
