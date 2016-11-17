@@ -19,7 +19,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 // ****** THERAPIST VIEW DASHBOARD PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
 .t-view-dashboard {
-
+  z-index: 2;
   font-family: 'Quicksand', sans-serif;
   transition: all .5s ease-in-out;
   visibility: hidden;
@@ -184,7 +184,7 @@ div.t-dashboard-opt:nth-child(4) {
 // ****** THERAPIST VIEW HEADER PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
 .t-view-header {
-
+  z-index: 2;
   display: flex;
   position: fixed;
   width: 100%;
