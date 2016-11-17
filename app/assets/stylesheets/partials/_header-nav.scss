@@ -20,6 +20,11 @@ header {
 
       .site-logo {
         margin: 0 10px;
+
+          .site-title {
+            color: #fff;
+            margin-right: 15px;
+          }
       }
 }
 
@@ -47,6 +52,7 @@ nav {
 }
 
 #header-nav-icon {
+  margin: 0 10px;
   @media (min-width: 600px) {
     display: none;
   }
