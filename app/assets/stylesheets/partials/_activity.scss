@@ -27,6 +27,16 @@ $red: rgba(234,6,6,0.65);
         width: 25%;
         padding: 15px;
         height: 100%;
+          background-color: $seagreenM;
+        &.filter_event {
+          background-color: rgba($seagreenM, 0.1);
+        }
+        &.filter_entry {
+          background-color: rgba($seagreenM, 0.4);
+        }
+        &.filter_mood {
+          background-color: rgba($seagreenM, 0.7);
+        }
         &.active{
           background: $seagreenTb;
           color: #fff;
@@ -45,6 +55,18 @@ $red: rgba(234,6,6,0.65);
       justify-content: center;
       align-items: center;
       margin-right: 1%;
+      font-size: 0.9em;
+      &.activity-type{
+        @media (max-width: 570px) {
+          display: none;
+        }
+    }
+    }
+    i {
+      margin: 5px;
+      @media (max-width: 570px) {
+        margin: 4%;
+      }
     }
     &.event {
       background-color: rgba($seagreenM, 0.2);
