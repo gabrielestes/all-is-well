@@ -69,6 +69,9 @@ main.registration {
     }
     input {
       line-height: 25px;
+      &:focus {
+        outline-color: $seagreenD;
+      }
     }
   }
     .field_with_errors {
@@ -113,7 +116,9 @@ main.registration {
         width: 50%;
         height: 25px;
         align-self: center;
-
+        &:focus {
+          outline-color: $seagreenD;
+        }
         @media (max-width: 800px){
           width: 80%;
         }
@@ -121,6 +126,8 @@ main.registration {
       #user_email {
         width: 100%;
         margin-bottom: 4%;
-
+        &:focus {
+          outline-color: $seagreenD;
+        }
       }
 }
