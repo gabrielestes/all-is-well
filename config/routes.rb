@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'therapist/note' => 'notes#create'
+
   get 'client/new'
 
   get 'client/:id' => 'clients#index'
