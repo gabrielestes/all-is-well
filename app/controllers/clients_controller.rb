@@ -1,17 +1,16 @@
 class ClientsController < ApplicationController
-  
+
   def index
-    @client = Client.find(1)
+    @client = Client.find(current_user.userable.id)
   end
 
   def new
     @client = Client.new client_params
     if @client.save!
       @user = User.new user_params
-      # @user.email = @client.email
       @user.userable = @client
       @user.save!
-      sign_in @user # some devise thing
+      sign_in @user
     end
   end
 

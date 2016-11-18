@@ -4,13 +4,13 @@ Rails.application.routes.draw do
 
   get 'client/:id' => 'clients#index'
 
+  get 'client/profile/:id' => 'clients#index'
+
   post 'client' => 'clients#new', as: 'new_client'
 
   get 'register' => 'registrations#new', as: 'register_user'
 
   post 'register' => 'registrations#new'
-
-  get '/index' => 'registrations#index'
 
   authenticated :user do
     root :to => 'therapists#index'

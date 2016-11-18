@@ -19,7 +19,7 @@ class TherapistsController < ApplicationController
       @user.email = @therapist.email
       @user.userable = @therapist
       @user.save
-      sign_in @user # some devise thing
+      sign_in @user
       render :index
     else
       render :new
