@@ -23,7 +23,8 @@ main.registration {
   display: flex;
   justify-content: center;
   align-items: center;
-  div {
+  .register-client,
+  .register-therapist {
     height: 300px;
     width: 300px;
     display: flex;
@@ -47,15 +48,10 @@ main.registration {
     background: $seagreen;
 
   }
-  .new-therapist {
-    background: $seagreenM;
-    display: none;
-    &.active {
-      display: block;
-    }
-  }
+  .new-therapist,
   .new-client {
-    background: $seagreen;
+    width: 75vw;
+    background: $seagreenM;
     display: none;
     &.active {
       display: block;
