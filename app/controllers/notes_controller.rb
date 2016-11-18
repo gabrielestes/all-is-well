@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  def index
+  def notes_index
   end
 
   def create
