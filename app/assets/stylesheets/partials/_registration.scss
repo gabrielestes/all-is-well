@@ -51,11 +51,83 @@ main.registration {
   .new-therapist,
   .new-client {
     width: 75vw;
+    max-width: 645px;
     background: $seagreenM;
     display: none;
+    padding: 4%;
     &.active {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      }
+    input,
+    label {
+      align-self: center;
+      width: 50%;
+      @media (max-width: 800px){
+        width: 80%;
+      }
+    }
+    input {
+      line-height: 25px;
+      &:focus {
+        outline-color: $seagreenD;
+      }
     }
   }
+    .field_with_errors {
+      width: 50%;
+      align-self: center;
+      #user_password {
+        width: 100%;
+        margin: 1% 0 7%;
 
+      }
+      @media (max-width: 800px){
+        width: 80%;
+      }
+    }
+    input.submit_registration {
+      width: 225px;
+      font-size: 20px;
+      margin: 5% 0;
+       font-family: inherit;
+       font-size: 1.1em;
+       color: #000;
+       border: 0;
+       border-radius: 2px;
+       text-align: center;
+       padding: 10px;
+       height: 44px;
+       background-color: $seagreen;
+       cursor: pointer;
+       &:hover {
+         color: #fff;
+         background-color: tint($seagreenM, 10%);
+       }
+       &:focus {
+         outline: 0;
+       }
+       @media (max-width: 800px){
+         width: 180px;
+         font-size: 17px;
+       }
+      }
+      #client_therapist_id {
+        width: 50%;
+        height: 25px;
+        align-self: center;
+        &:focus {
+          outline-color: $seagreenD;
+        }
+        @media (max-width: 800px){
+          width: 80%;
+        }
+      }
+      #user_email {
+        width: 100%;
+        margin-bottom: 4%;
+        &:focus {
+          outline-color: $seagreenD;
+        }
+      }
 }
