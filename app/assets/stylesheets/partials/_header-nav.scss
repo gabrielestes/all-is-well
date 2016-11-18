@@ -20,6 +20,11 @@ header {
 
       .site-logo {
         margin: 0 10px;
+
+          .site-title {
+            color: #fff;
+            margin-right: 15px;
+          }
       }
 }
 
@@ -47,6 +52,7 @@ nav {
 }
 
 #header-nav-icon {
+  margin: 0 10px;
   @media (min-width: 600px) {
     display: none;
   }
@@ -63,9 +69,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-    &:last-child {
-      border-bottom: 0.25px solid $seagreenM;
-    }
+
     &:hover {
       cursor: pointer;
       background-color: tint($seagreen, 25%);

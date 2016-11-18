@@ -7,13 +7,15 @@ $seagreenD: #0A382F;
 
 .t-index {
   display: flex;
-  width: 95%;
+  width: 100%;
+  max-width: 700px;
   flex-direction: column;
   align-items: center;
+  margin: 0 auto;
   .sort {
     display: flex;
     justify-content: space-between;
-    width: 70%;
+    width: 95%;
     margin: 11px 0;
     background: $seagreenMT;
     a {
@@ -29,24 +31,30 @@ $seagreenD: #0A382F;
 .sort_name {
   text-align: right;
 }
-
-.patient_card{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 64px;
-  align-items: center;
-  padding: 5px;
-  background: $seagreenT;
-  font-size: 18px;
-  width: 70%;
-  &:hover {
-    color: #fff;
-    background: $seagreenTb;
-
-  }
-  i {
-    color: #fff;
-    text-shadow: 1px 1px 1px $seagreenD;
+a {
+  width: 95%;
+  .patient_card{
+    display: flex;
+    justify-content: space-between;
+    padding: 2%;
+    background: $seagreenT;
+    &:hover {
+      color: #fff;
+      background: $seagreenTb;
+    }
+    p {
+      font-size: 1em;
+      @media (min-width: 570px) {
+        font-size: 1.2em;
+      }
+    }
+    i {
+      color: #fff;
+      text-shadow: 1px 1px 1px $seagreenD;
+      opacity: 0;
+      &.show {
+        opacity: 1;
+      }
+    }
   }
 }

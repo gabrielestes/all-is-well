@@ -18,9 +18,12 @@ $seagreenT: rgba(55, 207, 176, 0.4);
     .form-wrap {
 
         width: 400px;
-        margin: 20px auto;
         background-color: $seagreenT;
         padding: 2em;
+
+        @media (max-width: 600px) {
+          transform: scale(.8);
+        }
 
         label {
           display: none;

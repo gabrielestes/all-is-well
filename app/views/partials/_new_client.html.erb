@@ -1,4 +1,5 @@
 <%= form_for Client.new, url: new_client_path, method: :post do |f| %>
+  <div class="new-client">
   <%= f.label :first_name %><br/>
   <%= f.text_field :first_name %><br/>
 
@@ -24,6 +25,6 @@
     <%= u.label :password_confirmation %><br />
     <%= u.password_field :password_confirmation, autocomplete: "off" %><br />
     <%= f.submit "New Client Account" %><br/>
-
+  </div>
   <% end %>
 <% end %>

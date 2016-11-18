@@ -1,6 +1,10 @@
 <% @therapist = nil %>
-<%= render partial: 'partials/new_therapist' %>
-<%= render partial: 'partials/new_client' %>
+<main class="registration">
+  <div class="register-therapist"><h3>Register a Therapist</h3></div>
+  <%= render partial: 'partials/new_therapist' %>
+  <div class="register-client"><h3>Register a Client</h3></div>
+  <%= render partial: 'partials/new_client' %>
+</main>
 
 <%= form_for [@user, User.new], url: {action: 'new'} do |f| %>
   <div class="field">
