@@ -1,4 +1,6 @@
-
+<h1>
+  <%= current_user.userable.id %>
+</h1>
 <% unless @clients.nil? %>
   <% @clients.each do |c| %>
     <%= link_to "/client/#{c.id}" do %>
