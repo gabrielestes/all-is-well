@@ -1,8 +1,12 @@
 class TherapistsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :index]
   def index
+    sort_by = params[:sort_by]
     @therapist = Therapist.find(current_user.userable.id)
     @clients = Client.where(therapist_id: @therapist.id)
+    unless sort_by.nil?
+      @clients = @clients.order(sort_by => :asc)
+    end
   end
 
   #page that shows 4 option link to clients stuff T-client page
