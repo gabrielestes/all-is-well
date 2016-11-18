@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get '/therapist/profile/:id' => 'therapists#t_profile'
 
 # Create a new note
-  get 'therapist/note' => 'notes#create'
+  get 'therapist/note' => 'notes#index'
+
+  post 'therapist/note' => 'notes#create'
 
   get 'client/new'
 
