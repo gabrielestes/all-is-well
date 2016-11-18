@@ -53,9 +53,28 @@ main.registration {
     width: 75vw;
     background: $seagreenM;
     display: none;
+    padding: 4%;
     &.active {
-      display: block;
+      display: flex;
+      flex-direction: column;
+      }
+    input,
+    label {
+      align-self: center;
+      width: 50%;
     }
   }
-
+    .field_with_errors {
+      width: 50%;
+      align-self: center;
+      #user_password {
+        width: 100%;
+        margin: 1% 0 7%;
+      }
+    }
+    input.submit_registration {
+      width: 180px;
+      font-size: 30px;
+      background: red;
+    }
 }
