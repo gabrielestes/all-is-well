@@ -8,11 +8,13 @@
     '.t-view-dashboard',
     '.t-view-header',
     '.t-view-content',
-    '.t-view-dashboard-icon'
+    '.t-view-dashboard-icon',
+    '.show-dash-text',
+    '.hide-dash-text'
   ];
 
 //Event handler to display or hide the therapist-view dashboard.
-  $(document).on('click', '.t-view-dashboard-icon', function() {
+  $(document).on('click', '.t-dashboard-toggle-container', function() {
      dashboardElements.forEach(function(element) {
         $(element).toggleClass('t-dashboard-active');
       });

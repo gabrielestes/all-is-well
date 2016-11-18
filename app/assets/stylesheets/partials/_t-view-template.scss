@@ -197,12 +197,30 @@ div.t-dashboard-opt:nth-child(4) {
         }
     }
 
-    i.t-view-dashboard-icon {
+    .t-dashboard-toggle-container {
       position: absolute;
       padding: 5px;
       left: 0;
       cursor: pointer;
 
+      p.show-dash-text {
+        display: inline;
+        &.t-dashboard-active {
+          display: none;
+        }
+      }
+
+      p.hide-dash-text {
+        display: none;
+        &.t-dashboard-active {
+          display: inline;
+        }
+      }
+
+
+    }
+
+    i.t-view-dashboard-icon {
 
           &.t-dashboard-active {
             transform: rotate(180deg);
