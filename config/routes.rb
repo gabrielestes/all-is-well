@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'client/entries' => 'entries#entries_index'
+
+  get 'client/events' => 'events#events_index'
+
+  get 'client/surveys' => 'surveys#surveys_index'
+
   get '/therapist/profile/:id' => 'therapists#t_profile'
 
 # Create a new note
