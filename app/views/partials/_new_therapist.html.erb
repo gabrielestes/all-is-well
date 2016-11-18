@@ -1,5 +1,5 @@
 <%= form_for :therapist, url: new_therapist_path, method: :post do |f| %>
-
+<div class="new-therapist">
   <%= f.label :first_name %><br/>
   <%= f.text_field :first_name %><br/>
 
@@ -25,5 +25,6 @@
     <%= u.label :password_confirmation %><br />
     <%= u.password_field :password_confirmation, autocomplete: "off" %><br />
     <%= f.submit "New Therapist Account" %><br />
+  </div>
   <% end %>
 <% end %>
