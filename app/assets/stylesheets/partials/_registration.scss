@@ -42,7 +42,6 @@ main.registration {
   }
   .register-therapist {
     background: $seagreenM;
-
   }
   .register-client {
     background: $seagreen;
@@ -51,10 +50,16 @@ main.registration {
   .new-therapist {
     background: $seagreenM;
     display: none;
+    &.active {
+      display: block;
+    }
   }
   .new-client {
     background: $seagreen;
     display: none;
+    &.active {
+      display: block;
+    }
   }
 
 }
