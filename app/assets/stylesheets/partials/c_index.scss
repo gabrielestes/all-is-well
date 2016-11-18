@@ -1,0 +1,66 @@
+$seagreen: rgb(55, 207, 176);
+$seagreenT: rgba(55, 207, 176, 0.4);
+$seagreenTb: rgba(55, 207, 176, 0.7);
+$seagreenM: rgb(35, 188, 158);
+$seagreenMT: rgba(35, 188, 158, 0.4);
+$seagreenD: #0A382F;
+$dark: #333333;
+// Functions
+
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+.client-landing-page {
+width: 100%;
+
+  .nav-wrapper {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+      div.main-nav-opt {
+        color: #fff;
+        font-size: 1.5em;
+        height: 200px;
+        width: 200px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+          &:hover {
+          font-size: 1.6em;
+          }
+      }
+
+      div.main-nav-opt:nth-child(1) {
+        background-color: #72ddc8;
+          &:hover {
+          background-color: tint(#72ddc8, 5%);
+          }
+      }
+
+      div.main-nav-opt:nth-child(2) {
+        background-color: #53d5bc;
+        &:hover {
+        background-color: tint(#53d5bc, 5%);
+        }
+      }
+
+      div.main-nav-opt:nth-child(3) {
+        background-color: #41d1b4;
+        &:hover {
+        background-color: tint(#41d1b4, 5%);
+        }
+      }
+
+      div.main-nav-opt:nth-child(4) {
+        background-color: #3ac8ab;
+        &:hover {
+        background-color: tint(#3ac8ab, 5%);
+        }
+      }
+
+  }
+}
