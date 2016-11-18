@@ -10,6 +10,8 @@ class TherapistsController < ApplicationController
   end
 
   def t_profile
+    @therapist = Therapist.find(current_user.userable.id)
+    @therapist_name = @therapist.first_name + " " + @therapist.last_name
   end
 
   def new
@@ -31,9 +33,6 @@ class TherapistsController < ApplicationController
     @events = Event.where(client_id: params[:id])
   end
 
-  def t_profile
-  end
-
   def c_profile
   end
 
@@ -43,6 +42,10 @@ class TherapistsController < ApplicationController
   #therapist can write note sharable or not
   def note
   end
+
+  # def current_therapist
+  #   @therapist = Therapist.find(current_user.userable.id)
+  # end
 
   private
 
