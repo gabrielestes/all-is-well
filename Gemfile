@@ -30,6 +30,8 @@ gem 'ffaker'
 gem 'jquery-rails'
 # Use moment.js as additional JavaScript library
 gem 'momentjs-rails'
+# Use fullcalendar.js to display events in calendar format
+gem 'fullcalendar-rails'
 
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
