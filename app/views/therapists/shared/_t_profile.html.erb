@@ -2,7 +2,7 @@
 <!-- if user is a therapist, edit should be included as a class in outer section. -->
   <section class="t-data data edit">
 
-    <div class="data-block name"><h3>Therapist Name: </h3><span><div>FIRSTNAME I. LASTNAME</div><a class="edit">Edit</a></span></div>
+    <div class="data-block name"><h3>Therapist Name: </h3><span><div><%= @therapist_name %></div><a class="edit">Edit</a></span></div>
       <aside class="name disappear">
         <div>
           <input class="edit-data" type="text" id="first_name" placeholder="FIRSTNAME"/>
@@ -12,7 +12,7 @@
           <input class="button" type="submit" value="Submit"/>
       </aside>
 
-    <div class="data-block dob"><h3>Date of Birth: </h3><span><div>MM/DD/YYYY</div><a class="edit">Edit</a></span></div>
+    <div class="data-block dob"><h3>Email: </h3><span><div>MM/DD/YYYY</div><a class="edit">Edit</a></span></div>
       <aside class="dob disappear">
         <div>
           <input class="edit-data" type="number" id="month" placeholder="MM"/>
