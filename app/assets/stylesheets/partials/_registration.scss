@@ -97,7 +97,6 @@ main.registration {
        height: 44px;
        background-color: $seagreen;
        cursor: pointer;
-
        &:hover {
          color: #fff;
          background-color: tint($seagreenM, 10%);
@@ -105,13 +104,23 @@ main.registration {
        &:focus {
          outline: 0;
        }
-
        @media (max-width: 800px){
          width: 180px;
-         font-size: 13px;
+         font-size: 17px;
        }
       }
+      #client_therapist_id {
+        width: 50%;
+        height: 25px;
+        align-self: center;
 
+        @media (max-width: 800px){
+          width: 80%;
+        }
+      }
+      #user_email {
+        width: 100%;
+        margin-bottom: 4%;
 
-
+      }
 }
