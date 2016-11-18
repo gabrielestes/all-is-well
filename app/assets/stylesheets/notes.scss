@@ -1,3 +1,46 @@
 // Place all the styles related to the Notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+$seagreenT: rgba(55, 207, 176, 0.4);
+
+.note-form-container {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input[type="submit"] {
+      background-color: $seagreenT;
+      width: 20%;
+        &:hover {
+          background-color: shade($seagreenT, 5%);
+        }
+
+    }
+
+    .note-text-area {
+      width: 100%;
+      border: 1px solid #d6d6d6;
+      outline: 0;
+      font-size: 1em;
+      padding: 10px;
+      background-color: rgba(255,255,255,.4);
+        &:focus {
+          background-color: rgba(255,255,255,.7);
+        }
+    }
+}
