@@ -1,7 +1,7 @@
 /****** Vendor Imports ******/
 @import 'bourbon';
 @import 'neat';
-@import 'partials/reset';
+@import 'base/reset';
 
 
 /********** Setup ***********/
@@ -12,7 +12,6 @@
 
 
 /***** Site Components ******/
-@import 'partials/mixins';
 @import 'partials/header-nav';
 @import 'partials/t-index';
 @import 'partials/login';
