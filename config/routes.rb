@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+# Create a new note
   get 'therapist/note' => 'notes#create'
 
   get 'client/new'
