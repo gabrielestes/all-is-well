@@ -31,6 +31,10 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   overflow: hidden;
   cursor: pointer;
 
+  &.initial-page-load {
+    transition: none;
+  }
+
   &.t-dashboard-active,
   &.c-dashboard-active {
     visibility: visible;
@@ -45,7 +49,9 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
         padding-top: 30px;
         overflow: visible;
 
-
+        &.initial-page-load {
+          transition: none;
+        }
 
             &.t-dashboard-active,
             &.c-dashboard-active {
@@ -73,6 +79,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   display: flex;
   flex-direction: column;
 
+
     @media (min-width: 700px) {
       flex-direction: row;
       flex-wrap: wrap;
@@ -98,6 +105,10 @@ div.c-dashboard-opt {
         color: #fff;
         transition: none;
           }
+        }
+
+        &.initial-page-load {
+          transition: none;
         }
 
       @media (min-width: 700px) {
@@ -163,6 +174,10 @@ div.c-dashboard-opt:nth-child(4) {
   padding-top: 30px;
   transition: all .5s ease-in-out;
 
+  &.initial-page-load {
+    transition: none;
+  }
+
 
     @media (min-width: 700px) {
 
@@ -200,6 +215,10 @@ div.c-dashboard-opt:nth-child(4) {
   justify-content: flex-end;
   transition: all .5s ease-in-out;
   cursor: default;
+
+  &.initial-page-load {
+    transition: none;
+  }
 
     @media (min-width: 700px) {
         justify-content: center;

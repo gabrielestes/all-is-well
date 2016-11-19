@@ -16,26 +16,33 @@
 //Event handler to display or hide the therapist-view dashboard.
   $(document).on('click', '.t-dashboard-toggle-container', function() {
      dashboardElements.forEach(function(element) {
-        $(element).toggleClass('t-dashboard-active');
+        $(element).removeClass('initial-page-load').toggleClass('t-dashboard-active');
       });
 
+        });
 
 
 //****Below function makes the dashboard automatically open if the display width is bigger than 700px****
-//***Commented out because it also makes the dashboard always slide in on page load and that is weird****
-//****TODO: Figure out how to get it to display without sliding in on page load.****
 
-// $(document).on('ready', function() {
-//   if (width >= 700) {
-//     console.log(width);
-//     dashboardElements.forEach(function(element) {
-//       $(element).addClass('t-dashboard-active');
-//     });
-//   }
-// });
+  function loadDashboardOpen() {
+    if (width >= 700) {
+      console.log(width);
+      dashboardElements.forEach(function(element) {
+        $(element).addClass('t-dashboard-active').addClass('initial-page-load');
+      });
+    }
+  }
 
 
+$(document).on('turbolinks:render', function() {
+    loadDashboardOpen();
+});
 
-  });
+$(document).on('turbolinks:load', function() {
+    loadDashboardOpen();
+});
+
+
+
 
 })(jQuery);
