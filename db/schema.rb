@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161115190231) do
+ActiveRecord::Schema.define(version: 20161119190113) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -70,8 +70,16 @@ ActiveRecord::Schema.define(version: 20161115190231) do
   end
 
   create_table "surveys", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "client_id"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.integer  "question_one"
+    t.integer  "question_two"
+    t.integer  "question_three"
+    t.integer  "question_four"
+    t.integer  "question_five"
+    t.integer  "score"
+    t.index ["client_id"], name: "index_surveys_on_client_id", using: :btree
   end
 
   create_table "therapists", force: :cascade do |t|
@@ -108,4 +116,5 @@ ActiveRecord::Schema.define(version: 20161115190231) do
   add_foreign_key "notes", "clients"
   add_foreign_key "notes", "therapists"
   add_foreign_key "posts", "clients"
+  add_foreign_key "surveys", "clients"
 end

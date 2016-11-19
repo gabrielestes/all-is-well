@@ -26,7 +26,11 @@ def rand_cred
   ["LCSW, MA", "LCSW", "MSW, LCSW"].sample
 end
 
-# count = 1
+def rand_survey
+  [*1..5].sample
+end
+
+count = 1
 5.times do
   t = Therapist.create(
     first_name: FFaker::Name.first_name,
@@ -103,4 +107,30 @@ count = 1
   end
   count += 1
 
+end
+
+t = Therapist.create(
+    first_name: "Hugh",
+    last_name: "Mungus",
+    cred: "MD",
+    phone: "9191919191",
+    email: "hugh@mungus.com"
+    )
+    
+user = User.create(
+email: "hugh@mungus.com",
+password: "password",
+password_confirmation: "password",
+userable: t
+)
+
+5.times do
+  s = Survey.create(
+    client_id: 6,
+    question_one: rand_survey,
+    question_two: rand_survey,
+    question_three: rand_survey,
+    question_four: rand_survey,
+    question_five: rand_survey
+  )
 end
