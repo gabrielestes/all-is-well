@@ -1,10 +1,13 @@
 <div class="t-view-dashboard">
     <div class="t-dashboard">
         <div class="t-dashboard-opt">
-          <h3>All&nbsp;Activity</h3>
+          <!-- <h3>All&nbsp;Activity -->
+            <%= link_to 'All Activity', url: "/therapist/activity/#{@current_client.id}", method: :get %>
+          <!-- </h3> -->
         </div>
         <div class="t-dashboard-opt">
           <h3>Calendar</h3>
+
         </div>
         <div class="t-dashboard-opt">
           <h3>Client&nbsp;Profile</h3>
