@@ -6,14 +6,16 @@
   <!-- PUT THERAPIST VIEW PAGE CONTENT BELOW HERE -->
 
   <div class="note-form-container">
-  <%= form_for Note.new, url: "/therapist/note", method:"POST" do |f| %>
-  <div class="note-form-row">
-  <%= f.label :title, value:"Subject:", class:"note-title-label" %>
-  <%= f.text_field :title, class:"note-title-input", value:"New Note"%>
-  </div>
-  <%= f.text_area :message, rows: 10, class:"note-text-area"%>
-  <%= f.submit "Add Note", class:"button"%>
-  <% end %>
+    <%= form_for Note.new, url: create_note_path(@client_id), method: :post do |f| %>
+      <div class="note-form-row">
+        <%= f.label :title, value:"Subject:", class:"note-title-label" %>
+        <%= f.text_field :title, class:"note-title-input", value:"New Note"%>
+      </div>
+        <%= f.text_area :message, rows: 10, class:"note-text-area"%>
+        <%= f.hidden_field :client_id, value: @client_id %>
+        <%= f.hidden_field :therapist_id, value: @therapist_id %>
+        <%= f.submit "Add Note", class:"button"%>
+    <% end %>
   </div>
 
 
