@@ -14,6 +14,7 @@
         <%= f.text_area :message, rows: 10, class:"note-text-area"%>
         <%= f.hidden_field :client_id, value: @client_id %>
         <%= f.hidden_field :therapist_id, value: @therapist_id %>
+        <p>Shared? <%= f.select :shared, options_for_select([['Yes', true], ['No', false]])%></p>
         <%= f.submit "Add Note", class:"button"%>
     <% end %>
   </div>
