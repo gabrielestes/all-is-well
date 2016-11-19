@@ -1,18 +1,19 @@
 class NotesController < ApplicationController
   def notes_index
+    @client_id = params[:id]
+    @therapist_id = current_user.userable_id
   end
 
   def create
-    note = Note.new(
-      therapist_id: current_user.userable_id,
-      client_id: params[:client_id],
-      title: params[:title],
-      message: params[:message],
-      shared: params[:shared]
-    )
+    note = Note.new(params[:note])
+      # therapist_id: current_user.userable_id,
+      # client_id: params[:id],
+      # title: params[:title],
+      # message: params[:message]
+      # shared: params[:shared]
+    # )
     if note.save
-      #render page? back to ??
-      redirect_to :show
+      redirect_to c_profile_path(params[:client_id])
     end
   end
 
@@ -21,4 +22,5 @@ class NotesController < ApplicationController
 
   def delete
   end
+
 end
