@@ -26,7 +26,6 @@ $(document).on('click', '.c-dashboard-toggle-container', function() {
 
 function loadDashboardOpen() {
  if (width >= 700) {
-   console.log(width);
    dashboardElements.forEach(function(element) {
      $(element).addClass('c-dashboard-active').addClass('initial-page-load');
    });
