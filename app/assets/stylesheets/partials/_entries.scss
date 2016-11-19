@@ -37,15 +37,15 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   justify-content: center;
   &.shrink {
     height: 50px;
-    #add-new-entry-btn,
-    #view-previous-entries-btn {
+    #add-entry-btn,
+    #previous-entries-btn {
       height: 50px;
       background: red;
     }
   }
 
-    #view-previous-entries-btn,
-    #add-new-entry-btn {
+    #previous-entries-btn,
+    #add-entry-btn {
       width: 300px;
       height: 300px;
       &:nth-child(1) {
