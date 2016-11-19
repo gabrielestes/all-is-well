@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   get 'client/surveys' => 'surveys#surveys_index'
 
-  get '/therapist/profile/:id' => 'therapists#t_profile'
+  get '/therapist/profile/:id' => 'therapists#t_profile', as: 't_profile'
+
+  put '/therapist/profile/:id', to: 'therapists#update', as: 'update_therapist'
 
 # Create a new note
   get 'therapist/note/:id' => 'notes#notes_index', as: 'notes_index'

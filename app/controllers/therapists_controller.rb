@@ -13,6 +13,12 @@ class TherapistsController < ApplicationController
   def show
   end
 
+  def update
+    @therapist = current_user.userable
+    @therapist.update therapist_params
+    redirect_to t_profile_path
+  end
+
   def t_profile
     @therapist = Therapist.find(current_user.userable.id)
     @therapist_name = @therapist.first_name + " " + @therapist.last_name
@@ -32,7 +38,6 @@ class TherapistsController < ApplicationController
     end
   end
 
-  #therapist's view of the event calendar "list"
   def calendar
     @events = Event.where(client_id: params[:id])
     current_client
@@ -56,19 +61,7 @@ class TherapistsController < ApplicationController
     render :json => events
   end
 
-  #therapist can write note sharable or not
   def note
-  end
-
-  # def current_therapist
-  #   @therapist = Therapist.find(current_user.userable.id)
-  # end
-
-  def current_client
-    @current_client = Client.find_by_id(params[:id])
-    @client_name = @current_client.first_name + " " + @current_client.initial + ". " + @current_client.last_name
-    @client_dob = @current_client.birth_date
-    @client_phone = @current_client.phone
   end
 
   private
