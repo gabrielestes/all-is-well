@@ -1,5 +1,5 @@
 
-(function($){
+document.addEventListener("turbolinks:load", function(){
 
     //on page load, remove .actives from either title.
     $('.sort a').removeClass('actives');
@@ -20,4 +20,4 @@
   });
 
 
-})(jQuery);
+});
