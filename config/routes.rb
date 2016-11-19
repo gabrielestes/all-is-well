@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   get 'therapist/calendar/:id'  => 'therapists#calendar'
 
 # A client's posts and surveys, id is client id
-  get 'therapist/activity/:id'  => 'therapists#activity'
+  get 'therapist/activity/:id'  => 'therapists#activity', as: 'client_activity'
 
 # Therapist profile, id is therapist
 
