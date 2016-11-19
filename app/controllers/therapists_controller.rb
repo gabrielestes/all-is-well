@@ -47,6 +47,13 @@ class TherapistsController < ApplicationController
     @entries = Post.where(client_id: params[:id])
     @events = Event.where(client_id: params[:id])
     @surveys = Survey.where(client_id: params[:id])
+    @user = current_user
+  end
+
+  def render_events
+    current_client
+    events = Event.where(client_id: @current_client.id)
+    render :json => events
   end
 
   #therapist can write note sharable or not

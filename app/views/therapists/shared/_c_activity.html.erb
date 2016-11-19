@@ -2,8 +2,8 @@
 
 <% @events.each do |e| %>
   <div class="patient_card event">
-    <p class="date"><%= e.created_at %></p>
-    <p class="time">HH:MM</p>
+    <p class="date"><%= e.created_at.to_date %></p>
+    <p class="time"><%= e.created_at.strftime("%H:%M") %></p>
     <p class="activity-type">Event</p>
     <i class="fa fa-star-o"></i>
   </div>
@@ -11,8 +11,8 @@
 
 <% @entries.each do |e| %>
   <div class="patient_card entry">
-    <p class="date"><%= e.created_at %></p>
-    <p class="time">HH:MM</p>
+    <p class="date"><%= e.created_at.to_date %></p>
+    <p class="time"> <%= e.created_at.strftime("%H:%M") %> </p>
     <p class="activity-type">Entry</p>
     <i class="fa fa-pencil"></i>
   </div>
@@ -20,8 +20,8 @@
 
 <% @surveys.each do |s| %>
   <div class="patient_card mood">
-    <p class="date"><%= s.created_at %></p>
-    <p class="time">HH:MM</p>
+    <p class="date"><%= s.created_at.to_date %></p>
+    <p class="time"><%= s.created_at.strftime("%H:%M") %></p>
     <p class="activity-type">Mood</p>
     <i class="fa fa-smile-o"></i>
   </div>
