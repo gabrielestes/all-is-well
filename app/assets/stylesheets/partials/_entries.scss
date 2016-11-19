@@ -1,0 +1,84 @@
+$seagreen: rgb(55, 207, 176);
+$seagreenT: rgba(55, 207, 176, 0.4);
+$seagreenTb: rgba(55, 207, 176, 0.7);
+$seagreenM: rgb(35, 188, 158);
+$seagreenMT: rgba(35, 188, 158, 0.4);
+$seagreenD: #0A382F;
+$dark: #333333;
+
+
+
+
+$jade: #7cdfcb;
+$medium-jade: #4AD3B8;
+$deep-jade: #30C5A7;
+
+$jadeTb: rgba(124, 223, 203, 0.7);
+$medium-jadeTb: rgba(74, 211, 184, 0.7);
+$deep-jadeTb: rgba(48, 197, 167, 0.7);
+
+
+
+// Functions
+
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+@function tint($color, $percent) {
+  @return mix(#fff, $color, $percent);
+}
+
+
+.button-box {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  &.shrink {
+    height: 50px;
+    #add-new-entry-btn,
+    #view-previous-entries-btn {
+      height: 50px;
+      background: red;
+    }
+  }
+
+    #view-previous-entries-btn,
+    #add-new-entry-btn {
+      width: 300px;
+      height: 300px;
+      &:nth-child(1) {
+        background-color: #72ddc8;
+          &:hover {
+          background-color: tint(#72ddc8, 5%);
+          }
+      }
+
+        &:nth-child(2) {
+        background-color: #53d5bc;
+        &:hover {
+        background-color: tint(#53d5bc, 5%);
+        }
+      }
+    }
+}
+
+
+
+
+
+
+
+.disappear {
+  display: none;
+}
+#new-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  #entry-text {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+}
