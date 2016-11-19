@@ -1,10 +1,12 @@
 
+
 document.addEventListener("turbolinks:load", function(){
 
     //on page load, remove .actives from either title.
     $('.sort a').removeClass('actives');
     //check storage for existing activeItem
-    var storage = localStorage.getItem('activeItem');
+    var storage = localStorage.getItem('activeItem') || "wellness";
+
     //assign .actives to most recently chosen item based on what was stored in localStorage
         var id = "#" + storage;
         $(id).addClass('actives');
