@@ -30,12 +30,14 @@ ActiveRecord::Schema.define(version: 20161119190113) do
   end
 
   create_table "contacts", force: :cascade do |t|
+    t.integer  "client_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "relation"
     t.string   "phone"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_contacts_on_client_id", using: :btree
   end
 
   create_table "events", force: :cascade do |t|
@@ -62,10 +64,11 @@ ActiveRecord::Schema.define(version: 20161119190113) do
 
   create_table "posts", force: :cascade do |t|
     t.integer  "client_id"
+    t.boolean  "sharable",   default: true
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
     t.index ["client_id"], name: "index_posts_on_client_id", using: :btree
   end
 
@@ -112,6 +115,7 @@ ActiveRecord::Schema.define(version: 20161119190113) do
   end
 
   add_foreign_key "clients", "therapists"
+  add_foreign_key "contacts", "clients"
   add_foreign_key "events", "clients"
   add_foreign_key "notes", "clients"
   add_foreign_key "notes", "therapists"

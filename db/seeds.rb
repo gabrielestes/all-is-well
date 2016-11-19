@@ -30,6 +30,10 @@ def rand_survey
   [*1..5].sample
 end
 
+def relation
+  ["parent", "sibling", "child", "friend"].sample
+end
+
 count = 1
 5.times do
   t = Therapist.create(
@@ -116,7 +120,7 @@ t = Therapist.create(
     phone: "9191919191",
     email: "hugh@mungus.com"
     )
-    
+
 user = User.create(
 email: "hugh@mungus.com",
 password: "password",
@@ -133,4 +137,14 @@ userable: t
     question_four: rand_survey,
     question_five: rand_survey
   )
+end
+
+5.times do
+contact= Contact.create(
+  client_id: [1, 2, 3, 4].sample,
+  first_name: FFaker::Name.first_name,
+  last_name: FFaker::Name.last_name,
+  relation: relation,
+  phone: FFaker::PhoneNumber.phone_number
+)
 end
