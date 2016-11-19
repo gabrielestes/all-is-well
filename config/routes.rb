@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 # Create a new note
   get 'therapist/note/:id' => 'notes#notes_index', as: 'notes_index'
 
-  post 'therapist/note' => 'notes#create'
+  post 'therapist/c_profile/:id' => 'notes#create', as: 'create_note'
 
   get 'client/new'
 
