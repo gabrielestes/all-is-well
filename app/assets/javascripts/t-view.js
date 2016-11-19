@@ -22,24 +22,25 @@
         });
 
 
-//****Below function makes the dashboard automatically open if the display width is bigger than 700px****
+//****Below function makes the dashboard display open automatically and with no transition ease****
 
   function loadDashboardOpen() {
-    if (width >= 700) {
-      console.log(width);
       dashboardElements.forEach(function(element) {
         $(element).addClass('t-dashboard-active').addClass('initial-page-load');
       });
-    }
   }
 
 
 $(document).on('turbolinks:render', function() {
+  if (width >= 700) {
     loadDashboardOpen();
+  }
 });
 
 $(document).on('turbolinks:load', function() {
+  if (width >= 700) {
     loadDashboardOpen();
+  }
 });
 
 
