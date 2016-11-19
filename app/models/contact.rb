@@ -1,3 +1,3 @@
 class Contact < ApplicationRecord
-  belongs_to :client, index: true
+  belongs_to :client
 end
