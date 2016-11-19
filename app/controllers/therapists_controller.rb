@@ -43,6 +43,7 @@ class TherapistsController < ApplicationController
   end
 
   def activity
+    current_client
   end
 
   #therapist can write note sharable or not
