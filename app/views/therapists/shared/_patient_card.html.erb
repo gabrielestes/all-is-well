@@ -1,7 +1,7 @@
 
 <% unless @clients.nil? %>
   <% @clients.each do |c| %>
-    <%= link_to "/client/#{c.id}" do %>
+    <%= link_to "/therapist/c_profile/#{c.id}" do %>
       <div class="patient_card" data-id="<%= c.updated_at %>">
           <p class="id_number"><%= c.id %></p>
           <p class="pt_name"><%= c.first_name %> <%= c.last_name %></p>

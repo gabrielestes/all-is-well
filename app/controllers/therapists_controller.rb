@@ -35,9 +35,11 @@ class TherapistsController < ApplicationController
   #therapist's view of the event calendar "list"
   def calendar
     @events = Event.where(client_id: params[:id])
+    current_client
   end
 
   def c_profile
+    current_client
   end
 
   def activity
@@ -50,6 +52,13 @@ class TherapistsController < ApplicationController
   # def current_therapist
   #   @therapist = Therapist.find(current_user.userable.id)
   # end
+
+  def current_client
+    @current_client = Client.find_by_id(params[:id])
+    @client_name = @current_client.first_name + " " + @current_client.initial + ". " + @current_client.last_name
+    @client_dob = @current_client.birth_date
+    @client_phone = @current_client.phone
+  end
 
   private
 
