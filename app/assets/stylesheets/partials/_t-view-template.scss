@@ -107,7 +107,6 @@ div.t-dashboard-opt {
 
 div.t-dashboard-opt:nth-child(1) {
   background-color: $jade;
-  // background-color: $jadeTb;
   border-top: .25px solid shade($jade, 10%);
     &:hover {
     background-color: $jade;
@@ -116,7 +115,6 @@ div.t-dashboard-opt:nth-child(1) {
 
 div.t-dashboard-opt:nth-child(2) {
   background-color: $medium-jade;
-  // background-color: $medium-jadeTb;
   border-top: .25px solid shade($medium-jade, 10%);
   &:hover {
   background-color: $medium-jade;
@@ -125,7 +123,6 @@ div.t-dashboard-opt:nth-child(2) {
 
 div.t-dashboard-opt:nth-child(3) {
   background-color: $seagreen;
-  // background-color: $seagreenTb;
   border-top: .25px solid shade($seagreen, 10%);
   &:hover {
   background-color: $seagreen;
@@ -134,7 +131,6 @@ div.t-dashboard-opt:nth-child(3) {
 
 div.t-dashboard-opt:nth-child(4) {
   background-color: $deep-jade;
-  // background-color: $deep-jadeTb;
   border-top: .25px solid shade($deep-jade, 10%);
   &:hover {
   background-color: $deep-jade;
@@ -186,11 +182,12 @@ div.t-dashboard-opt:nth-child(4) {
   background: tint($jade, 20%);
   border-top: .25px solid shade($jade, 10%);
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   transition: all .5s ease-in-out;
   cursor: default;
 
     @media (min-width: 700px) {
+        justify-content: center;
 
         &.t-dashboard-active {
           width: 80%;
@@ -240,4 +237,5 @@ div.t-dashboard-opt:nth-child(4) {
 
 .t-view-header h3 {
   font-size: 1.3em;
+  padding-right: 5px;
 }
