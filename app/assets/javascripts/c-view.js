@@ -2,7 +2,6 @@
   "use strict";
 
  var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-console.log(width + "not in function");
 //Page elements that make up the therapist-view dashboard and sub-header.
  var dashboardElements = [
     '.c-view-dashboard',
@@ -14,10 +13,8 @@ console.log(width + "not in function");
   ];
   $(document).ready(function(){
   if (width >= 700) {
-    console.log(width);
     dashboardElements.forEach(function(element) {
       $(element).addClass('c-dashboard-active');
-      console.log(element);
     });
   }
 });
