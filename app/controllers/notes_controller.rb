@@ -1,10 +1,12 @@
 class NotesController < ApplicationController
   def notes_index
+    current_client
     @client_id = params[:id]
     @therapist_id = current_user.userable_id
   end
 
   def create
+    current_client
     note = Note.new(params[:note])
       # therapist_id: current_user.userable_id,
       # client_id: params[:id],
