@@ -1,19 +1,22 @@
 <!-- activities can be one of three types: event, entry, or mood. should be indicated as class value on enclosing div. -->
 
-<div class="patient_card event">
-  <p class="date">MM/DD/YYYY</p>
-  <p class="time">HH:MM</p>
-  <p class="activity-type">Event</p>
-  <i class="fa fa-star-o"></i>
-</div>
+<% @entries.each do |e| %>
+  <div class="patient_card event">
+    <p class="date"><%= e.created_at %></p>
+    <p class="time">HH:MM</p>
+    <p class="activity-type">Event</p>
+    <i class="fa fa-star-o"></i>
+  </div>
+<% end %>
 
-<div class="patient_card entry">
-  <p class="date">MM/DD/YYYY</p>
-  <p class="time">HH:MM</p>
-  <p class="activity-type">Entry</p>
-  <i class="fa fa-pencil"></i>
-
-</div>
+<% @events.each do |e| %>
+  <div class="patient_card entry">
+    <p class="date"><%= e.created_at %></p>
+    <p class="time">HH:MM</p>
+    <p class="activity-type">Entry</p>
+    <i class="fa fa-pencil"></i>
+  </div>
+<% end %>
 
 <div class="patient_card mood">
   <p class="date">MM/DD/YYYY</p>
