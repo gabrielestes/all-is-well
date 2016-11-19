@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   get 'therapist/activity/:id'  => 'therapists#activity', as: 'client_activity'
 
 # Client profile, id is client's id
-  get 'therapist/c_profile/:id' => 'therapists#c_profile'
+  get 'therapist/c_profile/:id' => 'therapists#c_profile', as: 'c_profile'
 
 
   devise_for :users
