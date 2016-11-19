@@ -15,6 +15,9 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   @return mix(#fff, $color, $percent);
 }
 
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
 
 // ****** THERAPIST VIEW DASHBOARD PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
@@ -31,9 +34,6 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   overflow: hidden;
   cursor: pointer;
 
-  // a {
-  //   padding: 50px;
-  // }
 
   &.initial-page-load {
     transition: none;
@@ -61,13 +61,13 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
             &.t-dashboard-active,
             &.c-dashboard-active {
               width: 20%;
-                div.t-dashboard-opt h3 a,
-                div.c-dashboard-opt h3 a {
+              .t-dashboard-opt h3,
+              .c-dashboard-opt h3 {
                   color: #000;
 
                 }
-                div.t-dashboard-opt:hover h3 a,
-                div.c-dashboard-opt:hover h3 a {
+              .t-dashboard-opt:hover h3,
+              .c-dashboard-opt:hover h3 {
                   color: #fff;
                 }
             }
@@ -92,8 +92,8 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
 }
 
-div.t-dashboard-opt,
-div.c-dashboard-opt {
+.t-dashboard-opt,
+.c-dashboard-opt {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -101,12 +101,13 @@ div.c-dashboard-opt {
   min-height: 50px;
   font-size: 1em;
 
-      h3, a {
+
+      h3 {
         transition: color .3s linear;
       }
 
       &:hover {
-          h3, a {
+          h3 {
         color: #fff;
         transition: none;
           }
@@ -118,7 +119,7 @@ div.c-dashboard-opt {
 
       @media (min-width: 700px) {
 
-         h3, a {
+         h3 {
            color: transparent;
            font-size: 1.1em;
          }
@@ -128,8 +129,8 @@ div.c-dashboard-opt {
 
 
 
-div.t-dashboard-opt:nth-child(1),
-div.c-dashboard-opt:nth-child(1) {
+.t-dashboard-opt:nth-child(1),
+.c-dashboard-opt:nth-child(1) {
   background-color: $jade;
   border-top: .25px solid shade($jade, 10%);
     &:hover {
@@ -137,8 +138,8 @@ div.c-dashboard-opt:nth-child(1) {
     }
 }
 
-div.t-dashboard-opt:nth-child(2),
-div.c-dashboard-opt:nth-child(2) {
+.t-dashboard-opt:nth-child(2),
+.c-dashboard-opt:nth-child(2) {
   background-color: $medium-jade;
   border-top: .25px solid shade($medium-jade, 10%);
   &:hover {
@@ -146,8 +147,8 @@ div.c-dashboard-opt:nth-child(2) {
   }
 }
 
-div.t-dashboard-opt:nth-child(3),
-div.c-dashboard-opt:nth-child(3) {
+.t-dashboard-opt:nth-child(3),
+.c-dashboard-opt:nth-child(3) {
   background-color: $seagreen;
   border-top: .25px solid shade($seagreen, 10%);
   &:hover {
@@ -155,8 +156,8 @@ div.c-dashboard-opt:nth-child(3) {
   }
 }
 
-div.t-dashboard-opt:nth-child(4),
-div.c-dashboard-opt:nth-child(4) {
+.t-dashboard-opt:nth-child(4),
+.c-dashboard-opt:nth-child(4) {
   background-color: $deep-jade;
   border-top: .25px solid shade($deep-jade, 10%);
   &:hover {
