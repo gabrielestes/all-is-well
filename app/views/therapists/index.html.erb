@@ -5,9 +5,6 @@
       <div class="sort">
         <%= link_to "Sort by Wellness", "/therapist/#{@therapist.id}?sort_by=wellness", class:"actives", id:"wellness" %>
         <%= link_to "Sort by Name", "/therapist/#{@therapist.id}?sort_by=last_name" ,id:"name"%>
-
-        <!-- <a href="#" class="sort_urgent">Sort by Name</a> -->
-        <!-- <a href="#" class="sort_name active">Sort by Wellness</a> -->
       </div>
       <%= render :partial => "therapists/shared/patient_card" %>
 
