@@ -13,6 +13,11 @@ class ApplicationController < ActionController::Base
     redirect_to '/sign_in'
   end
 
+  def survey_sum(survey)
+    survey.question_one + survey.question_two + survey.question_three + survey.question_four + survey.question_five
+  end
+
+  helper_method :survey_sum
   helper_method :current_client
   helper_method :return_to_sign_in
 end
