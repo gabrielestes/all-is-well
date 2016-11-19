@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/therapist/profile/:id' => 'therapists#t_profile'
 
 # Create a new note
-  get 'therapist/note' => 'notes#notes_index'
+  get 'therapist/note/:id' => 'notes#notes_index', as: 'notes_index'
 
   post 'therapist/note' => 'notes#create'
 
