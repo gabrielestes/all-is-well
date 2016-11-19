@@ -37,16 +37,11 @@ Rails.application.routes.draw do
 
   post 'therapist' => 'therapists#new', as: 'new_therapist'
 
-# T- client page, id is id of the client
-  get 'therapist/client/:id'    => 'therapists#show'
-
 # Client calendar, id is client id
-  get 'therapist/calendar/:id'  => 'therapists#calendar'
+  get 'therapist/calendar/:id'  => 'therapists#calendar', as: 'client_calendar'
 
 # A client's posts and surveys, id is client id
   get 'therapist/activity/:id'  => 'therapists#activity', as: 'client_activity'
-
-# Therapist profile, id is therapist
 
 # Client profile, id is client's id
   get 'therapist/c_profile/:id' => 'therapists#c_profile'

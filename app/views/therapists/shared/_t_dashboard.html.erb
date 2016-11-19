@@ -1,12 +1,10 @@
 <div class="t-view-dashboard">
     <div class="t-dashboard">
         <div class="t-dashboard-opt">
-          <!-- <h3>All&nbsp;Activity -->
-            <%= link_to 'All Activity', client_activity_path(params[:id]) %>
-          <!-- </h3> -->
+          <h3><%= link_to 'All Activity', client_activity_path(params[:id]) %></h3>
         </div>
         <div class="t-dashboard-opt">
-          <h3>Calendar</h3>
+          <h3><%= link_to 'Calendar', client_calendar_path(params[:id]) %></h3>
 
         </div>
         <div class="t-dashboard-opt">
