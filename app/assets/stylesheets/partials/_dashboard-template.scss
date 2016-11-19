@@ -32,7 +32,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   cursor: pointer;
 
   &.t-dashboard-active,
-  .c-view-active {
+  &.c-dashboard-active {
     visibility: visible;
     height: 100%;
   }
@@ -50,7 +50,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
             &.t-dashboard-active,
             &.c-dashboard-active {
               width: 20%;
-                div.t-dashboard-opt h3, 
+                div.t-dashboard-opt h3,
                 div.c-dashboard-opt h3 {
                   color: #000;
 
