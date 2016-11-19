@@ -31,6 +31,10 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   overflow: hidden;
   cursor: pointer;
 
+  // a {
+  //   padding: 50px;
+  // }
+
   &.initial-page-load {
     transition: none;
   }
@@ -40,6 +44,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
     visibility: visible;
     height: 100%;
   }
+
 
 
 
@@ -56,13 +61,13 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
             &.t-dashboard-active,
             &.c-dashboard-active {
               width: 20%;
-                div.t-dashboard-opt h3,
-                div.c-dashboard-opt h3 {
+                div.t-dashboard-opt h3 a,
+                div.c-dashboard-opt h3 a {
                   color: #000;
 
                 }
-                div.t-dashboard-opt:hover h3,
-                div.c-dashboard-opt:hover h3 {
+                div.t-dashboard-opt:hover h3 a,
+                div.c-dashboard-opt:hover h3 a {
                   color: #fff;
                 }
             }
@@ -96,12 +101,12 @@ div.c-dashboard-opt {
   min-height: 50px;
   font-size: 1em;
 
-      h3 {
+      h3, a {
         transition: color .3s linear;
       }
 
       &:hover {
-          h3 {
+          h3, a {
         color: #fff;
         transition: none;
           }
@@ -113,7 +118,7 @@ div.c-dashboard-opt {
 
       @media (min-width: 700px) {
 
-         h3 {
+         h3, a {
            color: transparent;
            font-size: 1.1em;
          }
