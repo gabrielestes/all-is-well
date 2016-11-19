@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/therapist/profile/:id' => 'therapists#t_profile'
 
 # Create a new note
-  get 'therapist/note' => 'notes#notes_index'
+  get 'therapist/note/:id' => 'notes#notes_index', as: 'notes_index'
 
   post 'therapist/note' => 'notes#create'
 
@@ -37,19 +37,14 @@ Rails.application.routes.draw do
 
   post 'therapist' => 'therapists#new', as: 'new_therapist'
 
-# T- client page, id is id of the client
-  get 'therapist/client/:id'    => 'therapists#show'
-
 # Client calendar, id is client id
-  get 'therapist/calendar/:id'  => 'therapists#calendar'
+  get 'therapist/calendar/:id'  => 'therapists#calendar', as: 'client_calendar'
 
 # A client's posts and surveys, id is client id
-  get 'therapist/activity/:id'  => 'therapists#activity'
-
-# Therapist profile, id is therapist
+  get 'therapist/activity/:id'  => 'therapists#activity', as: 'client_activity'
 
 # Client profile, id is client's id
-  get 'therapist/c_profile/:id' => 'therapists#c_profile'
+  get 'therapist/c_profile/:id' => 'therapists#c_profile', as: 'c_profile'
 
 
   devise_for :users
