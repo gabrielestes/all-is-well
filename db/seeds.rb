@@ -99,18 +99,14 @@ end
 count = 1
 5.times do
   3.times do
-
     event = Event.create(
-
       client_id: count,
       event_type: event_type,
       date: date,
       description: FFaker::CheesyLingo.sentence
-
     )
   end
   count += 1
-
 end
 
 t = Therapist.create(
@@ -144,6 +140,7 @@ count = 16
   4.times do
     n = Post.create(
       client_id: count,
+      sharable: true,
       title: FFaker::Book.title,
       body: FFaker::Lorem.sentence,
     )
