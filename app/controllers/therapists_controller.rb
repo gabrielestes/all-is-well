@@ -44,8 +44,9 @@ class TherapistsController < ApplicationController
 
   def activity
     current_client
-    @entries = Post.where(client_id: @current_client.id)
+    @entries = Post.where(client_id: params[:id])
     @events = Event.where(client_id: params[:id])
+    @surveys = Survey.where(client_id: params[:id])
   end
 
   #therapist can write note sharable or not
