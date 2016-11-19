@@ -1,0 +1,105 @@
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
+$seagreenT: rgba(55, 207, 176, 0.4);
+$seagreenD: #0A382F;
+$deep-jade: #30C5A7;
+$private-red: #8A0116;
+
+.note-form-container {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 15px;
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-left: 4px solid $seagreenT;
+      border-right: 4px solid $seagreenT;
+    }
+
+    .add-note-button {
+      background-color: transparent;
+      outline: 0;
+      border: 0;
+      border-radius: 2px;
+      padding: 5px 10px;
+      font-family: inherit;
+      font-size: 1.2em;
+      float: right;
+      margin: 0 10px;
+      cursor: pointer;
+
+        &:hover {
+          background-color: shade($seagreenT, 5%);
+        }
+    }
+
+    select {
+      margin: 0 10px;
+    }
+
+
+
+    .note-form-row {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    background-color: $seagreenT;
+    }
+
+    .note-form-footer {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      background-color: $seagreenT;
+
+    }
+
+    .note-title-label {
+      float: left;
+      font-size: 1.3em;
+      padding:  5px;
+      text-align: right;
+
+      &.view-note {
+        font-size: 1em;
+      }
+    }
+
+
+    .note-title-input {
+      width: 100%;
+      outline: 0;
+      border-style: none;
+      font-family: inherit;
+      font-style: italic;
+      font-size: 1.2em;
+      text-decoration: underline;
+      padding: 5px 10px;
+      background-color: transparent;
+    }
+
+
+    .note-text-area {
+      width: 100%;
+      border: 1px solid #d6d6d6;
+      outline: 0;
+      font-size: 1em;
+      padding: 10px;
+      background-color: rgba(255,255,255,.4);
+        &:focus {
+          background-color: rgba(255,255,255,.7);
+        }
+    }
+
+}
