@@ -18,7 +18,8 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
 // ****** THERAPIST VIEW DASHBOARD PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
-.t-view-dashboard {
+.t-view-dashboard,
+.c-view-dashboard {
   z-index: 2;
   font-family: 'Quicksand', sans-serif;
   transition: all .5s ease-in-out;
@@ -30,7 +31,8 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   overflow: hidden;
   cursor: pointer;
 
-  &.t-dashboard-active {
+  &.t-dashboard-active,
+  &.c-dashboard-active {
     visibility: visible;
     height: 100%;
   }
@@ -45,13 +47,16 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
 
 
-            &.t-dashboard-active {
+            &.t-dashboard-active,
+            &.c-dashboard-active {
               width: 20%;
-                div.t-dashboard-opt h3 {
+                div.t-dashboard-opt h3,
+                div.c-dashboard-opt h3 {
                   color: #000;
 
                 }
-                div.t-dashboard-opt:hover h3 {
+                div.t-dashboard-opt:hover h3,
+                div.c-dashboard-opt:hover h3 {
                   color: #fff;
                 }
             }
@@ -61,7 +66,8 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 }
 
 
-.t-dashboard {
+.t-dashboard,
+.c-dashboard {
   height: 100%;
   width: 100%;
   display: flex;
@@ -74,7 +80,8 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
 }
 
-div.t-dashboard-opt {
+div.t-dashboard-opt,
+div.c-dashboard-opt {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -105,7 +112,8 @@ div.t-dashboard-opt {
 
 
 
-div.t-dashboard-opt:nth-child(1) {
+div.t-dashboard-opt:nth-child(1),
+div.c-dashboard-opt:nth-child(1) {
   background-color: $jade;
   border-top: .25px solid shade($jade, 10%);
     &:hover {
@@ -113,7 +121,8 @@ div.t-dashboard-opt:nth-child(1) {
     }
 }
 
-div.t-dashboard-opt:nth-child(2) {
+div.t-dashboard-opt:nth-child(2),
+div.c-dashboard-opt:nth-child(2) {
   background-color: $medium-jade;
   border-top: .25px solid shade($medium-jade, 10%);
   &:hover {
@@ -121,7 +130,8 @@ div.t-dashboard-opt:nth-child(2) {
   }
 }
 
-div.t-dashboard-opt:nth-child(3) {
+div.t-dashboard-opt:nth-child(3),
+div.c-dashboard-opt:nth-child(3) {
   background-color: $seagreen;
   border-top: .25px solid shade($seagreen, 10%);
   &:hover {
@@ -129,7 +139,8 @@ div.t-dashboard-opt:nth-child(3) {
   }
 }
 
-div.t-dashboard-opt:nth-child(4) {
+div.t-dashboard-opt:nth-child(4),
+div.c-dashboard-opt:nth-child(4) {
   background-color: $deep-jade;
   border-top: .25px solid shade($deep-jade, 10%);
   &:hover {
@@ -140,7 +151,8 @@ div.t-dashboard-opt:nth-child(4) {
 
 // ****** THERAPIST VIEW CONTENT PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
-.t-view-content {
+.t-view-content,
+.c-view-content {
   font-family: 'Quicksand', sans-serif;
 
   width: 100%;
@@ -155,7 +167,8 @@ div.t-dashboard-opt:nth-child(4) {
     @media (min-width: 700px) {
 
 
-      &.t-dashboard-active {
+      &.t-dashboard-active,
+      &.c-dashboard-active {
         width: 80%;
       }
     }
@@ -165,7 +178,8 @@ div.t-dashboard-opt:nth-child(4) {
 // ****** THERAPIST VIEW MAIN STYLING - APPLIES ACROSS MANY PAGES ***** //
 // ****** VARIOUS PAGE VIEW CONTENT LIVES WITHIN THIS DIV ***** //
 
-.t-view-main {
+.t-view-main,
+.c-view-main {
   padding: 70px 20px 20px 20px;
 }
 
@@ -173,7 +187,8 @@ div.t-dashboard-opt:nth-child(4) {
 
 // ****** THERAPIST VIEW HEADER PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
-.t-view-header {
+.t-view-header,
+.c-view-header {
   z-index: 2;
   display: flex;
   position: fixed;
@@ -189,12 +204,14 @@ div.t-dashboard-opt:nth-child(4) {
     @media (min-width: 700px) {
         justify-content: center;
 
-        &.t-dashboard-active {
+        &.t-dashboard-active,
+        &.c-dashboard-active {
           width: 80%;
         }
     }
 
-    .t-dashboard-toggle-container {
+    .t-dashboard-toggle-container,
+    .c-dashboard-toggle-container {
       position: absolute;
       padding: 5px;
       left: 0;
@@ -202,14 +219,16 @@ div.t-dashboard-opt:nth-child(4) {
 
       p.show-dash-text {
         display: inline;
-        &.t-dashboard-active {
+        &.t-dashboard-active,
+        &.c-dashboard-active {
           display: none;
         }
       }
 
       p.hide-dash-text {
         display: none;
-        &.t-dashboard-active {
+        &.t-dashboard-active,
+        &.c-dashboard-active {
           display: inline;
         }
       }
@@ -217,9 +236,11 @@ div.t-dashboard-opt:nth-child(4) {
 
     }
 
-    i.t-view-dashboard-icon {
+    i.t-view-dashboard-icon,
+    i.c-view-dashboard-icon {
 
-          &.t-dashboard-active {
+          &.t-dashboard-active,
+          &.c-dashboard-active {
             transform: rotate(180deg);
           }
 
@@ -227,7 +248,8 @@ div.t-dashboard-opt:nth-child(4) {
 
         transform: rotate(-90deg);
 
-          &.t-dashboard-active {
+          &.t-dashboard-active,
+          &.c-dashboard-active {
             transform: rotate(-270deg);
           }
         }
@@ -235,7 +257,8 @@ div.t-dashboard-opt:nth-child(4) {
 
 }
 
-.t-view-header h3 {
+.t-view-header h3,
+.c-view-header h3 {
   font-size: 1.3em;
   padding-right: 5px;
 }
