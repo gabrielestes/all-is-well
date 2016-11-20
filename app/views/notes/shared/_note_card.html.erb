@@ -1,28 +1,28 @@
-<div class="note-card">
-  <div class="note-title-row">
-      <span class="note-title-label view-note">Subject:</span>
-      <h3>VERY LONG NOTE TITLE TO TEST LAYOUT STYLING VERY LONG NOTE TITLE</h3>
-  </div>
-  <div class="note-message-content">
-      <p>A nervate confirmation without authors is truly a mascara of goddamn skins. A voyage is a sotted cd. In recent years, a gazelle can hardly be considered a fustian competitor without also being a tennis. A Saturday of the impulse is assumed to be a
-          provoked clef. A balance of the cough is assumed to be a revolved network. In modern times before cards, offers were only exclamations. They were lost without the helpful geese that composed their attempt. A decrease can hardly be considered a
-          knuckly freezer without also being a thermometer.</p>
-      <div class="note-message-footer">
-          <div class="note-date-info">
-              <span>created at
-              </span>
-              <span class="date">11/11/16 08:23:00 PM</span>
-          </div>
-          <div class="note-privacy-info">
-              <div class="shared note-status selected">
-                  <i class="fa fa-eye" aria-hidden="true"></i>
-                  <span>shared</span>
+<%= @notes.each do |n| %>
+    <div class="note-card">
+      <div class="note-title-row">
+          <span class="note-title-label view-note">Subject:</span>
+          <h3><%= n.title %></h3>
+      </div>
+      <div class="note-message-content">
+          <p><%= n.message %></p>
+          <div class="note-message-footer">
+              <div class="note-date-info">
+                  <span>created at
+                  </span>
+                  <span class="date">11/11/16 08:23:00 PM</span>
               </div>
-              <div class="private note-status">
-                  <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                  <span>private</span>
+              <div class="note-privacy-info">
+                  <div class="shared note-status selected">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                      <span>shared</span>
+                  </div>
+                  <div class="private note-status">
+                      <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                      <span>private</span>
+                  </div>
               </div>
           </div>
       </div>
-  </div>
-</div>
+    </div>
+  <% end %>

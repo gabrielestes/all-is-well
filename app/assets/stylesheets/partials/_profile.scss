@@ -67,6 +67,7 @@ $seagreenLb: rgb(107, 213, 192);
       justify-content: space-around;
       align-items: center;
       background: $seagreen;
+      padding-bottom: 5px;
       &.disappear {
         display: none;
       }
@@ -86,7 +87,7 @@ $seagreenLb: rgb(107, 213, 192);
           min-width: 160px;
           max-width: 194px;
           text-align: center;
-          margin: 1%;
+          margin: 5px 2px;;
           @media (max-width: 540px){
             display: block;
           }
@@ -111,7 +112,7 @@ $seagreenLb: rgb(107, 213, 192);
         align-items: flex-start;
         width: 100%;
       }
-    span {
+      span {
       font-size: 1em;
       width: 100%;
       }

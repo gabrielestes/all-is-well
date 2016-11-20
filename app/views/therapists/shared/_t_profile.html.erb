@@ -10,10 +10,12 @@
           <input class="edit-data" type="text" id="cred" placeholder="CRED"/> -->
 
           <%= form_for @therapist, url: update_therapist_path(current_user.userable_id), method: :put do |f| %>
-            <%= f.text_field :first_name, class: 'edit-data', id: 'first_name' %>
-            <%= f.text_field :last_name, class: 'edit-data', id: 'last_name' %>
-            <%= f.text_field :cred, class: 'edit-data', id: 'cred' %>
-            <%= f.submit 'Submit', class: 'button' %>
+            <div>
+              <%= f.text_field :first_name, class: 'edit-data', id: 'first_name' %>
+              <%= f.text_field :last_name, class: 'edit-data', id: 'last_name' %>
+              <%= f.text_field :cred, class: 'edit-data', id: 'cred' %>
+            </div>
+            <div><%= f.submit 'Submit', class: 'button' %></div>
           <% end %>
 
         </div>
@@ -25,8 +27,10 @@
         <div>
           <!-- <input class="edit-data" type="email" id="t-email" placeholder="EMAIL"/> -->
           <%= form_for @therapist, url: update_therapist_path(current_user.userable_id), method: :put do |f| %>
-            <%= f.text_field :email, class: 'edit-data', id: 't-email' %>
-            <%= f.submit 'Submit', class: 'button' %>
+            <div>
+              <%= f.text_field :email, class: 'edit-data', id: 't-email' %>
+            </div>
+            <div><%= f.submit 'Submit', class: 'button' %></div>
           <% end %>
         </div>
         <!-- <input class="button" type="submit" value="Submit"/> -->
@@ -37,8 +41,10 @@
         <div>
           <!-- <input class="edit-data" type="text" id="phone" placeholder="123-456-7890"/> -->
           <%= form_for @therapist, url: update_therapist_path(current_user.userable_id), method: :put do |f| %>
-            <%= f.text_field :phone, class: 'edit-data', id: 'phone' %>
-            <%= f.submit 'Submit', class: 'button' %>
+            <div>
+              <%= f.text_field :phone, class: 'edit-data', id: 'phone' %>
+            </div>
+            <div><%= f.submit 'Submit', class: 'button' %></div>
           <% end %>
         </div>
         <!-- <input class="button" type="submit" value="Submit"/> -->
