@@ -55,72 +55,103 @@ $seagreenD: #0A382F;
     display: flex;
     flex-direction: column;
   }
-  //toggle switch for privacy setting
-  .privacy {
-    display: flex;
-    justify-content: flex-start;
-    div.togglePrivacy {
-      position: relative;
-      margin-bottom: 15px;
-      font-size: 19px;
-      background-image: radial-gradient(ellipse 165px 15px, #53ad9b, #4cab97, #298e7a);
+}
+//toggle switch for privacy setting
+.privacy {
+  display: flex;
+  justify-content: flex-start;
+  div.togglePrivacy {
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 19px;
+    // background-image: radial-gradient(ellipse 165px 15px, #53ad9b, #4cab97, #298e7a);
+    background: #23bc9e;
+    width: 100px;
+    border-radius: 5px;
+    height: 35px;
+    #togglePrivacy {
+      opacity: 0;
+      z-index: 3;
+      position: absolute;
       width: 100px;
-      border-radius: 13%;
       height: 35px;
-      #togglePrivacy {
-        opacity: 0;
-        z-index: 3;
-        position: absolute;
-        width: 100px;
-        height: 35px;
-      }
-      #togglePrivacy + label::before {
-        content: "Share";
-        color: #c2e4dd;
-        left: 42px;
-        top: 8px;
-        position: absolute;
-        font-size: 17px;
-      }
-      #togglePrivacy:checked + label::before {
-        content: "";
-      }
-      #togglePrivacy:checked + label::after {
-        content: "Private";
-        top: 8px;
-        left: 4px;
-        position: absolute;
-        font-size: 17px;
-        color: #0e6150;
-      }
-
-      #togglePrivacy + label > span {
-        transition: all .5s ease-out;
-        background-image: radial-gradient(closest-side, rgba(61, 193, 166, 0.77) 34%, #37cfb0 73%, #33dab8 70%, #105d4e 100%);
-        width: 30px;
-        height: 30px;
-        position: absolute;
-        left: 4px;
-        top: 3px;
-        border-radius: 10px;
-      }
-
-      #togglePrivacy:checked + label > span {
-        left: 66px;
-      }
+    }
+    #togglePrivacy + label::before {
+      content: "Shared";
+      color: #c2e4dd;
+      left: 40px;
+      top: 8px;
+      position: absolute;
+      font-size: 16px;
+    }
+    #togglePrivacy:checked + label::before {
+      content: "";
+    }
+    #togglePrivacy:checked + label::after {
+      content: "Private";
+      top: 8px;
+      left: 4px;
+      position: absolute;
+      font-size: 16px;
+      color: #0e6150;
     }
 
+    #togglePrivacy + label > span {
+      // transition: all .15s ease;
+      // // background-image: radial-gradient(closest-side, rgba(61, 193, 166, 0.77) 34%, #37cfb0 73%, #33dab8 70%, #105d4e 100%);
+      // background: $seagreenM;
+      // width: 30px;
+      // height: 30px;
+      // position: absolute;
+      // left: 4px;
+      // top: 3px;
+      // border-radius: 10px;
+      transition: all .15s ease;
+      background: #7cdfcb;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      left: 3px;
+      top: 0px;
+      border-radius: 5px;
+    }
+
+    #togglePrivacy:checked + label > span {
+      left: 63px;
+    }
   }
+
 }
 
 // new entry view
 #new-entry {
+  margin: 45px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  label {
+    font-size: 27px;
+    color: $seagreenD;
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: flex-end;
+  }
   #entry-text {
     font-family: 'Quicksand', sans-serif;
-    margin: 45px 0;
+    margin: 25px 0;
+    outline-color: $seagreenD;
+    width: 100%;
+    height: 45vh;
+    font-size: 20px;
+    padding: 5px;
+  }
+  input.button {
+    width: 140px;
+    display: inline-block;
   }
 
 }
