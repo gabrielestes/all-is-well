@@ -1,29 +1,33 @@
 <%= @notes.each do |n| %>
-    <div class="note-card">
-      <div class="note-title-row">
-          <span class="note-title-label view-note">Subject:</span>
-          <h3><%= n.title %></h3>
-      </div>
-      <div class="note-message-content">
-          <p><%= n.message %></p>
-          <div class="note-message-footer">
-              <div class="note-date-info">
-                  <span>created at
-                  </span>
-                  <span class="date">11/11/16 08:23:00 PM</span>
-              </div>
-              <div class="note-privacy-info">
-                  <span id="shared-boolean"><%= n.shared %></span>
-                  <div class="shared note-status selected">
-                      <i class="fa fa-eye" aria-hidden="true"></i>
-                      <span>shared</span>
-                  </div>
-                  <div class="private note-status">
-                      <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                      <span>private</span>
-                  </div>
-              </div>
-          </div>
-      </div>
+<div class="note-card">
+    <div class="note-title-row">
+        <span class="note-title-label view-note">Subject:</span>
+        <h3><%= n.title %></h3>
     </div>
-  <% end %>
+    <div class="note-message-content">
+        <p><%= n.message %></p>
+        <div class="note-message-footer">
+            <div class="note-date-info">
+                <span>created at
+                </span>
+                <span class="date">11/11/16 08:23:00 PM</span>
+            </div>
+            <div class="note-privacy-info">
+                <% if n.shared == false %>
+                <div class="private note-status selected">
+                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                    <span>private</span>
+                </div>
+                <% elsif n.shared == true %>
+                <div class="shared note-status selected">
+                    <i class="fa fa-eye" aria-hidden="true"></i>
+                    <span>shared</span>
+                </div>
+                <% end %>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<% end %>
