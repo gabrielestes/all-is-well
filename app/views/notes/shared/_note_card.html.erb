@@ -1,4 +1,4 @@
-<%= @notes.each do |n| %>
+<% @notes.each do |n| %>
     <div class="note-card">
       <div class="note-title-row">
           <span class="note-title-label view-note">Subject:</span>
@@ -10,7 +10,7 @@
               <div class="note-date-info">
                   <span>created at
                   </span>
-                  <span class="date">11/11/16 08:23:00 PM</span>
+                  <span class="date"><%= n.created_at.to_date %> <%= n.created_at.strftime("%H:%M") %></span>
               </div>
               <div class="note-privacy-info">
                   <div class="shared note-status selected">
