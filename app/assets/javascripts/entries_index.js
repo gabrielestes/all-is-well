@@ -3,27 +3,26 @@ document.addEventListener("turbolinks:load", function(){
 
   //on button click, show previous entries and shrink buttons
   $(document).on('click','.button-box .button',function(event){
-    var pressed = '#' + $(event.target).attr("id");
-    var notPressed = '#' + $(event.target).siblings('.button').attr('id');
 
-    //if the pressed button's view is not hidden, hide both views and expand the buttons
-    if( ! ($('pressed').hasClass('disappear')) ) {
-      console.log('pressed does not have class disappear');
-      $('.entry-view').addClass('disappear');
-      $('.button-box').removeClass('shrink');
+    //remove '-btn' from the end of the button id and use that to target the view id
+    var selected = '#' + $(event.target).attr("id");
+    selected = selected.substring(0, selected.indexOf('-btn'));
+    var notSelected = '#' + $(event.target).siblings('.button').attr('id');
+    notSelected = notSelected.substring(0, notSelected.indexOf('-btn'));
 
     //if the pressed button's view is hidden, show that view only and shrink the buttons
-    } else {
-      console.log('pressed has class disappear');
-      $('pressed').removeClass('disappear');
+    if ( $(selected).hasClass('disappear') ) {
+
+      $(selected).removeClass('disappear');
+      $(notSelected).addClass('disappear');
       $('.button-box').addClass('shrink');
-    if( ! ($('notPressed').hasClass('disappear')) ){
-      $('notPressed').addClass('disappear');
-      }
+
+    //if the pressed button's view is not hidden, hide both views and re-expand the buttons
+    } else {
+      $('.entry-view').addClass('disappear');
+      $('.button-box').removeClass('shrink');
     }
 
-    });
-
-
+  });
 
 });
