@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   def notes_index
     current_client
+    @notes = Note.where(client_id: params[:id])
     @client_id = params[:id]
     @therapist_id = current_user.userable_id
   end
