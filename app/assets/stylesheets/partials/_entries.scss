@@ -1,35 +1,9 @@
 $seagreen: rgb(55, 207, 176);
-$seagreenT: rgba(55, 207, 176, 0.4);
-$seagreenTb: rgba(55, 207, 176, 0.7);
 $seagreenM: rgb(35, 188, 158);
-$seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
-$dark: #333333;
 
 
-
-
-$jade: #7cdfcb;
-$medium-jade: #4AD3B8;
-$deep-jade: #30C5A7;
-
-$jadeTb: rgba(124, 223, 203, 0.7);
-$medium-jadeTb: rgba(74, 211, 184, 0.7);
-$deep-jadeTb: rgba(48, 197, 167, 0.7);
-
-
-
-// Functions
-
-@function shade($color, $percent) {
-  @return mix(#000, $color, $percent);
-}
-
-@function tint($color, $percent) {
-  @return mix(#fff, $color, $percent);
-}
-
-
+//buttons
 .button-box {
   width: 100%;
   display: flex;
@@ -37,17 +11,34 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   justify-content: center;
   &.shrink {
     height: 50px;
+    @media (max-width: 650px) {
+      height: 50px;
+      display: block;
+    }
     #add-entry-btn,
     #previous-entries-btn {
       height: 50px;
       margin-bottom: 45px;
+      @media (max-width: 650px) {
+        width: 100%;
+        margin: 0;
+      }
     }
+
+  }
+  @media (max-width: 650px) {
+    flex-direction: column;
   }
 
     #previous-entries-btn,
     #add-entry-btn {
       width: 300px;
       height: 300px;
+      @media (max-width: 650px) {
+        align-self: center;
+        margin: 0;
+      }
+
       &:nth-child(1) {
         background-color: #72ddc8;
           &:hover {
@@ -64,16 +55,154 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
     }
 }
 
+//views
 .disappear {
   display: none;
 }
+
+// previous entries view
+.entry-card {
+  margin: 45px 0;
+  border-bottom: 0.5px solid $seagreenD;
+  @media (max-width: 650px) {
+    margin: 80px 0;
+  }
+  .entry-text {
+    margin: 15px 0;
+  }
+  .entry-timestamp {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+  }
+}
+//toggle switch for privacy setting
+.privacy {
+  display: flex;
+  justify-content: flex-start;
+  div.togglePrivacy {
+    position: relative;
+    margin-bottom: 15px;
+    font-size: 19px;
+    // background-image: radial-gradient(ellipse 165px 15px, #53ad9b, #4cab97, #298e7a);
+    background: #23bc9e;
+    width: 100px;
+    border-radius: 5px;
+    height: 35px;
+    #togglePrivacy {
+      opacity: 0;
+      z-index: 3;
+      position: absolute;
+      width: 100px;
+      height: 35px;
+    }
+    #togglePrivacy + label::before {
+      content: "Shared";
+      color: #c2e4dd;
+      left: 40px;
+      top: 10px;
+      position: absolute;
+      font-size: 16px;
+    }
+    #togglePrivacy:checked + label::before {
+      content: "";
+    }
+    #togglePrivacy:checked + label::after {
+      content: "Private";
+      top: 10px;
+      left: 4px;
+      position: absolute;
+      font-size: 16px;
+      color: #0e6150;
+    }
+    #togglePrivacy + label > span {
+      transition: all .15s ease;
+      background: #7cdfcb;
+      width: 35px;
+      height: 35px;
+      position: absolute;
+      left: 3px;
+      top: 0px;
+      border-radius: 5px;
+    }
+    #togglePrivacy:checked + label > span {
+      left: 63px;
+    }
+  }
+
+}
+
+// new entry view
 #new-entry {
+  margin: 45px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media (max-width: 650px) {
+    margin: 80px 0;
+  }
+
+  h2 {
+    font-size: 23px;
+    margin-bottom: 5px;
+    color: $seagreenD;
+  }
+  fieldset {
+    width: 100%;
+    margin-top: 10px;
+    display: flex;
+    label {
+      text-align: center;
+    }
+  }
+  #title label {
+    font-size: 18px;
+    margin: 10px 0px;
+    color: $seagreenD;
+    font-weight: 200;
+  }
+  #title input {
+    width: 60%;
+    line-height: 29px;
+    font-size: 22px;
+    color: $seagreenD;
+    border: 0.25px solid $seagreenD;
+    max-width: 785px;
+    margin: 0 auto;
+    @media (max-width: 650px) {
+      width: 100%;
+    }
+    &:focus {
+      outline-color: $seagreenD;
+      background: rgba(150, 229, 213, 0.35);
+      }
+    }
   #entry-text {
     font-family: 'Quicksand', sans-serif;
-    margin: 45px 0;
+    margin: 10px auto;
+    width: 100%;
+    height: 30vh;
+    font-size: 20px;
+    padding: 5px;
+    color: $seagreenD;
+    border: 0.25px solid $seagreenD;
+    max-width: 785px;
+    &:focus {
+      outline-color: $seagreenD;
+      background: rgba(150, 229, 213, 0.35);
+    }
+  }
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 100%;
+    align-items: flex-end;
+  }
+  input.button {
+    width: 140px;
+    display: inline-block;
+    margin: 0;
   }
 
 }
