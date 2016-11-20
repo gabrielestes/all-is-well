@@ -40,7 +40,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
     #add-entry-btn,
     #previous-entries-btn {
       height: 50px;
-      background: red;
+      margin-bottom: 45px;
     }
   }
 
@@ -64,12 +64,6 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
     }
 }
 
-
-
-
-
-
-
 .disappear {
   display: none;
 }
@@ -79,6 +73,7 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
   align-items: center;
   #entry-text {
     font-family: 'Quicksand', sans-serif;
+    margin: 45px 0;
   }
 
 }
