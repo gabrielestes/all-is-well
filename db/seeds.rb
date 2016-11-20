@@ -124,6 +124,27 @@ password_confirmation: "password",
 userable: t
 )
 
+4.times do
+  c = Client.create(
+    therapist_id: 6,
+    first_name: FFaker::Name.first_name,
+    last_name: FFaker::Name.last_name,
+    initial: rand_init,
+    birth_date: rand_dob,
+    phone: FFaker::PhoneNumber.phone_number,
+    # emergency:
+    wellness: rand_num
+  )
+
+  u = User.create(
+    email: FFaker::Internet.free_email,
+    password: FFaker::Internet.password,
+    userable: c
+  )
+  u.password_confirmation = u.password
+  u.save
+end
+
 5.times do
   s = Survey.create(
     client_id: 6,
@@ -148,12 +169,14 @@ count = 16
   count += 1
 end
 
-5.times do
-contact= Contact.create(
-  client_id: [1, 2, 3, 4].sample,
-  first_name: FFaker::Name.first_name,
-  last_name: FFaker::Name.last_name,
-  relation: relation,
-  phone: FFaker::PhoneNumber.phone_number
-)
+count = 1
+24.times do
+  contact = Contact.create(
+    client_id: count,
+    first_name: FFaker::Name.first_name,
+    last_name: FFaker::Name.last_name,
+    relation: relation,
+    phone: FFaker::PhoneNumber.phone_number
+  )
+  count += 1
 end
