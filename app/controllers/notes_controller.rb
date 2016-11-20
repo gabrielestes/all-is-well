@@ -17,7 +17,7 @@ class NotesController < ApplicationController
     #   shared: params[:shared]
     # )
     if note.save
-      redirect_to c_profile_path(params[:id])
+      redirect_to notes_index_path(params[:id])
     end
   end
 
