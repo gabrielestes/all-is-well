@@ -42,6 +42,7 @@ Rails.application.routes.draw do
 # Client calendar, id is client id
   get 'therapist/calendar/:id'  => 'therapists#calendar', as: 'client_calendar'
 
+
   get 'calendar/json/:id' => 'therapists#render_events'
 
 # A client's posts and surveys, id is client id
