@@ -47,28 +47,8 @@
 
         });
 
-    //***TODO*** Loop through the events array and create a new array with objects that have properties that the calendar accepts. then pass to calendar to display******
 
     }
-
-
-
-      // page is now ready, initialize the calendar...
-
-      // $('#calendar').fullCalendar(
-      //   {
-      //     events: displayEvents,
-      //
-      //     eventClick: function(event) {
-      //        if (event.url) {
-      //            window.open(event.url);
-      //            return false;
-      //        }
-      //     }
-      // });
-
-
-
 
 
 
