@@ -12,9 +12,11 @@
   <div class="entry-timestamp">
     <span class="entry-date">MM/DD/YYYY</span><span class="entry-time">HH:MM</span>
   </div>
-  <div class="togglePrivacy">
-    <%= check_box 'togglePrivacy', '0', id:"togglePrivacy", class: 'togglePrivacy'%>
-    <label class="togglePrivacy-label" for="togglePrivacy">Mark as Private</label>
+  <div class="privacy">
+    <div class="togglePrivacy">
+      <%= check_box 'togglePrivacy', '0', id:"togglePrivacy", class: 'togglePrivacy'%>
+      <label class="togglePrivacy-label" for="togglePrivacy"><span></span></label>
+    </div>
   </div>
 
 </section>

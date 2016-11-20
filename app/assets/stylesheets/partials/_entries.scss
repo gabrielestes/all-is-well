@@ -1,35 +1,9 @@
 $seagreen: rgb(55, 207, 176);
-$seagreenT: rgba(55, 207, 176, 0.4);
-$seagreenTb: rgba(55, 207, 176, 0.7);
 $seagreenM: rgb(35, 188, 158);
-$seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
-$dark: #333333;
 
 
-
-
-$jade: #7cdfcb;
-$medium-jade: #4AD3B8;
-$deep-jade: #30C5A7;
-
-$jadeTb: rgba(124, 223, 203, 0.7);
-$medium-jadeTb: rgba(74, 211, 184, 0.7);
-$deep-jadeTb: rgba(48, 197, 167, 0.7);
-
-
-
-// Functions
-
-@function shade($color, $percent) {
-  @return mix(#000, $color, $percent);
-}
-
-@function tint($color, $percent) {
-  @return mix(#fff, $color, $percent);
-}
-
-
+//buttons
 .button-box {
   width: 100%;
   display: flex;
@@ -64,9 +38,82 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
     }
 }
 
+//views
 .disappear {
   display: none;
 }
+
+// previous entries view
+.entry-card {
+  margin: 45px 0;
+  border-bottom: 0.5px solid $seagreenD;
+  .entry-text {
+    margin: 15px 0;
+  }
+  .entry-timestamp {
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+  }
+  //toggle switch for privacy setting
+  .privacy {
+    display: flex;
+    justify-content: flex-start;
+    div.togglePrivacy {
+      position: relative;
+      margin-bottom: 15px;
+      font-size: 19px;
+      background-image: radial-gradient(ellipse 165px 15px, #53ad9b, #4cab97, #298e7a);
+      width: 100px;
+      border-radius: 13%;
+      height: 35px;
+      #togglePrivacy {
+        opacity: 0;
+        z-index: 3;
+        position: absolute;
+        width: 100px;
+        height: 35px;
+      }
+      #togglePrivacy + label::before {
+        content: "Share";
+        color: #c2e4dd;
+        left: 42px;
+        top: 8px;
+        position: absolute;
+        font-size: 17px;
+      }
+      #togglePrivacy:checked + label::before {
+        content: "";
+      }
+      #togglePrivacy:checked + label::after {
+        content: "Private";
+        top: 8px;
+        left: 4px;
+        position: absolute;
+        font-size: 17px;
+        color: #0e6150;
+      }
+
+      #togglePrivacy + label > span {
+        transition: all .5s ease-out;
+        background-image: radial-gradient(closest-side, rgba(61, 193, 166, 0.77) 34%, #37cfb0 73%, #33dab8 70%, #105d4e 100%);
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        left: 4px;
+        top: 3px;
+        border-radius: 10px;
+      }
+
+      #togglePrivacy:checked + label > span {
+        left: 66px;
+      }
+    }
+
+  }
+}
+
+// new entry view
 #new-entry {
   display: flex;
   flex-direction: column;
