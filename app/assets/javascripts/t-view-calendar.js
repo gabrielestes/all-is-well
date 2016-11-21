@@ -6,7 +6,7 @@
   $(document).on('turbolinks:load', function() {
 
     var path = location.pathname;
-    var pathArr = path.toString().split('/');
+    var pathArr = path.split('/');
     var clientId = pathArr.pop();
 
     var displayEvents = [];
@@ -14,7 +14,7 @@
 
 
     if (pathArr[1] === "therapist" && pathArr[2] === "calendar" ) {
-        console.log('on calendar page for client: ' + clientId);
+        // console.log('on calendar page for client: ' + clientId);
 
         $.ajax({
           url: '/calendar/json/' + clientId,
@@ -29,7 +29,7 @@
         );
 
         displayEvents = clientEvents;
-        console.log(displayEvents);
+
 
         $('#calendar').fullCalendar(
           {

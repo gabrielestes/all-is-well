@@ -37,14 +37,14 @@ aside.my-therapist {
     display: flex;
     max-width: 600px;
     .data {
-      background: $seagreenLb;
+      background: none;
       display: flex;
       flex-direction: column;
       width: 100%;
       .data-block {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
 
         h3 {
           font-size: 1.2em;
@@ -56,10 +56,10 @@ aside.my-therapist {
         }
         span {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           font-size: 30px;
           padding: 3%;
-          color: #fff;
+          color: $seagreen;
           width: 100%;
           @media (max-width: 470px){
               font-size: 16px;

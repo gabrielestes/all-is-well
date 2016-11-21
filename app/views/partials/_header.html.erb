@@ -2,16 +2,16 @@
   <header>
 
       <div class="site-logo">
-        <h3><span class="site-title">AllIsWell</span>Hi, <%= current_user.userable.first_name %> <%= current_user.userable.last_name %></h3>
+        <h3><span class="site-title">all is well</span>Hi, <%= current_user.userable.first_name %> <%= current_user.userable.last_name %></h3>
       </div>
 
 
       <nav class="header-nav">
         <%= link_to "/#{current_user.userable_type.downcase}/#{current_user.userable.id}" do %>
-          <div class="header-nav-opt">Home</div>
+          <div class="header-nav-opt" id="home">Home</div>
         <% end %>
         <%= link_to "/#{current_user.userable_type.downcase}/profile/#{current_user.userable.id}" do %>
-          <div class="header-nav-opt">Account</div>
+          <div class="header-nav-opt" id="account">Account</div>
         <% end %>
         <%= link_to destroy_user_session_path, :method => :delete do %>
           <div class="header-nav-opt">Logout</div>
