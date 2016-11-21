@@ -1,6 +1,12 @@
 class ApplicationController < ActionController::Base
   # protect_from_forgery with: :exception
 
+  def client_login_redirect
+    if signed_in? && current_user.userable_type == 'Client'
+      redirect_to client_index_path(current_user.userable_id)
+    end
+  end
+
   def current_client
     @current_client = Client.find_by_id(params[:id])
     @client_name = @current_client.first_name + " " + @current_client.initial + ". " + @current_client.last_name
