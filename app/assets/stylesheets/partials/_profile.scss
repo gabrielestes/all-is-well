@@ -6,13 +6,14 @@ $seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
 $dark: #333333;
 $seagreenLb: rgb(107, 213, 192);
+$seafoam: #A3E0D3;
+$grey: #dfe0e6;
+$fun: #b1269e;
 
-@function shade($color, $percent) {
-  @return mix(#000, $color, $percent);
-}
 
-@function tint($color, $percent) {
-  @return mix(#fff, $color, $percent);
+div.welcome {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 aside.my-therapist {
@@ -21,20 +22,18 @@ aside.my-therapist {
     width: 90%;
     .t-data .data-block {
       &:hover {
-        background-color: $seagreenLb !important;
+        background-color: $seagreen !important;
       }
   }
   }
 }
-
-
-
 
   .profile {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
     display: flex;
+    flex-direction: column;
     max-width: 600px;
     .data {
       background: none;
@@ -44,8 +43,8 @@ aside.my-therapist {
       .data-block {
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
 
+        align-items: flex-start;
         h3 {
           font-size: 1.2em;
           color: $seagreenD;
@@ -59,7 +58,7 @@ aside.my-therapist {
           justify-content: flex-start;
           font-size: 30px;
           padding: 3%;
-          color: $seagreen;
+          color: $fun;
           width: 100%;
           @media (max-width: 470px){
               font-size: 16px;
@@ -72,12 +71,13 @@ aside.my-therapist {
 .profile {
 
   section.edit {
+    background: $seafoam;
     aside {
       display: flex;
       flex-direction: column;
       justify-content: space-around;
       align-items: center;
-      background: $seagreen;
+      background: $seafoam;
       padding-bottom: 5px;
       &.disappear {
         display: none;
@@ -90,10 +90,13 @@ aside.my-therapist {
         }
 
         input {
+          color: $seagreenD;
+          font-family: 'Quicksand',sans-serif;
+          font-size: 18px;
           &:focus {
             outline-color: $seagreenD;
           }
-          line-height: 2em;
+          line-height: 25px;
           width: 25vw;
           min-width: 160px;
           max-width: 194px;
@@ -109,36 +112,28 @@ aside.my-therapist {
     }
     .data-block {
       width: 100%;
-      border-bottom: 0.25px solid $seagreenM;
-      &:hover {
-        background: $seagreen !important;
-      }
-      &.name {
-        border-top: 0.25px solid $seagreenM;
-      }
-
+      border: 0.25px solid $seafoam;
       h3 {
-        font-size: 1.2em;
+        font-size: 22px;
         display: flex;
         align-items: flex-start;
         width: 100%;
       }
       span {
-      font-size: 1em;
-      width: 100%;
+        color: $fun;
+        font-size: 20px;
+        width: 100%;
       }
       div {
         width: 100%;
       }
       a {
         text-align: right;
-        font-size: 1em;
+        font-size: 16px;
         cursor: pointer;
-        &.active {
-          color: white;
-        }
+        color: $seagreenD;
         &:hover {
-          color: shade($seagreenM, 10%);
+          color: #fff;
         }
       }
     }
@@ -147,7 +142,6 @@ aside.my-therapist {
 input.button {
  font-family: inherit;
  font-size: 1.1em;
- color: #000;
  border: 0;
  border-radius: 2px;
  text-align: center;
@@ -155,11 +149,11 @@ input.button {
  padding: 10px;
  width: 100px;
  height: 44px;
- background-color: $seagreenM;
+ background-color: $seagreen;
  cursor: pointer;
  &:hover {
    color: #fff;
-   background-color: shade($seagreenM, 10%);
+   background-color: $seagreenM;
  }
  &:focus {
    outline: 0;

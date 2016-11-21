@@ -6,10 +6,10 @@ $seagreenM: rgb(35, 188, 158);
 $seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
 $dark: #333333;
-
-
-
-
+$dark: #333333;
+$seafoam: #A3E0D3;
+$grey: #dfe0e6;
+$fun: #b1269e;
 $jade: #7cdfcb;
 $medium-jade: #4AD3B8;
 $deep-jade: #30C5A7;
@@ -21,8 +21,14 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
 main.registration {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: column;
+  .register-container {
+    display: flex;
+    margin: 60px auto;
+
+  }
   .register-client,
   .register-therapist {
     height: 300px;
@@ -30,25 +36,24 @@ main.registration {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: $seafoam;
+    cursor: pointer;
+
     &:hover,
     &.active {
-      background: #A3ADC2;
+      background: $seagreen;
       h3 {
-        color: #FAFFBD;
-        transform: scale(1.1);
+        color: #fff;
       }
     }
     h3 {
+      font-size: 24px;
       cursor: pointer;
       width: auto;
     }
   }
   .register-therapist {
-    background: #A3E0D3;
-  }
-  .register-client {
-    background: #A3E0D3;
-
+    border-right: .25px solid $seagreenM;
   }
   .new-therapist,
   .new-client {
