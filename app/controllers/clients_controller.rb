@@ -17,6 +17,7 @@ class ClientsController < ApplicationController
 
   def c_profile
     client_user
+    @therapist = Therapist.find(@current_client.therapist_id)
   end
 
   def update
@@ -28,11 +29,6 @@ class ClientsController < ApplicationController
     @current_client.save!
     redirect_to client_profile_path
   end
-
-  # def new_contact
-  #   @contact = Contact.new contact_params
-  #   # Contact.new(client_id: @current_client.id, phone: params[:phone]).save!
-  # end
 
   private
 
