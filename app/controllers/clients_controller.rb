@@ -15,6 +15,10 @@ class ClientsController < ApplicationController
     end
   end
 
+  def c_profile
+    current_client
+  end
+
 
   private
 

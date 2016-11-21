@@ -22,6 +22,8 @@ Rails.application.routes.draw do
 
   get 'client/:id' => 'clients#index', as: 'client_index'
 
+  get '/client/profile/:id' => 'clients#c_profile', as: 'client_profile'
+
   post 'client' => 'clients#new', as: 'new_client'
 
   get 'register' => 'registrations#new', as: 'register_user'
