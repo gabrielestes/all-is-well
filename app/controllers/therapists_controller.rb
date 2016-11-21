@@ -1,9 +1,18 @@
 class TherapistsController < ApplicationController
   before_action :authenticate_user!, except: [:new, :index]
   def index
+    client_login_redirect
+
     sort_by = params[:sort_by]
-    @therapist = Therapist.find(current_user.userable.id)
-    @clients = Client.where(therapist_id: @therapist.id)
+    if current_user.userable_type == "Therapist"
+      @therapist = Therapist.find(current_user.userable.id)
+      @clients = Client.where(therapist_id: @therapist.id)
+    elsif current_user.userable_type == "Client"
+      @client = Client.find(current_user.userable.id)
+      @therapist = Therapist.find(@client.therapist_id)
+    else
+      redirect_to root_path
+    end
     unless sort_by.nil?
       @clients = @clients.order(sort_by => :asc)
     end
