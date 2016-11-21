@@ -15,6 +15,17 @@ $seagreenLb: rgb(107, 213, 192);
   @return mix(#fff, $color, $percent);
 }
 
+aside.my-therapist {
+  div {
+    padding-bottom: 50px;
+    width: 90%;
+    .t-data .data-block {
+      &:hover {
+        background-color: $seagreenLb !important;
+      }
+  }
+  }
+}
 
 
 

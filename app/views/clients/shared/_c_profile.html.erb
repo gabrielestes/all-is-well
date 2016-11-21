@@ -14,9 +14,9 @@
     <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob %></div><a class="edit">Edit</a></span></div>
       <aside class="dob disappear">
         <div>
-          <input class="edit-data" type="number" id="month" placeholder="MM"/>
-          <input class="edit-data" type="number" id="date" placeholder="DD"/>
-          <input class="edit-data" type="number" id="year" placeholder="YYYY"/>
+          <input class="edit-data" type="text" id="dob" placeholder="<%= @client_dob %>"/>
+          <!-- <input class="edit-data" type="number" id="date" placeholder="DD"/>
+          <input class="edit-data" type="number" id="year" placeholder="YYYY"/> -->
         </div>
         <input class="button" type="submit" value="Submit"/>
     </aside>
@@ -35,6 +35,13 @@
           <input class="edit-data" type="text" id="em_phone" placeholder="098-765-4321"/>
         </div>
         <input class="button" type="submit" value="Submit"/>
+      </aside>
+
+    <div class="data-block my-therapist"><h3>My Therapist: </h3><span><div><%= @current_client.therapist_id %></div><a class="edit">View</a></span></div>
+      <aside class="my-therapist disappear">
+        <div>
+          <%= render :partial => "clients/shared/t_profile" %>
+        </div>
       </aside>
 
   </section>
