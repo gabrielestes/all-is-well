@@ -67,7 +67,9 @@ $deep-jadeTb: rgba(48, 197, 167, 0.7);
 
                 }
               .t-dashboard-opt:hover h3,
-              .c-dashboard-opt:hover h3 {
+              .t-dashboard-opt:active h3,
+              .c-dashboard-opt:hover h3,
+              .c-dashboard-opt:active h3 {
                   color: #fff;
                 }
             }
