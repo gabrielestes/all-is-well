@@ -62,6 +62,5 @@ Rails.application.routes.draw do
 # Client profile, id is client's id
   get 'therapist/c_profile/:id' => 'therapists#c_profile', as: 'c_profile'
 
-
   devise_for :users
 end
