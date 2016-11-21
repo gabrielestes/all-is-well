@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  get 'client/entries' => 'entries#entries_index'
+  get 'client/entries/:id' => 'entries#entries_index'
 
   get 'client/events' => 'events#events_index'
 
-  get 'client/surveys' => 'surveys#surveys_index'
+  get 'client/surveys/:id' => 'surveys#surveys_index', as: 'surveys_index'
 
   get '/therapist/profile/:id' => 'therapists#t_profile', as: 't_profile'
 
@@ -19,7 +19,7 @@ Rails.application.routes.draw do
 
   get 'client/:id' => 'clients#index', as: 'client_index'
 
-  post 'client/:id' => 'clients#new', as: 'new_client'
+  post 'client' => 'clients#new', as: 'new_client'
 
   get 'register' => 'registrations#new', as: 'register_user'
 
