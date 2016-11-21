@@ -20,9 +20,11 @@ Rails.application.routes.draw do
 
   get 'client/new'
 
-  get 'client/:id' => 'clients#index', as: 'client_index'
+  get 'client' => 'clients#index', as: 'client_index'
 
-  get '/client/profile/:id' => 'clients#c_profile', as: 'client_profile'
+  get '/client/profile' => 'clients#c_profile', as: 'client_profile'
+
+  put '/client/profile', to: 'clients#update', as: 'update_client'
 
   post 'client' => 'clients#new', as: 'new_client'
 

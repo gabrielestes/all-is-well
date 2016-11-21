@@ -19,6 +19,12 @@ class ClientsController < ApplicationController
     current_client
   end
 
+  def update
+    current_client
+    @current_client.update client_params
+    redirect_to client_profile_path
+  end
+
 
   private
 

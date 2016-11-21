@@ -3,12 +3,19 @@
 
     <div class="data-block name"><h3>Client Name: </h3><span><div><%= @client_name %></div><a class="edit">Edit</a></span></div>
       <aside class="name disappear">
-        <div>
+        <%= form_for @current_client, url: update_client_path(current_user.userable_id), method: :put do |f| %>
+          <div>
+            <%= f.text_field :first_name, class: 'edit-data', id: 'first_name' %>
+            <%= f.text_field :last_name, class: 'edit-data', id: 'last_name' %>
+          </div>
+          <div><%= f.submit 'Submit', class: 'button' %></div>
+        <% end %>
+        <!-- <div>
           <input class="edit-data" type="text" id="first_name" placeholder="<%= @current_client.first_name %>"/>
           <input class="edit-data" type="text" id="initial" placeholder="<%= @current_client.initial %>"/>
           <input class="edit-data" type="text" id="last_name" placeholder="<%= @current_client.last_name %>"/>
-        </div>
-          <input class="button" type="submit" value="Submit"/>
+        </div> -->
+          <!-- <input class="button" type="submit" value="Submit"/> -->
       </aside>
 
     <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob %></div><a class="edit">Edit</a></span></div>
@@ -24,12 +31,12 @@
     <div class="data-block phone"><h3>Primary Phone Number: </h3><span><div><%= @client_phone %></div><a class="edit">Edit</a></span></div>
       <aside class="phone disappear">
         <div>
-          <input class="edit-data" type="text" id="phone" placeholder="<%= @client_phone %>"/>
+          <input class="edit-data" type="text" id="phone" placeholder="<%=  %>"/>
         </div>
         <input class="button" type="submit" value="Submit"/>
       </aside>
 
-    <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span><div>098-765-4321</div><a class="edit">Edit</a></span></div>
+    <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span><div><%= @client_contact %></div><a class="edit">Edit</a></span></div>
       <aside class="em_phone disappear">
         <div>
           <input class="edit-data" type="text" id="em_phone" placeholder="098-765-4321"/>
