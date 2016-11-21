@@ -1,5 +1,7 @@
 class ClientsController < ApplicationController
-
+  before_action :authenticate_user!, except: [:new]
+  before_action :if_not_signed_in
+  
   def index
     @current_client = Client.find(current_user.userable_id)
   end

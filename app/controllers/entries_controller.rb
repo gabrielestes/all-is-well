@@ -1,4 +1,6 @@
 class EntriesController < ApplicationController
+  before_action :if_not_signed_in
+
   def entries_index
     @entries = Post.where(client_id: current_user.userable_id)
   end

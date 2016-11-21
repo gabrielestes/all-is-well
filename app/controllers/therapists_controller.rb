@@ -1,6 +1,7 @@
 class TherapistsController < ApplicationController
   before_action :authenticate_user!, except: [:new]
-
+  before_action :if_not_signed_in
+  
   def index
     # client_login_redirect
 

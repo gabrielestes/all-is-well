@@ -31,6 +31,12 @@ class ApplicationController < ActionController::Base
     redirect_to '/sign_in'
   end
 
+  def if_not_signed_in
+    if !user_signed_in?
+      redirect_to '/'
+    end
+  end
+
   def survey_sum(survey)
     survey.question_one + survey.question_two + survey.question_three + survey.question_four + survey.question_five
   end
