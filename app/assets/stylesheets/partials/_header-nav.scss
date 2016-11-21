@@ -1,11 +1,10 @@
 
 $seagreen: rgb(55, 207, 176);
-$seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenM: rgb(35, 188, 158);
-$seagreenD: #0A382F;
-
 $seafoam: #A3E0D3;
 
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script');
 
 
 header {
@@ -20,12 +19,15 @@ header {
   justify-content: space-between;
   z-index: 3;
   color: #fff;
-  // border-bottom: 1px #;
+
 
       .site-logo {
         margin: 0 10px;
 
           .site-title {
+            font-family: 'Dancing Script';
+            font-style: bold;
+            font-size: 30px;
             color: #fff;
             margin-right: 15px;
           }
@@ -37,7 +39,7 @@ nav {
   background-color: $seagreen;
   width: 100%;
   position: fixed;
-  top: 30px;
+  top: 50px;
   display: none;
   z-index: 3;
   font-family: 'Quicksand', sans-serif !important;
@@ -77,8 +79,10 @@ nav {
 
     &:hover {
       cursor: pointer;
-      // background-color: tint($seagreen, 25%);
-      // color: #FAFFBD;
+      text-decoration: underline;
+    }
+
+    &.selected {
       text-decoration: underline;
     }
 
@@ -87,11 +91,9 @@ nav {
     float: left;
     width: calc(100%/3);
     border: none;
-    &:hover {
-      cursor: pointer;
-      background-color: $seagreen;
-      // color:#FAFFBD;
-    }
+    // &:hover {
+    //   text-decoration: underline;
+    // }
   }
 
 }

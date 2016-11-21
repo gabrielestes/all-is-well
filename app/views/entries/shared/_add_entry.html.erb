@@ -1,29 +1,36 @@
 <article class="entry-view disappear" id="add-entry">
 
-  <form id="new-entry">
+  <!-- <form id="new-entry"> -->
 
     <h2>Type a Journal Entry</h2>
+    <%= form_for Post.new, url: create_entry_path, method: :post do |e| %>
+      <% e.hidden_field :client_id, value: current_user.userable_id %>
+      <!-- <fieldset id="title"> -->
+        <label for="title">Title:</label>
 
-    <fieldset id="title">
-      <label for="title">Title:</label>
-      <input id="title" name="title"/>
-    </fieldset>
+        <%= e.text_field :title, id: 'title' %>
+        <!-- <input id="title" name="title"/> -->
+      <!-- </fieldset> -->
 
-    <fieldset id="text">
-      <label for="entry-text">Entry:</label>
-      <textarea id="entry-text" name="entry-text"></textarea>
-    </fieldset>
+      <!-- <fieldset id="text"> -->
+        <!-- <label for="entry-text">Entry:</label> -->
+        <%= e.label :body, 'Entry: ' %>
+        <%= e.text_area :body, id: 'entry-text' %>
+        <!-- <textarea id="entry-text" name="entry-text"></textarea> -->
+      <!-- </fieldset> -->
 
-      <section>
-        <div class="privacy">
-          <div class="togglePrivacy">
-            <%= check_box 'togglePrivacy', '0', id:"togglePrivacy", class: 'togglePrivacy'%>
-            <label class="togglePrivacy-label" for="togglePrivacy"><span></span></label>
+        <section>
+          <div class="privacy">
+            <div class="togglePrivacy">
+              <!-- <%= check_box 'togglePrivacy', '0', id:"togglePrivacy", class: 'togglePrivacy'%> -->
+              <label class="togglePrivacy-label" for="togglePrivacy"><span></span></label>
+            </div>
           </div>
-        </div>
-        <input type="submit" class="button" value="Submit Entry"/>
-      </section>
 
-  </form>
+      <div><%= e.submit 'Submit', class: 'button' %></div>
+          <!-- <input type="submit" class="button" value="Submit Entry"/> -->
+        </section>
+    <% end %>
+  <!-- </form> -->
 
 </article>

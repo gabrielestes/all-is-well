@@ -7,6 +7,7 @@ class CreateNotes < ActiveRecord::Migration[5.0]
       t.string :title
       t.text :message
       t.boolean :shared
+      t.boolean :read, default: false
 
       t.timestamps
     end

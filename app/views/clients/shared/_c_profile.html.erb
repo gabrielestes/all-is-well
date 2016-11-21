@@ -6,43 +6,67 @@
 
     <div class="data-block name"><h3>Client Name: </h3><span><div><%= @client_name %></div><a class="edit">Edit</a></span></div>
       <aside class="name disappear">
-        <div>
+        <%= form_for @current_client, url: update_client_path(current_user.userable_id), method: :put do |f| %>
+          <div>
+            <%= f.text_field :first_name, class: 'edit-data', id: 'first_name' %>
+            <%= f.text_field :last_name, class: 'edit-data', id: 'last_name' %>
+          </div>
+          <div><%= f.submit 'Submit', class: 'button' %></div>
+        <% end %>
+        <!-- <div>
           <input class="edit-data" type="text" id="first_name" placeholder="<%= @current_client.first_name %>"/>
           <input class="edit-data" type="text" id="initial" placeholder="<%= @current_client.initial %>"/>
           <input class="edit-data" type="text" id="last_name" placeholder="<%= @current_client.last_name %>"/>
-        </div>
-          <input class="button" type="submit" value="Submit"/>
+        </div> -->
+          <!-- <input class="button" type="submit" value="Submit"/> -->
       </aside>
 
     <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob %></div><a class="edit">Edit</a></span></div>
       <aside class="dob disappear">
+        <%= form_for @current_client, url: update_client_path(current_user.userable_id), method: :put do |f| %>
         <div>
-          <input class="edit-data" type="text" id="dob" placeholder="<%= @client_dob %>"/>
+          <%= f.date_select :birth_date, {order: [:month, :day, :year], start_year: Date.today.year - 100, end_year: Date.today.year - 1}, class: 'edit-data', id: 'year' %>
         </div>
-        <input class="button" type="submit" value="Submit"/>
+        <div><%= f.submit 'Submit', class: 'button' %></div>
+      <% end %>
+
+        <!-- <div>
+          <input class="edit-data" type="number" id="month" placeholder="MM"/>
+          <input class="edit-data" type="number" id="date" placeholder="DD"/>
+          <input class="edit-data" type="number" id="year" placeholder="YYYY"/>
+        </div>
+        <input class="button" type="submit" value="Submit"/> -->
     </aside>
 
     <div class="data-block phone"><h3>Primary Phone Number: </h3><span><div><%= @client_phone %></div><a class="edit">Edit</a></span></div>
       <aside class="phone disappear">
         <div>
-          <input class="edit-data" type="text" id="phone" placeholder="<%= @client_phone %>"/>
+          <%= form_for @current_client, url: update_client_path(current_user.userable_id), method: :put do |f| %>
+            <%= f.text_field :phone, class: 'edit-data', id: 'phone' %>
+            <div><%= f.submit 'Submit', class: 'button' %></div>
+          <% end %>
+      </div>
+    </div>
+        <!-- <div>
+          <input class="edit-data" type="text" id="phone" placeholder="<%=  %>"/>
         </div>
-        <input class="button" type="submit" value="Submit"/>
+        <input class="button" type="submit" value="Submit"/> -->
       </aside>
 
-    <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span><div>098-765-4321</div><a class="edit">Edit</a></span></div>
+    <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span><div><%= @client_contact %></div><a class="edit">Edit</a></span></div>
       <aside class="em_phone disappear">
         <div>
+          <%= form_for :contacts, url: update_client_path(current_user.userable_id), method: :put do |f| %>
+            <% f.hidden_field :client_id, value: @current_client.id %>
+            <%= f.text_field :phone, class: 'edit-data', id: 'em_phone' %>
+            <div><%= f.submit 'Submit', class: 'button' %></div>
+          <% end %>
+      </div>
+
+        <!-- <div>
           <input class="edit-data" type="text" id="em_phone" placeholder="098-765-4321"/>
         </div>
         <input class="button" type="submit" value="Submit"/>
-      </aside>
-
-    <div class="data-block my-therapist"><h3>My Therapist: </h3><span><div><%= @current_client.therapist_id %></div><a class="edit">View</a></span></div>
-      <aside class="my-therapist disappear">
-        <div>
-          <%= render :partial => "clients/shared/t_profile" %>
-        </div>
-      </aside>
+      </aside> -->
 
   </section>

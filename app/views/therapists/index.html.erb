@@ -5,12 +5,14 @@
     </div>
 
     <div class="t-index">
+
       <div class="sort-background">
-        <div class="sort">
-          <a>Click to Sort:</a>
-          <%= link_to "Wellness", "/therapist/#{@therapist.id}?sort_by=wellness", class:"actives", id:"wellness" %>
-          <%= link_to "Name", "/therapist/#{@therapist.id}?sort_by=last_name" ,id:"name"%>
-        </div>
+
+      <div class="sort">
+        <%= link_to "Sort by Wellness", "/therapist?sort_by=wellness", class:"actives", id:"wellness" %>
+        <%= link_to "Sort by Name", "/therapist?sort_by=last_name" ,id:"name"%>
+      </div>
+      <%= render :partial => "therapists/shared/patient_card" %>
 
         <a id="patient_card_header"><div class="patient_card">
             <p class="id_number">Id</p>

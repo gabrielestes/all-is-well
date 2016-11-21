@@ -1,5 +1,6 @@
 $seagreen: rgb(55, 207, 176);
 $seagreenT: rgba(55, 207, 176, 0.4);
+$seagreenM: rgb(35, 188, 158);
 
 
 // the devise alert
@@ -77,11 +78,11 @@ $seagreenT: rgba(55, 207, 176, 0.4);
           margin: 15px 0;
           padding: 10px;
           width: 100%;
-          background-color: shade($seagreenT, 5%);
+          background-color: $seagreen;
           cursor: pointer;
           &:hover {
-            color: #FAFFBD;
-            background-color: shade($seagreenT, 10%);
+            color: #fff;
+            background-color: $seagreenM;
           }
         }
     }
