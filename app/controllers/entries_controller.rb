@@ -3,7 +3,7 @@ class EntriesController < ApplicationController
   end
 
   def create
-    @entry = Post.new(title: params[:post][:title], body: params[:post][:title])
+    @entry = Post.new(title: params[:post][:title], body: params[:post][:title], sharable: params[:togglePrivacy])
     @entry.client_id = current_user.userable_id
     if @entry.save!
       redirect_to entries_index_path
