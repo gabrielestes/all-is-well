@@ -37,7 +37,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.permit(
+    params.require(:client).permit(
       :therapist_id,
       :first_name,
       :last_name,
