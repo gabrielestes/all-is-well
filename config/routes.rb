@@ -40,15 +40,11 @@ Rails.application.routes.draw do
     root :to => 'therapists#index'
   end
 
-  # authenticated :user do
-  #   root :to => 'therapists#index'
-  # end
-
   devise_scope :user do
     get '/', to: 'devise/sessions#new', as: 'sign_in'
   end
 
-  get 'therapist/:id' => 'therapists#index'
+  get 'therapist' => 'therapists#index'
 
   post 'therapist' => 'therapists#new', as: 'new_therapist'
 

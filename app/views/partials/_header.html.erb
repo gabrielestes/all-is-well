@@ -7,7 +7,7 @@
 
 
       <nav class="header-nav">
-        <%= link_to "/#{current_user.userable_type.downcase}/#{current_user.userable.id}" do %>
+        <%= link_to "/#{current_user.userable_type.downcase}" do %>
           <div class="header-nav-opt">Home</div>
         <% end %>
         <%= link_to "/#{current_user.userable_type.downcase}/profile" do %>
