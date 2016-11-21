@@ -1,9 +1,10 @@
 class EntriesController < ApplicationController
   def entries_index
+    @entries = Post.where(client_id: current_user.userable_id)
   end
 
   def create
-    @entry = Post.new(title: params[:post][:title], body: params[:post][:title])
+    @entry = Post.new(title: params[:post][:title], body: params[:post][:body], sharable: params[:togglePrivacy])
     @entry.client_id = current_user.userable_id
     if @entry.save!
       redirect_to entries_index_path

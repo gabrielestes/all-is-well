@@ -6,7 +6,7 @@ class TherapistsController < ApplicationController
 
     sort_by = params[:sort_by]
     if current_user.userable_type == "Therapist"
-      @therapist = Therapist.find(current_user.userable.id)
+      @therapist = Therapist.find(current_user.userable_id)
       @clients = Client.where(therapist_id: @therapist.id)
     elsif current_user.userable_type == "Client"
       @client = Client.find(current_user.userable.id)

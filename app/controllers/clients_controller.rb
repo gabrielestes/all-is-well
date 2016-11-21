@@ -16,11 +16,11 @@ class ClientsController < ApplicationController
   end
 
   def c_profile
-    current_client
+    client_user
   end
 
   def update
-    current_client
+    client_user
     e = Contact.where(client_id: params[:format]).first_or_create!
     e.update(phone: params[:contacts][:phone])
     e.save!
@@ -37,7 +37,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.permit(
+    params.require(:client).permit(
       :therapist_id,
       :first_name,
       :last_name,
