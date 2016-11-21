@@ -8,7 +8,8 @@ function getHeaderLocation() {
   var path = location.pathname;
   var pathArr = path.split('/');
 
-  if (pathArr[1] === "therapist" && pathArr.length === 2 || pathArr[1] === "client" && pathArr.length === 2 ) {
+
+  if (pathArr[1] === "therapist" && pathArr.length === 2 || pathArr[1] === "client" && pathArr.length === 2 || pathArr[1] === "" && pathArr.length === 2) {
     $('#nav-account').removeClass('selected');
     $('#nav-home').addClass('selected');
   }
