@@ -16,11 +16,11 @@ class ClientsController < ApplicationController
   end
 
   def c_profile
-    current_client
+    client_user
   end
 
   def update
-    current_client
+    client_user
     e = Contact.where(client_id: params[:format]).first_or_create!
     e.update(phone: params[:contacts][:phone])
     e.save!
