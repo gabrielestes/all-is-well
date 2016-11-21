@@ -17,7 +17,7 @@
 
 })(jQuery);
 
-
+// TODO: make page scroll to bottom when 'view' is opened for therapist
 // $('#mydiv').slideToggle('slow', function() {
 //      var height = $('#mydiv').height();
 //      if($(this).is(':visible')){
