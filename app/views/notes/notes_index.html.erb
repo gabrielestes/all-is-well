@@ -5,26 +5,67 @@
 
   <!-- PUT THERAPIST VIEW PAGE CONTENT BELOW HERE -->
 
-  <div class="note-form-container">
-    <%= form_for Note.new, url: create_note_path(@client_id), method: :post do |f| %>
-      <div class="note-form-row">
-        <%= f.label :title, value:"Subject:", class:"note-title-label" %>
-        <%= f.text_field :title, class:"note-title-input", value:"New Note"%>
-      </div>
-        <%= f.text_area :message, :required => true, rows: 10, class:"note-text-area"%>
-        <%= f.hidden_field :client_id, value: @client_id %>
-        <%= f.hidden_field :therapist_id, value: @therapist_id %>
-      <div class="note-form-footer">
-        <%= f.label :shared, value:"Shared?" %>
-        <%= f.select :shared, options_for_select([['Yes', true], ['No', false]])%>
-        <%= f.submit "+ Add Note", class:"add-note-button"%>
-      </div>
-    <% end %>
-  </div>
 
-<div class="view-notes-container">
-<%= render :partial => "notes/shared/note_card" %>
-</div>
+          <div class="tabbed-views-wrapper">
+              <div class="tabs">
+                  <div class="tab-a active">
+                      <button id="tab-a-btn">All Notes</button>
+                  </div>
+                  <div class="tab-b">
+                      <button id="tab-b-btn">+ New Note</button>
+                  </div>
+              </div>
+              <div class="tabs-content">
+                  <div class="active" id="tab-a-content">
+                    <div class="view-notes-container">
+                    <%= render :partial => "notes/shared/note_card" %>
+                    </div>
+                  </div>
+                  <div id="tab-b-content">
+                    <div class="note-form-container">
+                      <%= form_for Note.new, url: create_note_path(@client_id), method: :post do |f| %>
+                        <div class="note-form-row">
+                          <%= f.label :title, value:"Subject:", class:"note-title-label" %>
+                          <%= f.text_field :title, class:"note-title-input", value:"New Note"%>
+                        </div>
+                          <%= f.text_area :message, :required => true, rows: 10, class:"note-text-area"%>
+                          <%= f.hidden_field :client_id, value: @client_id %>
+                          <%= f.hidden_field :therapist_id, value: @therapist_id %>
+                        <div class="note-form-footer">
+                          <%= f.label :shared, value:"Shared?" %>
+                          <%= f.select :shared, options_for_select([['Yes', true], ['No', false]])%>
+                          <%= f.submit "+ Add Note", class:"add-note-button"%>
+                        </div>
+                      <% end %>
+                    </div>
+
+                  </div>
+              </div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <!-- END THERAPIST VIEW PAGE CONTENT -->
 

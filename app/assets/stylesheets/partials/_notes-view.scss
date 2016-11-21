@@ -3,9 +3,10 @@
 }
 
 $seagreenT: rgba(55, 207, 176, 0.4);
-$seagreenD: #0A382F;
 $deep-jade: #30C5A7;
 $private-red: #8A0116;
+$jade: #7cdfcb;
+$tabbed-pages-border-color: shade($jade, 10%);
 
 .view-notes-container {
    width: 100%;
@@ -13,11 +14,14 @@ $private-red: #8A0116;
   flex-direction: column;
    justify-content: center;
    align-items: center;
+   margin-top: 15px;
  }
 
  .note-card {
    width: 100%;
    margin-bottom: 15px;
+   background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cloth_alike.png");
+  border: .5px solid $tabbed-pages-border-color;
 
 
       .note-title-row {
@@ -42,10 +46,10 @@ $private-red: #8A0116;
 
         .note-message-content {
           width: 100%;
-          border: 1px solid #d6d6d6;
+          // border: 1px solid #d6d6d6;
           font-size: 1em;
           padding: 10px;
-          background-color: rgba(255,255,255,.4);
+          background-color: rgba(255,255,255,.7);
         }
 
         .note-message-footer {
