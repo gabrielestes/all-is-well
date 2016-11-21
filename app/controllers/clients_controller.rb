@@ -11,6 +11,7 @@ class ClientsController < ApplicationController
       @user.userable = @client
       @user.save!
       sign_in @user
+      redirect_to client_index_path(@client.id)
     end
   end
 
