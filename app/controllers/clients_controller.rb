@@ -19,11 +19,25 @@ class ClientsController < ApplicationController
     current_client
   end
 
+  def update
+    current_client
+    e = Contact.where(client_id: params[:format]).first_or_create!
+    e.update(phone: params[:contacts][:phone])
+    e.save!
+    @current_client.update client_params
+    @current_client.save!
+    redirect_to client_profile_path
+  end
+
+  # def new_contact
+  #   @contact = Contact.new contact_params
+  #   # Contact.new(client_id: @current_client.id, phone: params[:phone]).save!
+  # end
 
   private
 
   def client_params
-    params.require(:client).permit(
+    params.permit(
       :therapist_id,
       :first_name,
       :last_name,

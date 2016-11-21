@@ -1,8 +1,8 @@
   <main>
     <div class="t-index">
       <div class="sort">
-        <%= link_to "Sort by Wellness", "/therapist/#{@therapist.id}?sort_by=wellness", class:"actives", id:"wellness" %>
-        <%= link_to "Sort by Name", "/therapist/#{@therapist.id}?sort_by=last_name" ,id:"name"%>
+        <%= link_to "Sort by Wellness", "/therapist?sort_by=wellness", class:"actives", id:"wellness" %>
+        <%= link_to "Sort by Name", "/therapist?sort_by=last_name" ,id:"name"%>
       </div>
       <%= render :partial => "therapists/shared/patient_card" %>
 

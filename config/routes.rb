@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'client/entries/:id' => 'entries#entries_index', as: 'entries_index'
+  get 'client/entries' => 'entries#entries_index', as: 'entries_index'
+
+  post 'client/entries' => 'entries#create', as: 'create_entry'
 
   get 'client/events/:id' => 'events#events_index', as: 'events_index'
 
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
 
   get 'client/notes/:id' => 'notes#notes_index', as: 'c_notes_index'
 
-  get '/therapist/profile/:id' => 'therapists#t_profile', as: 't_profile'
+  get '/therapist/profile' => 'therapists#t_profile', as: 't_profile'
 
   put '/therapist/profile/:id', to: 'therapists#update', as: 'update_therapist'
 
@@ -20,9 +22,11 @@ Rails.application.routes.draw do
 
   get 'client/new'
 
-  get 'client/:id' => 'clients#index', as: 'client_index'
+  get 'client' => 'clients#index', as: 'client_index'
 
-  get '/client/profile/:id' => 'clients#c_profile', as: 'client_profile'
+  get '/client/profile' => 'clients#c_profile', as: 'client_profile'
+
+  put '/client/profile', to: 'clients#update', as: 'update_client'
 
   post 'client' => 'clients#new', as: 'new_client'
 
@@ -32,7 +36,11 @@ Rails.application.routes.draw do
 
   get '/index' => 'registrations#index'
 
-  authenticated :user do
+  authenticated :user, lambda { |u| u.userable_type == 'Client' } do
+    root :to => 'clients#index'
+  end
+
+  authenticated :user, lambda { |u| u.userable_type == 'Therapist' } do
     root :to => 'therapists#index'
   end
 
@@ -40,7 +48,7 @@ Rails.application.routes.draw do
     get '/', to: 'devise/sessions#new', as: 'sign_in'
   end
 
-  get 'therapist/:id' => 'therapists#index'
+  get 'therapist' => 'therapists#index'
 
   post 'therapist' => 'therapists#new', as: 'new_therapist'
 
@@ -55,7 +63,6 @@ Rails.application.routes.draw do
 
 # Client profile, id is client's id
   get 'therapist/c_profile/:id' => 'therapists#c_profile', as: 'c_profile'
-
 
   devise_for :users
 end

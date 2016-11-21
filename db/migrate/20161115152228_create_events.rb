@@ -5,6 +5,7 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.string :event_type
       t.date :date
       t.text :description
+      t.boolean :read, default: false
 
       t.timestamps
     end
