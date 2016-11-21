@@ -28,7 +28,7 @@ $seagreenT: rgba(55, 207, 176, 0.4);
     .form-wrap {
 
         width: 400px;
-        background-color: $seagreenT;
+        background-color: #A3E0D3;
         padding: 2em;
 
         @media (max-width: 600px) {
@@ -70,7 +70,7 @@ $seagreenT: rgba(55, 207, 176, 0.4);
          input.button {
           font-family: inherit;
           font-size: 1.2em;
-          color: #000;
+          color: #fff;
           border: 0;
           border-radius: 2px;
           text-align: center;
@@ -80,7 +80,7 @@ $seagreenT: rgba(55, 207, 176, 0.4);
           background-color: shade($seagreenT, 5%);
           cursor: pointer;
           &:hover {
-            color: #fff;
+            color: #FAFFBD;
             background-color: shade($seagreenT, 10%);
           }
         }
