@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'client/notes/:id' => 'notes#notes_index', as: 'c_notes_index'
 
-  get '/therapist/profile/:id' => 'therapists#t_profile', as: 't_profile'
+  get '/therapist/profile' => 'therapists#t_profile', as: 't_profile'
 
   put '/therapist/profile/:id', to: 'therapists#update', as: 'update_therapist'
 

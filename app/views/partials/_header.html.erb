@@ -10,7 +10,7 @@
         <%= link_to "/#{current_user.userable_type.downcase}/#{current_user.userable.id}" do %>
           <div class="header-nav-opt">Home</div>
         <% end %>
-        <%= link_to "/#{current_user.userable_type.downcase}/profile/#{current_user.userable.id}" do %>
+        <%= link_to "/#{current_user.userable_type.downcase}/profile" do %>
           <div class="header-nav-opt">Account</div>
         <% end %>
         <%= link_to destroy_user_session_path, :method => :delete do %>
