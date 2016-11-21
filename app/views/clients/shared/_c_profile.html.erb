@@ -20,12 +20,19 @@
 
     <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob %></div><a class="edit">Edit</a></span></div>
       <aside class="dob disappear">
+        <%= form_for @current_client, url: update_client_path(current_user.userable_id), method: :put do |f| %>
         <div>
+          <%= f.datetime_select :birth_date, class: 'edit-data', id: 'year' %>
+        </div>
+        <div><%= f.submit 'Submit', class: 'button' %></div>
+      <% end %>
+
+        <!-- <div>
           <input class="edit-data" type="number" id="month" placeholder="MM"/>
           <input class="edit-data" type="number" id="date" placeholder="DD"/>
           <input class="edit-data" type="number" id="year" placeholder="YYYY"/>
         </div>
-        <input class="button" type="submit" value="Submit"/>
+        <input class="button" type="submit" value="Submit"/> -->
     </aside>
 
     <div class="data-block phone"><h3>Primary Phone Number: </h3><span><div><%= @client_phone %></div><a class="edit">Edit</a></span></div>
