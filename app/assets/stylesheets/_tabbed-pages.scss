@@ -1,13 +1,4 @@
-@function shade($color, $percent) {
-  @return mix(#000, $color, $percent);
-}
 
-$jade: #7cdfcb;
-$tabbed-pages-border-color: shade($jade, 10%);
-$deep-jade: #30C5A7;
-$medium-jade: #4AD3B8;
-$pale-jadeTb: rgba(124, 223, 203, 0.3);
-$pale-jadeTb-inactive: rgba(124, 223, 203, 0.6);
 
 
 
@@ -22,8 +13,6 @@ $pale-jadeTb-inactive: rgba(124, 223, 203, 0.6);
           .tab-a, .tab-b {
               float: left;
               width: 50%;
-              border-bottom: 1px solid $tabbed-pages-border-color;
-              background-color: $pale-jadeTb-inactive;
 
               #tab-a-btn, #tab-b-btn {
                   &:hover, &:active {
@@ -32,13 +21,8 @@ $pale-jadeTb-inactive: rgba(124, 223, 203, 0.6);
                 }
 
               &.active {
-                  background-color: $pale-jadeTb;
-                  border-right: 1px solid $tabbed-pages-border-color;
-                  border-top: 1px solid $tabbed-pages-border-color;
-                  border-left: 1px solid $tabbed-pages-border-color;
-                  border-bottom: none;
-
                     #tab-a-btn, #tab-b-btn {
+                      text-decoration: underline;
                   &:hover, &:active {
                     color: #000;
                   }
@@ -62,10 +46,6 @@ $pale-jadeTb-inactive: rgba(124, 223, 203, 0.6);
       }
 
     .tabs-content {
-      background-color: $pale-jadeTb;
-      border-right: 1px solid $tabbed-pages-border-color;
-      border-bottom: 1px solid $tabbed-pages-border-color;
-      border-left: 1px solid $tabbed-pages-border-color;
       padding: 15px;
       padding-top: 25px;
     }
