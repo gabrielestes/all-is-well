@@ -1,14 +1,17 @@
 Rails.application.routes.draw do
 
-  get 'client/entries/:id' => 'entries#entries_index'
+  get 'client/entries/:id' => 'entries#entries_index', as: 'entries_index'
 
-  get 'client/events' => 'events#events_index'
+  get 'client/events/:id' => 'events#events_index', as: 'events_index'
 
   get 'client/surveys/:id' => 'surveys#surveys_index', as: 'surveys_index'
+
+  get 'client/notes/:id' => 'notes#notes_index', as: 'c_notes_index'
 
   get '/therapist/profile/:id' => 'therapists#t_profile', as: 't_profile'
 
   put '/therapist/profile/:id', to: 'therapists#update', as: 'update_therapist'
+
 
 # Create a new note
   get 'therapist/note/:id' => 'notes#notes_index', as: 'notes_index'
@@ -18,6 +21,8 @@ Rails.application.routes.draw do
   get 'client/new'
 
   get 'client/:id' => 'clients#index', as: 'client_index'
+
+  get '/client/profile/:id' => 'clients#c_profile', as: 'client_profile'
 
   post 'client' => 'clients#new', as: 'new_client'
 
