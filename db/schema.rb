@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20161119190113) do
     t.string   "first_name"
     t.string   "last_name"
     t.string   "initial"
-    t.string   "birth_date"
+    t.datetime "birth_date"
     t.string   "phone"
     t.json     "emergency"
     t.integer  "wellness"
@@ -45,8 +45,9 @@ ActiveRecord::Schema.define(version: 20161119190113) do
     t.string   "event_type"
     t.date     "date"
     t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.boolean  "read",        default: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.index ["client_id"], name: "index_events_on_client_id", using: :btree
   end
 
@@ -56,8 +57,9 @@ ActiveRecord::Schema.define(version: 20161119190113) do
     t.string   "title"
     t.text     "message"
     t.boolean  "shared"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.boolean  "read",         default: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
     t.index ["client_id"], name: "index_notes_on_client_id", using: :btree
     t.index ["therapist_id"], name: "index_notes_on_therapist_id", using: :btree
   end
@@ -65,17 +67,19 @@ ActiveRecord::Schema.define(version: 20161119190113) do
   create_table "posts", force: :cascade do |t|
     t.integer  "client_id"
     t.boolean  "sharable",   default: true
+    t.boolean  "read",       default: false
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.index ["client_id"], name: "index_posts_on_client_id", using: :btree
   end
 
   create_table "surveys", force: :cascade do |t|
     t.integer  "client_id"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.boolean  "read",           default: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "question_one"
     t.integer  "question_two"
     t.integer  "question_three"

@@ -21,10 +21,15 @@ class ClientsController < ApplicationController
 
   def update
     current_client
+    # new_contact
     @current_client.update client_params
     redirect_to client_profile_path
   end
 
+  # def new_contact
+  #   @contact = Contact.new contact_params
+  #   # Contact.new(client_id: @current_client.id, phone: params[:phone]).save!
+  # end
 
   private
 

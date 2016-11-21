@@ -22,7 +22,7 @@
       <aside class="dob disappear">
         <%= form_for @current_client, url: update_client_path(current_user.userable_id), method: :put do |f| %>
         <div>
-          <%= f.datetime_select :birth_date, class: 'edit-data', id: 'year' %>
+          <%= f.date_select :birth_date, {order: [:month, :day, :year], start_year: Date.today.year - 100, end_year: Date.today.year - 1}, class: 'edit-data', id: 'year' %>
         </div>
         <div><%= f.submit 'Submit', class: 'button' %></div>
       <% end %>
@@ -38,17 +38,32 @@
     <div class="data-block phone"><h3>Primary Phone Number: </h3><span><div><%= @client_phone %></div><a class="edit">Edit</a></span></div>
       <aside class="phone disappear">
         <div>
+          <%= form_for @current_client, url: update_client_path(current_user.userable_id), method: :put do |f| %>
+            <%= f.text_field :phone, class: 'edit-data', id: 'phone' %>
+            <div><%= f.submit 'Submit', class: 'button' %></div>
+          <% end %>
+      </div>
+    </div>
+        <!-- <div>
           <input class="edit-data" type="text" id="phone" placeholder="<%=  %>"/>
         </div>
-        <input class="button" type="submit" value="Submit"/>
+        <input class="button" type="submit" value="Submit"/> -->
       </aside>
 
     <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span><div><%= @client_contact %></div><a class="edit">Edit</a></span></div>
       <aside class="em_phone disappear">
         <div>
+          <%= form_for Contact.new, url: update_client_path(current_user.userable_id), method: :put do |f| %>
+            <% f.hidden_field :client_id, value: @current_client.id %>
+            <%= f.text_field :phone, class: 'edit-data', id: 'em_phone' %>
+            <div><%= f.submit 'Submit', class: 'button' %></div>
+          <% end %>
+      </div>
+
+        <!-- <div>
           <input class="edit-data" type="text" id="em_phone" placeholder="098-765-4321"/>
         </div>
         <input class="button" type="submit" value="Submit"/>
-      </aside>
+      </aside> -->
 
   </section>
