@@ -1,21 +1,22 @@
 <div class="t-view-dashboard">
     <div class="t-dashboard">
-      <%= link_to client_activity_path(params[:id]), class:"t-dashboard-opt" do %>
+      <%= link_to client_activity_path(params[:id]), class:"t-dashboard-opt", id:"first-opt" do %>
         <div>
           <h3>All Activity</h3>
         </div>
         <% end %>
-        <%= link_to client_calendar_path(params[:id]), class:"t-dashboard-opt" do %>
+        <%= link_to client_calendar_path(params[:id]), class:"t-dashboard-opt", id:"second-opt" do %>
         <div>
           <h3>Calendar</h3>
         </div>
         <% end %>
-        <%= link_to c_profile_path(params[:id]), class:"t-dashboard-opt" do %>
+        <%= link_to c_profile_path(params[:id]), class:"t-dashboard-opt", id:"third-opt" do %>
         <div>
           <h3>Client Profile</h3>
         </div>
         <% end %>
-        <%= link_to notes_index_path(params[:id]), class:"t-dashboard-opt" do %>
+        <%= link_to notes_index_path(params[:id]), class:"t-dashboard-opt",
+        id:"fourth-opt" do %>
         <div>
           <h3>Notes</h3>
         </div>

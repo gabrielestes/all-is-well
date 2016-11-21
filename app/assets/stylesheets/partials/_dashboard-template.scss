@@ -24,7 +24,7 @@ $seafoam: #A3E0D3;
 .c-view-dashboard {
   z-index: 2;
   font-family: 'Quicksand', sans-serif;
-  transition: all .5s ease-in-out;
+  transition: all .3s linear;
   visibility: hidden;
   position: fixed;
   padding-top: 100px;
@@ -63,8 +63,13 @@ $seafoam: #A3E0D3;
               .t-dashboard-opt h3,
               .c-dashboard-opt h3 {
                   color: #000;
-
                 }
+
+                .t-dashboard-opt.selected h3,
+                .c-dashboard-opt.selected h3 {
+                    color: #fff;
+                  }
+
               .t-dashboard-opt:hover h3,
               .t-dashboard-opt:active h3,
               .c-dashboard-opt:hover h3,
@@ -105,11 +110,11 @@ $seafoam: #A3E0D3;
   border-top: .25px solid $seagreenM;
 
       h3 {
-        transition: color .3s linear;
+        // transition: color .3s linear;
       }
 
       &:hover {
-        background-color: $seagreen;
+        // background-color: $seagreen;
           h3 {
         color: #fff;
         transition: none;
@@ -120,6 +125,14 @@ $seafoam: #A3E0D3;
           transition: none;
         }
 
+      &.selected {
+        background-color: $seagreen;
+          h3 {
+          color: #fff;
+          text-decoration: underline;
+        }
+      }
+
       @media (min-width: 700px) {
         border-right: .25px solid $seagreenM;
 
@@ -127,6 +140,8 @@ $seafoam: #A3E0D3;
            color: transparent;
            font-size: 1.1em;
          }
+
+
       }
 
 }
@@ -182,7 +197,7 @@ $seafoam: #A3E0D3;
   display: flex;
   flex-direction: column;
   padding-top: 50px;
-  transition: all .5s ease-in-out;
+  transition: all .3s linear;
 
   &.initial-page-load {
     transition: none;
@@ -223,7 +238,7 @@ $seafoam: #A3E0D3;
   border-top: .25px solid $seagreenM;
   align-items: center;
   justify-content: flex-end;
-  transition: all .5s ease-in-out;
+  transition: all .3s linear;
   cursor: default;
 
   &.initial-page-load {

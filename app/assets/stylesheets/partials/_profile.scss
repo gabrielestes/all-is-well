@@ -15,6 +15,17 @@ $seagreenLb: rgb(107, 213, 192);
   @return mix(#fff, $color, $percent);
 }
 
+aside.my-therapist {
+  div {
+    padding-bottom: 50px;
+    width: 90%;
+    .t-data .data-block {
+      &:hover {
+        background-color: $seagreenLb !important;
+      }
+  }
+  }
+}
 
 
 
@@ -26,14 +37,14 @@ $seagreenLb: rgb(107, 213, 192);
     display: flex;
     max-width: 600px;
     .data {
-      background: $seagreenLb;
+      background: none;
       display: flex;
       flex-direction: column;
       width: 100%;
       .data-block {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
 
         h3 {
           font-size: 1.2em;
@@ -45,10 +56,10 @@ $seagreenLb: rgb(107, 213, 192);
         }
         span {
           display: flex;
-          justify-content: center;
+          justify-content: flex-start;
           font-size: 30px;
           padding: 3%;
-          color: #fff;
+          color: $seagreen;
           width: 100%;
           @media (max-width: 470px){
               font-size: 16px;
