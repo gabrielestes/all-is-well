@@ -11,8 +11,10 @@ class ApplicationController < ActionController::Base
     @current_client = Client.find_by_id(params[:id])
     @client_name = @current_client.first_name + ' ' + @current_client.last_name
     @client_dob = @current_client.birth_date
-    @client_phone = @current_client.phone
-    @client_contact = Contact.where(client_id: @current_client.id).first.phone
+    unless Contact.where(client_id: @current_client).first.nil?
+      @client_contact = Contact.where(client_id: @current_client.id).first.phone
+      @client_phone = @current_client.phone
+    end
 
   end
 
