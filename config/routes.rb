@@ -32,9 +32,17 @@ Rails.application.routes.draw do
 
   get '/index' => 'registrations#index'
 
-  authenticated :user do
+  authenticated :user, lambda { |u| u.userable_type == 'Client' } do
+    root :to => 'clients#index'
+  end
+
+  authenticated :user, lambda { |u| u.userable_type == 'Therapist' } do
     root :to => 'therapists#index'
   end
+
+  # authenticated :user do
+  #   root :to => 'therapists#index'
+  # end
 
   devise_scope :user do
     get '/', to: 'devise/sessions#new', as: 'sign_in'
