@@ -1,13 +1,12 @@
-<%= @client.first_name %>
-
-
-
-
 <main class="client-landing-page">
 
   <div class="nav-wrapper">
+    <%= link_to surveys_index_path(params[:id]) do %>
       <div class="main-nav-opt">Mood</div>
+    <% end %>
+    <%= link_to entries_index_path(params[:id]) do %>
       <div class="main-nav-opt">Entries</div>
+    <% end %>
       <div class="main-nav-opt">Events</div>
       <div class="main-nav-opt">Notes</div>
   </div>

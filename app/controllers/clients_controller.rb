@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
 
   def index
-    @client = Client.find(1)
+    @current_client = Client.find(current_user.userable_id)
   end
 
   def new
