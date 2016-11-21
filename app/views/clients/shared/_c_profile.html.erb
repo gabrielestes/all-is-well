@@ -53,7 +53,7 @@
     <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span><div><%= @client_contact %></div><a class="edit">Edit</a></span></div>
       <aside class="em_phone disappear">
         <div>
-          <%= form_for Contact.new, url: update_client_path(current_user.userable_id), method: :put do |f| %>
+          <%= form_for :contacts, url: update_client_path(current_user.userable_id), method: :put do |f| %>
             <% f.hidden_field :client_id, value: @current_client.id %>
             <%= f.text_field :phone, class: 'edit-data', id: 'em_phone' %>
             <div><%= f.submit 'Submit', class: 'button' %></div>

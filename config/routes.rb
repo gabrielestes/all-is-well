@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'client/entries/:id' => 'entries#entries_index', as: 'entries_index'
+  get 'client/entries' => 'entries#entries_index', as: 'entries_index'
+
+  post 'client/entries' => 'entries#create', as: 'create_entry'
 
   get 'client/events/:id' => 'events#events_index', as: 'events_index'
 
