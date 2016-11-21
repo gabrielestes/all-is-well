@@ -1,5 +1,6 @@
 <!-- activities can be one of three types: event, entry, or mood. should be indicated as class value on enclosing div. -->
 
+
 <% @events.each do |e| %>
   <div class="patient_card event">
     <p class="date"><%= e.created_at.to_date %></p>

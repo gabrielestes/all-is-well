@@ -1,10 +1,24 @@
   <main>
-    <div class="t-index">
-      <div class="sort">
-        <%= link_to "Sort by Wellness", "/therapist/#{@therapist.id}?sort_by=wellness", class:"actives", id:"wellness" %>
-        <%= link_to "Sort by Name", "/therapist/#{@therapist.id}?sort_by=last_name" ,id:"name"%>
-      </div>
-      <%= render :partial => "therapists/shared/patient_card" %>
 
-  </div>
+    <div  class="clients-header">
+      <h1>Client List</h1>
+    </div>
+
+    <div class="t-index">
+      <div class="sort-background">
+        <div class="sort">
+          <a>Click to Sort:</a>
+          <%= link_to "Wellness", "/therapist/#{@therapist.id}?sort_by=wellness", class:"actives", id:"wellness" %>
+          <%= link_to "Name", "/therapist/#{@therapist.id}?sort_by=last_name" ,id:"name"%>
+        </div>
+
+        <a id="patient_card_header"><div class="patient_card">
+            <p class="id_number">Id</p>
+            <p class="pt_name">Name</p>
+            <p class="pt_wellness">Wellness Score</p>
+        </div></a>
+
+        <%= render :partial => "therapists/shared/patient_card" %>
+      </div>
+    </div>
   </main>
