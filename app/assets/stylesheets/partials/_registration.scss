@@ -32,8 +32,10 @@ main.registration {
     align-items: center;
     &:hover,
     &.active {
+      background: #A3ADC2;
       h3 {
-        color: #fff;
+        color: #FAFFBD;
+        transform: scale(1.1);
       }
     }
     h3 {
@@ -42,10 +44,10 @@ main.registration {
     }
   }
   .register-therapist {
-    background: $seagreenM;
+    background: #A3E0D3;
   }
   .register-client {
-    background: $seagreen;
+    background: #A3E0D3;
 
   }
   .new-therapist,

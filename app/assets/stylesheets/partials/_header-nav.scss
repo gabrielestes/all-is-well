@@ -4,6 +4,8 @@ $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenM: rgb(35, 188, 158);
 $seagreenD: #0A382F;
 
+$seafoam: #A3E0D3;
+
 
 
 header {
@@ -12,11 +14,13 @@ header {
   top: 0;
   width: 100%;
   background-color: $seagreen;
-  height: 30px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   z-index: 3;
+  color: #fff;
+  // border-bottom: 1px #;
 
       .site-logo {
         margin: 0 10px;
@@ -69,11 +73,13 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #fff;
 
     &:hover {
       cursor: pointer;
-      background-color: tint($seagreen, 25%);
-      color: #fff;
+      // background-color: tint($seagreen, 25%);
+      // color: #FAFFBD;
+      text-decoration: underline;
     }
 
 
@@ -84,7 +90,7 @@ nav {
     &:hover {
       cursor: pointer;
       background-color: $seagreen;
-      color: #fff;
+      // color:#FAFFBD;
     }
   }
 

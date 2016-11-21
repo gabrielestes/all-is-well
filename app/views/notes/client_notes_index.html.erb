@@ -1,0 +1,34 @@
+<%= render :partial => "therapists/shared/t_dashboard" %>
+<div class="t-view-content">
+<%= render :partial => "therapists/shared/t_view_header" %>
+<div class="t-view-main">
+
+  <!-- PUT THERAPIST VIEW PAGE CONTENT BELOW HERE -->
+
+
+          <div class="tabbed-views-wrapper">
+              <div class="tabs">
+                  <div class="tab-a active">
+                      <button id="tab-a-btn">All Notes</button>
+                  </div>
+            
+              </div>
+              <div class="tabs-content">
+                  <div class="active" id="tab-a-content">
+                    <div class="view-notes-container">
+                    <%= render :partial => "notes/shared/note_card" %>
+                    </div>
+                  </div>
+
+              </div>
+          </div>
+
+
+
+
+
+  <!-- END THERAPIST VIEW PAGE CONTENT -->
+
+
+</div>
+</div>
