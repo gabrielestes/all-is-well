@@ -22,12 +22,12 @@
         <section>
           <div class="privacy">
             <div class="togglePrivacy">
-              <!-- <%= check_box 'togglePrivacy', '0', id:"togglePrivacy", class: 'togglePrivacy'%> -->
+              <%= e.check_box :sharable, { name: 'togglePrivacy', class: 'togglePrivacy', id: "togglePrivacy"}, false, true %>
               <label class="togglePrivacy-label" for="togglePrivacy"><span></span></label>
             </div>
           </div>
 
-      <div><%= e.submit 'Submit', class: 'button' %></div>
+          <div><%= e.submit 'Submit', class: 'button' %></div>
           <!-- <input type="submit" class="button" value="Submit Entry"/> -->
         </section>
     <% end %>
