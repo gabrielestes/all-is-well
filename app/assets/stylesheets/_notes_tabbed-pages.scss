@@ -1,4 +1,4 @@
-
+$fun: #b1269e;
 
 
 
@@ -16,16 +16,16 @@
 
               #tab-a-btn, #tab-b-btn {
                   &:hover, &:active {
-                    color: #fff;
+                    color: $fun;
+
                   }
                 }
 
               &.active {
                     #tab-a-btn, #tab-b-btn {
+                      color: $fun;
                       text-decoration: underline;
-                  &:hover, &:active {
-                    color: #000;
-                  }
+
                 }
               }
 

@@ -7,6 +7,7 @@ $seagreenD: #0A382F;
 $seagreenM: rgb(35, 188, 158);
 
 $seafoam: #A3E0D3;
+$fun: #b1269e;
 
 
 
@@ -147,44 +148,6 @@ $seafoam: #A3E0D3;
 }
 
 
-//
-// .t-dashboard-opt:nth-child(1),
-// .c-dashboard-opt:nth-child(1) {
-//   background-color: $jade;
-//   border-top: .25px solid shade($jade, 10%);
-//     &:hover {
-//       background-color: $seagreen;
-//     }
-// }
-//
-// .t-dashboard-opt:nth-child(2),
-// .c-dashboard-opt:nth-child(2) {
-//     background-color: $jade;
-//   border-top: .25px solid shade($medium-jade, 10%);
-//   &:hover {
-//       background-color: $seagreen;
-//   }
-// }
-//
-// .t-dashboard-opt:nth-child(3),
-// .c-dashboard-opt:nth-child(3) {
-//     background-color: $jade;
-//   border-top: .25px solid shade($seagreen, 10%);
-//   &:hover {
-//       background-color: $seagreen;
-//   }
-// }
-//
-// .t-dashboard-opt:nth-child(4),
-// .c-dashboard-opt:nth-child(4) {
-//   background-color: $jade;
-//   border-top: .25px solid shade($deep-jade, 10%);
-//   &:hover {
-//       background-color: $seagreen;
-//   }
-// }
-
-
 // ****** THERAPIST VIEW CONTENT PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
 .t-view-content,
@@ -240,6 +203,9 @@ $seafoam: #A3E0D3;
   justify-content: flex-end;
   transition: all .3s linear;
   cursor: default;
+      h3 {
+        color: $fun;
+      }
 
   &.initial-page-load {
     transition: none;
