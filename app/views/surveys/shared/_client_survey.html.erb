@@ -1,0 +1,141 @@
+<h1>HI IM THE CLIENT SURVEY PARTIAL Y'ALL</h1>
+<!-- <p>
+  1. Little interest or pleasure in doing things
+  2. Feeling down, depressed, or hopeless
+  3. Trouble falling or staying asleep, or sleeping too much
+  4. Feeling tired or having little energy
+  5. Poor appetite or overeating
+  6. Feeling bad about yourself — or that you are a failure or
+    have let yourself or your family down
+  7. Trouble concentrating on things, such as reading the
+    newspaper or watching television
+  8. Moving or speaking so slowly that other people could have
+    noticed? Or the opposite — being so fidgety or restless
+    that you have been moving around a lot more than usual
+  9. Thoughts that you would be better off dead or of hurting
+    yourself in some way.
+
+  If you checked off any problems, how difficult have these problems made it for you to do your
+  work, take care of things at home, or get along with other people?
+  Not difficult at all, Somewhat difficult, Very difficult, Extremely difficult -->
+<!-- </p> -->
+
+<div>
+  <%= form_for Survey.new, url: create_survey_path, method: :post do |s| %>
+    <div>
+      <span>Little interest or pleasure in doing things</span><br>
+      <%= radio_button_tag(:q1, 0) %>
+      <%= label_tag(:q1, "Not at all") %><br>
+      <%= radio_button_tag(:q1, 1) %>
+      <%= label_tag(:q1, "Several days") %><br>
+      <%= radio_button_tag(:q1, 2) %>
+      <%= label_tag(:q1, "More than half the days") %><br>
+      <%= radio_button_tag(:q1, 3) %>
+      <%= label_tag(:q1, "More than every day") %><br>
+    </div>
+
+    <div>
+      <span>Feeling down, depressed, or hopeless</span><br>
+      <%= radio_button_tag(:q2, 0) %>
+      <%= label_tag(:q2, "Not at all") %><br>
+      <%= radio_button_tag(:q2, 1) %>
+      <%= label_tag(:q2, "Several days") %><br>
+      <%= radio_button_tag(:q2, 2) %>
+      <%= label_tag(:q2, "More than half the days") %><br>
+      <%= radio_button_tag(:q2, 3) %>
+      <%= label_tag(:q2, "More than every day") %><br>
+    </div>
+
+    <div>
+      <span>Trouble falling or staying asleep, or sleeping too much</span><br>
+      <%= radio_button_tag(:q3, 0) %>
+      <%= label_tag(:q3, "Not at all") %><br>
+      <%= radio_button_tag(:q3, 1) %>
+      <%= label_tag(:q3, "Several days") %><br>
+      <%= radio_button_tag(:q3, 2) %>
+      <%= label_tag(:q3, "More than half the days") %><br>
+      <%= radio_button_tag(:q3, 3) %>
+      <%= label_tag(:q3, "More than every day") %><br>
+    </div>
+
+    <div>
+      <span>Feeling tired or having little energy</span><br>
+      <%= radio_button_tag(:q4, 0) %>
+      <%= label_tag(:q4, "Not at all") %><br>
+      <%= radio_button_tag(:q4, 1) %>
+      <%= label_tag(:q4, "Several days") %><br>
+      <%= radio_button_tag(:q4, 2) %>
+      <%= label_tag(:q4, "More than half the days") %><br>
+      <%= radio_button_tag(:q4, 3) %>
+      <%= label_tag(:q4, "More than every day") %><br>
+    </div>
+
+    <div>
+      <span>Poor appetite or overeating</span><br>
+      <%= radio_button_tag(:q5, 0) %>
+      <%= label_tag(:q5, "Not at all") %><br>
+      <%= radio_button_tag(:q5, 1) %>
+      <%= label_tag(:q5, "Several days") %><br>
+      <%= radio_button_tag(:q5, 2) %>
+      <%= label_tag(:q5, "More than half the days") %><br>
+      <%= radio_button_tag(:q5, 3) %>
+      <%= label_tag(:q5, "More than every day") %><br>
+    </div>
+
+    <div>
+      <span>Feeling bad about yourself - or that you are a failure or that you have let yourself or your family down</span><br>
+      <%= radio_button_tag(:q6, 0) %>
+      <%= label_tag(:q6, "Not at all") %><br>
+      <%= radio_button_tag(:q6, 1) %>
+      <%= label_tag(:q6, "Several days") %><br>
+      <%= radio_button_tag(:q6, 2) %>
+      <%= label_tag(:q6, "More than half the days") %><br>
+      <%= radio_button_tag(:q6, 3) %>
+      <%= label_tag(:q6, "More than every day") %><br>
+    </div>
+    <div>
+      <span>Trouble concentrating on things, such as reading the newspaper or watching TV</span><br>
+      <%= radio_button_tag(:q7, 0) %>
+      <%= label_tag(:q7, "Not at all") %><br>
+      <%= radio_button_tag(:q7, 1) %>
+      <%= label_tag(:q7, "Several days") %><br>
+      <%= radio_button_tag(:q7, 2) %>
+      <%= label_tag(:q7, "More than half the days") %><br>
+      <%= radio_button_tag(:q7, 3) %>
+      <%= label_tag(:q7, "More than every day") %><br>
+    </div>
+
+    <div>
+      <span>
+          Moving or speaking or so slowly that other people could have noticed?
+          Or the opposite -- being so fidgety or restless that you have been
+          moving around a lot more than usual
+      </span><br>
+      <%= radio_button_tag(:q8, 0) %>
+      <%= label_tag(:q8, "Not at all") %><br>
+      <%= radio_button_tag(:q8, 1) %>
+      <%= label_tag(:q8, "Several days") %><br>
+      <%= radio_button_tag(:q8, 2) %>
+      <%= label_tag(:q8, "More than half the days") %><br>
+      <%= radio_button_tag(:q8, 3) %>
+      <%= label_tag(:q8, "More than every day") %><br>
+    </div>
+
+    <div>
+      <span>Thoughts of self harm or worthlessness</span><br>
+      <%= radio_button_tag(:q9, 0) %>
+      <%= label_tag(:q9, "Not at all") %><br>
+      <%= radio_button_tag(:q9, 1) %>
+      <%= label_tag(:q9, "Several days") %><br>
+      <%= radio_button_tag(:q9, 2) %>
+      <%= label_tag(:q9, "More than half the days") %><br>
+      <%= radio_button_tag(:q9, 3) %>
+      <%= label_tag(:q9, "More than every day") %><br>
+    </div>
+
+    <div>
+      <%= s.submit "Submit" %>
+    </div>
+
+  <% end %>
+</div>

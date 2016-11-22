@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   get 'client/surveys' => 'surveys#surveys_index', as: 'surveys_index'
 
+  post 'client/surveys' => 'surveys#create', as: 'create_survey'
+
   get 'client/notes' => 'notes#client_notes_index', as: 'c_notes_index'
 
   get '/therapist/profile' => 'therapists#t_profile', as: 't_profile'

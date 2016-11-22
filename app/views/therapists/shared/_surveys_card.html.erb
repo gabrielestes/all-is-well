@@ -2,7 +2,15 @@
   <div class="patient_card mood">
     <p class="date"><%= s.created_at.to_date %></p>
     <p class="time"><%= s.created_at.strftime("%H:%M") %></p>
-    <p class="activity-type">Mood</p>
-    <i class="fa fa-smile-o"></i>
+    <p class="activity-type">Mood: <%= s.total %></p>
+    <% if s.total < 5 %>
+      <i class="fa fa-smile-o"></i>
+    <% elsif s.total < 10 %>
+      <i class="fa fa-smile-o"></i>
+    <% elsif s.total < 15 %>
+      <i class="fa fa-meh-o"></i>
+    <% elsif s.total < 27 %>
+      <i class="fa fa-frown-o"></i>
+    <% end %>
   </div>
 <% end %>
