@@ -43,6 +43,9 @@ $fun: #b1269e;
   &.c-dashboard-active {
     visibility: visible;
     height: 100%;
+    @media (max-width: 700px) {
+      height: 45%;
+    }
   }
 
 
@@ -60,6 +63,7 @@ $fun: #b1269e;
 
             &.t-dashboard-active,
             &.c-dashboard-active {
+
               width: 20%;
               .t-dashboard-opt h3,
               .c-dashboard-opt h3 {
