@@ -19,11 +19,11 @@ $fun: #b1269e;
   @return mix(#000, $color, $percent);
 }
 
-// ****** THERAPIST VIEW DASHBOARD PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
+// ****** THERAPIST/CLIENT VIEW DASHBOARD PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
 .t-view-dashboard,
 .c-view-dashboard {
-  z-index: 2;
+  z-index: 6;
   font-family: 'Quicksand', sans-serif;
   transition: all .3s linear;
   visibility: hidden;
@@ -141,7 +141,7 @@ $fun: #b1269e;
 }
 
 
-// ****** THERAPIST VIEW CONTENT PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
+// ****** THERAPIST/CLIENT VIEW CONTENT PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
 .t-view-content,
 .c-view-content {
@@ -171,7 +171,7 @@ $fun: #b1269e;
 }
 
 
-// ****** THERAPIST VIEW MAIN STYLING - APPLIES ACROSS MANY PAGES ***** //
+// ****** THERAPIST/CLIENT VIEW MAIN STYLING - APPLIES ACROSS MANY PAGES ***** //
 // ****** VARIOUS PAGE VIEW CONTENT LIVES WITHIN THIS DIV ***** //
 
 .t-view-main,
@@ -181,11 +181,11 @@ $fun: #b1269e;
 
 
 
-// ****** THERAPIST VIEW HEADER PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
+// ****** THERAPIST/CLIENT VIEW HEADER PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
 .t-view-header,
 .c-view-header {
-  z-index: 2;
+  z-index: 6;
   display: flex;
   position: fixed;
   width: 100%;
