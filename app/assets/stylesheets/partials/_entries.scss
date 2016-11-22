@@ -76,9 +76,15 @@ $fun: #b1269e;
   .entry-text-container {
     background: $seafoam;
     padding: 5px;
+    h2.title {
+      font-size:18px;
+      color: $fun;
+      overflow-wrap: break-word;
+    }
   }
   .entry-text {
     margin: 15px 0;
+    overflow-wrap: break-word;
   }
   .entry-timestamp {
     margin: 15px 0;
@@ -171,7 +177,7 @@ $fun: #b1269e;
   .title label,
   .text label {
     font-size: 18px;
-    margin: 10px 0px;
+    margin: 10px 5px;
     color: $seagreenD;
     font-weight: 200;
     width: 50px;
