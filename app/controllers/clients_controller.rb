@@ -7,6 +7,10 @@ class ClientsController < ApplicationController
   def new
     @client = Client.new client_params
     if @client.save!
+      @contact = Contact.new(phone: params[:contact][:phone])
+      @contact.client_id = @client.id
+      @contact.save!
+      debugger
       @user = User.new user_params
       @user.userable = @client
       @user.save!
@@ -17,6 +21,7 @@ class ClientsController < ApplicationController
 
   def c_profile
     client_user
+    @therapist_name = @client_therapist.first_name + " " + @client_therapist.last_name
   end
 
   def update
@@ -50,4 +55,8 @@ class ClientsController < ApplicationController
   def user_params
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
+
+  # def contact_params
+  #   params.permit(:client_id, :phone)
+  # end
 end
