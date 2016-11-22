@@ -56,7 +56,8 @@ $fun: #b1269e;
             }
         }
 
-        .note-message-content {
+        .note-message-content,
+        .entry-view-content {
           width: 100%;
           // border: 1px solid #d6d6d6;
           font-size: 1em;
@@ -76,8 +77,10 @@ $fun: #b1269e;
               color: #a5a5a5;
             }
 
-            .note-privacy-info {
-              .note-status {
+            .note-privacy-info,
+            .entry-view-privacy-info {
+              .note-status,
+              .entry-status {
                 display: none;
                 margin-left: 10px;
 

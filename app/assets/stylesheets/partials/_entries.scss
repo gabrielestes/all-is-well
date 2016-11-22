@@ -88,14 +88,16 @@ $fun: #b1269e;
   }
   .entry-timestamp {
     margin: 15px 0;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
+    width: 48%;
   }
 }
 //toggle switch for privacy setting
 .privacy {
-  display: flex;
-  justify-content: flex-start;
+  display: inline-flex;
+  justify-content: flex-end;
+  width: 48%;
   div.togglePrivacy {
     position: relative;
     margin-bottom: 15px;

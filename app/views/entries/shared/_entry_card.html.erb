@@ -11,21 +11,22 @@
       <span class="entry-date"><%= e.created_at.to_date %></span><span class="entry-time"><%= e.created_at.strftime("%H:%M") %></span>
     </div>
     <div class="privacy">
-      <div class="togglePrivacy">
-        <!-- <%= check_box 'togglePrivacy', '0', id:"togglePrivacy", class: 'togglePrivacy'%>
-        <label class="togglePrivacy-label" for="togglePrivacy"><span></span></label> -->
-        <div class="note-privacy-info">
-            <% if e.shared == false %>
-              <div class="private note-status selected">
+      <div class="entry-view-content">
+        <div class="entry-view-privacy-info">
+
+
+          <!-- if shared.... -->
+              <div class="private entry-status selected">
                   <i class="fa fa-eye-slash" aria-hidden="true"></i>
                   <span>private</span>
               </div>
-            <% elsif e.shared == true %>
+              <!-- if not shared... -->
               <div class="shared note-status selected">
                   <i class="fa fa-eye" aria-hidden="true"></i>
                   <span>shared</span>
               </div>
-            <% end %>
+
+
         </div>
 
       </div>
