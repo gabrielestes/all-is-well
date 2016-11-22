@@ -10,7 +10,7 @@ class NotesController < ApplicationController
 
   def client_notes_index
     client_user
-    @notes = Note.where(client_id: @current_client.id)
+    @notes = Note.where(client_id: @current_client.id, shared: true)
   end
 
   def create
