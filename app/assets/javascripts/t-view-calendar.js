@@ -12,9 +12,8 @@
     var displayEvents = [];
 
 
-
+  //Checks the location to 
     if (pathArr[1] === "therapist" && pathArr[2] === "calendar" ) {
-        // console.log('on calendar page for client: ' + clientId);
 
         $.ajax({
           url: '/calendar/json/' + clientId,
@@ -33,6 +32,12 @@
 
         $('#calendar').fullCalendar(
           {
+            header: {
+              left:   'today prev,next',
+              center: 'title',
+              right:  'month, basicWeek'
+            },
+
             events: displayEvents,
 
             eventClick: function(event) {
