@@ -26,7 +26,7 @@
                       <%= form_for Note.new, url: create_note_path(@client_id), method: :post do |f| %>
                         <div class="note-form-row">
                           <%= f.label :title, value:"Subject:", class:"note-title-label" %>
-                          <%= f.text_field :title, class:"note-title-input", value:"New Note"%>
+                          <%= f.text_field :title, class:"note-title-input", value:"untitled"%>
                         </div>
                           <%= f.text_area :message, :required => true, rows: 10, class:"note-text-area"%>
                           <%= f.hidden_field :client_id, value: @client_id %>

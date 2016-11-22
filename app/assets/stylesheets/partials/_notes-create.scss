@@ -5,9 +5,13 @@
 $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenD: #0A382F;
 $deep-jade: #30C5A7;
+$seagreen: rgb(55, 207, 176);
+$seagreenM: rgb(35, 188, 158);
 $private-red: #8A0116;
 $jade: #7cdfcb;
-$tabbed-pages-border-color: shade($jade, 10%);
+$grey: #dfe0e6;
+$border-grey: #c9cacf;
+$fun: #b1269e;
 
 .note-form-container {
    width: 100%;
@@ -15,8 +19,8 @@ $tabbed-pages-border-color: shade($jade, 10%);
    justify-content: center;
    align-items: center;
    margin: 15px 0;
-  background-image: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/cloth_alike.png");
-  border: .5px solid $tabbed-pages-border-color;
+
+  border: 1px solid $border-grey;
 
 
 
@@ -26,12 +30,12 @@ $tabbed-pages-border-color: shade($jade, 10%);
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      border-left: 10px solid $seagreenT;
-      border-right: 10px solid $seagreenT;
+      border-left: 10px solid $grey;
+      border-right: 10px solid $grey;
     }
 
     .add-note-button {
-      background-color: shade($seagreenT, 5%);
+      background-color: $seagreen;
       outline: 0;
       border: 0;
       border-radius: 2px;
@@ -41,10 +45,11 @@ $tabbed-pages-border-color: shade($jade, 10%);
       float: right;
       margin-left: 10px;
       cursor: pointer;
+      color: #fff;
 
         &:hover, &:active {
-          background-color: shade($seagreenT, 10%);
-          color: #fff;
+          background-color: $seagreenM;
+
         }
     }
 
@@ -59,7 +64,7 @@ $tabbed-pages-border-color: shade($jade, 10%);
     padding: 10px;
     display: flex;
     align-items: center;
-    background-color: $seagreenT;
+    background-color: $grey;
     }
 
     .note-form-footer {
@@ -68,7 +73,7 @@ $tabbed-pages-border-color: shade($jade, 10%);
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      background-color: $seagreenT;
+      background-color: $grey;
 
     }
 
@@ -99,13 +104,13 @@ $tabbed-pages-border-color: shade($jade, 10%);
 
     .note-text-area {
       width: 100%;
-      border: 1px solid $tabbed-pages-border-color;
+      border: 1px solid $border-grey;
       outline: 0;
       font-size: 1em;
       padding: 10px;
-      background-color: rgba(255,255,255,.4);
+      background-color: #fff;
         &:focus {
-          background-color: rgba(255,255,255,.7);
+
         }
     }
 

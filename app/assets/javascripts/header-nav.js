@@ -2,7 +2,7 @@
   "use strict";
 
 
-//Gets reads location URL and determines if header links should be styled appropriately if user is on home or account page.
+//Gets location URL and determines if header links should be styled appropriately if user is on home or account page.
 function getHeaderLocation() {
 
   var path = location.pathname;

@@ -1,7 +1,12 @@
 <% @therapist = nil %>
 <main class="registration">
-  <div class="register-therapist"><h3>Register a Therapist</h3></div>
+  <div  class="welcome">
+    <h1>Choose your Registration Type</h1>
+  </div>
+  <div class="register-container">
+  <div class="register-therapist"><h3>Therapist</h3></div>
   <%= render partial: 'partials/new_therapist' %>
-  <div class="register-client"><h3>Register a Client</h3></div>
+  <div class="register-client"><h3>Client</h3></div>
   <%= render partial: 'partials/new_client' %>
+</div>
 </main>

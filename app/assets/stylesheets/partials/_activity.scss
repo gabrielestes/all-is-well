@@ -5,19 +5,30 @@ $seagreenM: rgb(35, 188, 158);
 $seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
 $dark: #333333;
-$red: rgba(234,6,6,0.65);
+$red: rgb(234,6,6);
+$seafoam: #A3E0D3;
+$grey: #dfe0e6;
+$fun: #b1269e;
+
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
 
 .c-activity {
   width: 100%;
   height: 100%;
-  margin: 0 auto;
+  margin: 30px auto;
+  background: $grey;
+  padding: 1px 10px;
+
   .filter_title {
     display: flex;
     height: 50px;
     justify-content: space-between;
-    margin: 11px auto;
+    margin: 11px auto 7px;
     width: 100%;
-    background: $seagreenMT;
+    background: $seagreenM;
+
     @media (max-width: 570px){
       width: 100%;
     }
@@ -27,18 +38,23 @@ $red: rgba(234,6,6,0.65);
         width: 25%;
         padding: 15px;
         height: 100%;
-          background-color: $seagreenM;
+        color:$seagreenD;
+        background-color: $seafoam;
+        border-right: .25px solid $seagreenM;
         &.filter_event {
-          background-color: rgba($seagreenM, 0.1);
+          background-color: $seafoam;
         }
         &.filter_entry {
-          background-color: rgba($seagreenM, 0.4);
+          background-color: $seafoam;
         }
         &.filter_mood {
-          background-color: rgba($seagreenM, 0.7);
+          background-color: $seafoam;
+        }
+        &.filter_all {
+        border: none;
         }
         &.active{
-          background: $seagreenTb;
+          background: $seagreen;
           color: #fff;
         }
       }
@@ -50,22 +66,20 @@ $red: rgba(234,6,6,0.65);
     height: 50px;
     font-size: 17px;
     align-items: center;
+    background: #fff;
+    margin-bottom: 5px;
     &.event {
-      background-color: rgba($seagreenM, 0.2);
-        color: $red;
+        color: $fun;
     }
     &.entry {
-      background-color: rgba($seagreenM, 0.3);
-      color: $seagreenD;
+      color: $seagreen;
     }
     &.mood {
-      background-color: rgba($seagreenM, 0.4);
-      color: #0f9279;
+      color: $seagreenM;
     }
     &:hover{
-      background: $seagreen;
-      color: #fff;
-      box-shadow: 0px 1px 3px $seagreenD;
+      background: $seafoam;
+      color: $seagreenD;
     }
   }
 }

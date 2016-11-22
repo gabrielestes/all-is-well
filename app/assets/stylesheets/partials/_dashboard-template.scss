@@ -7,6 +7,7 @@ $seagreenD: #0A382F;
 $seagreenM: rgb(35, 188, 158);
 
 $seafoam: #A3E0D3;
+$fun: #b1269e;
 
 
 
@@ -68,14 +69,9 @@ $seafoam: #A3E0D3;
                 .t-dashboard-opt.selected h3,
                 .c-dashboard-opt.selected h3 {
                     color: #fff;
+                    text-decoration: underline;
                   }
 
-              .t-dashboard-opt:hover h3,
-              .t-dashboard-opt:active h3,
-              .c-dashboard-opt:hover h3,
-              .c-dashboard-opt:active h3 {
-                  color: #fff;
-                }
             }
 
   }
@@ -109,14 +105,13 @@ $seafoam: #A3E0D3;
   background-color: $seafoam;
   border-top: .25px solid $seagreenM;
 
-      h3 {
-        // transition: color .3s linear;
-      }
 
       &:hover {
+
         // background-color: $seagreen;
           h3 {
-        color: #fff;
+        color: #000;
+        text-decoration: underline;
         transition: none;
           }
         }
@@ -128,8 +123,7 @@ $seafoam: #A3E0D3;
       &.selected {
         background-color: $seagreen;
           h3 {
-          color: #fff;
-          text-decoration: underline;
+
         }
       }
 
@@ -145,44 +139,6 @@ $seafoam: #A3E0D3;
       }
 
 }
-
-
-//
-// .t-dashboard-opt:nth-child(1),
-// .c-dashboard-opt:nth-child(1) {
-//   background-color: $jade;
-//   border-top: .25px solid shade($jade, 10%);
-//     &:hover {
-//       background-color: $seagreen;
-//     }
-// }
-//
-// .t-dashboard-opt:nth-child(2),
-// .c-dashboard-opt:nth-child(2) {
-//     background-color: $jade;
-//   border-top: .25px solid shade($medium-jade, 10%);
-//   &:hover {
-//       background-color: $seagreen;
-//   }
-// }
-//
-// .t-dashboard-opt:nth-child(3),
-// .c-dashboard-opt:nth-child(3) {
-//     background-color: $jade;
-//   border-top: .25px solid shade($seagreen, 10%);
-//   &:hover {
-//       background-color: $seagreen;
-//   }
-// }
-//
-// .t-dashboard-opt:nth-child(4),
-// .c-dashboard-opt:nth-child(4) {
-//   background-color: $jade;
-//   border-top: .25px solid shade($deep-jade, 10%);
-//   &:hover {
-//       background-color: $seagreen;
-//   }
-// }
 
 
 // ****** THERAPIST VIEW CONTENT PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
@@ -240,6 +196,9 @@ $seafoam: #A3E0D3;
   justify-content: flex-end;
   transition: all .3s linear;
   cursor: default;
+      h3 {
+        color: $fun;
+      }
 
   &.initial-page-load {
     transition: none;
@@ -262,19 +221,27 @@ $seafoam: #A3E0D3;
       left: 0;
       cursor: pointer;
 
-      p.show-dash-text {
+      p.t-show-dash-text,
+      p.c-show-dash-text {
         display: inline;
+        &:hover {
+          text-decoration: underline;
+        }
         &.t-dashboard-active,
         &.c-dashboard-active {
           display: none;
         }
       }
 
-      p.hide-dash-text {
+      p.t-hide-dash-text,
+      p.c-hide-dash-text {
         display: none;
         &.t-dashboard-active,
         &.c-dashboard-active {
           display: inline;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
 

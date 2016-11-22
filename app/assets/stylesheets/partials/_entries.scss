@@ -1,6 +1,10 @@
 $seagreen: rgb(55, 207, 176);
 $seagreenM: rgb(35, 188, 158);
 $seagreenD: #0A382F;
+$seafoam: #A3E0D3;
+$grey: #dfe0e6;
+$border-grey: #c9cacf;
+$fun: #b1269e;
 
 
 //buttons
@@ -9,55 +13,54 @@ $seagreenD: #0A382F;
   display: flex;
   align-content: center;
   justify-content: center;
+  @media (max-width: 700px) {
+    margin-top: 196px;
+  }
+  // @media (max-width: 460px) {
+  //   transform: scale(.6);
+  // }
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
   &.shrink {
     height: 50px;
     @media (max-width: 650px) {
-      height: 50px;
-      display: block;
+      margin-top: 200px;
     }
     #add-entry-btn,
     #previous-entries-btn {
       height: 50px;
       margin-bottom: 45px;
-      @media (max-width: 650px) {
-        width: 100%;
-        margin: 0;
-      }
     }
-
   }
-  @media (max-width: 650px) {
-    flex-direction: column;
-  }
-
     #previous-entries-btn,
     #add-entry-btn {
       width: 300px;
       height: 300px;
-      @media (max-width: 650px) {
-        align-self: center;
-        margin: 0;
+      background: $seafoam;
+      &:hover {
+        background: $seagreen;
+        color: #fff;
       }
-
       &:nth-child(1) {
-        background-color: #72ddc8;
-          &:hover {
-          background-color: tint(#72ddc8, 5%);
-          }
-      }
-
-        &:nth-child(2) {
-        background-color: #53d5bc;
-        &:hover {
-        background-color: tint(#53d5bc, 5%);
+        border-right: 0.25px solid $seagreenM;
+        @media (max-width: 650px) {
+          border-right:none;
+          border-top: 0.25px solid $seagreenM;
         }
+      }
+      @media (max-width: 650px) {
+        width: 100%;
+        height: 100px;
+        border-bottom: 0.25px solid $seagreenM;
+        margin: 0;
       }
     }
 }
 
 //views
 .disappear {
-  display: none;
+  display: none !important;
 }
 
 // previous entries view
@@ -84,7 +87,6 @@ $seagreenD: #0A382F;
     position: relative;
     margin-bottom: 15px;
     font-size: 19px;
-    // background-image: radial-gradient(ellipse 165px 15px, #53ad9b, #4cab97, #298e7a);
     background: #23bc9e;
     width: 100px;
     border-radius: 5px;
@@ -133,7 +135,7 @@ $seagreenD: #0A382F;
 }
 
 // new entry view
-#new-entry {
+#add-entry {
   margin: 45px 0;
   display: flex;
   flex-direction: column;
@@ -147,7 +149,11 @@ $seagreenD: #0A382F;
     margin-bottom: 5px;
     color: $seagreenD;
   }
-  fieldset {
+  #new-entry {
+    width: 100%;
+  }
+  div.title,
+  div.text {
     width: 100%;
     margin-top: 10px;
     display: flex;
@@ -155,13 +161,13 @@ $seagreenD: #0A382F;
       text-align: center;
     }
   }
-  #title label {
+  .title label {
     font-size: 18px;
     margin: 10px 0px;
     color: $seagreenD;
     font-weight: 200;
   }
-  #title input {
+  .title input {
     width: 60%;
     line-height: 29px;
     font-size: 22px;

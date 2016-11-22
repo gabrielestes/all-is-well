@@ -1,9 +1,10 @@
-
+//TODO: use url hash instead if time to change.
 
 document.addEventListener("turbolinks:load", function(){
 
     //on page load, remove .actives from either title.
     $('.sort a').removeClass('actives');
+
     //check storage for existing activeItem
     var storage = localStorage.getItem('activeItem') || "wellness";
 

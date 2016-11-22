@@ -1,29 +1,51 @@
 
+$seagreen: rgb(55, 207, 176);
 $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenTb: rgba(55, 207, 176, 0.7);
 $seagreenM: rgb(35, 188, 158);
 $seagreenMT: rgba(35, 188, 158, 0.4);
 $seagreenD: #0A382F;
+$seafoam: #A3E0D3;
+$grey: #dfe0e6;
+$fun: #b1269e;
+
+.clients-header {
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+}
 
 .t-index {
+  background: $grey;
   display: flex;
   width: 100%;
   max-width: 700px;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
+  margin: 44px auto;
+  .sort-background {
+    background: $seafoam;
+    width: 92%;
+    // margin: 20px 0;
+    }
   .sort {
     display: flex;
-    justify-content: space-between;
-    width: 95%;
-    margin: 11px 0;
-    background: $seagreenMT;
+    background: $grey;
+
     a {
       width: 50%;
-      padding: 5px;
-      &.actives{
-        background: $seagreenTb;
-        color: #fff;
+      padding: 13px;
+      text-align: center;
+      font-size: 20px;
+      &.actives {
+        background: $seafoam;
+        color: $fun;
+      }
+      &:first-child {
+        text-align: left;
+        &:hover {
+          color: $seagreenD;
+        }
       }
     }
   }
@@ -31,27 +53,51 @@ $seagreenD: #0A382F;
 .sort_name {
   text-align: right;
 }
+#patient_card_header {
+  color: $fun;
+  & div:hover {
+    color: $fun;
+    background: $seafoam;
+  }
+  .pt_wellness {
+    text-align: center;
+    width: 30%;
+  }
+}
 a {
   width: 95%;
   .patient_card{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 2%;
-    background: $seagreenT;
+    background: $seafoam;
+    border-bottom: 0.25px solid $grey;
     &:hover {
       color: #fff;
-      background: $seagreenTb;
+      background: $seagreen;
     }
+
     p {
+      width: 12%;
       font-size: 1em;
       @media (min-width: 570px) {
         font-size: 1.2em;
       }
+      &.pt_wellness {
+        text-align: right;
+        width: 12%;
+      }
+      &.pt_name {
+        width:60%;
+      }
     }
     i {
+      width: 12%;
       color: #fff;
       text-shadow: 1px 1px 1px $seagreenD;
       opacity: 0;
+      text-align: right;
+
       &.show {
         opacity: 1;
       }
