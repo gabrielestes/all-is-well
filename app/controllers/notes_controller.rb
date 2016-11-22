@@ -1,9 +1,16 @@
 class NotesController < ApplicationController
+
   def notes_index
+    current_user.userable_type == 'Therapist'
     current_client
-    @notes = Note.where(client_id: params[:id])
     @client_id = params[:id]
+    @notes = Note.where(client_id: params[:id])
     @therapist_id = current_user.userable_id
+  end
+
+  def client_notes_index
+    client_user
+    @notes = Note.where(client_id: @current_client.id)
   end
 
   def create
