@@ -2,6 +2,10 @@
 <div class="c-view-content">
     <%= render :partial => "clients/shared/c_view_header" %>
     <div class="c-view-main">
+      <% if @notes.count > 0 %>
         <%= render :partial => "notes/shared/note_card" %>
+      <% else %>
+        <%= render :partial => "notes/shared/no_notes" %>
+      <% end %>
     </div>
 </div>
