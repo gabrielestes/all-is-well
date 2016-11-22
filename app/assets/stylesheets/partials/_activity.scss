@@ -10,6 +10,10 @@ $seafoam: #A3E0D3;
 $grey: #dfe0e6;
 $fun: #b1269e;
 
+@function shade($color, $percent) {
+  @return mix(#000, $color, $percent);
+}
+
 .c-activity {
   width: 100%;
   height: 100%;
