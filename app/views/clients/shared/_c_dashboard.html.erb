@@ -1,23 +1,23 @@
 <div class="c-view-dashboard">
 
     <div class="c-dashboard">
-        <%= link_to entries_index_path do %>
-            <div class="c-dashboard-opt" id="c-entries">
+        <%= link_to entries_index_path, class:"c-dashboard-opt", id:"c-entries" do %>
+            <div>
               <h3>Write&nbsp;Entry</h3>
             </div>
         <% end %>
-        <%= link_to events_index_path do %>
-            <div class="c-dashboard-opt" id="c-events">
+        <%= link_to events_index_path, class:"c-dashboard-opt", id:"c-events" do %>
+            <div>
               <h3>Submit&nbsp;Event</h3>
             </div>
         <% end %>
-        <%= link_to surveys_index_path do %>
-            <div class="c-dashboard-opt" id="c-surveys">
+        <%= link_to surveys_index_path, class:"c-dashboard-opt", id:"c-surveys" do %>
+            <div>
               <h3>Mood&nbsp;Survey</h3>
             </div>
         <% end %>
-        <%= link_to c_notes_index_path do %>
-            <div class="c-dashboard-opt" id="c-notes">
+        <%= link_to c_notes_index_path, class:"c-dashboard-opt", id:"c-notes" do %>
+            <div>
               <h3>Read&nbsp;Notes</h3>
             </div>
         <% end %>

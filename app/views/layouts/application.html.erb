@@ -19,6 +19,10 @@
       <% if current_user %>
         <%= render :partial =>'partials/header' %>
       <% end %>
+      <% if current_user == nil %>
+        <%= render :partial =>'partials/guest_header' %>
+      <% end %>
+
 
     <%= yield %>
 
