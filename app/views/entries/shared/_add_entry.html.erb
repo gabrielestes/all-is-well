@@ -3,19 +3,23 @@
   <!-- <form id="new-entry"> -->
 
     <h2>Type a Journal Entry</h2>
+    <div id="new-entry">
     <%= form_for Post.new, url: create_entry_path, method: :post do |e| %>
       <% e.hidden_field :client_id, value: current_user.userable_id %>
       <!-- <fieldset id="title"> -->
+      <div class="title">
         <label for="title">Title:</label>
-
         <%= e.text_field :title, id: 'title' %>
+      </div>
         <!-- <input id="title" name="title"/> -->
       <!-- </fieldset> -->
 
       <!-- <fieldset id="text"> -->
         <!-- <label for="entry-text">Entry:</label> -->
+      <div class="text">
         <%= e.label :body, 'Entry: ' %>
         <%= e.text_area :body, id: 'entry-text' %>
+      </div>
         <!-- <textarea id="entry-text" name="entry-text"></textarea> -->
       <!-- </fieldset> -->
 
@@ -31,6 +35,7 @@
           <!-- <input type="submit" class="button" value="Submit Entry"/> -->
         </section>
     <% end %>
+  </div>
   <!-- </form> -->
 
 </article>
