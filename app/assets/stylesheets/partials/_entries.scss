@@ -5,7 +5,8 @@ $seafoam: #A3E0D3;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
 $fun: #b1269e;
-
+$private-red: #8A0116;
+$deep-jade: #30C5A7;
 
 //buttons
 .button-box {
@@ -93,11 +94,20 @@ $fun: #b1269e;
     width: 48%;
   }
 }
+.fa-eye-slash {
+  color: $private-red;
+}
+.fa-eye {
+  color: $deep-jade;
+}
 //toggle switch for privacy setting
 .privacy {
   display: inline-flex;
   justify-content: flex-end;
   width: 48%;
+  &.privacy-toggle {
+    width: 100%;
+  }
   div.togglePrivacy {
     position: relative;
     margin-bottom: 15px;
@@ -146,7 +156,6 @@ $fun: #b1269e;
       left: 63px;
     }
   }
-
 }
 
 // new entry view
