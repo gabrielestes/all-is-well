@@ -23,14 +23,15 @@ $fun: #b1269e;
     flex-direction: column;
   }
   &.shrink {
-    height: 50px;
+    // height: 100px;
     @media (max-width: 650px) {
       margin-top: 200px;
+
     }
     #add-entry-btn,
     #previous-entries-btn {
       height: 50px;
-      margin-bottom: 45px;
+      margin-bottom: 0px;
     }
   }
     #previous-entries-btn,
@@ -67,11 +68,23 @@ $fun: #b1269e;
 .entry-card {
   margin: 45px 0;
   border-bottom: 0.5px solid $seagreenD;
+  background: $grey;
+  padding: 10px;
   @media (max-width: 650px) {
     margin: 80px 0;
   }
+  .entry-text-container {
+    background: $seafoam;
+    padding: 5px;
+    h2.title {
+      font-size:18px;
+      color: $fun;
+      overflow-wrap: break-word;
+    }
+  }
   .entry-text {
     margin: 15px 0;
+    overflow-wrap: break-word;
   }
   .entry-timestamp {
     margin: 15px 0;
@@ -161,14 +174,16 @@ $fun: #b1269e;
       text-align: center;
     }
   }
-  .title label {
+  .title label,
+  .text label {
     font-size: 18px;
-    margin: 10px 0px;
+    margin: 10px 5px;
     color: $seagreenD;
     font-weight: 200;
+    width: 50px;
   }
   .title input {
-    width: 60%;
+    width: 90%;
     line-height: 29px;
     font-size: 22px;
     color: $seagreenD;
@@ -186,7 +201,7 @@ $fun: #b1269e;
   #entry-text {
     font-family: 'Quicksand', sans-serif;
     margin: 10px auto;
-    width: 100%;
+    width: 90%;
     height: 30vh;
     font-size: 20px;
     padding: 5px;
