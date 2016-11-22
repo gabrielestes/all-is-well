@@ -69,14 +69,9 @@ $fun: #b1269e;
                 .t-dashboard-opt.selected h3,
                 .c-dashboard-opt.selected h3 {
                     color: #fff;
+                    text-decoration: underline;
                   }
 
-              .t-dashboard-opt:hover h3,
-              .t-dashboard-opt:active h3,
-              .c-dashboard-opt:hover h3,
-              .c-dashboard-opt:active h3 {
-                  color: #fff;
-                }
             }
 
   }
@@ -110,14 +105,13 @@ $fun: #b1269e;
   background-color: $seafoam;
   border-top: .25px solid $seagreenM;
 
-      h3 {
-        // transition: color .3s linear;
-      }
 
       &:hover {
+
         // background-color: $seagreen;
           h3 {
-        color: #fff;
+        color: #000;
+        text-decoration: underline;
         transition: none;
           }
         }
@@ -129,8 +123,7 @@ $fun: #b1269e;
       &.selected {
         background-color: $seagreen;
           h3 {
-          color: #fff;
-          text-decoration: underline;
+
         }
       }
 
@@ -228,19 +221,27 @@ $fun: #b1269e;
       left: 0;
       cursor: pointer;
 
-      p.show-dash-text {
+      p.t-show-dash-text,
+      p.c-show-dash-text {
         display: inline;
+        &:hover {
+          text-decoration: underline;
+        }
         &.t-dashboard-active,
         &.c-dashboard-active {
           display: none;
         }
       }
 
-      p.hide-dash-text {
+      p.t-hide-dash-text,
+      p.c-hide-dash-text {
         display: none;
         &.t-dashboard-active,
         &.c-dashboard-active {
           display: inline;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
 
