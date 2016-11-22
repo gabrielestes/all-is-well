@@ -4,11 +4,11 @@ Rails.application.routes.draw do
 
   post 'client/entries' => 'entries#create', as: 'create_entry'
 
-  get 'client/events/:id' => 'events#events_index', as: 'events_index'
+  get 'client/events' => 'events#events_index', as: 'events_index'
 
-  get 'client/surveys/:id' => 'surveys#surveys_index', as: 'surveys_index'
+  get 'client/surveys' => 'surveys#surveys_index', as: 'surveys_index'
 
-  get 'client/notes/:id' => 'notes#notes_index', as: 'c_notes_index'
+  get 'client/notes' => 'notes#notes_index', as: 'c_notes_index'
 
   get '/therapist/profile' => 'therapists#t_profile', as: 't_profile'
 
