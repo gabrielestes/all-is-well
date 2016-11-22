@@ -34,7 +34,7 @@ function getDashboardLocation() {
 
   if (pathArr[1] === "client" && pathArr[2] === "notes") {
     $('.c-dashboard-opt').removeClass('selected');
-    $('#t-notes').addClass('selected');
+    $('#c-notes').addClass('selected');
   }
 
 }
