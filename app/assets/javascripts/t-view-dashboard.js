@@ -67,7 +67,8 @@
       '.t-view-content',
       '.t-view-dashboard-icon',
       '.t-show-dash-text',
-      '.t-hide-dash-text'
+      '.t-hide-dash-text',
+      '.modal'
     ];
 
   //Event handler to display or hide the therapist-view dashboard.

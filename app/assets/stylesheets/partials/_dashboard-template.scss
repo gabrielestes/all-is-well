@@ -32,7 +32,7 @@ $fun: #b1269e;
   width: 100%;
   height: 0;
   overflow: hidden;
-  cursor: pointer;
+
 
 
   &.initial-page-load {
@@ -44,7 +44,7 @@ $fun: #b1269e;
     visibility: visible;
     height: 100%;
     @media (max-width: 700px) {
-      height: 45%;
+      height: 100%;
     }
   }
 
@@ -108,6 +108,7 @@ $fun: #b1269e;
   font-size: 1em;
   background-color: $seafoam;
   border-top: .25px solid $seagreenM;
+  cursor: pointer;
 
 
       &:hover {
