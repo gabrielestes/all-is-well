@@ -4,6 +4,8 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new survey_params
+    @survey.total = @survey.q1 + @survey.q2 + @survey.q3 + @survey.q4 + @survey.q5 + @survey.q6 + @survey.q7 + @survey.q8 + @survey.q9 
+    @survey.client_id = current_user.userable.id
     if @survey.save!
       redirect_to surveys_index_path
     end
