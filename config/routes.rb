@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 
   get 'client/surveys' => 'surveys#surveys_index', as: 'surveys_index'
 
-  get 'client/notes' => 'notes#notes_index', as: 'c_notes_index'
+  get 'client/notes' => 'notes#client_notes_index', as: 'c_notes_index'
 
   get '/therapist/profile' => 'therapists#t_profile', as: 't_profile'
 
