@@ -7,29 +7,41 @@ document.addEventListener("turbolinks:load", function(){
 $('#new_survey').find('.question').hide();
 
 //on click, begin survey
-$('#begin-survey').on('click',function(){
+$('#next-question').on('click',function(){
   //hide #begin-survey, show questions
-  $('#begin-survey').hide();
+  $('#next-question').html("Next");
+  var numQ = 9;
+  var current = 1;
 
+  //add click events to progression buttons
+  $('#next-question').on('click',function(){
+      current++;
+      //show next question, hide previous question
+      $('#q' + current).slideToggle();
+      if(current > 1){
+        $('#q' + (current - 1)).slideToggle();
+      }
+      if(current === numQ){
+        $('#next-question').hide();
+      }
+  });
+  $('#last-question').on('click',function(){
+      current--;
+      // show last question, hide current question
+      current++;
+      //show next question, hide previous question
+      $('#q' + current).slideToggle();
+      if(current > 1){
+        $('#q' + (current - 1)).slideToggle();
+      }
+      if(current === numQ){
+        $('#next-question').hide();
+      }
+  });
 
 });
 
 
-// $('#new_survey').first('next-question').on('click',function(event){
-// var numQ = 9;
-// var index = 1;
-// while(index <= numQ){
-//   console.log('#q' + 1);
-//
-//   $('#q' + numQ).show();
-//   $('#q' + numQ - 1).hide();
-//   $('#q' + numQ).find('.next-question').on('click', function(event){
-//     index++;
-//   });
-// }
-//
-// });//end of start button click event
-//
 });//end of turbolinks event listener
 
 })(jQuery);
