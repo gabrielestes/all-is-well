@@ -20,12 +20,9 @@ aside.my-therapist {
   div {
     padding-bottom: 50px;
     width: 70%;
-    background: white;
     .t-data .data-block {
-      &:hover {
-        background-color: $seagreen !important;
-      }
-  }
+      background: #fff;
+    }
   }
 }
 
