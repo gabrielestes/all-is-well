@@ -9,6 +9,13 @@
   <%= f.label :phone %><br/>
   <%= f.text_field :phone %><br/>
 
+  <label for"contact">Emergency Contact Phone</label><br/>
+  <input id="contact"/><br/>
+
+  <label for"birth_date">Birthdate</label><br/>
+  <input id="birth_date"/><br/>
+
+
   <%= f.label :therapist_id %><br/>
   <%= f.collection_select :therapist_id, Therapist.all.order(:last_name), :id, :last_name %><br/>
 

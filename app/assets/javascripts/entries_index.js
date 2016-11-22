@@ -1,4 +1,5 @@
-document.addEventListener("turbolinks:load", function(){
+// document.addEventListener("turbolinks:load", function(){
+(function($){
 "use strict";
 
   //on button click, show previous entries and shrink buttons
@@ -27,4 +28,4 @@ document.addEventListener("turbolinks:load", function(){
 
   });
 
-});
+})(jQuery);

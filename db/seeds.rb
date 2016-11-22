@@ -10,6 +10,10 @@ def rand_num
   [*1..10].sample
 end
 
+def rand_score
+  [*0..3].sample
+end
+
 def rand_init
   [*"A".."Z"].sample
 end
@@ -145,19 +149,8 @@ userable: t
   u.save
 end
 
-5.times do
-  s = Survey.create(
-    client_id: 6,
-    question_one: rand_survey,
-    question_two: rand_survey,
-    question_three: rand_survey,
-    question_four: rand_survey,
-    question_five: rand_survey
-  )
-end
-
-count = 16
-5.times do
+count = 0
+24.times do
   4.times do
     n = Post.create(
       client_id: count,
@@ -178,5 +171,27 @@ count = 1
     relation: relation,
     phone: FFaker::PhoneNumber.phone_number
   )
+  count += 1
+end
+
+count = 1
+24.times do
+  4.times do
+    survey = Survey.new(
+      client_id: count,
+      read: false,
+      q1: rand_score,
+      q2: rand_score,
+      q3: rand_score,
+      q4: rand_score,
+      q5: rand_score,
+      q6: rand_score,
+      q7: rand_score,
+      q8: rand_score,
+      q9: rand_score
+    )
+    survey.total = survey.q1 + survey.q2 + survey.q3 + survey.q4 + survey.q5 + survey.q6 + survey.q7 + survey.q8 + survey.q9
+    survey.save!
+  end
   count += 1
 end

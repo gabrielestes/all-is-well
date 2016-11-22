@@ -19,12 +19,10 @@ div.welcome {
 aside.my-therapist {
   div {
     padding-bottom: 50px;
-    width: 90%;
+    width: 70%;
     .t-data .data-block {
-      &:hover {
-        background-color: $seagreen !important;
-      }
-  }
+      background: #fff;
+    }
   }
 }
 
@@ -32,8 +30,6 @@ aside.my-therapist {
     margin: 0 auto;
     justify-content: center;
     align-items: center;
-    display: flex;
-    flex-direction: column;
     max-width: 600px;
     .data {
       background: none;
@@ -72,6 +68,7 @@ aside.my-therapist {
 
   section.edit {
     background: $seafoam;
+    display: block;
     aside {
       display: flex;
       flex-direction: column;

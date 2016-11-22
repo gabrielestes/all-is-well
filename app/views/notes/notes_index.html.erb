@@ -32,9 +32,21 @@
                           <%= f.hidden_field :client_id, value: @client_id %>
                           <%= f.hidden_field :therapist_id, value: @therapist_id %>
                         <div class="note-form-footer">
-                          <%= f.label :shared, value:"Shared?" %>
-                          <%= f.select :shared, options_for_select([['Yes', true], ['No', false]])%>
-                          <%= f.submit "+ Add Note", class:"add-note-button"%>
+
+
+
+          <section>
+            <div class="privacy privacy-toggle">
+              <div class="togglePrivacy">
+                <input type="checkbox", name="togglePrivacy" id="togglePrivacy" checked="checked" class="togglePrivacy"/>
+                <label class="togglePrivacy-label" for="togglePrivacy"><span></span></label>
+              </div>
+            </div>
+
+            <div> <input type="submit" class="button"/></div>
+          </section>
+
+
                         </div>
                       <% end %>
                     </div>
