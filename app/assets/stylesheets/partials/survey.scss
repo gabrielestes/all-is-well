@@ -10,9 +10,72 @@ $grey: #dfe0e6;
 $border-grey: #c9cacf;
 $fun: #b1269e;
 
+main.survey {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#new_survey {
+  display: flex;
+  flex-direction: column;
+  margin: 28px;
+  width: 100%;
+}
+
+
 .survey-questions {
   background: $seafoam;
-  div{
-    background: #fff;
+  height: 53vh;
+  display: flex;
+  width: 68vw;
+  #new_survey {
+    width: 100vw;
   }
+
+  div.question{
+    background: #fff;
+    backface-visibility: hidden;
+    transition: all 2s ease;
+    padding: 10px;
+    font-size: 18px;
+    overflow-wrap: break-word;
+
+    // transform: rotateX(-180deg);
+    input {
+      margin: 10px 0 0;
+    }
+  }
+}
+.survey-nav-btns {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 100%;
+  padding: 10px;
+  position: relative;
+  top: 30vh;
+  justify-content: space-between;
+}
+
+  #next-question,
+  #last-question {
+    cursor: pointer;
+
+  }
+
+.openQ {
+  width: 100%;
+  opacity: 1;
+  height: auto;
+  transform: perspective(700);
+  // transform: rotateX(180deg);
+}
+.closeQ {
+  width: 100%;
+  opacity: 0;
+  height: 0px;
+  transform: perspective(700);
+  // transform: rotateX(360deg);
+
 }
