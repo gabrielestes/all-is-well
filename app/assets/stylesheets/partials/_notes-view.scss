@@ -1,113 +1,124 @@
 @function shade($color, $percent) {
-  @return mix(#000, $color, $percent);
+     @return mix(#000, $color, $percent);
 }
-
 $seagreenT: rgba(55, 207, 176, 0.4);
 $deep-jade: #30C5A7;
 $private-red: #8A0116;
 $jade: #7cdfcb;
 $tabbed-pages-border-color: shade($jade, 10%);
-
-
 $seagreen: rgb(55, 207, 176);
 $seagreenM: rgb(35, 188, 158);
-
 $seafoam: #A3E0D3;
-
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
 $private-red: #8A0116;
 $fun: #b1269e;
 
-
 .view-notes-container {
-   width: 100%;
-   display: flex;
-  flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   margin-top: 15px;
- }
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+}
 
- .note-card {
-   width: 100%;
-   margin-bottom: 15px;
-   border: 1px solid $border-grey;
+.note-card {
+    width: 100%;
+    margin-bottom: 15px;
+    border: 1px solid $border-grey;
 
-
-      .note-title-row {
+    .note-title-row {
         width: 100%;
         height: 40px;
         display: flex;
         align-items: center;
+        justify-content: space-between;
         background-color: $grey;
         border-bottom: 1px solid $border-grey;
-        }
+        padding: 0px 10px;
 
-
-        .note-title-label {
-          float: left;
-          font-size: 1.3em;
-          padding:  5px;
-          text-align: right;
-
-            &.view-note {
-              font-size: 1em;
-            }
-        }
-
-        .note-message-content,
-        .entry-view-content {
-          width: 100%;
-          // border: 1px solid #d6d6d6;
-          font-size: 1em;
-          padding: 10px;
-          background-color: #fff;
-          overflow-wrap: break-word;
-        }
-
-        .note-message-footer {
-          width: 100%;
-          padding-top: 5px;
-          display: flex;
-          justify-content: flex-end;
-            span, i {
-              font-style: italic;
-              font-size: .9em;
-              color: #a5a5a5;
+            i {
+              margin-right: 5px;
+              color: $seagreenM;
             }
 
-            .note-privacy-info,
-            .entry-view-privacy-info {
-              .note-status,
-              .entry-status {
+            span.label {
+              display: none;
+            }
+
+            @media (min-width: 550px) {
+              span.label {
+                display: inline;
+              }
+            }
+
+        .entry-view-privacy-info,
+        .note-privacy-info {
+            .entry-status,
+            .note-status {
                 display: none;
-                margin-left: 10px;
 
-                  &.selected {
+
+                &.selected {
                     display: inline;
-                  }
+                }
 
-                  span, i {
+                i,
+                span {
                     font-style: italic;
-                    font-size: .9em;
-                  }
+                    font-size: 0.9em;
+                    margin:0;
+                }
 
-                  &.shared {
-                    span, i {
-                      color: $deep-jade;
+                &.shared {
+                    i,
+                    span.status {
+                        color: $deep-jade;
                     }
-                  }
+                }
 
-                  &.private {
-                    span, i {
-                      color: $private-red;
+                &.private {
+                    i,
+                    span.status {
+                        color: $private-red;
                     }
-                  }
-
-
-          }
+                }
+            }
         }
-
     }
-  }
+
+    .note-title-label {
+        float: left;
+        font-size: 1.3em;
+
+
+        &.view-note {
+            font-size: 1em;
+        }
+    }
+
+    .entry-view-content,
+    .note-message-content {
+        width: 100%;
+        // border: 1px solid #d6d6d6;
+        font-size: 1em;
+        padding: 10px;
+        background-color: #fff;
+        overflow-wrap: break-word;
+    }
+
+    .note-message-footer {
+        width: 100%;
+        padding-top: 5px;
+        display: flex;
+        justify-content: flex-end;
+
+        i,
+        span {
+            font-style: italic;
+            font-size: 0.9em;
+            color: #a5a5a5;
+        }
+    }
+}

@@ -84,6 +84,8 @@ $neutral-event: $dustymauve;
        align-items: center;
        background-color: $grey;
        font-size: 1.2em;
+       padding: 0px 10px;
+
 
        }
 
@@ -92,18 +94,18 @@ $neutral-event: $dustymauve;
        .entry-title-label,
        .mood-title-label {
          float: left;
-         padding:  5px;
-         text-align: right;
+
               i {
-                margin-right: 10px;
+                margin-right: 5px;
                 color: $seagreenM;
               }
        }
 
        .x-btn {
          position: absolute;
-         right: 3px;
-         top: 3px;
+         right: 5px;
+         top: 50%;
+         transform: translateY(-50%);
          color: #000;
          cursor: pointer;
             &:hover {
