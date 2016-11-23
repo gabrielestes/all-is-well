@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get '/client/profile' => 'clients#c_profile', as: 'client_profile'
+
+  put '/client/profile', to: 'clients#update', as: 'update_client'
+
   get 'client/entries' => 'entries#entries_index', as: 'entries_index'
 
   post 'client/entries' => 'entries#create', as: 'create_entry'
@@ -26,9 +30,7 @@ Rails.application.routes.draw do
 
   get 'client' => 'clients#index', as: 'client_index'
 
-  get '/client/profile' => 'clients#c_profile', as: 'client_profile'
 
-  put '/client/profile', to: 'clients#update', as: 'update_client'
 
   post 'client' => 'clients#new', as: 'new_client'
 

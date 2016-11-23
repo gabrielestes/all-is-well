@@ -26,12 +26,13 @@ class ClientsController < ApplicationController
 
   def update
     client_user
-    e = Contact.where(client_id: params[:format]).first_or_create!
-    e.update(phone: params[:contacts][:phone])
-    e.save!
+    # e = Contact.where(client_id: params[:format]).first_or_create!
+    # e.update(phone: params[:contacts][:phone])
+    # e.save!
     @current_client.update client_params
-    @current_client.save!
-    redirect_to client_profile_path
+    if @current_client.save!
+      redirect_to client_profile_path
+    end
   end
 
   # def new_contact

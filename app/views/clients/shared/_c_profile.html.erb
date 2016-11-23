@@ -4,11 +4,16 @@
     <div class="data-block name"><h3>Client Name: </h3><span><div><%= @client_name %></div><a class="edit">Edit</a></span></div>
       <aside class="name disappear">
         <div>
-          <input class="edit-data" type="text" id="first_name" placeholder="<%= @current_client.first_name %>"/>
-          <input class="edit-data" type="text" id="initial" placeholder="<%= @current_client.initial %>"/>
-          <input class="edit-data" type="text" id="last_name" placeholder="<%= @current_client.last_name %>"/>
+          <%= form_for :client, url: update_client_path, method: :put do |f| %>
+            <%= f.text_field :first_name, id: "first_name", class: "edit-data" %>
+            <%= f.text_field :last_name, id: "last_name", class: "edit-data" %>
+          <!-- <input class="edit-data" type="text" id="first_name" placeholder="<%= @current_client.first_name %>"/> -->
+          <!-- <input class="edit-data" type="text" id="initial" placeholder="<%= @current_client.initial %>"/> -->
+          <!-- <input class="edit-data" type="text" id="last_name" placeholder="<%= @current_client.last_name %>"/> -->
         </div>
-          <input class="button" type="submit" value="Submit"/>
+            <%= f.submit "Submit", class: "button" %>
+          <% end %>
+          <!-- <input class="button" type="submit" value="Submit"/> -->
       </aside>
 
     <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob %></div><a class="edit">Edit</a></span></div>
