@@ -18,10 +18,15 @@
                         <i class="fa fa-eye-slash" aria-hidden="true"></i>
                         <span>private</span>
                     </div>
-                  <% elsif n.shared == true %>
+                  <% elsif n.shared == true && current_user.userable_type == "Therapist" %>
                     <div class="shared note-status selected">
                         <i class="fa fa-eye" aria-hidden="true"></i>
                         <span>shared</span>
+                    </div>
+                  <% end %>
+                  <% if current_user.userable_type == "Client" %>
+                    <div class="note-privacy-info">
+                      <span>, from <%= @client_therapist.last_name %>, <%= @client_therapist.first_name %> </span>
                     </div>
                   <% end %>
               </div>

@@ -10,11 +10,15 @@
   <%= f.text_field :phone %><br/>
 
   <label for"contact">Emergency Contact Phone</label><br/>
-  <input id="contact"/><br/>
+  <%= form_for :contact do |c| %>
+    <%= c.text_field :phone, id: "birth_date" %>
 
-  <label for"birth_date">Birthdate</label><br/>
-  <input id="birth_date"/><br/>
-
+  <!-- <label for"birth_date">Birthdate</label><br/> -->
+  <!-- <input id="birth_date"/><br/> -->
+  <div>
+    <label for"birth_date">Birthdate</label><br/>
+    <%= f.date_select :birth_date, :order => [:day, :month, :year], :start_year => Date.today.year - 90, :end_year => Date.today.year, id: "birth_date" %>
+  </div>
 
   <%= f.label :therapist_id %><br/>
   <%= f.collection_select :therapist_id, Therapist.all.order(:last_name), :id, :last_name %><br/>
@@ -33,5 +37,6 @@
     <%= u.password_field :password_confirmation, autocomplete: "off" %><br />
     <%= f.submit "Register" , :class => 'submit_registration' %><br/>
   </div>
+  <% end %>
   <% end %>
 <% end %>
