@@ -30,18 +30,34 @@
   /* **************************************************************** */
 
   $(document).on('click', '.activity-card', function(event) {
-  
+
 
     var clickedCard = event.target;
-    console.log(clickedCard);
 
-    var detailCards = ".event-detail-card .entry-detail-card survey-detail-card";
-    $(detailCards).removeClass('active');
+
+    var detailCards = ['.event-detail-card', '.entry-detail-card', '.mood-detail-card'];
+
+      detailCards.forEach(function(card) {
+        $(card).removeClass('active');
+      });
+
 
     if ($(clickedCard).hasClass('event')) {
       console.log('in');
       $('.event-detail-card').addClass('active');
     }
+
+
+    if ($(clickedCard).hasClass('entry')) {
+
+      $('.entry-detail-card').addClass('active');
+    }
+
+    if ($(clickedCard).hasClass('mood')) {
+
+      $('.mood-detail-card').addClass('active');
+    }
+
 
 
     // Displays modal and event detail card

@@ -60,7 +60,8 @@ $neutral-event: $dustymauve;
 
 
 .event-detail-card,
-.entry-detail-card {
+.entry-detail-card,
+.mood-detail-card{
    display: none;
    z-index: 6;
    width: 80%;
@@ -74,7 +75,8 @@ $neutral-event: $dustymauve;
 
 
      .event-title-row,
-     .entry-title-row {
+     .entry-title-row,
+     .mood-title-row {
        position: relative;
        width: 100%;
        height: 40px;
@@ -87,7 +89,8 @@ $neutral-event: $dustymauve;
 
 
        .event-title-label,
-       .entry-title-label {
+       .entry-title-label,
+       .mood-title-label {
          float: left;
          padding:  5px;
          text-align: right;
@@ -110,7 +113,8 @@ $neutral-event: $dustymauve;
 
 
        .event-type-sub-header,
-       .entry-type-sub-header {
+       .entry-type-sub-header,
+       .mood-score-sub-header {
          background-color: $seagreen;
          color: #fff;
          padding: 5px;
@@ -130,7 +134,8 @@ $neutral-event: $dustymauve;
 
 
        .event-description-content,
-       .entry-description-content {
+       .entry-description-content,
+       .mood-survey-content {
          width: 100%;
          border: 1px solid $border-grey;
          font-size: 1em;
