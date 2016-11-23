@@ -38,12 +38,15 @@
           <section>
             <div class="privacy privacy-toggle">
               <div class="togglePrivacy">
-                <input type="checkbox", name="togglePrivacy" id="togglePrivacy" checked="checked" class="togglePrivacy"/>
+                <%= f.check_box :shared, { id: "togglePrivacy", class: "togglePrivacy" }, false, true %>
                 <label class="togglePrivacy-label" for="togglePrivacy"><span></span></label>
               </div>
             </div>
 
-            <div> <input type="submit" class="button"/></div>
+            <div>
+              <%= f.submit "Submit", class: "button" %>
+            </div>
+              <!-- <input type="submit" class="button"/></div> -->
           </section>
 
 
