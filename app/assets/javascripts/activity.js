@@ -24,4 +24,23 @@
     });
   });
 
+  $(document).on('click', '.event', function(event) {
+    event.preventDefault();
+    // Displays modal and event detail card
+    $('.modal').css("display", "flex");
+
+  });
+
+  // Hides modal and event detail card if you click anywhere outside of event detail card
+  $(document).on('click', '.modal-background', function(event) {
+    event.preventDefault();
+    $('.modal').css("display", "none");
+  });
+
+  // Hides modal and event detail card if you click on "x" on event detail card
+  $(document).on('click', '.x-btn', function(event) {
+    event.preventDefault();
+    $('.modal').css("display", "none");
+  });
+
 })(jQuery);

@@ -18,23 +18,27 @@
           url: '/calendar/json/' + clientId,
           method: 'GET',
         }).done(function(data) {
-          var clientEvents = [];
+          //Arrays for sorting events by event type
           var positiveEvents = [];
           var negativeEvents = [];
-          //Loops through events and assigns properties that are needed to display properly once passed to calendar
+          var neutralEvents = [];
+          //Loops through events and assigns properties that are needed to display properly once passed to calendar. Then pushes event to corresponding event type array.
           data.forEach(function(event) {
             event.start = event.date;
-            event.title = event.event_type.toUpperCase();
+            event.title = "EVENT";
             if (event.event_type === "negative") {
               negativeEvents.push(event);
             } else if (event.event_type === "positive") {
               positiveEvents.push(event);
+            } else if (event.event_type === "neutral") {
+              neutralEvents.push(event);
             }
           }
         );
 
         var positiveColor = "#5EAAED";
         var negativeColor = "#b1269e";
+        var neutralColor = "#A49097";
 
         var positiveEventsObj = {
           events: positiveEvents,
@@ -46,6 +50,12 @@
           events: negativeEvents,
           backgroundColor: negativeColor,
           color: negativeColor
+        };
+
+        var neutralEventsObj = {
+          events: neutralEvents,
+          backgroundColor: neutralColor,
+          color: neutralColor
         };
 
 
@@ -62,21 +72,40 @@
 
             eventSources: [
                 positiveEventsObj,
-                negativeEventsObj
+                negativeEventsObj,
+                neutralEventsObj
             ],
 
 
             eventClick: function(calEvent, jsEvent, view) {
 
-         alert('Event: ' + calEvent.title);
-         alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
-         alert('View: ' + view.name);
+                // Formats event date for display
+                var displayDate = moment(calEvent.date).format("MMMM Do[,] YYYY");
 
-         // change the border color just for fun
-         $(this).css('border-color', 'red');
+                // Updates event detail card with the clicked event data
+                 $('#event-date').html(displayDate);
+                 $('.event-type-sub-header').removeClass("positive negative neutral").addClass(calEvent.event_type);
+                 $('#event-type').html(calEvent.event_type.toUpperCase());
+                 $('#event-description').html('"' + calEvent.description + '"');
 
-     }
+                 // Displays modal and event detail card
+                 $('.modal').css("display", "flex");
+
+             }
         });
+
+        // Hides modal and event detail card if you click anywhere outside of event detail card
+        $(document).on('click', '.modal-background', function(event) {
+          event.preventDefault();
+          $('.modal').css("display", "none");
+        });
+
+        // Hides modal and event detail card if you click on "x" on event detail card
+        $(document).on('click', '.x-btn', function(event) {
+          event.preventDefault();
+          $('.modal').css("display", "none");
+        });
+
 
 
 

@@ -1,21 +1,51 @@
 <%= render :partial => "therapists/shared/t_dashboard" %>
 <div class="t-view-content">
-<%= render :partial => "therapists/shared/t_view_header" %>
-<div class="t-view-main">
+    <%= render :partial => "therapists/shared/t_view_header" %>
+    <div class="t-view-main">
 
-  <div class="welcome">Current Activity of Client</div>
+
+
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-background"></div>
+                <div class="event-detail-card">
+                     <div class="event-title-row">
+                         <span class="event-title-label">
+                             <i class="fa fa-star-o"></i>
+                         </span>
+                         <h3 id="event-date">EVENT DATE</h3>
+                         <div class="x-btn">
+                             <p>&#10005;</p>
+                         </div>
+                     </div>
+                     <div class="event-type-sub-header">
+                       <h3 id="event-type">EVENT TYPE</h3>
+                     </div>
+                     <div class="event-description-content">
+                         <p id="event-description">Event Description</p>
+                         <div class="event-footer"></div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="welcome">Current Activity of Client</div>
 
     <!-- PUT THERAPIST VIEW PAGE CONTENT BELOW HERE -->
     <div class="c-activity">
-      <div class="filter_title">
-        <a href="#" class="filter_event">Events</a>
-        <a href="#" class="filter_entry">Entries</a>
-        <a href="#" class="filter_mood">Mood</a>
-        <a href="#" class="filter_all active">All</a>
-      </div>
-      <%= render :partial => "therapists/shared/entries_card" %>
-      <%= render :partial => "therapists/shared/events_card" %>
-      <%= render :partial => "therapists/shared/surveys_card" %>
+        <div class="filter_title">
+            <a href="#" class="filter_event">Events</a>
+            <a href="#" class="filter_entry">Entries</a>
+            <a href="#" class="filter_mood">Mood</a>
+            <a href="#" class="filter_all active">All</a>
+        </div>
+        <%= render :partial => "therapists/shared/entries_card" %>
+        <%= render :partial => "therapists/shared/events_card" %>
+        <%= render :partial => "therapists/shared/surveys_card" %>
 
     </div>
 

@@ -8,15 +8,12 @@ $border-grey: #c9cacf;
 $private-red: #8A0116;
 $fun: #b1269e;
 $periwinkle: #5EAAED;
+$dustymauve: #A49097;
 
 $negative-event: $fun;
 $positive-event: $periwinkle;
+$neutral-event: $dustymauve;
 
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
-
-
-#banana {
-  height: 40px;
-}

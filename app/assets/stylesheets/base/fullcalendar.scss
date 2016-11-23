@@ -177,6 +177,7 @@ NOTE: use percentage font sizes or else old IE chokes
 	padding: 0 .6em;
 
 	/* text & cursor */
+	font-family: inherit;
 	font-size: 1em; /* normalize */
 	white-space: nowrap;
 	cursor: pointer;
@@ -819,6 +820,7 @@ a.fc-more:hover {
 /* Toolbar
 --------------------------------------------------------------------------------------------------*/
 
+
 .fc-toolbar {
 	text-align: center;
 	margin-bottom: 1em;
@@ -832,9 +834,22 @@ a.fc-more:hover {
 	float: right;
 }
 
+
+
 .fc-toolbar .fc-center {
 	display: inline-block;
+	font-size: 1.3em;
+	margin-top: 1em;
+
+		@media (min-width: 530px) {
+			margin-top: 0;
+		}
+
+		@media (min-width: 700px) {
+			font-size: 1.6em;
+		}
 }
+
 
 /* the things within each left/right/center section */
 .fc .fc-toolbar > * > * { /* extra precedence to override button border margins */

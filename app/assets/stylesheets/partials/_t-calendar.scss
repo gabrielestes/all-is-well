@@ -5,12 +5,14 @@ $seagreenM: rgb(35, 188, 158);
 $seafoam: #A3E0D3;
 $fun: #b1269e;
 $periwinkle: #5EAAED;
+$dustymauve: #A49097;
 
 $negative-event: $fun;
 $positive-event: $periwinkle;
+$neutral-event: $dustymauve;
 
 .modal {
-    display: flex;
+    display: none;
     position: fixed;
     z-index: 5;
     justify-content: center;
@@ -39,9 +41,17 @@ $positive-event: $periwinkle;
   height: 100%;
 }
 
+.modal-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: transparent;
+}
 
 .event-detail-card {
-  width: 80%;
+   z-index: 6;
+   width: 80%;
    border: 1px solid $border-grey;
 
 
@@ -52,7 +62,7 @@ $positive-event: $periwinkle;
        height: 40px;
        display: flex;
        align-items: center;
-       background-color: $seafoam;
+       background-color: $grey;
        font-size: 1.2em;
 
        }
@@ -64,6 +74,7 @@ $positive-event: $periwinkle;
          text-align: right;
               i {
                 margin-right: 10px;
+                color: $seagreenM;
               }
        }
 
@@ -80,13 +91,21 @@ $positive-event: $periwinkle;
 
 
        .event-type-sub-header {
-         background-color: $negative-event;
+         background-color: $seagreen;
          color: #fff;
          padding: 5px;
-
             h3 {
               margin-left: 10px;
             }
+         &.positive {
+           background-color: $positive-event;
+         }
+         &.negative {
+           background-color: $negative-event;
+         }
+         &.neutral {
+           background-color: $neutral-event;
+         }
        }
 
 
@@ -105,4 +124,53 @@ $positive-event: $periwinkle;
          justify-content: flex-end;
 
        }
+ }
+
+
+ .legend {
+   width: 100%;
+   margin-bottom: 1em;
+   padding: 10px 0;
+  //  background-color: $grey;
+  //  border: 1px solid $border-grey;
+
+   ul {
+     width: 100%;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+   }
+
+    li {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+
+       .color-key {
+         border-radius: 3px;
+         width: 1em;
+         height: 1em;
+         margin-right: 5px;
+       }
+
+      &.positive {
+        .color-key {
+          background-color: $positive-event;
+        }
+      }
+
+      &.negative {
+        .color-key {
+          background-color: $negative-event;
+        }
+      }
+
+      &.neutral {
+        .color-key {
+          background-color: $neutral-event;
+        }
+      }
+
+    }
+
  }
