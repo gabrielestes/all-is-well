@@ -34,9 +34,12 @@
     </div>
       <aside class="phone disappear">
         <div>
-          <input class="edit-data" type="text" id="phone" placeholder="<%= @client_phone %>"/>
+          <%= form_for :client, url: update_client_path, method: :put do |f| %>
+            <%= f.text_field :phone, class: "edit-data", id: "phone" %>
         </div>
-        <input class="button" type="submit" value="Submit"/>
+            <%= f.submit "Submit", class: "button" %>
+          <% end %>
+
       </aside>
 
     <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span>
