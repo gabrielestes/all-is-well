@@ -15,7 +15,10 @@
 
   <!-- <label for"birth_date">Birthdate</label><br/> -->
   <!-- <input id="birth_date"/><br/> -->
-
+  <div>
+    <label for"birth_date">Birthdate</label><br/>
+    <%= f.date_select :birth_date, :order => [:day, :month, :year], :start_year => Date.today.year - 90, :end_year => Date.today.year, id: "birth_date" %>
+  </div>
 
   <%= f.label :therapist_id %><br/>
   <%= f.collection_select :therapist_id, Therapist.all.order(:last_name), :id, :last_name %><br/>
