@@ -15,16 +15,19 @@
         <div class="entry-view-privacy-info">
 
 
-          <!-- if shared.... -->
+          <!-- if private.... -->
+          <% if e.sharable == false %>
               <div class="private entry-status selected">
                   <i class="fa fa-eye-slash" aria-hidden="true"></i>
                   <span>private</span>
               </div>
-              <!-- if not shared... -->
+              <!-- if shared... -->
+          <% elsif e.sharable == true %>
               <div class="shared note-status selected">
                   <i class="fa fa-eye" aria-hidden="true"></i>
                   <span>shared</span>
               </div>
+          <% end %>
 
 
         </div>
