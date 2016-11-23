@@ -1,11 +1,4 @@
-@function shade($color, $percent) {
-     @return mix(#000, $color, $percent);
-}
-$seagreenT: rgba(55, 207, 176, 0.4);
-$deep-jade: #30C5A7;
-$private-red: #8A0116;
-$jade: #7cdfcb;
-$tabbed-pages-border-color: shade($jade, 10%);
+
 $seagreen: rgb(55, 207, 176);
 $seagreenM: rgb(35, 188, 158);
 $seafoam: #A3E0D3;
@@ -14,14 +7,12 @@ $border-grey: #c9cacf;
 $private-red: #8A0116;
 $fun: #b1269e;
 
-.view-notes-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 15px;
-}
+
+
+
+
+/* ********** STYLING FOR NOTES/ENTRY CARDS ********* */
+/* ********** APPLIES ACROSS MANY PAGES ********* */
 
 .note-card {
     width: 100%;
@@ -74,7 +65,7 @@ $fun: #b1269e;
                 &.shared {
                     i,
                     span.status {
-                        color: $deep-jade;
+                        color: $seagreenM;
                     }
                 }
 

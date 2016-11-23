@@ -11,6 +11,10 @@ $negative-event: $fun;
 $positive-event: $periwinkle;
 $neutral-event: $dustymauve;
 
+
+/* ************** STYLING FOR MODALS ************* */
+/* ********** APPLIES ACROSS MANY PAGES ********* */
+
 .modal {
     display: none;
     position: fixed;
@@ -56,6 +60,13 @@ $neutral-event: $dustymauve;
   top: 0;
   background: transparent;
 }
+
+
+
+
+/* ********** STYLING FOR ACTIVITY DETAIL CARDS ********* */
+/* ********** APPLIES ACROSS MANY PAGES ********* */
+
 
 
 

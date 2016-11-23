@@ -1,0 +1,186 @@
+
+$seagreen: rgb(55, 207, 176);
+$seagreenM: rgb(35, 188, 158);
+$private-red: #8A0116;
+$jade: #7cdfcb;
+$grey: #dfe0e6;
+$border-grey: #c9cacf;
+$fun: #b1269e;
+
+
+    .tabbed-views-wrapper {
+        width: 100%;
+    }
+
+    .tabs {
+        overflow: hidden;
+        display: block;
+
+          .tab-a, .tab-b {
+              float: left;
+              width: 50%;
+
+              #tab-a-btn, #tab-b-btn {
+                  &:hover, &:active {
+                    color: $fun;
+
+                  }
+                }
+
+              &.active {
+                    #tab-a-btn, #tab-b-btn {
+                      color: $fun;
+                      text-decoration: underline;
+
+                }
+              }
+
+            }
+
+      }
+
+      #tab-a-btn, #tab-b-btn {
+        width: 100%;
+        padding: 15px 0;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        font-size: 1.4em;
+        font-family: inherit;
+        cursor: pointer;
+        color: #000;
+      }
+
+    .tabs-content {
+      padding: 15px 0;
+    }
+
+#tab-a-content, #tab-b-content {
+        display: none;
+        &.active {
+            display: block !important;
+        }
+
+    }
+
+
+    .view-notes-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 15px;
+    }
+
+
+    .note-form-container {
+       width: 100%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       margin: 15px 0;
+
+      border: 1px solid $border-grey;
+
+
+
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          border-left: 10px solid $grey;
+          border-right: 10px solid $grey;
+        }
+
+        .add-note-button {
+          background-color: $seagreen;
+          outline: 0;
+          border: 0;
+          border-radius: 2px;
+          padding: 10px 20px;
+          font-family: inherit;
+          font-size: 1.2em;
+          float: right;
+          margin-left: 10px;
+          cursor: pointer;
+          color: #fff;
+
+            &:hover, &:active {
+              background-color: $seagreenM;
+
+            }
+        }
+
+        select {
+          margin: 0 10px;
+        }
+
+
+
+        .note-form-row {
+        width: 100%;
+        padding: 10px;
+        display: flex;
+        align-items: center;
+        background-color: $grey;
+        }
+
+        .note-form-footer {
+          width: 100%;
+          padding: 5px 0;
+          display: flex;
+          align-items: center;
+          justify-content: flex-end;
+          background-color: $grey;
+
+            .togglePrivacy {
+              margin-bottom: 0;
+            }
+            .button {
+              margin: 5px 0;
+              margin-left: 20px;
+            }
+
+        }
+
+        .note-title-label {
+          float: left;
+          font-size: 1.3em;
+          padding:  5px;
+          text-align: right;
+
+          &.view-note {
+            font-size: 1em;
+          }
+        }
+
+
+        .note-title-input {
+          width: 100%;
+          outline: 0;
+          border-style: none;
+          font-family: inherit;
+          font-style: italic;
+          font-size: 1.2em;
+          text-decoration: underline;
+          padding: 5px 10px;
+          background-color: transparent;
+        }
+
+
+        .note-text-area {
+          width: 100%;
+          border: 1px solid $border-grey;
+          outline: 0;
+          font-size: 1em;
+          padding: 10px;
+          background-color: #fff;
+            &:focus {
+
+            }
+        }
+
+    }
