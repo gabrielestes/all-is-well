@@ -26,9 +26,9 @@ class ClientsController < ApplicationController
 
   def update
     client_user
-    # e = Contact.where(client_id: params[:format]).first_or_create!
-    # e.update(phone: params[:contacts][:phone])
-    # e.save!
+    e = Contact.where(client_id: params[:contact][:client_id]).first_or_create!
+    e.update(phone: params[:contact][:phone])
+    e.save!
     @current_client.update client_params
     if @current_client.save!
       redirect_to client_profile_path
@@ -43,7 +43,7 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    params.require(:client).permit(
+    params.permit(
       :therapist_id,
       :first_name,
       :last_name,
@@ -57,7 +57,7 @@ class ClientsController < ApplicationController
     params.require(:user).permit(:email, :password, :password_confirmation)
   end
 
-  # def contact_params
-  #   params.permit(:client_id, :phone)
-  # end
+  def contact_params
+    params.permit(:client_id, :phone)
+  end
 end
