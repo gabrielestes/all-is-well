@@ -21,8 +21,9 @@
 
   <div class="event-text">
     <label for="event-text">Describe the Event: </label>
-    <textarea id="event-text" type="text"></textarea>
-    <%= e.submit "Submit", class: "button" %>
+    <%= e.text_area :description, id: "event-text" %>
+    <!-- <textarea id="event-text" type="text"></textarea> -->
   </div>
+  <%= e.submit "Submit", class: "button" %>
 <% end %>
 <!-- </form> -->
