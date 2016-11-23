@@ -12,7 +12,6 @@
     //the activity type must be the second class named for this to work.
     var activity = classes.split(/[_ ]/)[1];
     $('.patient_card').each(function(){
-      console.log(this);
       if($(this).hasClass(activity)) {
         $(this).show();
       } else if (activity === 'all'){
