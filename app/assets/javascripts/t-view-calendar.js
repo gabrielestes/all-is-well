@@ -78,7 +78,8 @@
 
 
             eventClick: function(calEvent, jsEvent, view) {
-
+              console.log('in cal');
+                $('.event-detail-card').addClass('active');
                 // Formats event date for display
                 var displayDate = moment(calEvent.date).format("MMMM Do[,] YYYY");
 
