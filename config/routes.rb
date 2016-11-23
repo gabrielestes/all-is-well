@@ -10,6 +10,9 @@ Rails.application.routes.draw do
 
   get 'client/events' => 'events#events_index', as: 'events_index'
 
+  post 'client/events' => 'events#create', as: 'create_event'
+
+
   get 'client/surveys' => 'surveys#surveys_index', as: 'surveys_index'
 
   post 'client/surveys' => 'surveys#create', as: 'create_survey'

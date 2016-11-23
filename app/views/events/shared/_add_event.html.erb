@@ -1,24 +1,28 @@
 
 
-<form id="add-event">
+<!-- <form id="add-event"> -->
+<%= form_for :event, url: create_event_path, method: :post do |e| %>
+  <div class="event-date">
+    <label for="event-date">Event Date: </label>
+    <!-- <% e.hidden_field :client_id, value: "#{current_user.userable_id}" %> -->
+    <%= e.date_field :date, id: "event-date" %>
+    <!-- <input id="event-date" type="date"/> -->
+  </div>
 
-<div class="event-date">
-  <label for="event-date">Event Date: </label>
-  <input id="event-date" type="date"/>
-</div>
+  <div class="event-type">
+    <label for="event-type">Nature of the Event: </label>
+    <%= select_tag(:event_type, options_for_select(['good', 'not so good', 'neither good nor bad'])) %>
+    <!-- <select name="event-type">
+      <option value="negative">Not so good <i class="fa fa-frown-o"></i></option>
+      <option value="neutral" selected>Neither good nor bad <i class="fa fa-meh-o"></i></option>
+      <option value="positive">Good <i class="fa fa-smile-o"></i></option>
+    </select> -->
+  </div>
 
-<div class="event-type">
-  <label for="event-type">Nature of the Event: </label>
-  <select name="event-type">
-    <option value="negative">Not so good <i class="fa fa-frown-o"></i></option>
-    <option value="neutral" selected>Neither good nor bad <i class="fa fa-meh-o"></i></option>
-    <option value="positive">Good <i class="fa fa-smile-o"></i></option>
-  </select>
-</div>
-
-<div class="event-text">
-  <label for="event-text">Describe the Event: </label>
-  <textarea id="event-text" type="text"></textarea>
-</div>
-
-</form>
+  <div class="event-text">
+    <label for="event-text">Describe the Event: </label>
+    <textarea id="event-text" type="text"></textarea>
+    <%= e.submit "Submit", class: "button" %>
+  </div>
+<% end %>
+<!-- </form> -->
