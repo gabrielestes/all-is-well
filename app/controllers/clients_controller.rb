@@ -10,7 +10,6 @@ class ClientsController < ApplicationController
       @contact = Contact.new(phone: params[:contact][:phone])
       @contact.client_id = @client.id
       @contact.save!
-      debugger
       @user = User.new user_params
       @user.userable = @client
       @user.save!
@@ -26,7 +25,7 @@ class ClientsController < ApplicationController
 
   def update
     client_user
-    e = Contact.where(client_id: params[:format]).first_or_create!
+    e = Contact.where(client_id: @current_client.id).first_or_create!
     e.update(phone: params[:contacts][:phone])
     e.save!
     @current_client.update client_params
