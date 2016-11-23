@@ -1,0 +1,48 @@
+
+$seagreen: rgb(55, 207, 176);
+$seagreenT: rgba(55, 207, 176, 0.4);
+$seagreenTb: rgba(55, 207, 176, 0.7);
+$seagreenM: rgb(35, 188, 158);
+$seagreenMT: rgba(35, 188, 158, 0.4);
+$seagreenD: #0A382F;
+$dark: #333333;
+$seafoam: #A3E0D3;
+$grey: #dfe0e6;
+$border-grey: #c9cacf;
+$fun: #b1269e;
+
+
+.make_event {
+  // margin-top: 130px;
+  .welcome {
+    font-size: 20px;
+    margin: 10px 0;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    div {
+      margin: 10px 0;
+      line-height: 42px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input,
+      textarea,
+      select {
+        text-align: center;
+        color: $seagreenD;
+        &:focus {
+          outline-color: $seagreenD;
+          border: 1px solid $seagreenD;
+        }
+      }
+    }
+  }
+}
+#event-text {
+  overflow-wrap: break-word;
+  width: 87vw;
+  height: 26vw;
+}
