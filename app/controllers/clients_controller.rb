@@ -10,7 +10,6 @@ class ClientsController < ApplicationController
       @contact = Contact.new(phone: params[:contact][:phone])
       @contact.client_id = @client.id
       @contact.save!
-      debugger
       @user = User.new user_params
       @user.userable = @client
       @user.save!
@@ -22,6 +21,8 @@ class ClientsController < ApplicationController
   def c_profile
     client_user
     @therapist_name = @client_therapist.first_name + " " + @client_therapist.last_name
+    @therapist_number = @client_therapist.phone
+    @therapist_email = @client_therapist.email
   end
 
   def update
