@@ -11,12 +11,12 @@
 
   <label for"contact">Emergency Contact Phone</label><br/>
   <%= form_for :contact do |c| %>
-    <%= c.text_field :phone, id: "birth_date" %>
+    <%= c.text_field :phone, id: "contact" %>
 
   <!-- <label for"birth_date">Birthdate</label><br/> -->
   <!-- <input id="birth_date"/><br/> -->
-  <div>
-    <label for"birth_date">Birthdate</label><br/>
+    <label for"birth_date" id="birth_date">Birthdate</label><br/>
+  <div class="date-field">
     <%= f.date_select :birth_date, :order => [:day, :month, :year], :start_year => Date.today.year - 90, :end_year => Date.today.year, id: "birth_date" %>
   </div>
 

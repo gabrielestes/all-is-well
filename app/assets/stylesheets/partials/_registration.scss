@@ -29,6 +29,17 @@ main.registration {
     margin: 60px auto;
 
   }
+
+    label#birth_date {
+      margin-top: 10px;
+    }
+
+  .date-field {
+    width: 80%;
+    text-align: center;
+    align-self: center;
+    margin-bottom: 10px;
+  }
   .register-client,
   .register-therapist {
     height: 300px;
