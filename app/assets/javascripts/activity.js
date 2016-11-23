@@ -24,11 +24,28 @@
     });
   });
 
-  $(document).on('click', '.event', function(event) {
-    event.preventDefault();
+
+
+  /* ************ ACTIVITY-DETAIL-CARD MODAL FUNCTIONALITY BELOW ************* */
+  /* **************************************************************** */
+
+  $(document).on('click', '.activity-card', function(event) {
+  
+
+    var clickedCard = event.target;
+    console.log(clickedCard);
+
+    var detailCards = ".event-detail-card .entry-detail-card survey-detail-card";
+    $(detailCards).removeClass('active');
+
+    if ($(clickedCard).hasClass('event')) {
+      console.log('in');
+      $('.event-detail-card').addClass('active');
+    }
+
+
     // Displays modal and event detail card
     $('.modal').css("display", "flex");
-
   });
 
   // Hides modal and event detail card if you click anywhere outside of event detail card

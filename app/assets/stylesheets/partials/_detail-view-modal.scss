@@ -1,0 +1,147 @@
+$grey: #dfe0e6;
+$border-grey: #c9cacf;
+$seagreen: rgb(55, 207, 176);
+$seagreenM: rgb(35, 188, 158);
+$seafoam: #A3E0D3;
+$fun: #b1269e;
+$periwinkle: #5EAAED;
+$dustymauve: #A49097;
+
+$negative-event: $fun;
+$positive-event: $periwinkle;
+$neutral-event: $dustymauve;
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(#2c2c2c,0.6);
+
+    @media (min-width: 700px) {
+
+      &.t-dashboard-active {
+        padding-left: 20%;
+            .modal-background {
+              position: absolute;
+              top: 0;
+              left: 20%;
+              width: 80%;
+            }
+
+      }
+    }
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-background {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background: transparent;
+}
+
+
+
+.event-detail-card,
+.entry-detail-card {
+   display: none;
+   z-index: 6;
+   width: 80%;
+   margin-bottom: 10px;
+   border: 1px solid $border-grey;
+
+        &.active {
+          display: block;
+        }
+
+
+
+     .event-title-row,
+     .entry-title-row {
+       position: relative;
+       width: 100%;
+       height: 40px;
+       display: flex;
+       align-items: center;
+       background-color: $grey;
+       font-size: 1.2em;
+
+       }
+
+
+       .event-title-label,
+       .entry-title-label {
+         float: left;
+         padding:  5px;
+         text-align: right;
+              i {
+                margin-right: 10px;
+                color: $seagreenM;
+              }
+       }
+
+       .x-btn {
+         position: absolute;
+         right: 3px;
+         top: 3px;
+         color: #000;
+         cursor: pointer;
+            &:hover {
+              color: #fff;
+            }
+       }
+
+
+       .event-type-sub-header,
+       .entry-type-sub-header {
+         background-color: $seagreen;
+         color: #fff;
+         padding: 5px;
+            h3 {
+              margin-left: 10px;
+            }
+         &.positive {
+           background-color: $positive-event;
+         }
+         &.negative {
+           background-color: $negative-event;
+         }
+         &.neutral {
+           background-color: $neutral-event;
+         }
+       }
+
+
+       .event-description-content,
+       .entry-description-content {
+         width: 100%;
+         border: 1px solid $border-grey;
+         font-size: 1em;
+         padding: 10px;
+         background-color: #fff;
+       }
+
+       .event-footer {
+         width: 100%;
+         padding-top: 5px;
+         display: flex;
+         justify-content: flex-end;
+       }
+ }

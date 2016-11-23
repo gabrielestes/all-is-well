@@ -1,5 +1,5 @@
 <% @events.each do |e| %>
-  <div class="patient_card event">
+  <div class="patient_card event activity-card">
     <p class="date"><%= e.created_at.to_date %></p>
     <p class="time"><%= e.created_at.strftime("%H:%M") %></p>
     <p class="activity-type">Event</p>
