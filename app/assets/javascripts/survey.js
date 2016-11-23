@@ -11,7 +11,6 @@ document.addEventListener("turbolinks:load", function(){
     var current = 0;
   $('#next-question').on('click',function(){
     current++;
-    console.log(current);
     $('#next-question').html("Next").show();
     if(current >= 1){
       $('#q' + current).addClass('openQ').removeClass('closeQ');
@@ -30,7 +29,6 @@ document.addEventListener("turbolinks:load", function(){
   });
   $('#last-question').on('click',function(){
     current--;
-    console.log(current);
     if(current <= 1){
       $('#last-question').hide();
     }
@@ -47,9 +45,6 @@ document.addEventListener("turbolinks:load", function(){
     if(current < numQ){
       $('.button').hide();
     }
-  });
-  $('#new_survey').find('.submit').on('click',function(){
-    $('main.survey').append('h2').html('Thank you for submitting a survey!');
   });
 
 });

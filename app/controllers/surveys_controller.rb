@@ -9,7 +9,8 @@ class SurveysController < ApplicationController
     @survey.client_id = current_user.userable.id
     @current_client.wellness = @survey.total
     if @survey.save! && @current_client.save!
-      redirect_to surveys_index_path
+      # redirect_to surveys_index_path
+      render :survey_complete
     end
   end
 
