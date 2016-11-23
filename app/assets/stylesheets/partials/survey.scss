@@ -17,6 +17,10 @@ main.survey {
   align-items: center;
 }
 
+.survey-intro {
+  text-align: center;
+  line-height: 20px;
+}
 #new_survey {
   display: flex;
   flex-direction: column;
@@ -26,23 +30,18 @@ main.survey {
 
 
 .survey-questions {
-  // background: $seafoam;
-  // height: 53vh;
-  // display: flex;
-  // width: 68vw;
-  #new_survey {
-    // width: 100vw;
-  }
 
   div.question{
-    // background: #fff;
-    // backface-visibility: hidden;
-    transition: all 2s ease;
-    // padding: 10px;
+
+    transition: all 1s ease;
     font-size: 18px;
     opacity: 0;
     overflow-wrap: break-word;
-    // transform: rotateX(-180deg);
+    width: 90%;
+    span {
+      font-size: 20px;
+      line-height: 36px;
+    }
     input {
       margin: 10px 0 0;
     }
@@ -56,6 +55,12 @@ main.survey {
   position: relative;
   top: 10vh;
   justify-content: space-between;
+  div {
+    &:hover {
+      color: $fun;
+
+    }
+  }
 }
 
   #next-question,
@@ -69,14 +74,10 @@ main.survey {
   opacity: 1 !important;
   height: auto;
   z-index: 3;
-  transform: perspective(700);
-  // transform: rotateX(180deg);
 }
 .closeQ {
   width: 100%;
   opacity: 0 !important;
   height: 0px;
-  transform: perspective(700);
-  // transform: rotateX(360deg);
 
 }

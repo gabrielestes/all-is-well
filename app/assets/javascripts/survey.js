@@ -10,8 +10,11 @@ document.addEventListener("turbolinks:load", function(){
     var numQ = 9;
     var current = 0;
   $('#next-question').on('click',function(){
+    $('.survey-intro').remove();
     current++;
-    $('#next-question').html("Next").show();
+    $('#next-question i').removeClass("fa-play").addClass("fa-angle-double-right");
+    $('#next-question').show().find('span').html("Next  ");
+
     if(current >= 1){
       $('#q' + current).addClass('openQ').removeClass('closeQ');
     }
@@ -34,9 +37,9 @@ document.addEventListener("turbolinks:load", function(){
     }
     if(current > 1){
       $('#last-question').show();
-      $('#q' + (current + 1)).addClass('closeQ').removeClass('openQ');
     }
     if(current >= 1){
+      $('#q' + (current + 1)).addClass('closeQ').removeClass('openQ');
       $('#q' + current).addClass('openQ').removeClass('closeQ');
     }
     if(current === numQ-1){
