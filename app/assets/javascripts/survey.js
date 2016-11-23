@@ -11,19 +11,26 @@ document.addEventListener("turbolinks:load", function(){
     var current = 0;
   $('#next-question').on('click',function(){
     current++;
+    console.log(current);
     $('#next-question').html("Next").show();
     if(current >= 1){
       $('#q' + current).addClass('openQ').removeClass('closeQ');
     }
     if(current > 1){
       $('#q' + (current - 1)).addClass('closeQ').removeClass('openQ');
+      $('#last-question').show();
     }
     if(current === numQ){
+      $('.button').show();
       $('#next-question').hide();
+    }
+    if(current < numQ){
+      $('.button').hide();
     }
   });
   $('#last-question').on('click',function(){
     current--;
+    console.log(current);
     if(current <= 1){
       $('#last-question').hide();
     }
@@ -36,6 +43,9 @@ document.addEventListener("turbolinks:load", function(){
     }
     if(current === numQ-1){
       $('#next-question').show();
+    }
+    if(current < numQ){
+      $('.button').hide();
     }
   });
   $('#new_survey').find('.submit').on('click',function(){

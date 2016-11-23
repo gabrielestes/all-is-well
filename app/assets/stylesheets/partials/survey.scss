@@ -26,22 +26,22 @@ main.survey {
 
 
 .survey-questions {
-  background: $seafoam;
-  height: 53vh;
-  display: flex;
-  width: 68vw;
+  // background: $seafoam;
+  // height: 53vh;
+  // display: flex;
+  // width: 68vw;
   #new_survey {
-    width: 100vw;
+    // width: 100vw;
   }
 
   div.question{
-    background: #fff;
-    backface-visibility: hidden;
+    // background: #fff;
+    // backface-visibility: hidden;
     transition: all 2s ease;
-    padding: 10px;
+    // padding: 10px;
     font-size: 18px;
+    opacity: 0;
     overflow-wrap: break-word;
-
     // transform: rotateX(-180deg);
     input {
       margin: 10px 0 0;
@@ -51,10 +51,10 @@ main.survey {
 .survey-nav-btns {
   display: flex;
   flex-direction: row-reverse;
-  width: 100%;
+  width: 80%;
   padding: 10px;
   position: relative;
-  top: 30vh;
+  top: 10vh;
   justify-content: space-between;
 }
 
@@ -66,14 +66,15 @@ main.survey {
 
 .openQ {
   width: 100%;
-  opacity: 1;
+  opacity: 1 !important;
   height: auto;
+  z-index: 3;
   transform: perspective(700);
   // transform: rotateX(180deg);
 }
 .closeQ {
   width: 100%;
-  opacity: 0;
+  opacity: 0 !important;
   height: 0px;
   transform: perspective(700);
   // transform: rotateX(360deg);
