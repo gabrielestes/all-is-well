@@ -2,7 +2,7 @@
   <% if e.sharable == true %>
     <div class="patient_card entry activity-card">
       <p class="date"><%= e.created_at.to_date %></p>
-      <p class="time"> <%= e.created_at.strftime("%H:%M") %> </p>
+      <p class="time"> <%= e.created_at.strftime("%I:%M %p") %> </p>
       <p class="activity-type">Entry</p>
       <i class="fa fa-pencil"></i>
     </div>

@@ -2,8 +2,11 @@
   <header>
 
       <div class="site-logo">
-        <h3><span class="site-title">all is well</span>Hi, <%= current_user.userable.first_name %> <%= current_user.userable.last_name %><%= ", " + current_user.userable.cred if current_user.userable.cred %>
-        </h3>
+        <h3><span class="site-title">all is well</span>Hi, <%= current_user.userable.first_name + " " + current_user.userable.last_name %>
+          <% if current_user.userable_type == 'Therapist' && current_user.userable.cred %>
+            <%= ", " + current_user.userable.cred %>
+          <% end %>
+
       </div>
 
 
