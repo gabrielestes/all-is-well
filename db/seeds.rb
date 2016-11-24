@@ -35,7 +35,7 @@ def rand_survey
 end
 
 def event_type
-  types = ["positive", "negative"].sample
+  ["positive", "negative", "neutral"].sample
 end
 
 def date
@@ -152,6 +152,15 @@ userable: t
     password_confirmation: "password",
     userable: c
   )
+
+  3.times do
+    event = Event.create(
+      client_id: c.id,
+      event_type: event_type,
+      date: date,
+      description: FFaker::CheesyLingo.sentence
+    )
+  end
 end
 
 count = 0
