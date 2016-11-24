@@ -2,16 +2,23 @@
 
   <div class="nav-wrapper">
     <%= link_to surveys_index_path(current_user.id) do %>
-      <div class="main-nav-opt">Mood</div>
+      <div class="main-nav-opt"><span>Mood</span><i class="fa fa-smile-o"></i></div>
+      <h3>Take a Mood Survey every week to help your therapist track your progress</h3>
     <% end %>
     <%= link_to entries_index_path do %>
-      <div class="main-nav-opt">Entries</div>
+      <div class="main-nav-opt"><span>Entries</span><i class="fa fa-pencil"></i></div>
+      <h3>Make a Journal Entry to record your thoughts and feelings.</h3>
+
     <% end %>
     <%= link_to events_index_path(current_user.id) do %>
-      <div class="main-nav-opt">Events</div>
+      <div class="main-nav-opt"><span>Events</span><i class="fa fa-star-o"></i></div>
+      <h3>Post Events that have a significant impact on your life.</h3>
+
     <% end %>
     <%= link_to c_notes_index_path do %>
-      <div class="main-nav-opt">Notes</div>
+      <div class="main-nav-opt"><span>Notes</span><i class="fa fa-bell-o"></i></div>
+      <h3>Read Notes that your therapist has posted to you.</h3>
+
     <% end %>
   </div>
 
