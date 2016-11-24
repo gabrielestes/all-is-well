@@ -20,22 +20,25 @@ $deep-jade: #30C5A7;
   @media (max-width: 650px) {
     flex-direction: column;
   }
-  &.shrink {
-    // height: 100px;
+  // &.shrink {
+  //   // height: 100px;
     @media (max-width: 650px) {
       margin-top: 200px;
-
-    }
-    #add-entry-btn,
-    #previous-entries-btn {
-      height: 50px;
-      margin-bottom: 0px;
-    }
+    //
+    // }
+    // #add-entry-btn,
+    // #previous-entries-btn {
+    //   height: 50px;
+    //   margin-bottom: 0px;
+    // }
   }
     #previous-entries-btn,
     #add-entry-btn {
+      height: 50px;
+      margin-bottom: 0px;
+
       width: 300px;
-      height: 300px;
+      // height: 300px;
       background: $seafoam;
       &:hover {
         background: $seagreen;
