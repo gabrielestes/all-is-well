@@ -1,35 +1,41 @@
-<% @notes.each do |n| %>
-    <div class="note-card">
-      <div class="note-title-row">
-          <div class="note-title-label view-note"><h3><i class="fa fa-pencil"></i><span class="label">Subject: </span><%= n.title %></h3></div>
-          <div class="note-privacy-info">
-              <% if n.shared == false %>
-                <div class="private note-status selected">
-                    <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                    <span class="status">private</span>
+<% if @notes.count > 0 %>
+  <% @notes.each do |n| %>
+      <div class="note-card">
+        <div class="note-title-row">
+            <div class="note-title-label view-note"><h3><i class="fa fa-pencil"></i><span class="label">Subject: </span><%= n.title %></h3></div>
+            <div class="note-privacy-info">
+                <% if n.shared == false %>
+                  <div class="private note-status selected">
+                      <i class="fa fa-eye-slash" aria-hidden="true"></i>
+                      <span class="status">private</span>
+                  </div>
+                <% elsif n.shared == true && current_user.userable_type == "Therapist" %>
+                  <div class="shared note-status selected">
+                      <i class="fa fa-eye" aria-hidden="true"></i>
+                      <span class="status">shared</span>
+                  </div>
+                <% end %>
+                <% if current_user.userable_type == "Client" %>
+                  <div class="note-authorship">
+                    <span>, from <%= @client_therapist.last_name %>, <%= @client_therapist.first_name %> </span>
+                  </div>
+                <% end %>
+            </div>
+        </div>
+        <div class="note-message-content">
+            <p><%= n.message %></p>
+            <div class="note-message-footer">
+                <div class="note-date-info">
+                    <span>created at
+                    </span>
+                    <span class="date"><%= n.created_at.to_date %> <%= n.created_at.strftime("%H:%M") %></span>
                 </div>
-              <% elsif n.shared == true && current_user.userable_type == "Therapist" %>
-                <div class="shared note-status selected">
-                    <i class="fa fa-eye" aria-hidden="true"></i>
-                    <span class="status">shared</span>
-                </div>
-              <% end %>
-              <% if current_user.userable_type == "Client" %>
-                <div class="note-authorship">
-                  <span>, from <%= @client_therapist.last_name %>, <%= @client_therapist.first_name %> </span>
-                </div>
-              <% end %>
-          </div>
+            </div>
+        </div>
       </div>
-      <div class="note-message-content">
-          <p><%= n.message %></p>
-          <div class="note-message-footer">
-              <div class="note-date-info">
-                  <span>created at
-                  </span>
-                  <span class="date"><%= n.created_at.to_date %> <%= n.created_at.strftime("%H:%M") %></span>
-              </div>
-          </div>
-      </div>
-    </div>
+  <% end %>
+<% elsif @notes.count == 0 %>
+  <div class="note-message-content">
+    <p><%= "You have not left any notes for #{@current_client.first_name}. Send a new note!" %></p>
+  </div>
 <% end %>
