@@ -7,6 +7,13 @@ class TherapistsController < ApplicationController
     if current_user.userable_type == "Therapist"
       @therapist = Therapist.find(current_user.userable_id)
       @clients = Client.where(therapist_id: @therapist.id)
+      @clients.each do |c|
+        unless Survey.where(client_id: c.id)
+          c.wellness = Survey.where(client_id: c.id).order(created_at: :desc).first.total
+          c.save
+        end
+      end
+      # debugger
     elsif current_user.userable_type == "Client"
       @client = Client.find(current_user.userable.id)
       @therapist = Therapist.find(@client.therapist_id)
