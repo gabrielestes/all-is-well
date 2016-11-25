@@ -33,40 +33,53 @@ aside.my-therapist {
     margin: 0 auto;
     height: 100vh;
     display: flex;
+    &.c-profile {
+      height: auto;
+    }
 
-
+    .meds {
+      align-items: flex-start;
+      .med-list {
+        flex-direction: column;
+        margin: 5px 0;
+      }
+    }
     .data {
       background: none;
       display: flex;
       flex-direction: column;
-      width: auto;
+      width: 88%;
+      @media (max-width:470px){
+        width: auto;
+      }
       .data-block {
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
+        margin: 5px 0;
+        flex-wrap: wrap;
         @media (max-width: 470px){
-          flex-direction: column;
-          align-items: center;
-          border-bottom: 0.25px solid $grey;
+          padding: 5px 0;
         }
         h3 {
-          font-size: 30px;
+          font-size: 20px;
           color: $seagreenD;
-          padding: 30px;
+          margin: 5px 0;
           @media (max-width: 470px){
               font-size: 19px;
-              padding-bottom: 0;
+              padding: 0;
           }
         }
         span {
           display: flex;
           justify-content: flex-start;
-          font-size: 30px;
-          padding: 30px;
+          font-size: 18px;
           color: $fun;
           width: 100%;
           @media (max-width: 470px){
               font-size: 18px;
-              justify-content: center;
+              justify-content: flex-start;
+              padding: 0;
         }
       }
     }
