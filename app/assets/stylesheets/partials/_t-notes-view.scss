@@ -1,12 +1,26 @@
 
-$seagreen: rgb(55, 207, 176);
-$seagreenM: rgb(35, 188, 158);
-$private-red: #8A0116;
-$jade: #7cdfcb;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
-$fun: #b1269e;
+$text-grey: #a5a5a5;
+$seagreen: #99ded0;
+$seagreenM: #7ad4c2;
+$seajade: rgb(35, 188, 158);
+$seafoam: #cae8e2;
+$private-red: #8A0116;
+$fun: #4c5fce;
+$sky: #8CC6DB;
+$dustylilac: #928EA0;
 
+/* Pop Color */
+$pop-color: $fun;
+
+/* Calendar Event Colors */
+$negative-event: $pop-color;
+$positive-event: $sky;
+$neutral-event: $dustylilac;
+
+/* Icon Color for Activity Detail, Note, Entry Cards */
+$detail-icon-color: $seajade;
 
     .tabbed-views-wrapper {
         width: 100%;
@@ -22,14 +36,14 @@ $fun: #b1269e;
 
               #tab-a-btn, #tab-b-btn {
                   &:hover, &:active {
-                    color: $fun;
+                    color: $pop-color;
 
                   }
                 }
 
               &.active {
                     #tab-a-btn, #tab-b-btn {
-                      color: $fun;
+                      color: $pop-color;
                       text-decoration: underline;
 
                 }

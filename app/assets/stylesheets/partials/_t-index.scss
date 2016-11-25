@@ -8,6 +8,7 @@ $seagreenD: #000;
 $seafoam: #cae8e2;
 $grey: #dfe0e6;
 $fun: #4c5fce;
+$pop-color: $fun;
 
 .clients-header {
   width: 100%;
@@ -38,7 +39,7 @@ $fun: #4c5fce;
       font-size: 20px;
       &.actives {
         background: $seafoam;
-        color: $fun;
+        color: $pop-color;
       }
       &:first-child {
         text-align: left;
@@ -53,9 +54,9 @@ $fun: #4c5fce;
   text-align: right;
 }
 #patient_card_header {
-  color: $fun;
+  color: $pop-color;
   & div:hover {
-    color: $fun;
+    color: $pop-color;
     background: $seafoam;
   }
   .pt_wellness {
@@ -93,7 +94,7 @@ a {
     i {
       width: 12%;
       color: #fff;
-      text-shadow: 1px 1px 1px $seagreenD;
+      text-shadow: 1px 1px 1px #000;
       opacity: 0;
       text-align: right;
 

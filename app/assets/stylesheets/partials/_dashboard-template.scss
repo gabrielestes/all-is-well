@@ -1,23 +1,10 @@
-
-$jade: #7cdfcb;
-$medium-jade: #4AD3B8;
-$seagreen: #37CFB0;
-$deep-jade: #30C5A7;
-$seagreenD: #000;
+$seagreen: #99ded0;
 $seagreenM: #7ad4c2;
-
 $seafoam: #cae8e2;
 $fun: #4c5fce;
+$pop-color: $fun;
 
 
-
-@function tint($color, $percent) {
-  @return mix(#fff, $color, $percent);
-}
-
-@function shade($color, $percent) {
-  @return mix(#000, $color, $percent);
-}
 
 // ****** THERAPIST/CLIENT VIEW DASHBOARD PARTIAL STYLING - APPLIES ACROSS MANY PAGES ***** //
 
@@ -112,8 +99,6 @@ $fun: #4c5fce;
 
 
       &:hover {
-
-        // background-color: $seagreen;
           h3 {
         color: #000;
         text-decoration: underline;
@@ -202,7 +187,7 @@ $fun: #4c5fce;
   transition: all .3s linear;
   cursor: default;
       h3 {
-        color: $fun;
+        color: $pop-color;
       }
 
   &.initial-page-load {

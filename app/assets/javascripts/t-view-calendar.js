@@ -36,9 +36,9 @@
           }
         );
 
-        var positiveColor = "#5EAAED";
-        var negativeColor = "#b1269e";
-        var neutralColor = "#A49097";
+        var positiveColor = "#8CC6DB";
+        var negativeColor = "#4c5fce";
+        var neutralColor = "#928EA0";
 
         var positiveEventsObj = {
           events: positiveEvents,
