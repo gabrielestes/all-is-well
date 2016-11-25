@@ -19,14 +19,18 @@ $dustymauve: #A49097;
 width: 100%;
 
   .nav-wrapper {
-    width: 75%;
+    width: 80%;
     display: flex;
     margin: 0 auto;
     justify-content: space-around;
+    @media (max-width: 900px){
+      flex-wrap: wrap;
+    }
       a {
         width: auto;
+        margin: 0 20px 20px;
           div.main-nav-opt {
-          color: #fff;
+          color: #000;
           font-size: 1.5em;
           height: 200px;
           width: 200px;
@@ -43,6 +47,7 @@ width: 100%;
             &:hover {
             text-decoration: underline;
             background: $seagreen;
+            color: #fff;
             }
           }
           h3 {
