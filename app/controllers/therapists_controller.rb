@@ -8,8 +8,10 @@ class TherapistsController < ApplicationController
       @therapist = Therapist.find(current_user.userable_id)
       @clients = Client.where(therapist_id: @therapist.id)
       @clients.each do |c|
-        c.wellness = Survey.where(client_id: c.id).last.total
-        c.save!
+        unless Survey.where(client_id: c.id)
+          c.wellness = Survey.where(client_id: c.id).order(created_at: :desc).first.total
+          c.save
+        end
       end
       @clients
     elsif current_user.userable_type == "Client"
