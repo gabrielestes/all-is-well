@@ -3,10 +3,10 @@
 <div class="patient_card entry activity-card">
     <div class="activity-type">
         <i class="fa fa-pencil"></i>
-        <p class="activity-type">Entry</p>
+        <p>Journal Entry</p>
     </div>
     <p class="time">
-        <%= e.created_at.strftime("%B %d at %I:%M %p") %>
+        <%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %>
     </p>
 </div>
 <% end %>

@@ -1,16 +1,20 @@
 <% @surveys.each do |s| %>
   <div class="patient_card mood activity-card">
-    <p class="date"><%= s.created_at.to_date %></p>
-    <p class="time"><%= s.created_at.strftime("%H:%M") %></p>
-    <p class="activity-type">Mood: <%= s.total %></p>
-    <% if s.total < 5 %>
-      <i class="fa fa-smile-o"></i>
-    <% elsif s.total < 10 %>
-      <i class="fa fa-smile-o"></i>
-    <% elsif s.total < 15 %>
-      <i class="fa fa-meh-o"></i>
-    <% elsif s.total < 27 %>
-      <i class="fa fa-frown-o"></i>
-    <% end %>
+    <div class="activity-type">
+      <% if s.total < 5 %>
+        <i class="fa fa-smile-o"></i>
+      <% elsif s.total < 10 %>
+        <i class="fa fa-smile-o"></i>
+      <% elsif s.total < 15 %>
+        <i class="fa fa-meh-o"></i>
+      <% elsif s.total < 27 %>
+        <i class="fa fa-frown-o"></i>
+      <% end %>
+      <p>Mood Survey -
+         <span class="score"><%= s.total %>
+         </span>
+      </p>
+    </div>
+    <p class="time"><%= s.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
   </div>
 <% end %>

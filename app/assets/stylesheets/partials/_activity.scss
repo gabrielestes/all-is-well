@@ -73,7 +73,7 @@ $detail-icon-color: $seajade;
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    font-size: 17px;
+    font-size: 18px;
     background: #fff;
     padding: 10px 20px;
     margin-bottom: 5px;
@@ -93,10 +93,22 @@ $detail-icon-color: $seajade;
   }
 
   .activity-type {
-    i, p {
-      margin-left: 5px;
+    i {
+      font-size: 24px;
+    }
+    p {
+      margin-left: 10px;
       font-size: 20px;
       display: inline;
     }
+
+    span.score, span.type-of {
+      font-style: italic;
+    }
   }
+
+  p.time {
+    font-style: italic;
+  }
+
 }
