@@ -1,18 +1,26 @@
-$seagreen: #99ded0;
-$seagreenT: rgba(55, 207, 176, 0.4);
-$seagreenTb: rgba(55, 207, 176, 0.7);
-$seagreenM: #7ad4c2;
-$seagreenMT: rgba(35, 188, 158, 0.4);
-$seagreenD: #000;
-$dark: #333333;
-$red: rgb(234,6,6);
-$seafoam: #cae8e2;
-$grey: #dfe0e6;
-$fun: #4c5fce;
 
-@function shade($color, $percent) {
-  @return mix(#000, $color, $percent);
-}
+$grey: #dfe0e6;
+$border-grey: #c9cacf;
+$text-grey: #a5a5a5;
+$seagreen: #99ded0;
+$seagreenM: #7ad4c2;
+$seajade: rgb(35, 188, 158);
+$seafoam: #cae8e2;
+$private-red: #8A0116;
+$fun: #4c5fce;
+$sky: #8CC6DB;
+$dustylilac: #928EA0;
+
+/* Pop Color */
+$pop-color: $fun;
+
+/* Calendar Event Colors */
+$negative-event: $pop-color;
+$positive-event: $sky;
+$neutral-event: $dustylilac;
+
+/* Icon Color for Activity Detail, Note, Entry Cards */
+$detail-icon-color: $seajade;
 
 .c-activity {
   width: 100%;
@@ -38,7 +46,7 @@ $fun: #4c5fce;
         width: 25%;
         padding: 15px;
         height: 100%;
-        color:$seagreenD;
+        color: #000;
         background-color: $seafoam;
         border-right: .25px solid $seagreenM;
         &.filter_event {
@@ -70,7 +78,7 @@ $fun: #4c5fce;
     padding: 10px 20px;
     margin-bottom: 5px;
     &.event {
-        color: $fun;
+        color: $pop-color;
     }
     &.entry {
       color: $seagreen;
@@ -80,7 +88,7 @@ $fun: #4c5fce;
     }
     &:hover{
       background: $seafoam;
-      color: $seagreenD;
+      color: #000;
     }
   }
 

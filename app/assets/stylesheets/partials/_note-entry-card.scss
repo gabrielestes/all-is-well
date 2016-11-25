@@ -1,12 +1,26 @@
 
-$seagreen: rgb(55, 207, 176);
-$seagreenM: rgb(35, 188, 158);
-$seafoam: #A3E0D3;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
+$text-grey: #a5a5a5;
+$seagreen: #99ded0;
+$seagreenM: #7ad4c2;
+$seajade: rgb(35, 188, 158);
+$seafoam: #cae8e2;
 $private-red: #8A0116;
-$fun: #b1269e;
+$fun: #4c5fce;
+$sky: #8CC6DB;
+$dustylilac: #928EA0;
 
+/* Pop Color */
+$pop-color: $fun;
+
+/* Calendar Event Colors */
+$negative-event: $pop-color;
+$positive-event: $sky;
+$neutral-event: $dustylilac;
+
+/* Icon Color for Activity Detail, Note, Entry Cards */
+$detail-icon-color: $seajade;
 
 
 
@@ -31,7 +45,7 @@ $fun: #b1269e;
 
             i {
               margin-right: 5px;
-              color: $seagreenM;
+              color: $detail-icon-color;
             }
 
             span.label {
@@ -65,7 +79,7 @@ $fun: #b1269e;
                 &.shared {
                     i,
                     span.status {
-                        color: $seagreenM;
+                        color: $detail-icon-color;
                     }
                 }
 
@@ -92,7 +106,6 @@ $fun: #b1269e;
     .entry-view-content,
     .note-message-content {
         width: 100%;
-        // border: 1px solid #d6d6d6;
         font-size: 1em;
         padding: 10px;
         background-color: #fff;
@@ -109,7 +122,7 @@ $fun: #b1269e;
         span {
             font-style: italic;
             font-size: 0.9em;
-            color: #a5a5a5;
+            color: $text-grey;
         }
 
         .note-date-info {

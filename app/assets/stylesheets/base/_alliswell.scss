@@ -1,19 +1,30 @@
-$seagreen: #99ded0;
-$seagreenM: #7ad4c2;
-
-$seafoam: #cae8e2;
 
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
+$text-grey: #a5a5a5;
+$seagreen: #99ded0;
+$seagreenM: #7ad4c2;
+$seajade: rgb(35, 188, 158);
+$seafoam: #cae8e2;
 $private-red: #8A0116;
 $fun: #4c5fce;
-$periwinkle: #5EAAED;
-$dustymauve: #A49097;
+$sky: #8CC6DB;
+$dustylilac: #928EA0;
 
-$negative-event: $fun;
-$positive-event: $periwinkle;
-$neutral-event: $dustymauve;
+/* Pop Color */
+$pop-color: $fun;
+
+/* Calendar Event Colors */
+$negative-event: $pop-color;
+$positive-event: $sky;
+$neutral-event: $dustylilac;
+
+/* Icon Color for Activity Detail, Note, Entry Cards */
+$detail-icon-color: $seajade;
 
 
+/* Site Font */
 @import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+/* Logo Font */
 @import url('https://fonts.googleapis.com/css?family=Dancing+Script');
