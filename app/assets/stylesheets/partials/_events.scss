@@ -15,26 +15,35 @@ $fun: #4c5fce;
   .welcome {
     font-size: 20px;
     margin: 10px 0;
+    text-align: center;
   }
+
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
     div {
       margin: 10px 0;
-      line-height: 42px;
+      line-height: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      label {
+        font-size: 17px;
+      }
       input,
       textarea,
       select {
         text-align: center;
         color: $seagreenD;
+        height: 30px;
+        font-size: 15px;
+        font-family: 'Quicksand',sans-serif;
         &:focus {
           outline-color: $seagreenD;
           border: 1px solid $seagreenD;
         }
+
 
       }
 
@@ -48,6 +57,7 @@ $fun: #4c5fce;
 
 #event-text {
   overflow-wrap: break-word;
-  width: 87vw;
-  height: 26vw;
+  max-width: 680px;
+  width: 70vw;
+  height: 20vh;
 }
