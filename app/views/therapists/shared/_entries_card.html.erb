@@ -1,10 +1,13 @@
 <% @entries.each do |e| %>
-  <% if e.sharable == true %>
-    <div class="patient_card entry activity-card">
-      <p class="date"><%= e.created_at.to_date %></p>
-      <p class="time"> <%= e.created_at.strftime("%H:%M") %> </p>
-      <p class="activity-type">Entry</p>
-      <i class="fa fa-pencil"></i>
+<% if e.sharable == true %>
+<div class="patient_card entry activity-card">
+    <div class="activity-type">
+        <i class="fa fa-pencil"></i>
+        <p class="activity-type">Entry</p>
     </div>
-  <% end %>
+    <p class="time">
+        <%= e.created_at.strftime("%B %d at %I:%M %p") %>
+    </p>
+</div>
+<% end %>
 <% end %>

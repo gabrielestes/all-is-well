@@ -14,20 +14,20 @@
                     <span class="status">shared</span>
                 </div>
               <% end %>
-              <% if current_user.userable_type == "Client" %>
-                <div class="note-authorship">
-                  <span>, from <%= @client_therapist.last_name %>, <%= @client_therapist.first_name %> </span>
-                </div>
-              <% end %>
           </div>
       </div>
       <div class="note-message-content">
           <p><%= n.message %></p>
           <div class="note-message-footer">
+            <% if current_user.userable_type == "Client" %>
+              <div class="note-authorship">
+                <span>by <%= @client_therapist.first_name %> <%= @client_therapist.last_name %> on </span>
+              </div>
+            <% elsif current_user.userable_type == "Therapist" %>
+              <div class="note-authorship"><span>created on</span></div>
+            <% end %>
               <div class="note-date-info">
-                  <span>created at
-                  </span>
-                  <span class="date"><%= n.created_at.to_date %> <%= n.created_at.strftime("%H:%M") %></span>
+                  <span class="date"><%= n.created_at.strftime("%B %d at %I:%M %p") %></span>
               </div>
           </div>
       </div>

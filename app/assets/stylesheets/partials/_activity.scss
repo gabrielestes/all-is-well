@@ -62,11 +62,12 @@ $fun: #4c5fce;
   .patient_card {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     height: 50px;
     font-size: 17px;
-    align-items: center;
     background: #fff;
+    padding: 10px 20px;
     margin-bottom: 5px;
     &.event {
         color: $fun;
@@ -80,6 +81,14 @@ $fun: #4c5fce;
     &:hover{
       background: $seafoam;
       color: $seagreenD;
+    }
+  }
+
+  .activity-type {
+    i, p {
+      margin-left: 5px;
+      font-size: 20px;
+      display: inline;
     }
   }
 }

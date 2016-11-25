@@ -3,92 +3,82 @@
     <%= render :partial => "therapists/shared/t_view_header" %>
     <div class="t-view-main">
 
-
-
         <div class="modal">
             <div class="modal-content">
                 <div class="modal-background"></div>
 
-                    <div class="event-detail-card">
-                         <div class="event-title-row">
-                             <span class="event-title-label">
-                                 <i class="fa fa-star-o"></i>
-                             </span>
-                             <h3 id="event-date">EVENT DATE</h3>
-                             <div class="x-btn">
-                                 <p>&#10005;</p>
-                             </div>
-                         </div>
-                         <div class="event-type-sub-header">
-                           <h3 id="event-type">EVENT TYPE</h3>
-                         </div>
-                         <div class="event-description-content">
-                             <p id="event-description">Event Description</p>
-                         </div>
-                     </div>
+                <div class="event-detail-card">
+                    <div class="event-title-row">
+                        <span class="event-title-label">
+                            <i class="fa fa-star-o"></i>
+                        </span>
+                        <h3 id="event-date">EVENT DATE</h3>
+                        <div class="x-btn">
+                            <p>&#10005;</p>
+                        </div>
+                    </div>
+                    <div class="event-type-sub-header">
+                        <h3 id="event-type">EVENT TYPE</h3>
+                    </div>
+                    <div class="event-description-content">
+                        <p id="event-description">Event Description</p>
+                    </div>
+                </div>
 
-                     <div class="entry-detail-card">
-                          <div class="entry-title-row">
-                              <span class="entry-title-label">
-                                  <i class="fa fa-pencil"></i>
-                              </span>
-                              <h3 id="entry-date">ENTRY DATE</h3>
-                              <div class="x-btn">
-                                  <p>&#10005;</p>
-                              </div>
-                          </div>
-                          <div class="entry-type-sub-header">
-                            <h3 id="entry-type">ENTRY TYPE</h3>
-                          </div>
-                          <div class="entry-description-content">
-                              <p id="entry-description">Entry Description</p>
-                          </div>
-                      </div>
+                <div class="entry-detail-card">
+                    <div class="entry-title-row">
+                        <span class="entry-title-label">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                        <h3 id="entry-date">ENTRY DATE</h3>
+                        <div class="x-btn">
+                            <p>&#10005;</p>
+                        </div>
+                    </div>
+                    <div class="entry-type-sub-header">
+                        <h3 id="entry-type">ENTRY TYPE</h3>
+                    </div>
+                    <div class="entry-description-content">
+                        <p id="entry-description">Entry Description</p>
+                    </div>
+                </div>
 
-                      <div class="mood-detail-card">
-                           <div class="mood-title-row">
-                               <span class="mood-title-label">
-                                   <i class="fa fa-smile-o"></i>
-                               </span>
-                               <h3 id="mood-date">MOOD SURVEY DATE</h3>
-                               <div class="x-btn">
-                                   <p>&#10005;</p>
-                               </div>
-                           </div>
-                           <div class="mood-score-sub-header">
-                             <h3 id="mood-score">MOOD SCORE</h3>
-                           </div>
-                           <div class="mood-survey-content">
-                               <p id="mood-survey">Mood Survey Results</p>
-                           </div>
-                       </div>
-
-
+                <div class="mood-detail-card">
+                    <div class="mood-title-row">
+                        <span class="mood-title-label">
+                            <i class="fa fa-smile-o"></i>
+                        </span>
+                        <h3 id="mood-date">MOOD SURVEY DATE</h3>
+                        <div class="x-btn">
+                            <p>&#10005;</p>
+                        </div>
+                    </div>
+                    <div class="mood-score-sub-header">
+                        <h3 id="mood-score">MOOD SCORE</h3>
+                    </div>
+                    <div class="mood-survey-content">
+                        <p id="mood-survey">Mood Survey Results</p>
+                    </div>
+                </div>
 
             </div>
         </div>
-    </div>
 
+        <div class="welcome">Current Activity of Client</div>
+        <div class="c-activity">
+            <div class="filter_title">
+                <a href="#" class="filter_event">Events</a>
+                <a href="#" class="filter_entry">Entries</a>
+                <a href="#" class="filter_mood">Mood</a>
+                <a href="#" class="filter_all active">All</a>
+            </div>
+            <%= render :partial => "therapists/shared/entries_card" %>
+            <%= render :partial => "therapists/shared/events_card" %>
+            <%= render :partial => "therapists/shared/surveys_card" %>
 
-
-
-    <div class="welcome">Current Activity of Client</div>
-
-    <!-- PUT THERAPIST VIEW PAGE CONTENT BELOW HERE -->
-    <div class="c-activity">
-        <div class="filter_title">
-            <a href="#" class="filter_event">Events</a>
-            <a href="#" class="filter_entry">Entries</a>
-            <a href="#" class="filter_mood">Mood</a>
-            <a href="#" class="filter_all active">All</a>
         </div>
-        <%= render :partial => "therapists/shared/entries_card" %>
-        <%= render :partial => "therapists/shared/events_card" %>
-        <%= render :partial => "therapists/shared/surveys_card" %>
 
     </div>
-
-    <!-- END THERAPIST VIEW PAGE CONTENT -->
 
 </div>
 </div>

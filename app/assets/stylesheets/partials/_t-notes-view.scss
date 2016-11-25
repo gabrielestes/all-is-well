@@ -6,6 +6,7 @@ $jade: #7cdfcb;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
 $fun: #b1269e;
+$pop-color: $fun;
 
 
     .tabbed-views-wrapper {
@@ -22,7 +23,7 @@ $fun: #b1269e;
 
               #tab-a-btn, #tab-b-btn {
                   &:hover, &:active {
-                    color: $fun;
+                    color: $pop-color;
 
                   }
                 }
