@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #
 def rand_num
-  [*1..10].sample
+  [*0..100].sample
 end
 
 def rand_score
@@ -19,7 +19,7 @@ def rand_init
 end
 
 def rand_dob
-  "#{[*1..12].sample}-#{[*1..28].sample}-#{[*1950..2000].sample}"
+  rand(Date.civil(1960, 1, 1)..Date.civil(2000, 12, 31))
 end
 
 def rand_relation
@@ -35,7 +35,7 @@ def rand_survey
 end
 
 def event_type
-  types = ["positive", "negative"].sample
+  ["positive", "negative", "neutral"].sample
 end
 
 def date
@@ -52,17 +52,17 @@ count = 1
   t = Therapist.create(
     first_name: FFaker::Name.first_name,
     last_name: FFaker::Name.last_name,
-    cred: rand_cred,
-    phone: FFaker::PhoneNumber.phone_number,
-    email: FFaker::Internet.free_email
+    cred: "LCSW",
+    phone: FFaker::PhoneNumber.phone_number
   )
+  t.email = t.first_name[0].downcase + t.last_name.downcase + '@alliswell.com'
+  t.save
   user = User.create(
-    email: FFaker::Internet.free_email,
-    password: FFaker::Internet.password,
+    email: t.email,
+    password: 'password',
+    password_confirmation: 'password',
     userable: t
   )
-  user.password_confirmation = user.password
-  user.save
 
   4.times do
     c = Client.create(
@@ -72,17 +72,24 @@ count = 1
       initial: rand_init,
       birth_date: rand_dob,
       phone: FFaker::PhoneNumber.phone_number,
-      # emergency:
       wellness: rand_num
     )
 
     u = User.create(
-      email: FFaker::Internet.free_email,
-      password: FFaker::Internet.password,
+      email: c.first_name[0].downcase + c.last_name.downcase + "@alliswell.com",
+      password: "password",
+      password_confirmation: "password",
       userable: c
     )
-    u.password_confirmation = u.password
-    u.save
+
+    3.times do
+      event = Event.create(
+        client_id: c.id,
+        event_type: event_type,
+        date: rand(Date.civil(2016, 11, 1)..Date.civil(2016, 11, 25)),
+        description: FFaker::CheesyLingo.sentence
+      )
+    end
   end
 end
 
@@ -100,29 +107,16 @@ count = 1
   count += 1
 end
 
-count = 1
-5.times do
-  3.times do
-    event = Event.create(
-      client_id: count,
-      event_type: event_type,
-      date: date,
-      description: FFaker::CheesyLingo.sentence
-    )
-  end
-  count += 1
-end
-
 t = Therapist.create(
-    first_name: "Hugh",
-    last_name: "Mungus",
-    cred: "MD",
-    phone: "9191919191",
-    email: "hugh@mungus.com"
+    first_name: "Ben",
+    last_name: "Sanderson",
+    cred: "LCSW",
+    phone: "919-456-7890",
+    email: "bsanderson@alliswell.com"
     )
 
 user = User.create(
-email: "hugh@mungus.com",
+email: "bsanderson@alliswell.com",
 password: "password",
 password_confirmation: "password",
 userable: t
@@ -136,17 +130,24 @@ userable: t
     initial: rand_init,
     birth_date: rand_dob,
     phone: FFaker::PhoneNumber.phone_number,
-    # emergency:
     wellness: rand_num
   )
 
   u = User.create(
-    email: FFaker::Internet.free_email,
-    password: FFaker::Internet.password,
+    email: c.first_name[0].downcase + c.last_name.downcase + "@alliswell.com",
+    password: "password",
+    password_confirmation: "password",
     userable: c
   )
-  u.password_confirmation = u.password
-  u.save
+
+  3.times do
+    event = Event.create(
+      client_id: c.id,
+      event_type: event_type,
+      date: rand(Date.civil(2016, 11, 1)..Date.civil(2016, 11, 25)),
+      description: FFaker::CheesyLingo.sentence
+    )
+  end
 end
 
 count = 0
@@ -154,9 +155,9 @@ count = 0
   4.times do
     n = Post.create(
       client_id: count,
-      sharable: true,
+      sharable: [true, false].sample,
       title: FFaker::Book.title,
-      body: FFaker::Lorem.sentence,
+      body: FFaker::Lorem.sentence
     )
   end
   count += 1
@@ -190,7 +191,7 @@ count = 1
       q8: rand_score,
       q9: rand_score
     )
-    survey.total = survey.q1 + survey.q2 + survey.q3 + survey.q4 + survey.q5 + survey.q6 + survey.q7 + survey.q8 + survey.q9
+    survey.total = ((1 - ((survey.q1 + survey.q2 + survey.q3 + survey.q4 + survey.q5 + survey.q6 + survey.q7 + survey.q8 + survey.q9)/27.to_f)) * 100).round
     survey.save!
   end
   count += 1
