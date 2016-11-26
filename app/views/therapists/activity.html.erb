@@ -64,12 +64,15 @@
             </div>
         </div>
 
-        <div class="welcome">Current Activity of Client</div>
+        <div class="welcome">
+          <h1>Current Activity of Client</h1>
+        </div>
         <div class="c-activity">
+            <h3 class="filterBy">filter by:</h3>
             <div class="filter_title">
-                <a href="#" class="filter_event">Events</a>
-                <a href="#" class="filter_entry">Entries</a>
-                <a href="#" class="filter_mood">Mood</a>
+                <a href="#" class="filter_event"><i class="fa fa-star-o"></i>Events</a>
+                <a href="#" class="filter_entry"><i class="fa fa-pencil"></i>Entries</a>
+                <a href="#" class="filter_mood"><i class="fa fa-smile-o"></i>Mood</a>
                 <a href="#" class="filter_all active">All</a>
             </div>
             <%= render :partial => "therapists/shared/entries_card" %>

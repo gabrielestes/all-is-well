@@ -22,26 +22,42 @@ $neutral-event: $dustylilac;
 /* Icon Color for Activity Detail, Note, Entry Cards */
 $detail-icon-color: $seajade;
 
+.welcome {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .c-activity {
   width: 100%;
+  max-width: 700px;
   height: 100%;
-  margin: 30px auto;
+  margin: 20px auto;
   background: $grey;
-  padding: 1px 10px;
+  padding: 10px 10px;
+
+  .filterBy {
+    font-style: italic;
+    color: $detail-icon-color;
+  }
 
   .filter_title {
     display: flex;
     height: 50px;
     justify-content: space-between;
-    margin: 11px auto 7px;
+    margin: 10px auto 10px;
     width: 100%;
     background: $seagreenM;
+    border: .25px solid $seagreenM;
+
 
     @media (max-width: 570px){
       width: 100%;
     }
 
       a {
+        font-size: 20px;
         text-align: center;
         width: 25%;
         padding: 15px;
@@ -65,9 +81,15 @@ $detail-icon-color: $seajade;
           background: $seagreen;
           color: #fff;
         }
+
+        i {
+          margin-right: 5px;
+        }
+
       }
   }
   .patient_card {
+    cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: space-between;

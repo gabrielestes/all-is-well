@@ -84,6 +84,7 @@ $detail-icon-color: $seajade;
 .event-detail-card,
 .entry-detail-card,
 .mood-detail-card{
+  cursor: default;
    display: none;
    z-index: 6;
    width: 80%;

@@ -31,7 +31,7 @@
   $(document).on('click', '.activity-card', function(event) {
 
 
-    var clickedCard = event.target;
+    var clickedCard = event.currentTarget;
 
 
     var detailCards = ['.event-detail-card', '.entry-detail-card', '.mood-detail-card'];
