@@ -47,6 +47,9 @@ def relation
   ["parent", "sibling", "child", "friend"].sample
 end
 
+def meds
+  m = ["Lexapro", "Zoloft", "Prozac", "Paxil", " Oleptro", "Celexa", "None", "None", "None"].sample
+end
 count = 1
 5.times do
   t = Therapist.create(
@@ -72,7 +75,9 @@ count = 1
       initial: rand_init,
       birth_date: rand_dob,
       phone: FFaker::PhoneNumber.phone_number,
-      wellness: rand_num
+      wellness: rand_num,
+      general_prac: FFaker::Name.first_name + ' ' +FFaker::Name.last_name + ', MD',
+      current_meds: meds
     )
 
     u = User.create(
@@ -130,7 +135,9 @@ userable: t
     initial: rand_init,
     birth_date: rand_dob,
     phone: FFaker::PhoneNumber.phone_number,
-    wellness: rand_num
+    wellness: rand_num,
+    general_prac: FFaker::Name.first_name + ' ' +FFaker::Name.last_name + ', MD',
+    current_meds: meds
   )
 
   u = User.create(
