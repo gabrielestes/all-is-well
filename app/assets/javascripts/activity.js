@@ -42,7 +42,6 @@
 
 
     if ($(clickedCard).hasClass('event')) {
-      console.log('in');
       $('.event-detail-card').addClass('active');
     }
 
