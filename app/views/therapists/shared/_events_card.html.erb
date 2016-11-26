@@ -5,7 +5,9 @@
       <p>Event - <span class="type-of">negative</span></p>
     </div>
     <p class="time"><%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
-
+    <p hidden>
+      <%= e.description %>
+    </p>
 
   </div>
 <% end %>
