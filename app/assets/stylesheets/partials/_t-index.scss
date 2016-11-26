@@ -14,6 +14,11 @@ $pop-color: $fun;
   width: 100%;
   font-size: 24px;
   text-align: center;
+  p {
+    font-size: 15px;
+    margin: 10px 0;
+    font-style: italic;
+  }
 }
 
 .t-index {
@@ -25,27 +30,28 @@ $pop-color: $fun;
   align-items: center;
   margin: 44px auto;
   .sort-background {
-    background: $seafoam;
-    width: 92%;
+    background: $grey;
+    width: 100%;
     }
   .sort {
     display: flex;
     background: $grey;
+    line-height: 44px;
+    margin: 5px;
 
     a {
       width: 50%;
-      padding: 13px;
       text-align: center;
       font-size: 20px;
+      background: $seafoam;
+      border-right: 0.25px solid $seagreenM;
+      cursor: pointer;
       &.actives {
-        background: $seafoam;
-        color: $pop-color;
+        background: $seagreen;
+        color: #fff;
       }
-      &:first-child {
-        text-align: left;
-        &:hover {
-          color: $seagreenD;
-        }
+      &:last-child {
+        border-right: none;
       }
     }
   }
@@ -54,10 +60,20 @@ $pop-color: $fun;
   text-align: right;
 }
 #patient_card_header {
-  color: $pop-color;
+
+  color: $fun;
+  font-size: 17px;
   & div:hover {
-    color: $pop-color;
-    background: $seafoam;
+    color: $fun;
+    background: #fff;
+  }
+  p {
+    text-align: center;
+  }
+  .id_number,
+  .pt_name {
+    text-align: left;
+
   }
   .pt_wellness {
     text-align: center;
@@ -66,38 +82,40 @@ $pop-color: $fun;
 }
 a {
   width: 95%;
-  .patient_card{
+  .patient_card {
     display: flex;
-    justify-content: flex-start;
-    padding: 2%;
-    background: $seafoam;
-    border-bottom: 0.25px solid $grey;
+    justify-content: space-between;
+    line-height: 44px;
+    background: #fff;
+    margin: 5px;
+    padding: 5px;
     &:hover {
       color: #fff;
       background: $seagreen;
     }
 
     p {
-      width: 12%;
+      text-align: left;
       font-size: 1em;
+      width: 34%;
+      text-align: left;
       @media (min-width: 570px) {
         font-size: 1.2em;
       }
       &.pt_wellness {
+        width: 15%;
         text-align: right;
-        width: 12%;
-      }
-      &.pt_name {
-        width:60%;
       }
     }
     i {
-      width: 12%;
-      color: #fff;
-      text-shadow: 1px 1px 1px #000;
-      opacity: 0;
-      text-align: right;
 
+      width: 15%;
+      color: $fun;
+      opacity: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
       &.show {
         opacity: 1;
       }
