@@ -8,7 +8,10 @@
     <p class="time">
         <%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %>
     </p>
-    <p hidden class="entry-body">
+    <p hidden>
+      <% e.read %>
+    </p>
+    <p hidden>
       <% e.body %>
     </p>
 </div>
