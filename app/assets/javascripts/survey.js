@@ -10,6 +10,9 @@ document.addEventListener("turbolinks:load", function(){
     var numQ = 9;
     var current = 0;
   $('#next-question').on('click',function(){
+      if (current === 0) {
+        $("main.survey").css('padding','0');
+      }
           if (current > 0) {
           var id = "q" + current;
           if (!$('input[name=' + id + ']:checked').length) {
