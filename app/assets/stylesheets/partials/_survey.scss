@@ -15,6 +15,9 @@ main.survey {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  div.welcome {
+    margin-bottom: 35px;
+  }
 }
 
 .survey-intro {
@@ -24,26 +27,73 @@ main.survey {
 #new_survey {
   display: flex;
   flex-direction: column;
-  margin: 28px;
   width: 100%;
+  align-items: center;
+}
+
+#next-question,
+#last-question {
+  background: $seagreen;
+  padding: 5px;
+  height: 30px;
+  width: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  &:hover {
+    background: $seagreenM;
+    color: #fff;
+  }
+
 }
 
 
 .survey-questions {
-
   div.question{
-
+    background: $grey;
     transition: all 1s ease;
     font-size: 18px;
     opacity: 0;
     overflow-wrap: break-word;
     width: 90%;
+    .choices {
+      background: #fff;
+      padding: 10px;
+      margin: 5px;
+      border: 0.25px solid $border-grey;
+    }
+
     span {
       font-size: 20px;
       line-height: 36px;
+      padding-left: 5px;
     }
     input {
       margin: 10px 0 0;
+      &:hover {
+        cursor: pointer;
+      }
+      &:checked {
+         + label {
+          color: $seagreenM;
+        }
+        &::before {
+          content: " ";
+          height: 14px;
+          width: 13px;
+          position: absolute;
+          border-radius: 50%;
+          background: $seagreenM;
+        }
+      }
+      &::before {
+        content: " ";
+        background: $grey;
+        height: 14px;
+        width: 13px;
+        position: absolute;
+        border-radius: 50%;
+      }
     }
   }
 }
@@ -53,8 +103,12 @@ main.survey {
   width: 80%;
   padding: 10px;
   position: relative;
-  top: 10vh;
+  top: 0;
   justify-content: space-between;
+  &.button {
+    position: relative;
+    top: -17px;
+  }
   div {
     &:hover {
       color: $fun;
@@ -72,7 +126,7 @@ main.survey {
 .openQ {
   width: 100%;
   opacity: 1 !important;
-  height: auto;
+  height: 250px;
   z-index: 3;
 }
 .closeQ {
