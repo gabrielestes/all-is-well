@@ -53,7 +53,10 @@ class ClientsController < ApplicationController
       :last_name,
       :initial,
       :birth_date,
-      :phone
+      :phone,
+      :general_prac,
+      :gender,
+      :current_meds
     )
   end
 

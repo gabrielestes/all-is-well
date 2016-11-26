@@ -9,6 +9,9 @@ class CreateClients < ActiveRecord::Migration[5.0]
       t.string :phone
       t.json :emergency
       t.integer :wellness
+      t.string :general_prac
+      t.string :gender
+      t.string :current_meds
 
       t.timestamps
     end
