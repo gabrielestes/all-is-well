@@ -6,6 +6,9 @@
     </div>
     <p class="time"><%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
     <p hidden>
+      <% e.read %>
+    </p>
+    <p hidden>
       <%= e.description %>
     </p>
 

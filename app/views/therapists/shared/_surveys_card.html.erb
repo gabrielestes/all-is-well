@@ -15,4 +15,7 @@
     </div>
     <p class="time"><%= s.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
   </div>
+  <p hidden>
+    <% s.read %>
+  </p>
 <% end %>
