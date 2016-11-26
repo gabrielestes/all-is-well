@@ -62,12 +62,17 @@ $(document).on('click', '.c-dashboard-toggle-container', function() {
 
 $(document).on('turbolinks:render', function() {
  getDashboardLocation();
+ if (width >= 700) {
  loadDashboardOpen();
+ }
 });
 
 $(document).on('turbolinks:load', function() {
+
+  if (width >= 700) {
  getDashboardLocation();
  loadDashboardOpen();
+ }
 });
 
 
