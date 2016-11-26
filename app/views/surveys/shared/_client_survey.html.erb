@@ -24,91 +24,99 @@
   <%= form_for Survey.new, url: create_survey_path, method: :post do |s| %>
     <div class="question" id="q1">
       <span>Little interest or pleasure in doing things</span><br>
-      <%= radio_button_tag(:q1, 0) %>
-      <%= label_tag(:q1, "Not at all") %><br>
-      <%= radio_button_tag(:q1, 1) %>
-      <%= label_tag(:q1, "Several days") %><br>
-      <%= radio_button_tag(:q1, 2) %>
-      <%= label_tag(:q1, "More than half the days") %><br>
-      <%= radio_button_tag(:q1, 3) %>
-      <%= label_tag(:q1, "More than every day") %><br>
+      <div class="choices">
+        <%= radio_button_tag(:q1, 0) %>
+        <%= label_tag(:q1, "Not at all") %><br>
+        <%= radio_button_tag(:q1, 1) %>
+        <%= label_tag(:q1, "Several days") %><br>
+        <%= radio_button_tag(:q1, 2) %>
+        <%= label_tag(:q1, "More than half the days") %><br>
+        <%= radio_button_tag(:q1, 3) %>
+        <%= label_tag(:q1, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="question"  id="q2">
       <span>Feeling down, depressed, or hopeless</span><br>
-      <%= radio_button_tag(:q2, 0) %>
-      <%= label_tag(:q2, "Not at all") %><br>
-      <%= radio_button_tag(:q2, 1) %>
-      <%= label_tag(:q2, "Several days") %><br>
-      <%= radio_button_tag(:q2, 2) %>
-      <%= label_tag(:q2, "More than half the days") %><br>
-      <%= radio_button_tag(:q2, 3) %>
-      <%= label_tag(:q2, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q2, 0) %>
+        <%= label_tag(:q2, "Not at all") %><br>
+        <%= radio_button_tag(:q2, 1) %>
+        <%= label_tag(:q2, "Several days") %><br>
+        <%= radio_button_tag(:q2, 2) %>
+        <%= label_tag(:q2, "More than half the days") %><br>
+        <%= radio_button_tag(:q2, 3) %>
+        <%= label_tag(:q2, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="question"  id="q3">
       <span>Trouble falling or staying asleep, or sleeping too much</span><br>
-      <%= radio_button_tag(:q3, 0) %>
-      <%= label_tag(:q3, "Not at all") %><br>
-      <%= radio_button_tag(:q3, 1) %>
-      <%= label_tag(:q3, "Several days") %><br>
-      <%= radio_button_tag(:q3, 2) %>
-      <%= label_tag(:q3, "More than half the days") %><br>
-      <%= radio_button_tag(:q3, 3) %>
-      <%= label_tag(:q3, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q3, 0) %>
+        <%= label_tag(:q3, "Not at all") %><br>
+        <%= radio_button_tag(:q3, 1) %>
+        <%= label_tag(:q3, "Several days") %><br>
+        <%= radio_button_tag(:q3, 2) %>
+        <%= label_tag(:q3, "More than half the days") %><br>
+        <%= radio_button_tag(:q3, 3) %>
+        <%= label_tag(:q3, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="question"  id="q4">
       <span>Feeling tired or having little energy</span><br>
-      <%= radio_button_tag(:q4, 0) %>
-      <%= label_tag(:q4, "Not at all") %><br>
-      <%= radio_button_tag(:q4, 1) %>
-      <%= label_tag(:q4, "Several days") %><br>
-      <%= radio_button_tag(:q4, 2) %>
-      <%= label_tag(:q4, "More than half the days") %><br>
-      <%= radio_button_tag(:q4, 3) %>
-      <%= label_tag(:q4, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q4, 0) %>
+        <%= label_tag(:q4, "Not at all") %><br>
+        <%= radio_button_tag(:q4, 1) %>
+        <%= label_tag(:q4, "Several days") %><br>
+        <%= radio_button_tag(:q4, 2) %>
+        <%= label_tag(:q4, "More than half the days") %><br>
+        <%= radio_button_tag(:q4, 3) %>
+        <%= label_tag(:q4, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="question"  id="q5">
       <span>Poor appetite or overeating</span><br>
-      <%= radio_button_tag(:q5, 0) %>
-      <%= label_tag(:q5, "Not at all") %><br>
-      <%= radio_button_tag(:q5, 1) %>
-      <%= label_tag(:q5, "Several days") %><br>
-      <%= radio_button_tag(:q5, 2) %>
-      <%= label_tag(:q5, "More than half the days") %><br>
-      <%= radio_button_tag(:q5, 3) %>
-      <%= label_tag(:q5, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q5, 0) %>
+        <%= label_tag(:q5, "Not at all") %><br>
+        <%= radio_button_tag(:q5, 1) %>
+        <%= label_tag(:q5, "Several days") %><br>
+        <%= radio_button_tag(:q5, 2) %>
+        <%= label_tag(:q5, "More than half the days") %><br>
+        <%= radio_button_tag(:q5, 3) %>
+        <%= label_tag(:q5, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="question"  id="q6">
       <span>Feeling bad about yourself - or that you are a failure or that you have let yourself or your family down</span><br>
-      <%= radio_button_tag(:q6, 0) %>
-      <%= label_tag(:q6, "Not at all") %><br>
-      <%= radio_button_tag(:q6, 1) %>
-      <%= label_tag(:q6, "Several days") %><br>
-      <%= radio_button_tag(:q6, 2) %>
-      <%= label_tag(:q6, "More than half the days") %><br>
-      <%= radio_button_tag(:q6, 3) %>
-      <%= label_tag(:q6, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q6, 0) %>
+        <%= label_tag(:q6, "Not at all") %><br>
+        <%= radio_button_tag(:q6, 1) %>
+        <%= label_tag(:q6, "Several days") %><br>
+        <%= radio_button_tag(:q6, 2) %>
+        <%= label_tag(:q6, "More than half the days") %><br>
+        <%= radio_button_tag(:q6, 3) %>
+        <%= label_tag(:q6, "More than every day") %><br>
+      </div>
     </div>
     <div class="question"  id="q7">
       <span>Trouble concentrating on things, such as reading the newspaper or watching TV</span><br>
-      <%= radio_button_tag(:q7, 0) %>
-      <%= label_tag(:q7, "Not at all") %><br>
-      <%= radio_button_tag(:q7, 1) %>
-      <%= label_tag(:q7, "Several days") %><br>
-      <%= radio_button_tag(:q7, 2) %>
-      <%= label_tag(:q7, "More than half the days") %><br>
-      <%= radio_button_tag(:q7, 3) %>
-      <%= label_tag(:q7, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q7, 0) %>
+        <%= label_tag(:q7, "Not at all") %><br>
+        <%= radio_button_tag(:q7, 1) %>
+        <%= label_tag(:q7, "Several days") %><br>
+        <%= radio_button_tag(:q7, 2) %>
+        <%= label_tag(:q7, "More than half the days") %><br>
+        <%= radio_button_tag(:q7, 3) %>
+        <%= label_tag(:q7, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="question"  id="q8">
@@ -117,28 +125,30 @@
           Or the opposite -- being so fidgety or restless that you have been
           moving around a lot more than usual
       </span><br>
-      <%= radio_button_tag(:q8, 0) %>
-      <%= label_tag(:q8, "Not at all") %><br>
-      <%= radio_button_tag(:q8, 1) %>
-      <%= label_tag(:q8, "Several days") %><br>
-      <%= radio_button_tag(:q8, 2) %>
-      <%= label_tag(:q8, "More than half the days") %><br>
-      <%= radio_button_tag(:q8, 3) %>
-      <%= label_tag(:q8, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q8, 0) %>
+        <%= label_tag(:q8, "Not at all") %><br>
+        <%= radio_button_tag(:q8, 1) %>
+        <%= label_tag(:q8, "Several days") %><br>
+        <%= radio_button_tag(:q8, 2) %>
+        <%= label_tag(:q8, "More than half the days") %><br>
+        <%= radio_button_tag(:q8, 3) %>
+        <%= label_tag(:q8, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="question"  id="q9">
       <span>Thoughts of self harm or worthlessness</span><br>
-      <%= radio_button_tag(:q9, 0) %>
-      <%= label_tag(:q9, "Not at all") %><br>
-      <%= radio_button_tag(:q9, 1) %>
-      <%= label_tag(:q9, "Several days") %><br>
-      <%= radio_button_tag(:q9, 2) %>
-      <%= label_tag(:q9, "More than half the days") %><br>
-      <%= radio_button_tag(:q9, 3) %>
-      <%= label_tag(:q9, "More than every day") %><br>
-
+      <div class="choices">
+        <%= radio_button_tag(:q9, 0) %>
+        <%= label_tag(:q9, "Not at all") %><br>
+        <%= radio_button_tag(:q9, 1) %>
+        <%= label_tag(:q9, "Several days") %><br>
+        <%= radio_button_tag(:q9, 2) %>
+        <%= label_tag(:q9, "More than half the days") %><br>
+        <%= radio_button_tag(:q9, 3) %>
+        <%= label_tag(:q9, "More than every day") %><br>
+      </div>
     </div>
 
     <div class="survey-nav-btns">

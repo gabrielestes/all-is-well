@@ -10,37 +10,53 @@ document.addEventListener("turbolinks:load", function(){
     var numQ = 9;
     var current = 0;
   $('#next-question').on('click',function(){
-    $('.survey-intro').remove();
-    current++;
-    $('#next-question i').removeClass("fa-play").addClass("fa-angle-double-right");
-    $('#next-question').show().find('span').html("Next  ");
+          if (current > 0) {
+          var id = "q" + current;
+          if (!$('input[name=' + id + ']:checked').length) {
+            return;
+          }
+        }
 
-    if(current >= 1){
-      $('#q' + current).addClass('openQ').removeClass('closeQ');
-    }
-    if(current > 1){
-      $('#q' + (current - 1)).addClass('closeQ').removeClass('openQ');
-      $('#last-question').show();
-    }
-    if(current === numQ){
-      $('.button').show();
-      $('#next-question').hide();
-    }
-    if(current < numQ){
-      $('.button').hide();
-    }
+        $('#new_survey .button').on('click',function(){
+          var id = "q" + current;
+          if (!$('input[name=' + id + ']:checked').length) {
+            return;
+          }
+        });
+
+        $('.survey-intro').remove();
+        current++;
+        $('#next-question i').removeClass("fa-play").addClass("fa-angle-double-right");
+        $('#next-question').show().find('span').html("Next  ");
+
+        if(current >= 1){
+          $('#q' + current).addClass('openQ').removeClass('closeQ');
+        }
+        if(current > 1){
+          $('#q' + (current - 1)).addClass('closeQ').removeClass('openQ');
+          $('#last-question').show();
+        }
+        if(current === numQ){
+          $('.button').show();
+          $('#next-question').hide();
+        }
+        if(current < numQ){
+          $('.button').hide();
+        }
+
   });
+
   $('#last-question').on('click',function(){
     current--;
     if(current <= 1){
       $('#last-question').hide();
     }
-    if(current > 1){
-      $('#last-question').show();
-    }
     if(current >= 1){
       $('#q' + (current + 1)).addClass('closeQ').removeClass('openQ');
       $('#q' + current).addClass('openQ').removeClass('closeQ');
+    }
+    if(current > 1){
+      $('#last-question').show();
     }
     if(current === numQ-1){
       $('#next-question').show();
