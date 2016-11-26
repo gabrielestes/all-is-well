@@ -18,12 +18,9 @@ function getHeaderLocation() {
       $('#nav-home').removeClass('selected');
       $('#nav-account').addClass('selected');
   }
-
 }
 
-
 $(document).on("turbolinks:load", function() {
-
 //Gets page location to assign correct styling of header links on page load
   getHeaderLocation();
 
@@ -31,11 +28,8 @@ $(document).on("turbolinks:load", function() {
 //Displays navigation menu at mobile widths on menu icon click
   $(document).on('click', '#header-nav-icon', function() {
     $('nav.header-nav').toggleClass('header-nav-active');
-
-
   });
 });
-
 
 
 $(document).on("turbolinks:render", function() {
