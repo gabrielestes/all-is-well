@@ -29,9 +29,15 @@ $pop-color: $fun;
   flex-direction: column;
   align-items: center;
   margin: 44px auto;
+  @media (max-width: 470px) {
+    width: 97%;
+  }
   .sort-background {
     background: $grey;
     width: 100%;
+    @media (max-width: 700px) {
+      width: 95%;
+    }
     }
   .sort {
     display: flex;
@@ -46,6 +52,10 @@ $pop-color: $fun;
       background: $seafoam;
       border-right: 0.25px solid $seagreenM;
       cursor: pointer;
+      @media (max-width: 470px) {
+        font-size: 16px;
+        line-height: 22px;
+      }
       &.actives {
         background: $seagreen;
         color: #fff;
@@ -99,9 +109,11 @@ a {
       font-size: 1em;
       width: 34%;
       text-align: left;
-      @media (min-width: 570px) {
-        font-size: 1.2em;
-      }
+        @media (max-width: 470px) {
+          font-size: 16px;
+          line-height: 22px;
+        }
+
       &.pt_wellness {
         width: 15%;
         text-align: right;
