@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
   belongs_to :userable, polymorphic: true
 
-  acts_as_reader
-
   has_many :posts
   has_many :surveys
 end
