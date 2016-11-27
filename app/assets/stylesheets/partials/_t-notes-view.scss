@@ -36,14 +36,15 @@ $detail-icon-color: $seajade;
 
               #tab-a-btn, #tab-b-btn {
                   &:hover, &:active {
-                    color: $pop-color;
+                    color: #fff;
+                    background: $border-grey;
 
                   }
                 }
 
               &.active {
                     #tab-a-btn, #tab-b-btn {
-                      color: $pop-color;
+                      color: #fff;
                       text-decoration: underline;
 
                 }
@@ -56,9 +57,9 @@ $detail-icon-color: $seajade;
       #tab-a-btn, #tab-b-btn {
         width: 100%;
         padding: 15px 0;
-        background-color: transparent;
-        border: 0;
-        outline: 0;
+        background-color: $grey;
+        border: 0.25px solid $border-grey;
+        outline: #000;
         font-size: 1.4em;
         font-family: inherit;
         cursor: pointer;
