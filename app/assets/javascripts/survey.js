@@ -36,6 +36,9 @@ document.addEventListener("turbolinks:load", function(){
           $('#q' + (current - 1)).addClass('closeQ').removeClass('openQ');
           $('#last-question').show();
         }
+        if(current === numQ) {
+          $('#next-question').css('visibility','hidden');
+        }
         //change event for radio buttons to test if should show 'submit' button
         $('#new_survey').change(function(){
           if(current === numQ && $('input[name=q9]:checked').length > 0 ){
@@ -54,8 +57,8 @@ document.addEventListener("turbolinks:load", function(){
       $('#last-question').hide();
     }
     if(current >= 1){
-      $('#q' + (current + 1)).addClass('closeQ').removeClass('openQ');
-      $('#q' + current).addClass('openQ').removeClass('closeQ');
+      $('#q' + (current + 1)).removeClass('openQ').addClass('closeQ');
+      $('#q' + current).removeClass('closeQ').addClass('openQ');
     }
     if(current > 1){
       $('#last-question').show();
@@ -63,6 +66,10 @@ document.addEventListener("turbolinks:load", function(){
     if(current === numQ-1){
       $('#next-question').show();
     }
+    if(current === numQ) {
+      $('#next-question').hide();
+    }
+
     if(current < numQ){
       $('.button').hide();
     }
