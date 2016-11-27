@@ -1,37 +1,29 @@
 <% @entries.each do |e| %>
   <section class="entry-card">
     <div class="entry-text-container">
-      <h2 class="title"><%= e.title %></h2>
+
+      <div class="entry-header">
+        <h2 class="title"><i class="fa fa-pencil"></i> Title: <%= e.title %></h2>
+        <!-- if private.... -->
+        <% if e.sharable == false %>
+        <div class="private entry-status selected">
+          <i class="fa fa-eye-slash" aria-hidden="true"></i>
+          <span>private</span>
+        </div>
+        <!-- if shared... -->
+        <% elsif e.sharable == true %>
+        <div class="shared note-status selected">
+          <i class="fa fa-eye" aria-hidden="true"></i>
+          <span>shared</span>
+        </div>
+        <% end %>
+    </div>
 
       <div class="entry-text">
         <%= e.body %>
-      </div>
-    </div>
-    <div class="entry-timestamp">
-      <span class="entry-date"><%= e.created_at.to_date %></span><span class="entry-time"><%= e.created_at.strftime("%H:%M") %></span>
-    </div>
-    <div class="privacy">
-      <div class="entry-view-content">
-        <div class="entry-view-privacy-info">
-
-
-          <!-- if private.... -->
-          <% if e.sharable == false %>
-              <div class="private entry-status selected">
-                  <i class="fa fa-eye-slash" aria-hidden="true"></i>
-                  <span>private</span>
-              </div>
-              <!-- if shared... -->
-          <% elsif e.sharable == true %>
-              <div class="shared note-status selected">
-                  <i class="fa fa-eye" aria-hidden="true"></i>
-                  <span>shared</span>
-              </div>
-          <% end %>
-
-
+        <div class="entry-timestamp">
+          <span class="entry-date">written on <%= e.created_at.to_date.strftime("%B %C") %> at <%= e.created_at.strftime("%I:%M%p") %></span>
         </div>
-
       </div>
     </div>
 

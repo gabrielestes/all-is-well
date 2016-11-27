@@ -21,11 +21,11 @@ body {
 $seagreen: #99ded0;
 $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenM: #7ad4c2;
-$seagreenD: #000;
+$black: #000;
 
 
 a {
-  color: $seagreenD;
+  color: #000;
   text-decoration: none;
   &:active, &:hover {
     color: $seagreenM;

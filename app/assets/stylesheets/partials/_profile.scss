@@ -3,7 +3,7 @@ $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenTb: rgba(55, 207, 176, 0.7);
 $seagreenM: #7ad4c2;
 $seagreenMT: rgba(35, 188, 158, 0.4);
-$seagreenD: #000;
+$black: #000;
 $dark: #333333;
 $seagreenLb: rgb(107, 213, 192);
 $seafoam: #cae8e2;
@@ -68,7 +68,7 @@ aside.my-therapist {
         }
         h3 {
           font-size: 20px;
-          color: $seagreenD;
+          color: #000;
           margin: 5px 0;
           @media (max-width: 470px){
               font-size: 19px;
@@ -114,11 +114,11 @@ aside.my-therapist {
         }
 
         input {
-          color: $seagreenD;
+          color: #000;
           font-family: 'Quicksand',sans-serif;
           font-size: 18px;
           &:focus {
-            outline-color: $seagreenD;
+            outline-color: #000;
           }
           line-height: 25px;
           width: 25vw;
@@ -155,7 +155,7 @@ aside.my-therapist {
         text-align: right;
         font-size: 16px;
         cursor: pointer;
-        color: $seagreenD;
+        color: #000;
         &:hover {
           color: #fff;
         }

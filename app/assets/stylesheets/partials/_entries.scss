@@ -1,12 +1,36 @@
 $seagreen: #99ded0;
+$seagreenT: rgba(55, 207, 176, 0.4);
+$seagreenTb: rgba(55, 207, 176, 0.7);
 $seagreenM: #7ad4c2;
-$seagreenD: #000;
+$seagreenMT: rgba(35, 188, 158, 0.4);
+$seajade: rgb(35, 188, 158);
+$dark: #333333;
 $seafoam: #cae8e2;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
 $fun: #4c5fce;
+$sky: #8CC6DB;
+$dustylilac: #928EA0;
 $private-red: #8A0116;
-$deep-jade: #30C5A7;
+
+
+
+/* Pop Color */
+$pop-color: $fun;
+
+/* Calendar Event Colors */
+$negative-event: $pop-color;
+$positive-event: $sky;
+$neutral-event: $dustylilac;
+
+/* Icon Color for Activity Detail, Note, Entry Cards */
+$detail-icon-color: $seajade;
+.c-view-main {
+  .welcome {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+}
 
 //buttons
 .button-box {
@@ -14,48 +38,27 @@ $deep-jade: #30C5A7;
   display: flex;
   align-content: center;
   justify-content: center;
-  @media (max-width: 700px) {
-    margin-top: 196px;
-  }
+
   @media (max-width: 650px) {
     flex-direction: column;
   }
-  // &.shrink {
-  //   // height: 100px;
-    @media (max-width: 650px) {
-      margin-top: 200px;
-    //
-    // }
-    // #add-entry-btn,
-    // #previous-entries-btn {
-    //   height: 50px;
-    //   margin-bottom: 0px;
-    // }
-  }
+
     #previous-entries-btn,
     #add-entry-btn {
       height: 50px;
       margin-bottom: 0px;
-
+      border: 0.25px solid $border-grey;
       width: 300px;
-      // height: 300px;
-      background: $seafoam;
+      background: $grey;
       &:hover {
-        background: $seagreen;
+        background: $border-grey;
         color: #fff;
-      }
-      &:nth-child(1) {
-        border-right: 0.25px solid $seagreenM;
-        @media (max-width: 650px) {
-          border-right:none;
-          border-top: 0.25px solid $seagreenM;
-        }
+        text-decoration: underline;
       }
       @media (max-width: 650px) {
+        margin: 1px auto;
         width: 100%;
         height: 100px;
-        border-bottom: 0.25px solid $seagreenM;
-        margin: 0;
       }
     }
 }
@@ -67,38 +70,60 @@ $deep-jade: #30C5A7;
 
 // previous entries view
 .entry-card {
-  margin: 45px 0;
-  border-bottom: 0.5px solid $seagreenD;
-  background: $grey;
-  padding: 10px;
+  margin: 45px auto;
+  border: 0.25px solid $border-grey;
+  background: #fff;
+  max-width: 700px;
   @media (max-width: 650px) {
-    margin: 80px 0;
+    margin: 20px auto;
+  }
+  .entry-header {
+    background: $grey;
+    border-bottom: 0.25px solid $border-grey;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    padding: 0px 10px;
+    width: 100%;
+    height: 40px;
+}
   }
   .entry-text-container {
-    background: $seafoam;
-    padding: 5px;
+    background: #fff;
     h2.title {
       font-size:18px;
-      color: $fun;
-      overflow-wrap: break-word;
+      color: #000;
+      overflow: hidden;
+      max-width: 80%;
+
     }
   }
   .entry-text {
-    margin: 15px 0;
+    margin: 0;
     overflow-wrap: break-word;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
   }
   .entry-timestamp {
-    margin: 15px 0;
-    display: inline-flex;
-    flex-direction: column;
-    width: 48%;
+    color: $border-grey;
+    font-size: 0.9em;
+    font-style: italic;
+    margin: 15px 0 5px;
+    width: 100%;
+    text-align: right;
   }
-}
+
 .fa-eye-slash {
   color: $private-red;
 }
 .fa-eye {
-  color: $deep-jade;
+  color: $seajade;
+}
+.fa-pencil {
+  color: $fun;
 }
 //toggle switch for privacy setting
 .privacy {
@@ -125,7 +150,7 @@ $deep-jade: #30C5A7;
     }
     #togglePrivacy + label::before {
       content: "Shared";
-      color: #c2e4dd;
+      color: #fff;
       left: 40px;
       top: 10px;
       position: absolute;
@@ -140,7 +165,7 @@ $deep-jade: #30C5A7;
       left: 4px;
       position: absolute;
       font-size: 16px;
-      color: #0e6150;
+      color: $private-red;
     }
     #togglePrivacy + label > span {
       transition: all .15s ease;
@@ -160,18 +185,18 @@ $deep-jade: #30C5A7;
 
 // new entry view
 #add-entry {
-  margin: 45px 0;
+  margin: 20px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media (max-width: 650px) {
-    margin: 80px 0;
+    margin: 20px auto;
   }
 
   h2 {
-    font-size: 23px;
+    font-size: 18px;
     margin-bottom: 5px;
-    color: $seagreenD;
+    color: #000;
   }
   #new-entry {
     width: 100%;
@@ -179,49 +204,57 @@ $deep-jade: #30C5A7;
   div.title,
   div.text {
     width: 100%;
-    margin-top: 10px;
+    max-width: 780px;
+    margin: 0 auto;
     display: flex;
+    flex-direction: column;
     label {
       text-align: center;
+    }
+    @media (max-width: 650px) {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
   }
   .title label,
   .text label {
     font-size: 18px;
     margin: 10px 5px;
-    color: $seagreenD;
+    color: #000;
     font-weight: 200;
     width: 50px;
   }
   .title input {
-    width: 90%;
+    width: 100%;
     line-height: 29px;
     font-size: 22px;
-    color: $seagreenD;
-    border: 0.25px solid $seagreenD;
-    max-width: 785px;
+    color: #000;
+    border: 0.25px solid #000;
     margin: 0 auto;
     @media (max-width: 650px) {
       width: 100%;
     }
     &:focus {
-      outline-color: $seagreenD;
+      outline-color: #000;
       background: rgba(150, 229, 213, 0.35);
       }
     }
   #entry-text {
     font-family: 'Quicksand', sans-serif;
     margin: 10px auto;
-    width: 90%;
-    height: 30vh;
+    width: 100%;
+    height: 20vh;
     font-size: 20px;
     padding: 5px;
-    color: $seagreenD;
-    border: 0.25px solid $seagreenD;
-    max-width: 785px;
+    color: #000;
+    border: 0.25px solid #000;
     &:focus {
-      outline-color: $seagreenD;
+      outline-color: #000;
       background: rgba(150, 229, 213, 0.35);
+    }
+    @media (max-width: 650px) {
+      width: 100%;
     }
   }
   section {
@@ -230,7 +263,7 @@ $deep-jade: #30C5A7;
     justify-content: flex-end;
     width: 100%;
     max-width: 785px;
-
+    margin: 0 auto;
     align-items: flex-end;
   }
   input.button {
