@@ -57,9 +57,17 @@ main.survey {
     opacity: 0;
     overflow-wrap: break-word;
     width: 90%;
+    position: relative;
+    &#q8 span {
+      font-size: 18px;
+    }
+    &#q8 .choices {
+      margin: 0 5px;
+    }
+
     .choices {
       background: #fff;
-      padding: 10px;
+      padding: 5px;
       margin: 5px;
       border: 0.25px solid $border-grey;
     }
@@ -67,7 +75,8 @@ main.survey {
     span {
       font-size: 20px;
       line-height: 36px;
-      padding-left: 5px;
+      padding-left: 10px;
+      display: inherit;
     }
     input {
       margin: 10px 0 0;
@@ -104,11 +113,12 @@ main.survey {
   width: 80%;
   padding: 10px;
   position: relative;
-  top: 0;
+  top: 30px;
   justify-content: space-between;
-  .button {
+  & input[name=commit] {
     position: relative;
-    top: -17px;
+    top: 0px;
+    margin: 0px;
   }
   div {
     &:hover {
@@ -127,12 +137,13 @@ main.survey {
 .openQ {
   width: 100%;
   opacity: 1 !important;
-  height: 250px;
+  height: auto;
   z-index: 3;
+  left: 0;
 }
 .closeQ {
   width: 100%;
   opacity: 0 !important;
   height: 0px;
-
+  left: -1400px;
 }
