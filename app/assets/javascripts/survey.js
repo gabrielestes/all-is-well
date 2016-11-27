@@ -9,28 +9,20 @@ document.addEventListener("turbolinks:load", function(){
   $('#new_survey').find('.button').hide();
     var numQ = 9;
     var current = 0;
-
+  //if label clicked, corresponding radio button checked and change event initiated
   $('.choices').on('click','label', function(event){
-    $(event.target).prev().attr('checked','true');
+    $(event.target).prev().attr('checked','true').change();
   });
 
+  //click event for 'next-question' button
   $('#next-question').on('click',function(){
-
-
-          if (current > 0) {
-          var id = "q" + current;
-          if (!$('input[name=' + id + ']:checked').length) {
-            return;
-            }
-          }
-
-
-        $('#new_survey .button').on('click',function(){
-          var id = "q" + current;
-          if (!$('input[name=' + id + ']:checked').length) {
-            return;
-          }
-        });
+      //if no radio buttons checked, return
+      if (current > 0) {
+      var id = "q" + current;
+      if (!$('input[name=' + id + ']:checked').length) {
+        return;
+        }
+      }
 
         $('.survey-intro').remove();
         current++;
@@ -44,7 +36,8 @@ document.addEventListener("turbolinks:load", function(){
           $('#q' + (current - 1)).addClass('closeQ').removeClass('openQ');
           $('#last-question').show();
         }
-        $('input[type=radio]').on('click',function(){
+        //change event for radio buttons to test if should show 'submit' button
+        $('#new_survey').change(function(){
           if(current === numQ && $('input[name=q9]:checked').length > 0 ){
             $('.button').show();
             $('#next-question').hide();

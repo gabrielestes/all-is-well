@@ -57,10 +57,11 @@ main.survey {
     opacity: 0;
     overflow-wrap: break-word;
     width: 90%;
+    position: relative;
     &#q8 span {
       font-size: 18px;
     }
-    &#q8 choices {
+    &#q8 .choices {
       margin: 0 5px;
     }
 
@@ -136,12 +137,13 @@ main.survey {
 .openQ {
   width: 100%;
   opacity: 1 !important;
-  height: 250px;
+  height: auto;
   z-index: 3;
+  left: 0;
 }
 .closeQ {
   width: 100%;
   opacity: 0 !important;
   height: 0px;
-
+  left: -1400px;
 }
