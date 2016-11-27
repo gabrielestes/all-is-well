@@ -1,5 +1,7 @@
 <% @surveys.each do |s| %>
   <div class="patient_card mood activity-card">
+    <% s.read = true %>
+    <% s.save! %>
     <div class="activity-type">
       <% if s.total < 50 %>
         <i class="fa fa-frown-o mood-icon"></i>
