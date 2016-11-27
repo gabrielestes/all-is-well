@@ -4,7 +4,7 @@ $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenTb: rgba(55, 207, 176, 0.7);
 $seagreenM: #7ad4c2;
 $seagreenMT: rgba(35, 188, 158, 0.4);
-$seagreenD: #000;
+$black: #000;
 $dark: #333333;
 $dark: #333333;
 $seafoam: #cae8e2;
@@ -88,7 +88,7 @@ main.registration {
     input {
       line-height: 25px;
       &:focus {
-        outline-color: $seagreenD;
+        outline-color: #000;
       }
     }
   }
@@ -135,7 +135,7 @@ main.registration {
         height: 25px;
         align-self: center;
         &:focus {
-          outline-color: $seagreenD;
+          outline-color: #000;
         }
         @media (max-width: 800px){
           width: 80%;
@@ -145,7 +145,7 @@ main.registration {
         width: 100%;
         margin-bottom: 4%;
         &:focus {
-          outline-color: $seagreenD;
+          outline-color: #000;
         }
       }
 }

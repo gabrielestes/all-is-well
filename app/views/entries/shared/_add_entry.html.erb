@@ -2,7 +2,7 @@
 
   <!-- <form id="new-entry"> -->
 
-    <h2>Type a Journal Entry</h2>
+    <!-- <h2>Type a Journal Entry</h2> -->
     <div id="new-entry">
     <%= form_for Post.new, url: create_entry_path, method: :post do |e| %>
       <% e.hidden_field :client_id, value: current_user.userable_id %>

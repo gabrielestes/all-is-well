@@ -2,6 +2,7 @@
 <div class="c-view-content">
     <%= render :partial => "clients/shared/c_view_header" %>
     <div class="c-view-main">
+      <h1 class="welcome">Notes from your Therapist</h1>
       <% if @notes.count > 0 %>
         <%= render :partial => "notes/shared/note_card" %>
       <% else %>
