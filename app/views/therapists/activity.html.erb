@@ -45,7 +45,7 @@
 
                 <div class="mood-detail-card">
                     <div class="mood-title-row">
-                        <span class="mood-title-label">
+                        <span class="mood-title-label" id="mood-icon">
                             <i class="fa fa-smile-o"></i>
                         </span>
                         <h3 id="mood-date">MOOD SURVEY DATE</h3>
@@ -57,31 +57,72 @@
                         <h3 id="mood-score">MOOD SCORE</h3>
                     </div>
                     <div class="mood-survey-content">
-                        <p id="mood-survey">Mood Survey Results</p>
+                      <h1 class="howOften">How often are you experiencing... </h1>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>1. </span>Little interest or pleasure in doing things?</h3>
+                            <p class="answer" id="q1"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>2. </span>Feeling down, depressed, or hopeless?</h3>
+                            <p class="answer" id="q2"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>3. </span>Trouble falling or staying asleep, or sleeping too much?</h3>
+                            <p class="answer" id="q3"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>4. </span>Feeling tired or having little energy?</h3>
+                            <p class="answer" id="q4"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>5. </span>Poor appetite or overeating?</h3>
+                            <p class="answer" id="q5"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>6. </span>Feeling bad about yourself - or that you are a failure or that you have let yourself or your family down?</h3>
+                            <p class="answer" id="q6"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>7. </span>Trouble concentrating on things, such as reading the newspaper or watching TV?</h3>
+                            <p class="answer" id="q7"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>8. </span>Moving or speaking or so slowly that other people could have noticed?
+                            Or the opposite -- being so fidgety or restless that you have been
+                            moving around a lot more than usual?</h3>
+                            <p class="answer" id="q8"></p>
+                        </div>
+                        <div class="survey-detail-question">
+                            <h3 class="question"><span>9. </span>Thoughts of self harm or worthlessness?</h3>
+                            <p class="answer" id="q9"></p>
+                        </div>
                     </div>
+
                 </div>
+            </div>
+          </div>
+
+            <div class="welcome">
+                <h1>Current Activity of Client</h1>
+            </div>
+            <div class="c-activity">
+                <h3 class="filterBy">filter by:</h3>
+                <div class="filter_title">
+                    <a href="#" class="filter_event">
+                        <i class="fa fa-star-o"></i>Events</a>
+                    <a href="#" class="filter_entry">
+                        <i class="fa fa-pencil"></i>Entries</a>
+                    <a href="#" class="filter_mood">
+                        <i class="fa fa-smile-o"></i>Mood</a>
+                    <a href="#" class="filter_all active">All</a>
+                </div>
+                <%= render :partial => "therapists/shared/entries_card" %>
+                <%= render :partial => "therapists/shared/events_card" %>
+                <%= render :partial => "therapists/shared/surveys_card" %>
 
             </div>
-        </div>
-
-        <div class="welcome">
-          <h1>Current Activity of Client</h1>
-        </div>
-        <div class="c-activity">
-            <h3 class="filterBy">filter by:</h3>
-            <div class="filter_title">
-                <a href="#" class="filter_event"><i class="fa fa-star-o"></i>Events</a>
-                <a href="#" class="filter_entry"><i class="fa fa-pencil"></i>Entries</a>
-                <a href="#" class="filter_mood"><i class="fa fa-smile-o"></i>Mood</a>
-                <a href="#" class="filter_all active">All</a>
-            </div>
-            <%= render :partial => "therapists/shared/entries_card" %>
-            <%= render :partial => "therapists/shared/events_card" %>
-            <%= render :partial => "therapists/shared/surveys_card" %>
 
         </div>
 
     </div>
-
-</div>
 </div>

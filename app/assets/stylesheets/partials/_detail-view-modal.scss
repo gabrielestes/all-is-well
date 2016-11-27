@@ -32,12 +32,12 @@ $detail-icon-color: $seajade;
     z-index: 5;
     justify-content: center;
     align-items: center;
-    padding-top: 50px;
+    padding-top: 100px;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    // overflow: auto;
     background-color: rgba(#2c2c2c,0.6);
 
     @media (min-width: 700px) {
@@ -58,10 +58,12 @@ $detail-icon-color: $seajade;
 .modal-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   height: 100%;
+  padding-top: 20px;
+  overflow: scroll;
 }
 
 .modal-background {
@@ -88,7 +90,7 @@ $detail-icon-color: $seajade;
    display: none;
    z-index: 6;
    width: 80%;
-   margin-bottom: 10px;
+   margin-bottom: 20px;
    border: 1px solid $border-grey;
 
         &.active {
@@ -107,7 +109,7 @@ $detail-icon-color: $seajade;
        align-items: center;
        background-color: $grey;
        font-size: 1.2em;
-       padding: 0px 10px;
+       padding: 0px 15px;
 
 
        }
@@ -126,7 +128,7 @@ $detail-icon-color: $seajade;
 
        .x-btn {
          position: absolute;
-         right: 5px;
+         right: 10px;
          top: 50%;
          transform: translateY(-50%);
          color: #000;
@@ -164,7 +166,7 @@ $detail-icon-color: $seajade;
          width: 100%;
          border: 1px solid $border-grey;
          font-size: 1em;
-         padding: 10px;
+         padding: 15px;
          background-color: #fff;
        }
 
@@ -174,4 +176,14 @@ $detail-icon-color: $seajade;
          display: flex;
          justify-content: flex-end;
        }
+ }
+
+ .mood-survey-content {
+    .howOften {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .survey-detail-question {
+      margin-bottom: 10px;
+    }
  }

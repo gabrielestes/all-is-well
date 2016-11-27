@@ -2,11 +2,11 @@
   <div class="patient_card mood activity-card">
     <div class="activity-type">
       <% if s.total < 50 %>
-        <i class="fa fa-frown-o"></i>
+        <i class="fa fa-frown-o mood-icon"></i>
       <% elsif s.total < 85 %>
-        <i class="fa fa-meh-o"></i>
+        <i class="fa fa-meh-o mood-icon"></i>
       <% elsif s.total < 100 %>
-        <i class="fa fa-smile-o"></i>
+        <i class="fa fa-smile-o mood-icon"></i>
       <% end %>
       <p>Mood Survey -
          <span class="score"><%= s.total %>
@@ -14,8 +14,17 @@
       </p>
     </div>
     <p class="time"><%= s.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
+    <p hidden> <%= s.read %> </p>
+    <p hidden class="q1"> <%= s.q1 %> </p>
+    <p hidden class="q2"> <%= s.q2 %> </p>
+    <p hidden class="q3"> <%= s.q3 %> </p>
+    <p hidden class="q4"> <%= s.q4 %> </p>
+    <p hidden class="q5"> <%= s.q5 %> </p>
+    <p hidden class="q6"> <%= s.q6 %> </p>
+    <p hidden class="q7"> <%= s.q7 %> </p>
+    <p hidden class="q8"> <%= s.q8 %> </p>
+    <p hidden class="q9"> <%= s.q9 %> </p>
   </div>
-  <p hidden>
-    <%= s.read %>
-  </p>
+
+
 <% end %>

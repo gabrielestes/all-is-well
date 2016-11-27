@@ -53,25 +53,26 @@
           var thisEventType = $(clickedCard).find('.type-of').text().toUpperCase();
           var thisEventDescription = $(clickedCard).find('.event-content').text();
 
-          //TODO: FIGURE OUT WHY THIS DOES NOT WORK!!!!!
-          // Changes background color of subheader to match the event-type
-            switch(thisEventType) {
-              case 'POSITIVE':
-                  console.log('in positive');
-                  break;
-              case 'NEGATIVE':
-                  console.log('in negative');
-                  break;
-              case 'NEUTRAL':
-                  console.log('in neutral');
-                  break;
-            }
+
 
         // Updates event detail card with the clicked event data
           $('#event-date').text(thisEventDate);
           $('#event-type').text(thisEventType);
           $('#event-description').text('"' + thisEventDescription + '"');
 
+
+          // Changes background color of subheader to match the event-type
+            switch(thisEventType) {
+              case ' POSITIVE ':
+                  $('.event-type-sub-header').css('background-color', positiveColor);
+                  break;
+              case ' NEGATIVE ':
+                    $('.event-type-sub-header').css('background-color', negativeColor);
+                  break;
+              case ' NEUTRAL ':
+                    $('.event-type-sub-header').css('background-color', neutralColor);
+                  break;
+            }
 
         // Displays event detail card against modal
           $('.event-detail-card').addClass('active');
@@ -81,12 +82,12 @@
   /* ****** if clicked card is an ENTRY CARD ******* */
   /* *********************************************** */
     if ($(clickedCard).hasClass('entry')) {
-        // Gets clicked event data
+        // Gets clicked entry data
           var thisEntryDate = $(clickedCard).find('.time').text();
           var thisEntryTitle = $(clickedCard).find('.entry-title').text().toUpperCase();
           var thisEntryDescription = $(clickedCard).find('.entry-content').text();
 
-        // Updates event detail card with the clicked event data
+        // Updates entry detail card with the clicked entry data
           $('#entry-date').text(thisEntryDate);
           $('#entry-title').text('Subject:  ' + thisEntryTitle);
           $('#entry-description').text('"' + thisEntryDescription + '"');
@@ -95,11 +96,59 @@
           $('.entry-detail-card').addClass('active');
         }
 
+//Gets survey results from hidden elements using JQuery
+  function getSurveyResults(clickedCard) {
+    var answersArr = [];
+    for (index = 1; index <= 9; index++) {
+      var classname = '.q' + index;
+      var answer = $(clickedCard).find(classname).text();
+      switch(answer) {
+        case ' 0 ':
+          answer = "Not At All (0)";
+          break;
+        case ' 1 ':
+          answer = "Several Days (1)";
+          break;
+        case ' 2 ':
+          answer = "More Than Half the Days (2)";
+          break;
+        case ' 3 ':
+          answer = "More Than Every Day (3)";
+          break;
+      }
+      answersArr.push(answer);
+    }
+    console.log(answersArr);
+    return answersArr;
+  }
+
+  function setAnswers(answersArr) {
+    for (index = 0; index < answersArr.length; index++) {
+      console.log('in loop');
+      var question = '#q' + (index + 1);
+      $(question).html(answersArr[index]);
+    }
+  }
 
 
   /* ****** if clicked card is an MOOD SURVEY CARD ******* */
   /* *********************************************** */
     if ($(clickedCard).hasClass('mood')) {
+        // Gets clicked mood survey data
+          var thisSurveyDate = $(clickedCard).find('.time').text();
+          var thisSurveyScore = $(clickedCard).find('.score').text();
+          var thisSurveyResults = $(clickedCard).find('.q2').text();
+          var thisMoodIcon = $(clickedCard).find('.mood-icon').clone();
+
+
+        // Updates event detail card with the clicked event data
+          $('#mood-date').text(thisSurveyDate);
+          $('#mood-score').text('MOOD SCORE: ' + thisSurveyScore);
+          $('#mood-survey').text('Question 2 Answer ' + thisSurveyResults);
+          $('#mood-icon').html(thisMoodIcon);
+
+          var thisAnswers = getSurveyResults(clickedCard);
+          setAnswers(thisAnswers);
 
         // Displays mood survey detail card against modal
           $('.mood-detail-card').addClass('active');
