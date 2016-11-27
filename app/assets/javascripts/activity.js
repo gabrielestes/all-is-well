@@ -44,15 +44,34 @@
  /* ****** if clicked card is an EVENT CARD ******* */
  /* *********************************************** */
     if ($(clickedCard).hasClass('event')) {
+        // Event-type colors
+          var positiveColor = "#8CC6DB";
+          var negativeColor = "#4c5fce";
+          var neutralColor = "#928EA0";
         // Gets clicked event data
-          var thisEventDate = $(clickedCard).find('.time').html();
-          var thisEventType = $(clickedCard).find('.type-of').html().toUpperCase();
-          var thisEventDescription = $(clickedCard).find('.event-content').html();
+          var thisEventDate = $(clickedCard).find('.time').text();
+          var thisEventType = $(clickedCard).find('.type-of').text().toUpperCase();
+          var thisEventDescription = $(clickedCard).find('.event-content').text();
+
+          //TODO: FIGURE OUT WHY THIS DOES NOT WORK!!!!!
+          // Changes background color of subheader to match the event-type
+            switch(thisEventType) {
+              case 'POSITIVE':
+                  console.log('in positive');
+                  break;
+              case 'NEGATIVE':
+                  console.log('in negative');
+                  break;
+              case 'NEUTRAL':
+                  console.log('in neutral');
+                  break;
+            }
 
         // Updates event detail card with the clicked event data
-          $('#event-date').html(thisEventDate);
-          $('#event-type').html(thisEventType);
-          $('#event-description').html('"' + thisEventDescription + '"');
+          $('#event-date').text(thisEventDate);
+          $('#event-type').text(thisEventType);
+          $('#event-description').text('"' + thisEventDescription + '"');
+
 
         // Displays event detail card against modal
           $('.event-detail-card').addClass('active');
@@ -63,14 +82,14 @@
   /* *********************************************** */
     if ($(clickedCard).hasClass('entry')) {
         // Gets clicked event data
-          var thisEntryDate = $(clickedCard).find('.time').html();
-          var thisEntryTitle = $(clickedCard).find('.entry-title').html().toUpperCase();
-          var thisEntryDescription = $(clickedCard).find('.entry-content').html();
+          var thisEntryDate = $(clickedCard).find('.time').text();
+          var thisEntryTitle = $(clickedCard).find('.entry-title').text().toUpperCase();
+          var thisEntryDescription = $(clickedCard).find('.entry-content').text();
 
         // Updates event detail card with the clicked event data
-          $('#entry-date').html(thisEntryDate);
-          $('#entry-title').html('"' + thisEntryTitle + '"');
-          $('#entry-description').html('"' + thisEntryDescription + '"');
+          $('#entry-date').text(thisEntryDate);
+          $('#entry-title').text('Subject:  ' + thisEntryTitle);
+          $('#entry-description').text('"' + thisEntryDescription + '"');
 
         // Displays entry detail card against modal
           $('.entry-detail-card').addClass('active');
