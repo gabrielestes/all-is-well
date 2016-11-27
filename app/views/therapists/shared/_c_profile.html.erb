@@ -5,15 +5,15 @@
   <div class="data-block dob"><h3>Date&nbsp;of&nbsp;Birth: </h3><span><%= @client_dob.strftime("%m/%d/%Y") %></span></div>
   <div class="data-block phone"><h3>Primary&nbsp;Phone&nbsp;Number: </h3><span><%= @client_phone %></span></div>
   <div class="data-block em_phone"><h3>Emergency&nbsp;Phone&nbsp;Number: </h3><span><%= @client_contact %></span></div>
-  <div class="data-block gen_pract"><h3>General&nbsp;Practicioner: </h3><span>General Practicioner, M.D.</span></div>
-  <div class="data-block gender"><h3>Gender: </h3><span>Female</span></div>
-  <div class="data-block meds"><h3>Current&nbsp;Medications: </h3>
-    <div class="med-list">
-      <span>Medication One</span>
-      <span>Medication Two</span>
+  <div class="data-block gen_pract"><h3>General&nbsp;Practicioner: </h3><span><%= @current_client.general_prac %></span></div>
+  <div class="data-block gender"><h3>Gender: </h3><span><%= @current_client.gender %> </span></div>
+  <div class="data-block meds"><h3>Current&nbsp;Medications: </h3><span><%= @current_client.current_meds %></span
+  <div class="med-list">
+    <!-- <span><%# @current_client.current_meds %></span> -->
+      <!-- <span>Medication Two</span>
       <span>Medication Three</span>
       <span>Medication Four</span>
-      <span>Medication Five</span>
+      <span>Medication Five</span> -->
     </div>
   </div>
 

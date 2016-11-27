@@ -24,6 +24,9 @@ ActiveRecord::Schema.define(version: 20161122172243) do
     t.string   "phone"
     t.json     "emergency"
     t.integer  "wellness"
+    t.string   "general_prac"
+    t.string   "gender"
+    t.string   "current_meds"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["therapist_id"], name: "index_clients_on_therapist_id", using: :btree

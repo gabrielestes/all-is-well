@@ -30,38 +30,69 @@
 
   $(document).on('click', '.activity-card', function(event) {
 
-
+  // The clicked card element
     var clickedCard = event.currentTarget;
 
-
+  // Removes the active class from all detail cards before adding it to clicked card.
     var detailCards = ['.event-detail-card', '.entry-detail-card', '.mood-detail-card'];
-
       detailCards.forEach(function(card) {
         $(card).removeClass('active');
       });
 
 
+
+ /* ****** if clicked card is an EVENT CARD ******* */
+ /* *********************************************** */
     if ($(clickedCard).hasClass('event')) {
-      console.log('in');
-      $('.event-detail-card').addClass('active');
-    }
+        // Gets clicked event data
+          var thisEventDate = $(clickedCard).find('.time').html();
+          var thisEventType = $(clickedCard).find('.type-of').html().toUpperCase();
+          var thisEventDescription = $(clickedCard).find('.event-content').html();
+
+        // Updates event detail card with the clicked event data
+          $('#event-date').html(thisEventDate);
+          $('#event-type').html(thisEventType);
+          $('#event-description').html('"' + thisEventDescription + '"');
+
+        // Displays event detail card against modal
+          $('.event-detail-card').addClass('active');
+        }
 
 
+  /* ****** if clicked card is an ENTRY CARD ******* */
+  /* *********************************************** */
     if ($(clickedCard).hasClass('entry')) {
+        // Gets clicked event data
+          var thisEntryDate = $(clickedCard).find('.time').html();
+          var thisEntryTitle = $(clickedCard).find('.entry-title').html().toUpperCase();
+          var thisEntryDescription = $(clickedCard).find('.entry-content').html();
 
-      $('.entry-detail-card').addClass('active');
-    }
+        // Updates event detail card with the clicked event data
+          $('#entry-date').html(thisEntryDate);
+          $('#entry-title').html('"' + thisEntryTitle + '"');
+          $('#entry-description').html('"' + thisEntryDescription + '"');
 
+        // Displays entry detail card against modal
+          $('.entry-detail-card').addClass('active');
+        }
+
+
+
+  /* ****** if clicked card is an MOOD SURVEY CARD ******* */
+  /* *********************************************** */
     if ($(clickedCard).hasClass('mood')) {
 
-      $('.mood-detail-card').addClass('active');
-    }
+        // Displays mood survey detail card against modal
+          $('.mood-detail-card').addClass('active');
+        }
 
 
 
-    // Displays modal and event detail card
+
+  // Displays modal and selected event detail card
     $('.modal').css("display", "flex");
   });
+
 
   // Hides modal and event detail card if you click anywhere outside of event detail card
   $(document).on('click', '.modal-background', function(event) {

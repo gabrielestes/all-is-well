@@ -18,7 +18,11 @@
               <div class="tabs-content">
                   <div class="active" id="tab-a-content">
                     <div class="view-notes-container">
-                    <%= render :partial => "notes/shared/note_card" %>
+                      <% if @notes.count > 0 %>
+                        <%= render :partial => "notes/shared/note_card" %>
+                      <% else %>
+                        <h1>You have not left <%= @current_client.first_name %> any notes. Leave a note!</h1>
+                      <% end %>
                     </div>
                   </div>
                   <div id="tab-b-content">
