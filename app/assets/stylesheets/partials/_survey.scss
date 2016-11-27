@@ -56,6 +56,9 @@ main.survey {
     opacity: 0;
     overflow-wrap: break-word;
     width: 90%;
+    &#q8 span {
+      font-size: 18px;
+    }
     .choices {
       background: #fff;
       padding: 10px;
@@ -107,7 +110,7 @@ main.survey {
   justify-content: space-between;
   &.button {
     position: relative;
-    top: -17px;
+    top: 0px;
   }
   div {
     &:hover {
