@@ -2,15 +2,14 @@
   <div class="patient_card event activity-card">
     <div class="activity-type">
       <i class="fa fa-star-o"></i>
-      <p>Event - <span class="type-of">negative</span></p>
+      <p>Event - <span class="type-of"> <%= e.event_type %> </span></p>
     </div>
     <p class="time"><%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
     <p hidden>
-      <% e.read %>
+      <%= e.read %>
     </p>
-    <p hidden>
+    <p hidden class="event-content">
       <%= e.description %>
     </p>
-
   </div>
 <% end %>
