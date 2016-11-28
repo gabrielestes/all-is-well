@@ -94,6 +94,9 @@ $detail-icon-color: $seajade;
         justify-content: center;
         align-items: center;
         margin-top: 15px;
+        h1 {
+          font-size: 22px;
+        }
     }
 
 
@@ -172,10 +175,6 @@ $detail-icon-color: $seajade;
 
         .note-title-label,
         .note-text-label {
-          // float: left;
-          // font-size: 1.2em;
-          // padding:  5px;
-          // text-align: right;
           font-size: 18px;
           line-height: 29px;
           margin: 10px 5px;
@@ -190,7 +189,6 @@ $detail-icon-color: $seajade;
 
         .note-title-input {
           width: 100%;
-          // outline: 0;
           border-style: none;
           font-family: inherit;
           font-style: italic;
@@ -198,7 +196,6 @@ $detail-icon-color: $seajade;
           text-decoration: underline;
           padding: 5px 10px;
           border: 0.25px solid $border-grey;
-          // background-color: transparent;
           background: #fff;
           &:focus {
             outline-color: $fun;
@@ -210,7 +207,6 @@ $detail-icon-color: $seajade;
         .note-text-area {
           width: 100%;
           border: 1px solid $border-grey;
-          // outline: 0;
           font-size: 1em;
           padding: 10px;
           background-color: #fff;
