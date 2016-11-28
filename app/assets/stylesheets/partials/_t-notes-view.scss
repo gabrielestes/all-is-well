@@ -24,6 +24,12 @@ $detail-icon-color: $seajade;
 
     .tabbed-views-wrapper {
         width: 100%;
+        max-width: 780px;
+        margin: 0 auto;
+        .welcome {
+          margin-bottom: 15px;
+          font-size: 20px;
+        }
     }
 
     .tabs {
@@ -36,15 +42,17 @@ $detail-icon-color: $seajade;
 
               #tab-a-btn, #tab-b-btn {
                   &:hover, &:active {
-                    color: $pop-color;
+                    color: #fff;
+                    background: $border-grey;
 
                   }
                 }
 
               &.active {
                     #tab-a-btn, #tab-b-btn {
-                      color: $pop-color;
+                      color: $fun;
                       text-decoration: underline;
+                      background: $border-grey;
 
                 }
               }
@@ -56,10 +64,10 @@ $detail-icon-color: $seajade;
       #tab-a-btn, #tab-b-btn {
         width: 100%;
         padding: 15px 0;
-        background-color: transparent;
-        border: 0;
-        outline: 0;
-        font-size: 1.4em;
+        background-color: $grey;
+        border: 0.25px solid $border-grey;
+        outline: #000;
+        font-size: 1.2em;
         font-family: inherit;
         cursor: pointer;
         color: #000;
@@ -138,7 +146,8 @@ $detail-icon-color: $seajade;
         width: 100%;
         padding: 10px;
         display: flex;
-        align-items: center;
+        flex-direction: column;
+        // align-items: flex-start;
         background-color: $grey;
         }
 
@@ -160,12 +169,18 @@ $detail-icon-color: $seajade;
 
         }
 
-        .note-title-label {
-          float: left;
-          font-size: 1.3em;
-          padding:  5px;
-          text-align: right;
-
+        .note-title-label,
+        .note-text-label {
+          // float: left;
+          // font-size: 1.2em;
+          // padding:  5px;
+          // text-align: right;
+          font-size: 18px;
+          line-height: 29px;
+          margin: 10px 5px;
+          color: #000;
+          font-weight: 200;
+          width: 50px;
           &.view-note {
             font-size: 1em;
           }
@@ -174,26 +189,33 @@ $detail-icon-color: $seajade;
 
         .note-title-input {
           width: 100%;
-          outline: 0;
+          // outline: 0;
           border-style: none;
           font-family: inherit;
           font-style: italic;
-          font-size: 1.2em;
+          font-size: 1.1em;
           text-decoration: underline;
           padding: 5px 10px;
-          background-color: transparent;
+          border: 0.25px solid $border-grey;
+          // background-color: transparent;
+          background: #fff;
+          &:focus {
+            outline-color: $fun;
+            background: $seafoam;
+          }
         }
 
 
         .note-text-area {
           width: 100%;
           border: 1px solid $border-grey;
-          outline: 0;
+          // outline: 0;
           font-size: 1em;
           padding: 10px;
           background-color: #fff;
             &:focus {
-
+              outline-color: $fun;
+              background: $seafoam;
             }
         }
 
