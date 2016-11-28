@@ -1,7 +1,5 @@
 <% @surveys.each do |s| %>
-  <div class="patient_card mood activity-card <%= 'read' if s.read %>" data-activity-type="<%= s.class.name %>" data-id="<%= s.id %>">
-    <% s.read = true %>
-    <% s.save! %>
+  <div class="patient_card mood activity-card" data-activity-type="<%= s.class.name %>" data-id="<%= s.id %>">
     <div class="activity-type">
       <% if s.total < 50 %>
         <i class="fa fa-frown-o mood-icon"></i>
@@ -14,6 +12,11 @@
          <span class="score"><%= s.total %>
          </span>
       </p>
+      <!-- <% if s.read == false %> -->
+        <i class="fa fa-bell-o show"></i>
+      <!-- <% else %> -->
+        <!-- <i></i> -->
+      <!-- <% end %> -->
     </div>
     <p class="time"><%= s.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
     <p hidden> <%= s.read %> </p>
