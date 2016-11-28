@@ -15,9 +15,13 @@ class EventsController < ApplicationController
     elsif event.event_type == 'neither good nor bad'
       event.event_type = 'neutral'
     end
+
     if event.save!
-      redirect_to events_index_path
+      redirect_to event_complete_path
     end
+  end
+
+  def event_complete
   end
 
   private
