@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def entries_index
-    @entries = Post.where(client_id: current_user.userable_id)
+    @entries = Post.where(client_id: current_user.userable_id).order(created_at: :desc)
   end
 
   def create
