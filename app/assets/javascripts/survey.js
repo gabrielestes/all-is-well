@@ -11,7 +11,7 @@ document.addEventListener("turbolinks:load", function(){
     var current = 0;
   //if label clicked, corresponding radio button checked and change event initiated
   $('.choices').on('click','label', function(event){
-    $(event.target).prev().attr('checked','true').change();
+    $(event.target).prev().prop('checked','true').change();
   });
 
   //click event for 'next-question' button
