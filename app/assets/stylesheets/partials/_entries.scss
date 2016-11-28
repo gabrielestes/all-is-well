@@ -26,6 +26,8 @@ $neutral-event: $dustylilac;
 /* Icon Color for Activity Detail, Note, Entry Cards */
 $detail-icon-color: $seajade;
 .c-view-main {
+  max-width: 780px;
+  margin: 0 auto;
   .welcome {
     margin-bottom: 15px;
     font-size: 20px;
@@ -245,7 +247,7 @@ $detail-icon-color: $seajade;
       width: 100%;
     }
     &:focus {
-      outline-color: #000;
+      outline-color: $fun;
       background: $seafoam;
       }
     }
@@ -259,7 +261,7 @@ $detail-icon-color: $seajade;
     color: #000;
     border: 0.25px solid $border-grey;
     &:focus {
-      outline-color: #000;
+      outline-color: $fun;
       background: rgba(150, 229, 213, 0.35);
     }
     @media (max-width: 650px) {
