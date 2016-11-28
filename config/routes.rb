@@ -69,6 +69,8 @@ Rails.application.routes.draw do
 # A client's posts and surveys, id is client id
   get 'therapist/activity/:id'  => 'therapists#activity', as: 'client_activity'
 
+  put 'therapist/update_read'  => 'therapists#update_read', as: 'activity_read'
+
 # Client profile, id is client's id
   get 'therapist/c_profile/:id' => 'therapists#c_profile', as: 'c_profile'
 

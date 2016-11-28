@@ -1,5 +1,5 @@
 <% @events.each do |e| %>
-  <div class="patient_card event activity-card">
+  <div class="patient_card event activity-card <%= 'read' if e.read %>" data-activity-type="<%= e.class.name %>" data-id="<%= e.id %>">
     <% e.read = true %>
     <% e.save! %>
     <div class="activity-type">

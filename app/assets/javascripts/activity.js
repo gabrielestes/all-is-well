@@ -39,7 +39,28 @@
         $(card).removeClass('active');
       });
 
+  //
+    var activityId = $(clickedCard).attr('data-id');
+    var activityType = $(clickedCard).attr('data-activity-type');
+    console.log(activityId);
+    console.log(activityType);
 
+    $.ajax({
+        url: '/therapist/update_read',
+        method: 'PUT',
+        data: {
+                id: activityId,
+                type: activityType
+                },
+        success:
+                function(){
+                    console.log('SUCCESS!');
+                    $(clickedCard).addClass('read');
+                },
+        failure:
+                function(){ console.log('FAILS');
+                }
+    });
 
  /* ****** if clicked card is an EVENT CARD ******* */
  /* *********************************************** */
