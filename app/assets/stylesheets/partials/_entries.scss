@@ -112,12 +112,14 @@ $detail-icon-color: $seajade;
     display: flex;
     flex-direction: column;
     padding: 10px 5px;
+    font-size: 16px;
+    line-height: 22px;
   }
   .entry-timestamp {
     color: $border-grey;
-    font-size: 0.9em;
+    font-size: 14px;
     font-style: italic;
-    margin: 15px 0 5px;
+    margin: 5px 0 0;
     width: 100%;
     text-align: right;
   }
