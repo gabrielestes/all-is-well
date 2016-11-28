@@ -68,12 +68,10 @@
           var negativeColor = "#4c5fce";
           var neutralColor = "#928EA0";
         // Gets clicked event data
-          var thisEventDate = $.trim($(clickedCard).find('.time').text());
+          var thisEventDate = $.trim($(clickedCard).find('.long-time').text());
           var thisEventType = $.trim($(clickedCard).find('.type-of').text().toUpperCase());
           var thisEventDescription = $.trim($(clickedCard).find('.event-content').text());
 
-
-          console.log(thisEventType);
         // Updates event detail card with the clicked event data
           $('#event-date').text(thisEventDate);
           $('#event-type').text(thisEventType);
@@ -102,7 +100,7 @@
   /* *********************************************** */
     if ($(clickedCard).hasClass('entry')) {
         // Gets clicked entry data
-          var thisEntryDate = $.trim($(clickedCard).find('.time').text());
+          var thisEntryDate = $.trim($(clickedCard).find('.long-time').text());
           var thisEntryTitle = $.trim($(clickedCard).find('.entry-title').text().toUpperCase());
           var thisEntryDescription = $.trim($(clickedCard).find('.entry-content').text());
 
@@ -156,7 +154,7 @@
   /* *********************************************** */
     if ($(clickedCard).hasClass('mood')) {
         // Gets clicked mood survey data
-          var thisSurveyDate = $.trim($(clickedCard).find('.time').text());
+          var thisSurveyDate = $.trim($(clickedCard).find('.long-time').text());
           var thisSurveyScore = $.trim($(clickedCard).find('.score').text());
           var thisMoodIcon = $(clickedCard).find('.mood-icon').clone();
 

@@ -6,9 +6,8 @@
         <p>Journal Entry</p>
     </div>
     <div class="activity-time">
-        <p class="time">
-            <%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %>
-        </p>
+      <p class="time long-time"><%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %> </p>
+      <p class="time short-time"><%= e.created_at.strftime("%m/%d/%y %l:%M%P") %> </p>
             <% if e.read == false %>
             <p class="alert">
             <i class="fa fa-bell-o show"></i>
