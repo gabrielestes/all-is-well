@@ -26,7 +26,15 @@ $fun: #4c5fce;
     border: 0.25px solid $border-grey;
 
     .date-type-container {
-      margin: 0 auto;
+      // margin: 0 auto;
+    }
+    .event-type {
+      .radio-choices {
+        flex-direction: row;
+        label {
+          margin: 0;
+        }
+      }
     }
 
     input.button {
@@ -34,17 +42,17 @@ $fun: #4c5fce;
       margin: 5px 15px;
     }
     div {
-      margin: 10px auto;
       line-height: 30px;
       display: flex;
       flex-direction: column;
-      // align-items: center;
       label {
         font-size: 17px;
+        margin-top: 22px;
       }
       input,
       textarea,
       select {
+
         text-align: center;
         color: #000;
         height: 30px;
