@@ -1,25 +1,34 @@
+<header>
 
-  <header>
-
-      <div class="site-logo">
-        <h3><span class="site-title">all is well</span>Hi, <%= current_user.userable.first_name %> <%= current_user.userable.last_name %><%= ", #{current_user.userable.cred}" if current_user.userable_type == 'Therapist' %></h3>
-      </div>
-
-
-      <nav class="header-nav">
+    <div class="site-logo">
         <%= link_to "/#{current_user.userable_type.downcase}" do %>
-          <div class="header-nav-opt" id="nav-home">Home</div>
+        <h3 class="site-title" id="nav-home">all&nbsp;is&nbsp;well</h3>
         <% end %>
-        <%= link_to "/#{current_user.userable_type.downcase}/profile" do %>
-          <div class="header-nav-opt" id="nav-account">Account</div>
-        <% end %>
-        <%= link_to destroy_user_session_path, :method => :delete do %>
-          <div class="header-nav-opt">Logout</div>
-        <% end %>
-      </nav>
-
-    <div id="header-nav-icon">
-        <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
 
-  </header>
+    <nav class="header-nav">
+        <%= link_to destroy_user_session_path, :method => :delete do %>
+        <div class="header-nav-opt" id="logout">
+            <span class="icon">
+                <i class="fa fa-sign-out logout-icon"></i>
+            </span>
+            <span class="nav-text">
+              Logout
+            </span>
+        </div>
+        <% end %>
+        <%= link_to "/#{current_user.userable_type.downcase}/profile" do %>
+        <div class="header-nav-opt" id="nav-account">
+            <span class="icon">
+                <i class="fa fa-user-circle-o user-icon"></i>
+            </span>
+            <span class="nav-text username">
+                <%= current_user.userable.first_name %>
+                <%= current_user.userable.last_name %><%= ", #{current_user.userable.cred}" if current_user.userable_type == 'Therapist' %>
+            </span>
+            <span class="nav-text account">Account</span>
+        </div>
+        <% end %>
+    </nav>
+
+</header>

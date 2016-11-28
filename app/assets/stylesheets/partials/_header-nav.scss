@@ -20,7 +20,6 @@ header {
   z-index: 6;
   color: #fff;
 
-
       .site-logo {
         margin: 0 10px;
 
@@ -29,57 +28,47 @@ header {
             font-style: bold;
             font-size: 30px;
             color: #fff;
-            margin-right: 15px;
           }
       }
 }
 
 nav {
-  transition: all .5s ease-in-out;
-  background-color: $seagreen;
   width: 100%;
-  position: fixed;
-  top: 50px;
-  display: none;
-  z-index: 3;
   font-family: 'Quicksand', sans-serif !important;
+  font-size: 1.2em;
 
-      &.header-nav-active {
-        display: block;
+  span.icon {
+    font-size: 1.2em;
+      i.user-icon {
+        margin-right: 5px;
       }
-
-  @media (min-width: 600px) {
-    position: relative;
-    top: 0;
-    display: block;
-    width: auto;
+      i.logout-icon {
+        margin-right: 2px;
+      }
   }
 
 }
-
-#header-nav-icon {
-  margin: 0 10px;
-  @media (min-width: 600px) {
-    display: none;
-  }
-}
-
-
-
 
 
 .header-nav-opt {
-  border-top: 0.25px solid $seagreenM;
-  padding: 10px;
-  height: 30px;
+  padding: 0 5px;
+  margin-right: 5px;
+  float: right;
   display: flex;
   justify-content: center;
   align-items: center;
   color: #fff;
 
+    span.nav-text.username {
+      display: none;
+    }
+
     &:hover {
       cursor: pointer;
       text-decoration: underline;
+      span.icon {
+        text-decoration: none;
+      }
     }
 
     &.selected {
@@ -87,13 +76,16 @@ nav {
     }
 
 
-  @media (min-width: 600px){
-    float: left;
-    width: calc(100%/3);
-    border: none;
-    // &:hover {
-    //   text-decoration: underline;
-    // }
+  @media (min-width: 530px){
+    span.nav-text.username {
+      display: inline-flex;
+    }
+    span.nav-text.account {
+      display: none;
+    }
+
+
   }
+
 
 }
