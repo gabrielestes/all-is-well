@@ -112,6 +112,12 @@ $detail-icon-color: $seajade;
       background: $seafoam;
       color: #000;
     }
+
+    &.read {
+      .fa-bell-o {
+        visibility: hidden;
+      }
+    }
   }
 
   .activity-type {

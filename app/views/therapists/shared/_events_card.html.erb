@@ -1,17 +1,23 @@
 <% @events.each do |e| %>
   <div class="patient_card event activity-card <%= 'read' if e.read %>" data-activity-type="<%= e.class.name %>" data-id="<%= e.id %>">
-    <% e.read = true %>
-    <% e.save! %>
     <div class="activity-type">
       <i class="fa fa-star-o"></i>
       <p>Event - <span class="type-of"> <%= e.event_type %> </span></p>
     </div>
     <p class="time"><%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
+    <p>
+      <% if !e.read %>
+        <i class="fa fa-bell-o show"></i>
+      <% else %>
+        <i class="fa fa-bell-o hide"></i>
+      <% end %>
+    </p>
     <p hidden>
       <%= e.read %>
     </p>
     <p hidden class="event-content">
       <%= e.description %>
     </p>
+
   </div>
 <% end %>

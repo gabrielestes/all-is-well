@@ -56,6 +56,7 @@
                 function(){
                     console.log('SUCCESS!');
                     $(clickedCard).addClass('read');
+                
                 },
         failure:
                 function(){ console.log('FAILS');
