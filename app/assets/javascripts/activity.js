@@ -139,13 +139,13 @@
       }
       answersArr.push(answer);
     }
-    console.log(answersArr);
+
     return answersArr;
   }
 
   function setAnswers(answersArr) {
     for (index = 0; index < answersArr.length; index++) {
-      console.log('in loop');
+  
       var question = '#q' + (index + 1);
       $(question).html(answersArr[index]);
     }

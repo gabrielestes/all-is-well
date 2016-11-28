@@ -27,12 +27,13 @@ $detail-icon-color: $seajade;
 
  .legend {
    width: 100%;
-   margin-bottom: 1em;
+   margin-bottom: 16px;
    padding: 10px 0;
 
 
    ul {
      width: 100%;
+     font-size: 16px;
      display: flex;
      justify-content: flex-end;
      align-items: center;
@@ -45,8 +46,8 @@ $detail-icon-color: $seajade;
 
        .color-key {
          border-radius: 3px;
-         width: 1em;
-         height: 1em;
+         width: 16px;
+         height: 16px;
          margin-right: 5px;
        }
 

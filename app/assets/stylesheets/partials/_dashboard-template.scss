@@ -60,7 +60,6 @@ $pop-color: $fun;
                 .t-dashboard-opt.selected h3,
                 .c-dashboard-opt.selected h3 {
                     color: #fff;
-                    text-decoration: underline;
                   }
 
             }
@@ -92,7 +91,7 @@ $pop-color: $fun;
   justify-content: center;
   align-items: center;
   min-height: 50px;
-  font-size: 1em;
+  font-size: 20px;
   background-color: $seafoam;
   border-top: .25px solid $seagreenM;
   cursor: pointer;
@@ -101,7 +100,6 @@ $pop-color: $fun;
       &:hover {
           h3 {
         color: #000;
-        text-decoration: underline;
         transition: none;
           }
         }
@@ -122,7 +120,7 @@ $pop-color: $fun;
 
          h3 {
            color: transparent;
-           font-size: 1.1em;
+           font-size: 20px;
          }
 
 
@@ -261,6 +259,6 @@ $pop-color: $fun;
 
 .t-view-header h3,
 .c-view-header h3 {
-  font-size: 1.3em;
+  font-size: 22px;
   padding-right: 5px;
 }
