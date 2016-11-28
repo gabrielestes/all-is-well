@@ -37,7 +37,35 @@ $fun: #4c5fce;
       .radio-choices {
         flex-direction: row;
         align-items: center;
+        input {
+          position: relative;
+          &:checked {
+            &::before {
+              content: " ";
+              height: 15px;
+              width: 15px;
+              position: absolute;
+              border-radius: 50%;
+              background: $seagreenM;
+              top: 8px;
+              left: 0px;
+            }
 
+          }
+          &::before {
+            content: " ";
+            background: $border-grey;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            border-radius: 50%;
+            top: 8px;
+            left: 0px;
+          }
+          &:checked + label {
+            color: $seagreenM;
+          }
+        }
         label {
           margin: 0 36px 0 0;
           cursor: pointer;
