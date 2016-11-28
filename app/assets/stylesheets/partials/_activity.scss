@@ -90,7 +90,7 @@ $detail-icon-color: $seajade;
 
       }
   }
-  .patient_card {
+  .activity-card {
     cursor: pointer;
     display: flex;
     flex-direction: row;
@@ -99,7 +99,7 @@ $detail-icon-color: $seajade;
     height: 50px;
     font-size: 18px;
     background: #fff;
-    padding: 10px 20px;
+    padding: 10px 0 10px 20px;
     margin-bottom: 5px;
     &.event {
         color: $pop-color;
@@ -115,11 +115,13 @@ $detail-icon-color: $seajade;
       color: #000;
     }
 
+
     &.read {
       .fa-bell-o {
-        visibility: hidden;
+        display: none;
       }
     }
+
   }
 
   .activity-type {
@@ -137,8 +139,28 @@ $detail-icon-color: $seajade;
     }
   }
 
-  p.time {
-    font-style: italic;
+  .activity-time {
+        display: flex;
+        align-items: baseline;
+        margin-right: 20px;
+
+    p.time {
+      font-style: italic;
+      display: inline;
+    }
+
+    p.alert {
+        display: inline;
+      i {
+      margin-left: 10px;
+    }
+    }
+
   }
+
+
+
+
+
 
 }
