@@ -1,6 +1,5 @@
 class Client < ApplicationRecord
-  validates_presence_of :therapist_id, :first_name, :last_name, :birth_date, :phone,
-  :emergency, :current_meds
+  validates_presence_of :therapist_id, :first_name, :last_name, :birth_date, :phone, :current_meds
 
   has_one :user, as: :userable, dependent: :destroy
   has_many :contacts
