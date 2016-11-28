@@ -165,6 +165,10 @@ $pop-color: $fun;
 .t-view-main,
 .c-view-main {
   padding: 70px 20px 20px 20px;
+  width: 100%;
+  .welcome {
+    text-align: center;
+  }
 }
 
 
