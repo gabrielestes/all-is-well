@@ -10,15 +10,16 @@
 
       <h2>sort by:</h2>
       <div class="sort">
-        <a>Most Recent</a>
-        <%= link_to "Wellness", "/therapist?sort_by=wellness", class:"actives", id:"wellness" %>
+        <!-- <a>Most Recent</a> -->
         <%= link_to "Name", "/therapist?sort_by=last_name" ,id:"name"%>
+        <%= link_to "Wellness", "/therapist?sort_by=wellness", class:"actives", id:"wellness" %>
       </div>
 
         <a id="patient_card_header"><div class="patient_card">
             <p class="id_number">Id</p>
             <p class="pt_name">Name</p>
-            <p class="pt_wellness">Wellness Score</p>
+            <p class="pt_wellness">Wellness</p>
+            <i class="bell_column"> </i>
         </div></a>
 
         <%= render :partial => "therapists/shared/patient_card" %>

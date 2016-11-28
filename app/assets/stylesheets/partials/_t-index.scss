@@ -9,6 +9,7 @@ $seafoam: #cae8e2;
 $grey: #dfe0e6;
 $fun: #4c5fce;
 $pop-color: $fun;
+$border-grey: #c9cacf;
 
 .clients-header {
   width: 100%;
@@ -44,6 +45,27 @@ $pop-color: $fun;
         font-size: 16px;
         color: #000;
       }
+      a#patient_card_header,
+      a.patient-link {
+        div {
+          p,
+          i {
+            padding: 0 10px;
+            text-align: left;
+            &.pt_wellness {
+              text-align: right;
+            }
+          }
+          i {
+            justify-content: flex-end;
+            width: 10%;
+            color: $seagreen;
+          }
+          p {
+            width: calc(90%/3);
+          }
+        }
+      }
     }
   .sort {
     display: flex;
@@ -62,8 +84,12 @@ $pop-color: $fun;
         font-size: 16px;
         line-height: 22px;
       }
+      &:hover {
+        background: $seagreenM;
+        color: #fff;
+      }
       &.actives {
-        background: $seagreen;
+        background: $seagreenM;
         color: #fff;
       }
     }
@@ -73,25 +99,24 @@ $pop-color: $fun;
   text-align: right;
 }
 #patient_card_header {
-
-  color: $fun;
-  font-size: 17px;
+  div {
+    background: $border-grey;
+    color: #000;
+    font-size: 18px;
+    margin-top: 30px;
+    }
   & div:hover {
-    color: $fun;
-    background: #fff;
+    color: #000;
+    background: $border-grey;
   }
-  p {
-    text-align: center;
-  }
-  .id_number,
-  .pt_name {
-    text-align: left;
-
-  }
-  .pt_wellness {
-    text-align: center;
-    width: 30%;
-  }
+  // p {
+  //   text-align: left;
+  // }
+  // .id_number,
+  // .pt_name {
+  //   text-align: left;
+  //
+  // }
 }
 a {
   width: 95%;
@@ -104,7 +129,7 @@ a {
     padding: 5px;
     &:hover {
       color: #fff;
-      background: $seagreen;
+      background: $seagreenM;
     }
 
     p {
