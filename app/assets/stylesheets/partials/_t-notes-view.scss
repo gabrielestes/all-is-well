@@ -28,7 +28,7 @@ $detail-icon-color: $seajade;
         margin: 0 auto;
         .welcome {
           margin-bottom: 15px;
-          font-size: 20px;
+          font-size: 24px;
         }
     }
 
@@ -43,16 +43,15 @@ $detail-icon-color: $seajade;
               #tab-a-btn, #tab-b-btn {
                   &:hover, &:active {
                     color: #fff;
-                    background: $border-grey;
+                    background: $seagreen;
 
                   }
                 }
 
               &.active {
                     #tab-a-btn, #tab-b-btn {
-                      color: $fun;
-                      text-decoration: underline;
-                      background: $border-grey;
+                      color: #fff;
+                      background: $seagreen;
 
                 }
               }
@@ -64,10 +63,10 @@ $detail-icon-color: $seajade;
       #tab-a-btn, #tab-b-btn {
         width: 100%;
         padding: 15px 0;
-        background-color: $grey;
-        border: 0.25px solid $border-grey;
+        background-color: $seafoam;
+        border: 0.25px solid $seagreenM;
         outline: #000;
-        font-size: 1.2em;
+        font-size: 20px;
         font-family: inherit;
         cursor: pointer;
         color: #000;
