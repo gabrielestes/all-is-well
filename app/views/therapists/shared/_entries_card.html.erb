@@ -1,6 +1,6 @@
 <% @entries.each do |e| %>
   <% if e.sharable == true %>
-  <div class="patient_card entry activity-card" data-activity-type="<%= e.class.name %>" data-id="<%= e.id %>">
+  <div class="patient_card entry activity-card <%= 'read' if e.read %>" data-activity-type="<%= e.class.name %>" data-id="<%= e.id %>">
       <div class="activity-type">
           <i class="fa fa-pencil"></i>
           <p>Journal Entry</p>
@@ -8,7 +8,11 @@
       <p class="time">
           <%= e.created_at.strftime("%B %d, %Y at %I:%M %P") %>
       </p>
-
+      <% if e.read == false %>
+        <i class="fa fa-bell-o show"></i>
+      <% else %>
+        <i class="fa fa-bell-o hide"></i>
+      <% end %>
       <p hidden class="entry-title">
          <%= e.title %>
       </p>
@@ -18,11 +22,6 @@
       <p hidden>
           <%= e.read %>
       </p>
-      <% if e.read == false %>
-        <i class="fa fa-bell-o show"></i>
-      <% else %>
-        <i></i>
-      <% end %>
   </div>
   <% end %>
 <% end %>
