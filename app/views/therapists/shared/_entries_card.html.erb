@@ -1,8 +1,6 @@
 <% @entries.each do |e| %>
 <% if e.sharable == true %>
-<div class="patient_card entry activity-card">
-    <% e.read = true %>
-    <% e.save! %>
+<div class="patient_card entry activity-card <%= 'read' if e.read %>" data-activity-type="<%= e.class.name %>" data-id="<%= e.id %>">
     <div class="activity-type">
         <i class="fa fa-pencil"></i>
         <p>Journal Entry</p>

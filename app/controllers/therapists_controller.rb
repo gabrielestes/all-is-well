@@ -80,6 +80,19 @@ class TherapistsController < ApplicationController
   def note
   end
 
+  def update_read
+    activity_id = params[:id]
+    activity_type = params[:type]
+    activity = activity_type.constantize.find(activity_id)
+    if activity.present?
+      activity.read = true
+      activity.save!
+    end
+    respond_to do |format|
+      format.json { render json: @current_client }
+    end
+  end
+
   private
 
   def user_params

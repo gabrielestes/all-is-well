@@ -6,7 +6,7 @@
           <p class="id_number"><%= c.id %></p>
           <p class="pt_name"><%= c.first_name %> <%= c.last_name %></p>
           <p class="pt_wellness"> <%= c.wellness %><%= "%" if c.wellness != nil %></p>
-          <% if (Survey.where(client_id: c.id, read: false).count + Post.where(client_id: c.id, read: false, sharable: true).count + Event.where(client_id: c.id, read: false).count) > 0 %>
+          <% if c.has_recent_activity? %>
             <i class="fa fa-bell-o show"></i>
           <% else %>
             <i></i>

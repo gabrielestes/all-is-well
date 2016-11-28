@@ -1,5 +1,5 @@
 <% @surveys.each do |s| %>
-  <div class="patient_card mood activity-card">
+  <div class="patient_card mood activity-card <%= 'read' if s.read %>" data-activity-type="<%= s.class.name %>" data-id="<%= s.id %>">
     <% s.read = true %>
     <% s.save! %>
     <div class="activity-type">
