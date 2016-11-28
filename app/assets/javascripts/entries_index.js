@@ -4,7 +4,7 @@
 
   //on button click, show previous entries and shrink buttons
   $(document).on('click','.button-box .button',function(event){
-
+    $(this).addClass('active').siblings('.button').removeClass('active');
     //remove '-btn' from the end of the button id and use that to target the view id
     var selected = '#' + $(event.target).attr("id");
     selected = selected.substring(0, selected.indexOf('-btn'));

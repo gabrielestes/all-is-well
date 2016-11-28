@@ -7,12 +7,13 @@
 
 
           <div class="tabbed-views-wrapper">
+            <h1 class="welcome">Notes for <%= @client_name %></h1>
               <div class="tabs">
                   <div class="tab-a active">
-                      <button id="tab-a-btn">All Notes</button>
+                      <button id="tab-a-btn">View Previous Notes</button>
                   </div>
                   <div class="tab-b">
-                      <button id="tab-b-btn">+ New Note</button>
+                      <button id="tab-b-btn">Add a New Note</button>
                   </div>
               </div>
               <div class="tabs-content">
@@ -30,11 +31,14 @@
                       <%= form_for Note.new, url: create_note_path(@client_id), method: :post do |f| %>
                         <div class="note-form-row">
                           <%= f.label :title, value:"Subject:", class:"note-title-label" %>
-                          <%= f.text_field :title, class:"note-title-input", value:"untitled"%>
+                          <%= f.text_field :title, class:"note-title-input", value:""%>
                         </div>
+                        <div class="note-form-row">
+                          <%= f.label :message, value:"Note:", class:"note-text-label" %>
                           <%= f.text_area :message, :required => true, rows: 10, class:"note-text-area"%>
                           <%= f.hidden_field :client_id, value: @client_id %>
                           <%= f.hidden_field :therapist_id, value: @therapist_id %>
+                        </div>
                         <div class="note-form-footer">
 
 

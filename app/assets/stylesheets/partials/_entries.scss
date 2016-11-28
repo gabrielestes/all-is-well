@@ -48,8 +48,14 @@ $detail-icon-color: $seajade;
       height: 50px;
       margin-bottom: 0px;
       border: 0.25px solid $border-grey;
-      width: 300px;
+      width: 50%;
       background: $grey;
+      &.active{
+        background: $border-grey;
+        color: $fun;
+        text-decoration: underline;
+
+      }
       &:hover {
         background: $border-grey;
         color: #fff;
@@ -200,6 +206,9 @@ $detail-icon-color: $seajade;
   }
   #new-entry {
     width: 100%;
+    background: $grey;
+    border: 0.25px solid $border-grey;
+    padding: 5px;
   }
   div.title,
   div.text {
@@ -230,14 +239,14 @@ $detail-icon-color: $seajade;
     line-height: 29px;
     font-size: 22px;
     color: #000;
-    border: 0.25px solid #000;
+    border: 0.25px solid $border-grey;
     margin: 0 auto;
     @media (max-width: 650px) {
       width: 100%;
     }
     &:focus {
       outline-color: #000;
-      background: rgba(150, 229, 213, 0.35);
+      background: $seafoam;
       }
     }
   #entry-text {
@@ -248,7 +257,7 @@ $detail-icon-color: $seajade;
     font-size: 20px;
     padding: 5px;
     color: #000;
-    border: 0.25px solid #000;
+    border: 0.25px solid $border-grey;
     &:focus {
       outline-color: #000;
       background: rgba(150, 229, 213, 0.35);
@@ -271,5 +280,11 @@ $detail-icon-color: $seajade;
     display: inline-block;
     margin: 0;
   }
+  section.add-entry-footer {
+    flex-direction: row;
+    .privacy div.togglePrivacy {
+      margin: 10px;
+    }
 
+  }
 }
