@@ -32,6 +32,9 @@ $detail-icon-color: $seajade;
     width: 100%;
     margin-bottom: 15px;
     border: 1px solid $border-grey;
+    @media (min-width: 700px) {
+        min-width: 550px;
+    }
 
     .note-title-row {
         width: 100%;
