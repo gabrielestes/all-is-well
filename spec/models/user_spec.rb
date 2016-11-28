@@ -42,4 +42,20 @@ RSpec.describe User, :type => :model do
     subject.password_confirmation = 'password'
     expect(subject).to_not be_valid
   end
+
+  it "is invalid when an email is invalid" do
+    subject.email = 'nameexamplecom'
+    subject.password = 'password'
+    subject.password_confirmation = 'password'
+    subject.userable = therapist
+    expect(subject).to_not be_valid
+  end
+
+  it "is invalid when a password is less than six characters" do
+    subject.email = 'name@example.com'
+    subject.password = 'pass'
+    subject.password_confirmation = 'pass'
+    subject.userable = therapist
+    expect(subject).to_not be_valid
+  end
 end
