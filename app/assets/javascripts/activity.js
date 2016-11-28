@@ -6,21 +6,33 @@
         $(this).toggleClass('active');
       }
     });
-    $(event.target).toggleClass('active');
+    $(event.currentTarget).toggleClass('active');
     event.preventDefault();
-    var classes = $(event.target).attr('class');
+    var classes = $(event.currentTarget).attr('class');
     //the activity type must be the second class named for this to work.
     var activity = classes.split(/[_ ]/)[1];
-    $('.patient_card').each(function(){
-      if($(this).hasClass(activity)) {
-        $(this).show();
-      } else if (activity === 'all'){
-        $(this).show();
-      }
-      else {
-        $(this).hide();
-      }
-    });
+    if (activity === 'event' || activity === 'entry' || activity === 'mood' || activity === 'all') {
+        $('.patient_card').each(function(){
+          if($(this).hasClass(activity)) {
+            $(this).show();
+          } else if (activity === 'all'){
+            $(this).show();
+          }
+          else {
+            $(this).hide();
+          }
+        });
+    } else if (activity === 'read') {
+      $('.patient_card').each(function(){
+        if($(this).hasClass(activity)) {
+          $(this).hide();
+        } else {
+          $(this).show();
+        }
+      });
+    }
+
+
   });
 
 
