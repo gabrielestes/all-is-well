@@ -30,7 +30,7 @@ $detail-icon-color: $seajade;
   margin: 0 auto;
   .welcome {
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
@@ -49,19 +49,17 @@ $detail-icon-color: $seajade;
     #add-entry-btn {
       height: 50px;
       margin-bottom: 0px;
-      border: 0.25px solid $border-grey;
+      border: 0.25px solid $seagreenM;
       width: 50%;
-      background: $grey;
+      background: $seafoam;
+      font-size: 20px;
       &.active{
-        background: $border-grey;
-        color: $fun;
-        text-decoration: underline;
-
+        background: $seagreen;
+        color: #fff;
       }
       &:hover {
-        background: $border-grey;
+        background: $seagreen;
         color: #fff;
-        text-decoration: underline;
       }
       @media (max-width: 650px) {
         margin: 1px auto;
