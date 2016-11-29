@@ -10,6 +10,7 @@ $grey: #dfe0e6;
 $fun: #4c5fce;
 $pop-color: $fun;
 $border-grey: #c9cacf;
+$seajade: rgb(35, 188, 158);
 
 .clients-header {
   width: 100%;
@@ -59,7 +60,7 @@ $border-grey: #c9cacf;
           i {
             justify-content: flex-end;
             width: 10%;
-            color: $seagreen;
+            color: $seajade;
           }
           p {
             width: calc(90%/3);
