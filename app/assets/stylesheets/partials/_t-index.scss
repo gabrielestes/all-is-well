@@ -51,19 +51,30 @@ $seajade: rgb(35, 188, 158);
         div {
           p,
           i {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             padding: 0 10px;
-            text-align: left;
             &.pt_wellness {
-              text-align: right;
+              justify-content: center;
+            }
+            @media(max-width: 700px) {
+              font-size: 16px;
             }
           }
           i {
             justify-content: flex-end;
             width: 10%;
             color: $seajade;
+            @media(max-width: 470px) {
+              width: 15%;
+            }
           }
           p {
             width: calc(90%/3);
+            @media(max-width: 470px) {
+              width: calc(85%/3);
+            }
           }
         }
       }
@@ -141,7 +152,6 @@ a {
       }
     }
     i {
-
       width: 15%;
       color: $fun;
       opacity: 0;
