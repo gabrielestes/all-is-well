@@ -23,7 +23,12 @@ header {
       .site-logo {
         z-index: 7;
         margin: 0 10px;
-
+        // This is the stuff that is decorating the alliswell logo
+        background: $seagreenM;
+        padding: 6px 12px 4px 7px;
+        border-radius: 25px 0px;
+        border: 0.25px solid $seafoam;
+        // end of logo decoration
           .site-title {
             font-family: 'Dancing Script';
             font-style: bold;
