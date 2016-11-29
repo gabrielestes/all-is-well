@@ -32,7 +32,7 @@ class ClientsController < ApplicationController
     if !params[:contact].nil?
       e = Contact.where(client_id: params[:contact][:client_id]).first_or_create!
       e.phone = params[:contact][:phone]
-      e.save! unless e.phone.length < 7
+      e.save!
     else
       @current_client.update client_params
     end
