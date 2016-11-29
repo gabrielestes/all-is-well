@@ -9,7 +9,7 @@
       <!-- <fieldset id="title"> -->
       <div class="title">
         <label for="title">Title:</label>
-        <%= e.text_field :title, id: 'title',:maxlength => 90 %>
+        <%= e.text_field :title, id: 'title', :required => true, :maxlength => 90 %>
       </div>
         <!-- <input id="title" name="title"/> -->
       <!-- </fieldset> -->
@@ -18,7 +18,7 @@
         <!-- <label for="entry-text">Entry:</label> -->
       <div class="text">
         <%= e.label :body, 'Entry: ' %>
-        <%= e.text_area :body, id: 'entry-text' %>
+        <%= e.text_area :body, :required => true, id: 'entry-text' %>
       </div>
         <!-- <textarea id="entry-text" name="entry-text"></textarea> -->
       <!-- </fieldset> -->
