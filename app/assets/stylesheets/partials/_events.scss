@@ -10,13 +10,15 @@ $seafoam: #cae8e2;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
 $fun: #4c5fce;
+$seajade: rgb(35, 188, 158);
+
+
 .make_event {
   .welcome {
     font-size: 24px;
     margin: 10px 0;
     text-align: center;
   }
-
   form {
     display: flex;
     flex-direction: column;
@@ -31,14 +33,29 @@ $fun: #4c5fce;
     .date-type-container {
       .event-date input {
         width: 50%;
+        @media (max-width: 600px) {
+          width: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        width: 100%;
       }
     }
     .event-type {
       .radio-choices {
         flex-direction: row;
         align-items: center;
+        @media (max-width: 600px) {
+          flex-direction: column-reverse;
+          line-height: 10px;
+          margin-top: 20px;
+          }
+        label[for="event_type"]{
+          margin-top: 13px;
+        }
         input {
           position: relative;
+          top: 5px;
           &:checked {
             &::before {
               content: " ";
@@ -46,9 +63,9 @@ $fun: #4c5fce;
               width: 15px;
               position: absolute;
               border-radius: 50%;
-              background: $seagreenM;
-              top: 8px;
-              left: 0px;
+              background: $seajade;
+              left: -1px;
+              top: 1px;
             }
 
           }
@@ -59,16 +76,19 @@ $fun: #4c5fce;
             width: 15px;
             position: absolute;
             border-radius: 50%;
-            top: 8px;
-            left: 0px;
+            left: -1px;
+            top: 1px;
           }
           &:checked + label {
-            color: $seagreenM;
+            color: $seajade;
           }
         }
         label {
           margin: 0 36px 0 0;
           cursor: pointer;
+          @media (max-width: 600px) {
+            margin: 0;
+          }
           &:hover,
           &.active {
             color: $seagreenM;
@@ -85,6 +105,10 @@ $fun: #4c5fce;
       line-height: 30px;
       display: flex;
       flex-direction: column;
+      align-items: left;
+      @media (max-width: 600px) {
+        align-items: center;
+      }
       label {
         font-size: 18px;
         margin-top: 22px;
@@ -95,7 +119,7 @@ $fun: #4c5fce;
 
         text-align: center;
         color: #000;
-        height: 30px;
+        // height: 30px;
         font-size: 16px;
         font-family: 'Quicksand',sans-serif;
         background: #fff;
@@ -136,4 +160,11 @@ main.event {
     width: 100%;
     height: 20vh;
   }
+}
+
+.event-date label:first-child,
+.event-type label:first-child,
+.event-text label:first-child {
+  font-size: 20px;
+  color: $fun;
 }
