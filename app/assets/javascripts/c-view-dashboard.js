@@ -1,7 +1,17 @@
 (function($) {
 "use strict";
 
-var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+
+//Page elements that make up the client-view dashboard and sub-header.
+var dashboardElements = [
+ '.c-view-dashboard',
+ '.c-view-header',
+ '.c-view-content',
+ '.c-view-dashboard-icon',
+ '.c-show-dash-text',
+ '.c-hide-dash-text'
+];
 
 //Makes the dashboard display open automatically on wider screens.
 function loadDashboardOpen() {
@@ -40,15 +50,7 @@ function getDashboardLocation() {
 }
 
 
-//Page elements that make up the client-view dashboard and sub-header.
-var dashboardElements = [
- '.c-view-dashboard',
- '.c-view-header',
- '.c-view-content',
- '.c-view-dashboard-icon',
- '.c-show-dash-text',
- '.c-hide-dash-text'
-];
+
 
 //Event handler to display or hide the client-view dashboard.
 $(document).on('click', '.c-dashboard-toggle-container', function() {
@@ -60,21 +62,27 @@ $(document).on('click', '.c-dashboard-toggle-container', function() {
 
 
 
-$(document).on('turbolinks:render', function() {
- getDashboardLocation();
- if (width >= 700) {
- loadDashboardOpen();
- }
-});
 
-$(document).on('turbolinks:load', function() {
+       $(document).on('turbolinks:render', function() {
+             //Current display width
+             var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+             getDashboardLocation();
 
-  if (width >= 700) {
- getDashboardLocation();
- loadDashboardOpen();
- }
-});
+             if (currentWidth >= 700) {
+               loadDashboardOpen();
+             }
 
+       });
+
+       $(document).on('turbolinks:load', function() {
+             //Current display width
+             var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+             getDashboardLocation();
+
+             if (currentWidth >= 700) {
+               loadDashboardOpen();
+             }
+       });
 
 
 
