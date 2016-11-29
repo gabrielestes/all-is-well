@@ -1,8 +1,17 @@
 (function($) {
   "use strict";
 
-  //Current display width
-   var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
+   //Page elements that make up the therapist-view dashboard and sub-header.
+    var dashboardElements = [
+       '.t-view-dashboard',
+       '.t-view-header',
+       '.t-view-content',
+       '.t-view-dashboard-icon',
+       '.t-show-dash-text',
+       '.t-hide-dash-text',
+       '.modal'
+     ];
 
 
   //Makes the dashboard display open automatically on wider screens.
@@ -44,32 +53,27 @@
 
 
   $(document).on('turbolinks:render', function() {
+        //Current display width
+        var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         getDashboardLocation();
 
-        if (width >= 700) {
+        if (currentWidth >= 700) {
           loadDashboardOpen();
         }
 
   });
 
   $(document).on('turbolinks:load', function() {
+        //Current display width
+        var currentWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
         getDashboardLocation();
 
-        if (width >= 700) {
+        if (currentWidth >= 700) {
           loadDashboardOpen();
         }
   });
 
-  //Page elements that make up the therapist-view dashboard and sub-header.
-   var dashboardElements = [
-      '.t-view-dashboard',
-      '.t-view-header',
-      '.t-view-content',
-      '.t-view-dashboard-icon',
-      '.t-show-dash-text',
-      '.t-hide-dash-text',
-      '.modal'
-    ];
+
 
   //Event handler to display or hide the therapist-view dashboard.
     $(document).on('click', '.t-dashboard-toggle-container', function() {
@@ -85,8 +89,5 @@
 
 
 
-$(document).on('turbolinks:load', function() {
-
-});
 
 })(jQuery);
