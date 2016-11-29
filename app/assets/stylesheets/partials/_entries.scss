@@ -8,6 +8,7 @@ $dark: #333333;
 $seafoam: #cae8e2;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
+$text-grey: #a5a5a5;
 $fun: #4c5fce;
 $sky: #8CC6DB;
 $dustylilac: #928EA0;
@@ -111,12 +112,12 @@ $detail-icon-color: $seajade;
     background: #fff;
     display: flex;
     flex-direction: column;
-    padding: 10px 5px;
+    padding: 10px;
     font-size: 16px;
     line-height: 22px;
   }
   .entry-timestamp {
-    color: $border-grey;
+    color: $text-grey;
     font-size: 14px;
     font-style: italic;
     margin: 5px 0 0;
@@ -124,10 +125,10 @@ $detail-icon-color: $seajade;
     text-align: right;
   }
 
-.fa-eye-slash {
+.fa-eye-slash, .private.entry-status {
   color: $private-red;
 }
-.fa-eye {
+.fa-eye, .shared.entry-status {
   color: $seajade;
 }
 .entry-header .fa-pencil {

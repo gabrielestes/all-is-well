@@ -88,7 +88,7 @@ $detail-icon-color: $seajade;
   cursor: default;
    display: none;
    z-index: 6;
-   width: 80%;
+   width: 90%;
    margin-bottom: 20px;
    border: 1px solid $border-grey;
 
@@ -107,9 +107,14 @@ $detail-icon-color: $seajade;
        display: flex;
        align-items: center;
        background-color: $grey;
-       font-size: 18px;
+       font-size: 16px;
+       line-height: 22px;
        padding: 5px 15px;
 
+       @media (min-width: 400px) {
+         font-size: 18px;
+         line-height: 24px;
+       }
 
        }
 
@@ -118,7 +123,6 @@ $detail-icon-color: $seajade;
        .entry-title-label,
        .mood-title-label {
          float: left;
-
               i {
                 font-size: inherit;
                 margin-right: 5px;

@@ -175,6 +175,10 @@ NOTE: use percentage font sizes or else old IE chokes
 	margin: 0;
 	height: 2.1em;
 	padding: 0 .6em;
+		@media (max-width: 400px) {
+			padding: .2em;
+		}
+
 
 	/* text & cursor */
 	font-family: inherit;
@@ -533,6 +537,9 @@ temporary rendered events).
 	border-radius: 3px;
 	border: 1px solid #3a87ad; /* default BORDER color */
 	font-weight: normal; /* undo jqui's ui-widget-header bold */
+	@media (max-width: 400px) {
+		font-size: .7em;
+	}
 }
 
 .fc-event,
@@ -855,7 +862,10 @@ a.fc-more:hover {
 /* the things within each left/right/center section */
 .fc .fc-toolbar > * > * { /* extra precedence to override button border margins */
 	float: left;
-	margin-left: .75em;
+	margin-left: .2em;
+	 @media (min-width: 400px) {
+		 margin-left: .75em;
+	 }
 }
 
 /* the first thing within each left/center/right section */

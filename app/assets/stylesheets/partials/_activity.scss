@@ -37,7 +37,10 @@ $detail-icon-color: $seajade;
   height: 100%;
   margin: 20px auto;
   background: $grey;
-  padding: 10px 10px;
+  padding: 5px;
+   @media (min-width: 400px) {
+     padding: 10px;
+   }
 
   .filterBy {
     font-style: italic;
@@ -58,7 +61,7 @@ $detail-icon-color: $seajade;
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 16px;
+        font-size: 14px;
         width: 25%;
         color: #000;
         background-color: $seafoam;
@@ -78,6 +81,9 @@ $detail-icon-color: $seajade;
         &.active{
           background: $seagreen;
           color: #fff;
+        }
+        @media (min-width: 350px) {
+          font-size: 16px;
         }
 
         @media (min-width: 430px) {
@@ -105,8 +111,8 @@ $detail-icon-color: $seajade;
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
-    min-height: 50px;
-    font-size: 18px;
+    min-height: 40px;
+    font-size: 16px;
     background: #fff;
     padding: 10px 0 10px 10px;
     margin-bottom: 5px;
@@ -130,6 +136,10 @@ $detail-icon-color: $seajade;
       }
     }
 
+    @media (min-width: 400px) {
+      font-size: 18px;
+    }
+
 
 
     @media (min-width: 800px) {
@@ -142,7 +152,10 @@ $detail-icon-color: $seajade;
   .activity-type {
 
     i {
-      font-size: 24px;
+      font-size: 18px;
+      @media (min-width: 400px) {
+        font-size: 24px;
+      }
     }
     p {
       margin-left: 5px;
