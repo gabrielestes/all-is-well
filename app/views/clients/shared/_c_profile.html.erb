@@ -4,7 +4,7 @@
     <div class="data-block name"><h3>Client Name: </h3><span><div><%= @client_name %></div><a class="edit">Edit</a></span></div>
       <aside class="name disappear">
         <div>
-          <%= form_for :client, url: update_client_path, method: :put do |f| %>
+          <%= form_for @current_client, url: update_client_path, method: :put do |f| %>
             <%= f.text_field :first_name, id: "first_name", class: "edit-data" %>
             <%= f.text_field :last_name, id: "last_name", class: "edit-data" %>
         </div>

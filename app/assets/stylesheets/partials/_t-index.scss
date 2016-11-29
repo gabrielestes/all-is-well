@@ -10,6 +10,7 @@ $grey: #dfe0e6;
 $fun: #4c5fce;
 $pop-color: $fun;
 $border-grey: #c9cacf;
+$seajade: rgb(35, 188, 158);
 
 .clients-header {
   width: 100%;
@@ -50,19 +51,30 @@ $border-grey: #c9cacf;
         div {
           p,
           i {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
             padding: 0 10px;
-            text-align: left;
             &.pt_wellness {
-              text-align: right;
+              justify-content: center;
+            }
+            @media(max-width: 700px) {
+              font-size: 16px;
             }
           }
           i {
             justify-content: flex-end;
             width: 10%;
-            color: $seagreen;
+            color: $seajade;
+            @media(max-width: 470px) {
+              width: 15%;
+            }
           }
           p {
             width: calc(90%/3);
+            @media(max-width: 470px) {
+              width: calc(85%/3);
+            }
           }
         }
       }
@@ -109,14 +121,6 @@ $border-grey: #c9cacf;
     color: #000;
     background: $border-grey;
   }
-  // p {
-  //   text-align: left;
-  // }
-  // .id_number,
-  // .pt_name {
-  //   text-align: left;
-  //
-  // }
 }
 a {
   width: 95%;
@@ -148,7 +152,6 @@ a {
       }
     }
     i {
-
       width: 15%;
       color: $fun;
       opacity: 0;
