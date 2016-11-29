@@ -1,10 +1,10 @@
 <%= form_for Client.new, url: new_client_path, method: :post do |f| %>
   <div class="new-client">
   <%= f.label :first_name %><br/>
-  <%= f.text_field :first_name %><br/>
+  <%= f.text_field :first_name, :required => true %><br/>
 
   <%= f.label :last_name %><br/>
-  <%= f.text_field :last_name %><br/>
+  <%= f.text_field :last_name, :required => true %><br/>
 
   <label for"birth_date" id="birth_date">Birthdate</label><br/>
 <div class="date-field">
@@ -12,36 +12,36 @@
 </div>
 
   <%= f.label :gender %><br/>
-  <%= f.text_field :gender %><br/>
+  <%= f.text_field :gender, :required => true %><br/>
 
   <%= f.label :phone %><br/>
-  <%= f.text_field :phone %><br/>
+  <%= f.text_field :phone, :required => true %><br/>
 
   <label for"contact">Emergency Contact Phone</label><br/>
   <%= form_for :contact do |c| %>
-  <%= c.text_field :phone, id: "contact" %>
+  <%= c.text_field :phone, id: "contact", :required => true %>
 
   <label for"general_prac">General Practitioner</label><br/>
-  <%= f.text_field :general_prac%><br/>
+  <%= f.text_field :general_prac, :required => true %><br/>
 
   <%= f.label :therapist_id %><br/>
-  <%= f.collection_select :therapist_id, Therapist.all.order(:last_name), :id, :last_name %><br/>
+  <%= f.collection_select :therapist_id, Therapist.all.order(:last_name), :id, :last_name, :required => true %><br/>
 
   <label for"current_meds">Current Medications</label><br/>
-  <%= f.text_field :current_meds %><br/>
+  <%= f.text_field :current_meds, :required => true %><br/>
 
   <%= form_for :user do |u| %>
     <%= u.label :email %><br />
-    <%= u.email_field :email %>
+    <%= u.email_field :email, :required => true %>
 
     <%= u.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br />
-    <%= u.password_field :password, autocomplete: "off" %>
+    <%= u.password_field :password, autocomplete: "off", :required => true %>
 
     <%= u.label :password_confirmation %><br />
-    <%= u.password_field :password_confirmation, autocomplete: "off" %><br />
+    <%= u.password_field :password_confirmation, autocomplete: "off", :required => true %><br />
     <%= f.submit "Register" , :class => 'submit_registration' %><br/>
   </div>
   <% end %>
