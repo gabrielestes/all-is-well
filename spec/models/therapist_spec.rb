@@ -1,28 +1,35 @@
 require "rails_helper"
 
 RSpec.describe Therapist, :type => :model do
+
+  subject { Therapist.new(first_name: "test", last_name: "test", cred: "test", phone: "test", email: "test") }
+
   it "is valid with valid attributes" do
-  expect(Therapist.new(first_name: "test", last_name: "test", cred: "test", phone: "test", email: "test")).to be_valid
-  end
-  it "is not valid without a first_name" do
-    therapist = Therapist.new(first_name: nil)
-    expect(therapist).to_not be_valid
-  end
-  it "is not valid without a last_name" do
-    therapist = Therapist.new(last_name: nil)
-    expect(therapist).to_not be_valid
-  end
-  it "is not valid without a cred" do
-    therapist = Therapist.new(cred: nil)
-    expect(therapist).to_not be_valid
-  end
-  it "is not valid without a phone" do
-    therapist = Therapist.new(phone: nil)
-    expect(therapist).to_not be_valid
-  end
-  it "is not valid without a email" do
-    therapist = Therapist.new(last_name: nil)
-    expect(therapist).to_not be_valid
+    expect(subject).to be_valid
   end
 
+  it "is not valid without a first_name" do
+    subject.first_name = nil
+    expect(subject).to_not be_valid
+  end
+
+  it "is not valid without a last_name" do
+    subject.last_name = nil
+    expect(subject).to_not be_valid
+  end
+
+  it "is not valid without a cred" do
+    subject.cred = nil
+    expect(subject).to_not be_valid
+  end
+
+  it "is not valid without a phone" do
+    subject.phone = nil
+    expect(subject).to_not be_valid
+  end
+
+  it "is not valid without a email" do
+    subject.last_name = nil
+    expect(subject).to_not be_valid
+  end
 end

@@ -1,29 +1,29 @@
 <%= form_for :therapist, url: new_therapist_path, method: :post do |f| %>
 <div class="new-therapist">
   <%= f.label :first_name %><br/>
-  <%= f.text_field :first_name %><br/>
+  <%= f.text_field :first_name, :required => true %><br/>
 
   <%= f.label :last_name %><br/>
-  <%= f.text_field :last_name %><br/>
+  <%= f.text_field :last_name, :required => true %><br/>
 
   <%= f.label :cred %><br/>
-  <%= f.text_field :cred %><br/>
+  <%= f.text_field :cred, :required => true %><br/>
 
   <%= f.label :phone %><br/>
-  <%= f.text_field :phone %><br/>
+  <%= f.text_field :phone, :required => true %><br/>
 
   <%= f.label :email %><br/>
-  <%= f.text_field :email %><br/>
+  <%= f.text_field :email, :required => true %><br/>
 
   <%= form_for :user do |u| %>
     <%= u.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> characters minimum)</em>
       <% end %><br/>
-    <%= u.password_field :password, autocomplete: "off" %>
+    <%= u.password_field :password, :required => true, autocomplete: "off" %>
 
     <%= u.label :password_confirmation %><br />
-    <%= u.password_field :password_confirmation, autocomplete: "off" %><br />
+    <%= u.password_field :password_confirmation, :required => true, autocomplete: "off" %><br />
     <%= f.submit "Register" , :class => 'submit_registration'%><br />
   </div>
   <% end %>

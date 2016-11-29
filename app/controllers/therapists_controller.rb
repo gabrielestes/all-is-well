@@ -50,7 +50,7 @@ class TherapistsController < ApplicationController
       sign_in @user # some devise thing
       render :index
     else
-      render :new
+      # render :action=>'register_user'
     end
   end
 
