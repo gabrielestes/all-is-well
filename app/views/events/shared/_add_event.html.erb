@@ -1,6 +1,7 @@
 
-
 <%= form_for :event, url: create_event_path, method: :post do |e| %>
+
+
   <div class="date-type-container">
     <div class="event-date">
       <label for="event-date">Event Date: </label>
@@ -24,5 +25,10 @@
     <label for="event-text">Describe the Event: </label>
     <%= e.text_area :description, id: "event-text" %>
   </div>
+  <% if flash[:danger] %>
+    <div class="notice">
+      <%= flash[:danger] %>
+    </div>
+  <% end %>
   <%= e.submit "Submit", class: "button" %>
 <% end %>
