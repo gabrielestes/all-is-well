@@ -24,23 +24,16 @@ aside.my-therapist {
     width: 70%;
     .t-data .data-block {
       background: #fff;
+      padding: 5px;
     }
   }
 }
 
   .profile {
-    // min-height: 100vh;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
 
-    // .meds {
-    //   align-items: flex-start;
-    //   .med-list {
-    //     flex-direction: column;
-    //     margin: 5px 0;
-    //   }
-    // }
     .data {
       margin: 20px;
       background: none;
@@ -51,15 +44,12 @@ aside.my-therapist {
         margin-bottom: 20px;
         display: flex;
         flex-direction: column;
-        // flex-wrap: nowrap;
         align-items: baseline;
         @media (min-width: 500px) {
           flex-direction: row;
           flex-wrap: nowrap;
         }
-        // @media (max-width: 470px){
-        //   padding: 5px 0;
-        // }
+
         h3 {
           font-size: 20px;
           color: #000;
@@ -120,11 +110,8 @@ aside.my-therapist {
             outline-color: #000;
           }
           line-height: 25px;
-          width: 25vw;
-          min-width: 160px;
-          max-width: 194px;
           text-align: center;
-          margin: 5px 2px;;
+          margin: 5px auto;
           @media (max-width: 540px){
             display: block;
           }
@@ -176,6 +163,9 @@ input.button {
  height: 44px;
  background-color: $seagreen;
  cursor: pointer;
+ &.edit {
+   display: block;
+ }
  &:hover {
    color: #fff;
    background-color: $seagreenM;
