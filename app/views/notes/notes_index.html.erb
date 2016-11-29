@@ -10,10 +10,10 @@
             <h1 class="welcome">Notes for <%= @client_name %></h1>
               <div class="tabs">
                   <div class="tab-a active">
-                      <button id="tab-a-btn">View Previous Notes</button>
+                      <button id="tab-a-btn">View <span class="superfluous">Previous</span> Notes</button>
                   </div>
                   <div class="tab-b">
-                      <button id="tab-b-btn">Add a New Note</button>
+                      <button id="tab-b-btn">Add <span class="superfluous">a New</span> Note</button>
                   </div>
               </div>
               <div class="tabs-content">
@@ -31,7 +31,7 @@
                       <%= form_for Note.new, url: create_note_path(@client_id), method: :post do |f| %>
                         <div class="note-form-row">
                           <%= f.label :title, value:"Subject:", class:"note-title-label" %>
-                          <%= f.text_field :title, class:"note-title-input", value:""%>
+                          <%= f.text_field :title, :required => true, class:"note-title-input", value:""%>
                         </div>
                         <div class="note-form-row">
                           <%= f.label :message, value:"Note:", class:"note-text-label" %>

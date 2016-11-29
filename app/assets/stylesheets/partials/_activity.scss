@@ -33,11 +33,14 @@ $detail-icon-color: $seajade;
 
 .c-activity {
   width: 100%;
-  max-width: 700px;
+  max-width: 800px;
   height: 100%;
   margin: 20px auto;
   background: $grey;
-  padding: 10px 10px;
+  padding: 5px;
+   @media (min-width: 400px) {
+     padding: 10px;
+   }
 
   .filterBy {
     font-style: italic;
@@ -48,22 +51,18 @@ $detail-icon-color: $seajade;
     display: flex;
     height: 50px;
     justify-content: space-between;
+    align-items: stretch;
     margin: 10px auto 10px;
     width: 100%;
-    background: $seagreenM;
     border: .25px solid $seagreenM;
 
 
-    @media (max-width: 570px){
-      width: 100%;
-    }
-
       a {
-        font-size: 20px;
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 14px;
         width: 25%;
-        padding: 15px;
-        height: 100%;
         color: #000;
         background-color: $seafoam;
         border-right: .25px solid $seagreenM;
@@ -83,23 +82,39 @@ $detail-icon-color: $seajade;
           background: $seagreen;
           color: #fff;
         }
+        @media (min-width: 350px) {
+          font-size: 16px;
+        }
+
+        @media (min-width: 430px) {
+          font-size: 18px;
+        }
+        @media (min-width: 800px) {
+          font-size: 19px;
+        }
 
         i {
-          margin-right: 5px;
+          display: none;
+          @media (min-width: 550px) {
+            display: inline;
+            margin-right: 5px;
+          }
         }
+
+
 
       }
   }
-  .patient_card {
+  .activity-card {
     cursor: pointer;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
-    height: 50px;
-    font-size: 18px;
+    align-items: baseline;
+    min-height: 40px;
+    font-size: 16px;
     background: #fff;
-    padding: 10px 20px;
+    padding: 10px 0 10px 10px;
     margin-bottom: 5px;
     &.event {
         color: $pop-color;
@@ -117,28 +132,94 @@ $detail-icon-color: $seajade;
 
     &.read {
       .fa-bell-o {
-        visibility: hidden;
+        display: none;
+      }
+    }
+
+    @media (min-width: 400px) {
+      font-size: 18px;
+    }
+
+
+
+    @media (min-width: 800px) {
+      font-size: 20px;
+      padding: 10px 0 10px 20px;
+    }
+
+  }
+
+  .activity-type {
+
+    i {
+      font-size: 18px;
+      @media (min-width: 400px) {
+        font-size: 24px;
+      }
+    }
+    p {
+      margin-left: 5px;
+      display: inline;
+      @media (min-width: 800px) {
+        margin-left: 10px;
+      }
+    }
+
+    span.hyphen, span.score, span.type-of {
+      font-style: italic;
+      display: none;
+      @media (min-width: 450px) {
+        display: inline;
       }
     }
   }
 
-  .activity-type {
-    i {
-      font-size: 24px;
-    }
-    p {
-      margin-left: 10px;
-      font-size: 20px;
-      display: inline;
-    }
+  .activity-time {
+        display: flex;
+        margin-right: 10px;
+        @media (min-width: 800px) {
+          margin-right: 20px;
+        }
 
-    span.score, span.type-of {
+
+    p.time {
       font-style: italic;
+      display: inline;
+      &.long-time {
+        display: none;
+        @media (min-width: 730px) {
+          display: inline;
+        }
+      }
+      &.short-time {
+        display: inline;
+        font-size: 16px;
+        @media (min-width: 460px) {
+          font-size: inherit;
+        }
+        @media (min-width: 730px) {
+          display: none;
+        }
+      }
     }
+
+
+
+    p.alert {
+        display: inline;
+      i {
+      margin-left: 5px;
+      @media (min-width: 800px) {
+        margin-left: 10px;
+      }
+    }
+    }
+
   }
 
-  p.time {
-    font-style: italic;
-  }
+
+
+
+
 
 }

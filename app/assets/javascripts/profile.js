@@ -3,7 +3,7 @@
   $(document).on('click','a.edit',function(event){
 
     //assign click event to 'Submit' button to refresh page
-    $('.button').on('click',function(){
+    $('.edit').on('click',function(){
       location = location.href;
     });
 

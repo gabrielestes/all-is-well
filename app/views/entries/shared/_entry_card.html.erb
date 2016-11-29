@@ -8,13 +8,13 @@
         <% if e.sharable == false %>
         <div class="private entry-status selected">
           <i class="fa fa-eye-slash" aria-hidden="true"></i>
-          <span>private</span>
+          <span class="status">private</span>
         </div>
         <!-- if shared... -->
         <% elsif e.sharable == true %>
-        <div class="shared note-status selected">
+        <div class="shared entry-status selected">
           <i class="fa fa-eye" aria-hidden="true"></i>
-          <span>shared</span>
+          <span class="status">shared</span>
         </div>
         <% end %>
     </div>

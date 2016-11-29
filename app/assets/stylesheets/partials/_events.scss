@@ -10,13 +10,15 @@ $seafoam: #cae8e2;
 $grey: #dfe0e6;
 $border-grey: #c9cacf;
 $fun: #4c5fce;
+$seajade: rgb(35, 188, 158);
+
+
 .make_event {
   .welcome {
-    font-size: 20px;
+    font-size: 24px;
     margin: 10px 0;
     text-align: center;
   }
-
   form {
     display: flex;
     flex-direction: column;
@@ -24,29 +26,91 @@ $fun: #4c5fce;
     background: $grey;
     padding: 10px;
     border: 0.25px solid $border-grey;
-
+    input,
+    textarea {
+      cursor: pointer;
+    }
     .date-type-container {
-      // margin: 0 auto;
+      .event-date input {
+        width: 50%;
+        @media (max-width: 600px) {
+          width: 100%;
+        }
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
     .event-type {
       .radio-choices {
         flex-direction: row;
+        align-items: center;
+        @media (max-width: 600px) {
+          flex-direction: column-reverse;
+          line-height: 10px;
+          margin-top: 20px;
+          }
+        label[for="event_type"]{
+          margin-top: 13px;
+        }
+        input {
+          position: relative;
+          top: 5px;
+          &:checked {
+            &::before {
+              content: " ";
+              height: 15px;
+              width: 15px;
+              position: absolute;
+              border-radius: 50%;
+              background: $seajade;
+              left: -1px;
+              top: 1px;
+            }
+
+          }
+          &::before {
+            content: " ";
+            background: $border-grey;
+            height: 15px;
+            width: 15px;
+            position: absolute;
+            border-radius: 50%;
+            left: -1px;
+            top: 1px;
+          }
+          &:checked + label {
+            color: $seajade;
+          }
+        }
         label {
-          margin: 0;
+          margin: 0 36px 0 0;
+          cursor: pointer;
+          @media (max-width: 600px) {
+            margin: 0;
+          }
+          &:hover,
+          &.active {
+            color: $seagreenM;
+          }
         }
       }
     }
 
     input.button {
       align-self: flex-end;
-      margin: 5px 15px;
+      margin: 10px 0;
     }
     div {
       line-height: 30px;
       display: flex;
       flex-direction: column;
+      align-items: left;
+      @media (max-width: 600px) {
+        align-items: center;
+      }
       label {
-        font-size: 17px;
+        font-size: 18px;
         margin-top: 22px;
       }
       input,
@@ -55,8 +119,8 @@ $fun: #4c5fce;
 
         text-align: center;
         color: #000;
-        height: 30px;
-        font-size: 15px;
+        // height: 30px;
+        font-size: 16px;
         font-family: 'Quicksand',sans-serif;
         background: #fff;
         &:focus {
@@ -74,6 +138,7 @@ $fun: #4c5fce;
 
 }
 
+
 main.event {
   padding: 0;
   align-items: center;
@@ -86,9 +151,20 @@ main.event {
   }
 }
 
-#event-text {
-  overflow-wrap: break-word;
-  max-width: 680px;
-  width: 70vw;
-  height: 20vh;
+
+.event-text{
+  width: 100%;
+  #event-text {
+    overflow-wrap: break-word;
+    text-align: left;
+    width: 100%;
+    height: 20vh;
+  }
+}
+
+.event-date label:first-child,
+.event-type label:first-child,
+.event-text label:first-child {
+  font-size: 20px;
+  color: $fun;
 }

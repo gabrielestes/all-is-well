@@ -1,7 +1,7 @@
 
 
 <!-- if user is a therapist, edit should be included as a class in outer section. -->
-<div  class="welcome">
+<div  class="welcome account">
   <h1>Edit your Account Info</h1>
 </div>
   <section class="t-data data edit">
@@ -9,49 +9,40 @@
     <div class="data-block name"><h3>Therapist Name: </h3><span><div><%= @therapist_name %></div><a class="edit">Edit</a></span></div>
       <aside class="name disappear">
         <div>
-          <!-- <input class="edit-data" type="text" id="first_name" placeholder="FIRSTNAME"/> -->
-          <!-- <input class="edit-data" type="text" id="last_name" placeholder="LASTNAME"/>
-          <input class="edit-data" type="text" id="cred" placeholder="CRED"/> -->
-
           <%= form_for @therapist, url: update_therapist_path(current_user.userable_id), method: :put do |f| %>
             <div>
               <%= f.text_field :first_name, class: 'edit-data', id: 'first_name' %>
               <%= f.text_field :last_name, class: 'edit-data', id: 'last_name' %>
               <%= f.text_field :cred, class: 'edit-data', id: 'cred' %>
             </div>
-            <div><%= f.submit 'Submit', class: 'button' %></div>
+            <div><%= f.submit 'Submit', class: 'button edit' %></div>
           <% end %>
 
         </div>
-          <!-- <input class="button" type="submit" value="Submit"/> -->
       </aside>
 
     <div class="data-block email"><h3>Email: </h3><span><div><%= @therapist.email %></div><a class="edit">Edit</a></span></div>
       <aside class="email disappear">
         <div>
-          <!-- <input class="edit-data" type="email" id="t-email" placeholder="EMAIL"/> -->
           <%= form_for @therapist, url: update_therapist_path(current_user.userable_id), method: :put do |f| %>
             <div>
               <%= f.text_field :email, class: 'edit-data', id: 't-email' %>
             </div>
-            <div><%= f.submit 'Submit', class: 'button' %></div>
+            <div><%= f.submit 'Submit', class: 'button edit' %></div>
           <% end %>
         </div>
-        <!-- <input class="button" type="submit" value="Submit"/> -->
     </aside>
 
     <div class="data-block phone"><h3>Primary Phone Number: </h3><span><div><%= @therapist.phone %></div><a class="edit">Edit</a></span></div>
       <aside class="phone disappear">
         <div>
-          <!-- <input class="edit-data" type="text" id="phone" placeholder="123-456-7890"/> -->
           <%= form_for @therapist, url: update_therapist_path(current_user.userable_id), method: :put do |f| %>
             <div>
               <%= f.text_field :phone, class: 'edit-data', id: 'phone' %>
             </div>
-            <div><%= f.submit 'Submit', class: 'button' %></div>
+            <div><%= f.submit 'Submit', class: 'button edit' %></div>
           <% end %>
         </div>
-        <!-- <input class="button" type="submit" value="Submit"/> -->
       </aside>
 
   </section>

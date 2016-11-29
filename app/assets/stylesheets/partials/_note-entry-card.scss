@@ -32,6 +32,9 @@ $detail-icon-color: $seajade;
     width: 100%;
     margin-bottom: 15px;
     border: 1px solid $border-grey;
+    @media (min-width: 700px) {
+        min-width: 550px;
+    }
 
     .note-title-row {
         width: 100%;
@@ -95,18 +98,19 @@ $detail-icon-color: $seajade;
 
     .note-title-label {
         float: left;
-        font-size: 1.3em;
+        font-size: 18px;
 
 
         &.view-note {
-            font-size: 1em;
+            font-size: 18px;
         }
     }
 
     .entry-view-content,
     .note-message-content {
         width: 100%;
-        font-size: 1em;
+        font-size: 16px;
+        line-height: 22px;
         padding: 10px;
         background-color: #fff;
         overflow-wrap: break-word;
@@ -121,7 +125,7 @@ $detail-icon-color: $seajade;
         i,
         span {
             font-style: italic;
-            font-size: 0.9em;
+            font-size: 14px;
             color: $text-grey;
         }
 
@@ -129,4 +133,14 @@ $detail-icon-color: $seajade;
           margin-left: 5px;
         }
     }
+}
+.no-notes {
+  background: $grey;
+  padding: 5px;
+  p {
+    background: #fff;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+  }
 }

@@ -8,18 +8,23 @@
       <% elsif s.total < 100 %>
         <i class="fa fa-smile-o mood-icon"></i>
       <% end %>
-      <p>Mood Survey -
+      <p>Mood Survey<span class="hyphen"> - </span>
          <span class="score"><%= s.total %>
          </span>
       </p>
     </div>
-    <p class="time"><%= s.created_at.strftime("%B %d, %Y at %I:%M %P") %></p>
+
+    <div class="activity-time">
+      <p class="time long-time"><%= s.created_at.strftime("%B %d, %Y at %l:%M %P") %> </p>
+      <p class="time short-time"><%= s.created_at.strftime("%m/%d/%y %l:%M%P") %> </p>
     <% if s.read == false %>
+      <p class="alert">
       <i class="fa fa-bell-o show"></i>
-    <% else %>
-      <i class="fa fa-bell-o hide"></i>
+    </p>
     <% end %>
-    <p hidden> <%= s.read %> </p>
+  </div>
+
+
     <p hidden class="q1"> <%= s.q1 %> </p>
     <p hidden class="q2"> <%= s.q2 %> </p>
     <p hidden class="q3"> <%= s.q3 %> </p>

@@ -115,8 +115,16 @@ $pop-color: $fun;
         }
       }
 
+      &:last-child {
+        border-bottom: .25px solid $seagreenM;
+      }
+
       @media (min-width: 700px) {
         border-right: .25px solid $seagreenM;
+
+        &:last-child {
+          border-bottom: none;
+        }
 
          h3 {
            color: transparent;
@@ -164,7 +172,16 @@ $pop-color: $fun;
 
 .t-view-main,
 .c-view-main {
+  width: 100%;
+  padding: 70px 5px 5px 5px;
+
+  @media (min-width: 400px) {
   padding: 70px 20px 20px 20px;
+}
+
+  .welcome {
+    text-align: center;
+  }
 }
 
 
@@ -211,9 +228,9 @@ $pop-color: $fun;
 
       p.t-show-dash-text,
       p.c-show-dash-text {
-        display: inline;
-        &:hover {
-          text-decoration: underline;
+        display: none;
+        @media (min-width: 400px){
+              display: inline;
         }
         &.t-dashboard-active,
         &.c-dashboard-active {
@@ -226,9 +243,9 @@ $pop-color: $fun;
         display: none;
         &.t-dashboard-active,
         &.c-dashboard-active {
-          display: inline;
-          &:hover {
-            text-decoration: underline;
+          display: none;
+          @media (min-width: 400px){
+                display: inline;
           }
         }
       }
@@ -259,6 +276,9 @@ $pop-color: $fun;
 
 .t-view-header h3,
 .c-view-header h3 {
-  font-size: 22px;
+  font-size: 18px;
   padding-right: 5px;
+  @media (min-width: 400px) {
+    font-size: 22px;
+  }
 }

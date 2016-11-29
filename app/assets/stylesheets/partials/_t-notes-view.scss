@@ -29,7 +29,7 @@ $detail-icon-color: $seajade;
         max-width: 780px;
         margin: 0 auto;
         .welcome {
-          margin-bottom: 15px;
+          margin-bottom: 20px;
           font-size: 24px;
         }
     }
@@ -68,10 +68,22 @@ $detail-icon-color: $seajade;
         background-color: $seafoam;
         border: 0.25px solid $seagreenM;
         outline: #000;
-        font-size: 20px;
+        font-size: 16px;
         font-family: inherit;
         cursor: pointer;
         color: #000;
+          span.superfluous {
+            display: none;
+          }
+        @media (min-width: 500px) {
+          font-size: 18px;
+          span.superfluous {
+            display: inline;
+          }
+        }
+        @media (min-width: 800px) {
+          font-size: 20px;
+        }
       }
 
     .tabs-content {
@@ -93,7 +105,6 @@ $detail-icon-color: $seajade;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin-top: 15px;
         h1 {
           font-size: 22px;
         }

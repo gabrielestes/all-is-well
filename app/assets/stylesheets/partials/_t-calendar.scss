@@ -27,22 +27,37 @@ $detail-icon-color: $seajade;
 
  .legend {
    width: 100%;
-   margin-bottom: 16px;
-   padding: 10px 0;
+   margin-bottom: 20px;
+   padding:  0;
 
 
    ul {
      width: 100%;
-     font-size: 16px;
+     font-size: 14px;
      display: flex;
-     justify-content: flex-end;
+     justify-content: center;
      align-items: center;
+     @media (min-width: 420px) {
+       font-size: 16px;
+       justify-content: flex-end;
+     }
+
    }
 
     li {
       display: flex;
       align-items: center;
-      margin-left: 20px;
+      margin-left: 8px;
+      &:first-child {
+        margin-left: 0;
+      }
+
+      @media (min-width: 400px) {
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0;
+        }
+      }
 
        .color-key {
          border-radius: 3px;

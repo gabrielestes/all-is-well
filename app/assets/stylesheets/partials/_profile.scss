@@ -10,18 +10,12 @@ $seafoam: #cae8e2;
 $grey: #dfe0e6;
 $fun: #4c5fce;
 
-.t-view-main.profile {
-  display: flex;
-}
 
-.t-profile {
-  flex-direction: column;
-  align-items: center;
-}
-
-div.welcome {
+.welcome {
   font-size: 24px;
-  margin-bottom: 10px;
+  &.account {
+    margin-top: 20px;
+  }
 }
 
 aside.my-therapist {
@@ -35,41 +29,41 @@ aside.my-therapist {
 }
 
   .profile {
-    margin: 0 auto;
-    height: 100vh;
+    // min-height: 100vh;
     display: flex;
-    &.c-profile {
-      height: auto;
-    }
+    justify-content: flex-start;
+    flex-direction: column;
 
-    .meds {
-      align-items: flex-start;
-      .med-list {
-        flex-direction: column;
-        margin: 5px 0;
-      }
-    }
+    // .meds {
+    //   align-items: flex-start;
+    //   .med-list {
+    //     flex-direction: column;
+    //     margin: 5px 0;
+    //   }
+    // }
     .data {
+      margin: 20px;
       background: none;
       display: flex;
       flex-direction: column;
-      width: 88%;
-      @media (max-width:470px){
-        width: auto;
-      }
+
       .data-block {
+        margin-bottom: 20px;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 5px 0;
-        flex-wrap: wrap;
-        @media (max-width: 470px){
-          padding: 5px 0;
+        flex-direction: column;
+        // flex-wrap: nowrap;
+        align-items: baseline;
+        @media (min-width: 500px) {
+          flex-direction: row;
+          flex-wrap: nowrap;
         }
+        // @media (max-width: 470px){
+        //   padding: 5px 0;
+        // }
         h3 {
           font-size: 20px;
           color: #000;
-          margin: 5px 0;
+          margin-right: 10px;
           @media (max-width: 470px){
               font-size: 19px;
               padding: 0;
@@ -96,6 +90,11 @@ aside.my-therapist {
   section.edit {
     background: $seafoam;
     display: block;
+    align-self: center;
+    padding: 20px;
+    @media (min-width: 700px) {
+      min-width: 600px;
+    }
     aside {
       display: flex;
       flex-direction: column;
@@ -137,6 +136,8 @@ aside.my-therapist {
     .data-block {
       width: 100%;
       border: 0.25px solid $seafoam;
+      padding: 0 5px;
+      flex-direction: column;
       h3 {
         font-size: 22px;
         display: flex;
