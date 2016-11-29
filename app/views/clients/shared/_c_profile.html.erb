@@ -52,7 +52,6 @@
           <%= form_for :contact, url: update_client_path, method: :put do |f| %>
             <%= f.hidden_field :client_id, value: @current_client.id  %>
             <%= f.text_field :phone, class: "edit-data", id: "em_phone" %>
-          <!-- <input class="edit-data" type="text" id="em_phone" placeholder="098-765-4321"/> -->
             <%= f.submit "Submit", class: "button edit" %>
           <% end %>
         </div>
