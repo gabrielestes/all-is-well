@@ -5,7 +5,7 @@
   <div class="date-type-container">
     <div class="event-date">
       <label for="event-date">Event Date: </label>
-      <%= e.date_field :date, id: "event-date" %>
+      <%= e.date_field :date, :required => true, id: "event-date" %>
     </div>
 
     <div class="event-type">
@@ -23,7 +23,7 @@
 
   <div class="event-text">
     <label for="event-text">Describe the Event: </label>
-    <%= e.text_area :description, id: "event-text" %>
+    <%= e.text_area :description, :required => true, id: "event-text" %>
   </div>
   <% if flash[:danger] %>
     <div class="notice">

@@ -16,15 +16,11 @@ class NotesController < ApplicationController
   def create
     current_client
     note = Note.new note_params
-    # (
-    #   therapist_id: current_user.userable_id,
-    #   client_id: params[:id],
-    #   title: params[:title],
-    #   message: params[:message],
-    #   shared: params[:shared]
-    # )
     if note.save
       redirect_to notes_index_path(params[:id])
+    else
+      flash[:danger] = "*All fields must be completed to submit a note."
+      render :action=>'notes_index'
     end
   end
 
