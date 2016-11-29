@@ -7,9 +7,9 @@
           <%= form_for @current_client, url: update_client_path, method: :put do |f| %>
             <%= f.text_field :first_name, id: "first_name", class: "edit-data" %>
             <%= f.text_field :last_name, id: "last_name", class: "edit-data" %>
-        </div>
-            <%= f.submit "Submit", class: "button" %>
+            <%= f.submit "Submit", class: "button edit" %>
           <% end %>
+        </div>
       </aside>
 
     <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob.strftime("%m/%d/%Y") %></div><a class="edit">Edit</a></span></div>
@@ -17,9 +17,9 @@
         <div>
           <%= form_for :client, url: update_client_path, method: :put do |f| %>
             <%= f.date_select :birth_date, :order => [:day, :month, :year], :start_year => Date.today.year - 90, :end_year => Date.today.year %>
-        </div>
-            <%= f.submit "Submit", class: "button" %>
+            <%= f.submit "Submit", class: "button edit" %>
           <% end %>
+        </div>
 
     </aside>
 
@@ -36,9 +36,9 @@
         <div>
           <%= form_for :client, url: update_client_path, method: :put do |f| %>
             <%= f.text_field :phone, class: "edit-data", id: "phone" %>
-        </div>
-            <%= f.submit "Submit", class: "button" %>
+            <%= f.submit "Submit", class: "button edit" %>
           <% end %>
+        </div>
       </aside>
 
     <div class="data-block em_phone"><h3>Emergency Phone Number: </h3><span>
@@ -53,9 +53,9 @@
             <%= f.hidden_field :client_id, value: @current_client.id  %>
             <%= f.text_field :phone, class: "edit-data", id: "em_phone" %>
           <!-- <input class="edit-data" type="text" id="em_phone" placeholder="098-765-4321"/> -->
-        </div>
-            <%= f.submit "Submit", class: "button" %>
+            <%= f.submit "Submit", class: "button edit" %>
           <% end %>
+        </div>
       </aside>
 
     <div class="data-block my-therapist"><h3>My Therapist: </h3><span><div><%= @therapist_name %></div><a class="edit">View</a></span></div>

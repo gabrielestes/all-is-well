@@ -1,7 +1,7 @@
 (function($){
 
   //click event for 'submit' button
-  $(document,'make_event').on('click', '.button',function(event){
+  $(document,'.make_event').on('click', '.event-btn',function(event){
     //if no radio buttons checked, return
       if (!$('input[name=event_type]:checked').length) {
         event.preventDefault();
