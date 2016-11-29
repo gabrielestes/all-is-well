@@ -55,7 +55,7 @@ aside.my-therapist {
       flex-direction: column;
       width: 88%;
       @media (max-width:470px){
-        width: auto;
+        width: 95%;
       }
       .data-block {
         display: flex;
@@ -137,6 +137,7 @@ aside.my-therapist {
     .data-block {
       width: 100%;
       border: 0.25px solid $seafoam;
+      padding: 0 5px;
       h3 {
         font-size: 22px;
         display: flex;

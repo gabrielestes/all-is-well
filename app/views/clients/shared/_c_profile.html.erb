@@ -12,7 +12,7 @@
           <% end %>
       </aside>
 
-    <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob %></div><a class="edit">Edit</a></span></div>
+    <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob.strftime("%m/%d/%Y") %></div><a class="edit">Edit</a></span></div>
       <aside class="dob disappear">
         <div>
           <%= form_for :client, url: update_client_path, method: :put do |f| %>
