@@ -7,9 +7,9 @@
           <%= form_for @current_client, url: update_client_path, method: :put do |f| %>
             <%= f.text_field :first_name, id: "first_name", class: "edit-data" %>
             <%= f.text_field :last_name, id: "last_name", class: "edit-data" %>
-        </div>
             <%= f.submit "Submit", class: "button" %>
           <% end %>
+        </div>
       </aside>
 
     <div class="data-block dob"><h3>Date of Birth: </h3><span><div><%= @client_dob.strftime("%m/%d/%Y") %></div><a class="edit">Edit</a></span></div>

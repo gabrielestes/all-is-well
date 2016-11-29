@@ -23,7 +23,8 @@ class ClientsController < ApplicationController
     @therapist_name = @client_therapist.first_name + " " + @client_therapist.last_name
     @therapist_number = @client_therapist.phone
     @therapist_email = @client_therapist.email
-    # @current_client.update client_params
+    # @therapist.update client_params
+    # redirect_to client_profile_path
   end
 
   def update
