@@ -115,8 +115,16 @@ $pop-color: $fun;
         }
       }
 
+      &:last-child {
+        border-bottom: .25px solid $seagreenM;
+      }
+
       @media (min-width: 700px) {
         border-right: .25px solid $seagreenM;
+
+        &:last-child {
+          border-bottom: none;
+        }
 
          h3 {
            color: transparent;
