@@ -134,3 +134,13 @@ $detail-icon-color: $seajade;
         }
     }
 }
+.no-notes {
+  background: $grey;
+  padding: 5px;
+  p {
+    background: #fff;
+    padding: 5px;
+    text-align: center;
+    font-size: 18px;
+  }
+}
