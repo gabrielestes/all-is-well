@@ -2,7 +2,6 @@ class TherapistsController < ApplicationController
   before_action :authenticate_user!, except: [:new]
 
   def index
-    # client_login_redirect
     sort_by = params[:sort_by]
     if current_user.userable_type == "Therapist"
       @therapist = Therapist.find(current_user.userable_id)
