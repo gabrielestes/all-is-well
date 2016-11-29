@@ -3,13 +3,18 @@ $seagreenT: rgba(55, 207, 176, 0.4);
 $seagreenTb: rgba(55, 207, 176, 0.7);
 $seagreenM: #7ad4c2;
 $seagreenMT: rgba(35, 188, 158, 0.4);
-$black: #000;
+$seajade: rgb(35, 188, 158);
 $dark: #333333;
-$seagreenLb: rgb(107, 213, 192);
 $seafoam: #cae8e2;
 $grey: #dfe0e6;
+$border-grey: #c9cacf;
 $fun: #4c5fce;
-
+$sky: #8CC6DB;
+$dustylilac: #928EA0;
+$private-red: #8A0116;
+$green-dark: rgb(54, 144, 126);
+$purple-dark: #8641b7;
+$seajade: rgb(35, 188, 158);
 
 .welcome {
   font-size: 24px;
@@ -22,9 +27,19 @@ aside.my-therapist {
   div {
     padding-bottom: 50px;
     width: 70%;
+    @media (max-width: 700px) {
+      width: 100%;
+    }
     .t-data .data-block {
       background: #fff;
       padding: 5px;
+      h3,
+      span {
+        @media (max-width: 700px) {
+          font-size: 16px;
+        }
+
+      }
     }
   }
 }
@@ -55,7 +70,7 @@ aside.my-therapist {
           color: #000;
           margin-right: 10px;
           @media (max-width: 470px){
-              font-size: 19px;
+              font-size: 18px;
               padding: 0;
           }
         }
@@ -66,7 +81,7 @@ aside.my-therapist {
           color: $fun;
           width: 100%;
           @media (max-width: 470px){
-              font-size: 18px;
+              font-size: 16px;
               justify-content: flex-start;
               padding: 0;
         }
@@ -98,7 +113,7 @@ aside.my-therapist {
       div {
         display: flex;
         justify-content: center;
-        @media (max-width: 540px){
+        @media (max-width: 700px){
           flex-direction: column;
         }
 
@@ -112,8 +127,9 @@ aside.my-therapist {
           line-height: 25px;
           text-align: center;
           margin: 5px auto;
-          @media (max-width: 540px){
+          @media (max-width: 700px){
             display: block;
+            font-size: 14px;
           }
 
         }
@@ -130,20 +146,36 @@ aside.my-therapist {
         display: flex;
         align-items: flex-start;
         width: 100%;
+        @media (max-width: 700px) {
+          font-size: 18px;
+        }
       }
       span {
         color: $fun;
         font-size: 20px;
         width: 100%;
+        @media (max-width: 700px) {
+          display: flex;
+          flex-direction: column;
+        }
       }
       div {
         width: 100%;
+        @media (max-width: 700px) {
+          font-size: 18px;
+        }
       }
       a {
         text-align: right;
         font-size: 16px;
         cursor: pointer;
         color: #000;
+        @media (max-width: 700px) {
+          font-size: 14px;
+          color: $private-red;
+          align-self: flex-start;
+          text-align: left;
+        }
         &:hover {
           color: #fff;
         }
