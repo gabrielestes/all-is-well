@@ -1,32 +1,51 @@
-
-$seagreen: #99ded0;
-$seagreenT: rgba(55, 207, 176, 0.4);
-$seagreenTb: rgba(55, 207, 176, 0.7);
-$seagreenM: #7ad4c2;
-$seagreenMT: rgba(35, 188, 158, 0.4);
-$black: #000;
-$dark: #333333;
-$dark: #333333;
-$seafoam: #cae8e2;
 $grey: #dfe0e6;
+$border-grey: #c9cacf;
+$text-grey: #a5a5a5;
+$seagreen: #99ded0;
+$seagreenM: #7ad4c2;
+$seajade: rgb(35, 188, 158);
+$seafoam: #cae8e2;
+$private-red: #8A0116;
 $fun: #4c5fce;
-$jade: #7cdfcb;
-$medium-jade: #4AD3B8;
-$deep-jade: #30C5A7;
+$sky: #8CC6DB;
+$dustylilac: #928EA0;
 
-$jadeTb: rgba(124, 223, 203, 0.7);
-$medium-jadeTb: rgba(74, 211, 184, 0.7);
-$deep-jadeTb: rgba(48, 197, 167, 0.7);
+/* Pop Color */
+$pop-color: $fun;
+
+/* Calendar Event Colors */
+$negative-event: $pop-color;
+$positive-event: $sky;
+$neutral-event: $dustylilac;
+
+/* Icon Color for Activity Detail, Note, Entry Cards */
+$detail-icon-color: $seajade;
 
 
 main.registration {
+  width: 100%;
   display: flex;
-  justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+
+  .welcome {
+    font-size: 18px;
+    margin: 40px 0;
+    @media (min-width: 600px) {
+      font-size: 24px;
+    }
+  }
   .register-container {
-    display: flex;
-    margin: 60px auto;
+    width: 100%;
+    max-width: 300px;
+    border: .25px solid $seagreenM;
+    margin-bottom: 20px;
+    @media (min-width: 400px) {
+      max-width: 400px;
+    }
+    @media (min-width: 600px) {
+      width: 90%;
+    }
 
   }
 
@@ -35,20 +54,29 @@ main.registration {
     }
 
   .date-field {
-    width: 80%;
     text-align: center;
     align-self: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+      select {
+          font-size: inherit;
+          outline: none;
+      }
   }
   .register-client,
   .register-therapist {
-    height: 300px;
-    width: 300px;
+
+    min-height: 150px;
+    width: 50%;
+    float: left;
     display: flex;
     justify-content: center;
     align-items: center;
     background: $seafoam;
     cursor: pointer;
+
+    @media (min-width: 450px) {
+      height: 200px;
+    }
 
     &:hover,
     &.active {
@@ -68,77 +96,75 @@ main.registration {
   }
   .new-therapist,
   .new-client {
-    width: 75vw;
-    max-width: 645px;
+    width: 100%;
     background: $seafoam;
     display: none;
-    padding: 4%;
+    padding: 1.5em 1em 1em 1em;
+
+    @media (min-width: 600px) {
+      padding: 2em;
+    }
     &.active {
       display: flex;
       flex-direction: column;
       }
-    input,
+
     label {
-      align-self: center;
-      width: 50%;
-      @media (max-width: 800px){
-        width: 80%;
-      }
+      font-size: 1.2em;
+      margin-bottom: 5px;
     }
     input {
-      line-height: 25px;
-      &:focus {
-        outline-color: #000;
+      font-family: inherit;
+      font-size: 1.2em;
+      border: 1px solid $seagreen;
+      border-radius: 2px;
+      text-align: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      width: 100%;
+      transition: all .2s ease;
+
+      &:hover, &:focus {
+        border-color: $seagreenM;
+        outline: 0;
       }
-    }
+
   }
     .field_with_errors {
-      width: 50%;
-      align-self: center;
-      #user_password {
-        width: 100%;
-        margin: 1% 0 7%;
 
+        margin-bottom: 5px;
+
+      input {
+        border-color: $pop-color;
       }
-      @media (max-width: 800px){
-        width: 80%;
-      }
+
     }
     input.submit_registration {
-      width: 225px;
-      font-size: 20px;
-      margin: 5% 0;
-       font-family: inherit;
-       font-size: 1.1em;
-       color: #000;
-       border: 0;
-       border-radius: 2px;
-       text-align: center;
-       padding: 10px;
-       height: 44px;
-       background-color: $seagreen;
-       cursor: pointer;
-       &:hover {
-         color: #fff;
-         background-color: tint($seagreenM, 10%);
-       }
-       &:focus {
-         outline: 0;
-       }
-       @media (max-width: 800px){
-         width: 180px;
-         font-size: 17px;
-       }
+      font-family: inherit;
+      font-size: 1.2em;
+      color: #fff;
+      border: 0;
+      border-radius: 2px;
+      text-align: center;
+      margin: 15px 0;
+      padding: 10px;
+      width: 100%;
+      background-color: $seagreenM;
+      cursor: pointer;
+      font-weight: 900;
+      &:hover {
+        color: #fff;
+        background-color: $seajade;
       }
+    }
+
       #client_therapist_id {
-        width: 50%;
-        height: 25px;
-        align-self: center;
+        width: 100%;
+        font-size: inherit;
+        min-height: 25px;
+        margin-bottom: 15px;
         &:focus {
-          outline-color: #000;
-        }
-        @media (max-width: 800px){
-          width: 80%;
+          outline: none;
         }
       }
       #user_email {
@@ -148,4 +174,5 @@ main.registration {
           outline-color: #000;
         }
       }
+}
 }
