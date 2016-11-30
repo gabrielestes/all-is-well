@@ -23,6 +23,9 @@ document.addEventListener("turbolinks:load", function(){
   //click event for 'next-question' button
   $('#next-question').on('click',function(){
 
+    $('#next-question').removeClass('begin-btn');
+
+
     // //if no radio buttons checked, return
     if (current >= 1) {
       var id = "q" + current;

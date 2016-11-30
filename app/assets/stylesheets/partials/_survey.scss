@@ -118,7 +118,7 @@ main.survey {
   position: absolute;
   display: flex;
   flex-direction: row-reverse;
-  transform: translate(-5%, 920%);
+  transform: translateX(-5%);
   width: 100%;
   justify-content: space-around;
   & input[name=commit] {
@@ -126,15 +126,13 @@ main.survey {
     display: flex;
     justify-content: center;
     margin: 0;
-    transform: translate(22vw, 43vh);
-  }
-  div {
-    &:hover {
-      color: $fun;
-
+    transform: translate(183%, 574%);
+    @media(max-width: 600px) {
+      transform: translate(86%, 585%);
+      }
     }
   }
-}
+
 
   #next-question,
   #last-question {
@@ -142,10 +140,19 @@ main.survey {
     position: fixed;
   }
   #last-question {
-    transform: translate(-22vw, 43vh);
+    transform: translate(-193%, 846%);
+    @media (max-width: 600px) {
+      transform: translate(-88%, 900%);
+    }
   }
   #next-question {
-    transform: translate(22vw, 43vh);
+    transform: translate(187%, 846%);
+    @media (max-width: 600px) {
+      transform: translate(87%, 900%);
+    }
+    &.begin-btn {
+      transform: translate(2%, 128%);
+    }
   }
 
 

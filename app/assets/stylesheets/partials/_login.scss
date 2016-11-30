@@ -13,6 +13,7 @@ $dustylilac: #928EA0;
 
 .login-content {
     height: 100%;
+    padding-top: 50px;
     font-family: 'Quicksand', sans-serif;
     display: flex;
     flex-direction: column;
@@ -77,18 +78,20 @@ $dustylilac: #928EA0;
           margin: 15px 0;
           padding: 10px;
           width: 100%;
-          background-color: $seajade;
+          background-color: $seagreenM;
           cursor: pointer;
           font-weight: 900;
           &:hover {
             color: #fff;
-            background-color: $seagreenM;
+            background-color: $seajade;
           }
         }
     }
 
     .form-wrap  .tab-content-footer {
       text-align: center;
+      font-size: 18px;
+      line-height: 24px;
 
     }
 
