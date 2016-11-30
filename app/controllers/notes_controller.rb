@@ -4,7 +4,7 @@ class NotesController < ApplicationController
     current_user.userable_type == 'Therapist'
     current_client
     @client_id = params[:id]
-    @notes = Note.where(client_id: params[:id])
+    @notes = Note.where(client_id: params[:id]).order("created_at DESC")
     @therapist_id = current_user.userable_id
   end
 
