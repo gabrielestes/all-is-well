@@ -1,7 +1,7 @@
 <% @notes.each do |n| %>
     <div class="note-card">
       <div class="note-title-row">
-          <div class="note-title-label view-note"><h3><i class="fa fa-pencil"></i><span class="label">Subject: </span><%= n.title %></h3></div>
+          <div class="note-title-label view-note"><h3><i class="fa fa-pencil"></i><%= n.title %></h3></div>
           <div class="note-privacy-info">
               <% if n.shared == false %>
                 <div class="private note-status selected">
