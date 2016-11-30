@@ -14,7 +14,7 @@ main.survey {
   padding: 0;
   align-items: center;
   max-width: 550px;
-  margin: 0 auto;
+  margin: 50px auto;
 
   div.welcome {
     margin-bottom: 35px;
@@ -53,6 +53,8 @@ main.survey {
 
 
 .survey-questions {
+  position: relative;
+  transform: translateX(5%);
   div.question{
     background: $grey;
     transition: all 1s ease;
@@ -60,12 +62,13 @@ main.survey {
     opacity: 0;
     overflow-wrap: break-word;
     width: 90%;
-    position: relative;
+    position: absolute;
     &#q8 span {
       font-size: 18px;
+      line-height: 28px;
     }
     &#q8 .choices {
-      margin: 0 5px;
+      margin: 0 5px 5px;
     }
 
     .choices {
@@ -114,17 +117,17 @@ main.survey {
   }
 }
 .survey-nav-btns {
+  position: absolute;
   display: flex;
   flex-direction: row-reverse;
-  width: 80%;
-  padding: 10px;
-  position: relative;
-  top: 30px;
-  justify-content: space-between;
+  transform: translate(-5%, 920%);
+  width: 100%;
+  justify-content: space-around;
   & input[name=commit] {
-    position: relative;
-    top: 0px;
-    margin: 0px;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    transform: translate(22vw, 43vh);
   }
   div {
     &:hover {
@@ -137,7 +140,13 @@ main.survey {
   #next-question,
   #last-question {
     cursor: pointer;
-
+    position: fixed;
+  }
+  #last-question {
+    transform: translate(-22vw, 43vh);
+  }
+  #next-question {
+    transform: translate(22vw, 43vh);
   }
 
 
