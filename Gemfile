@@ -42,9 +42,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# Assist with instances during testing
-gem "factory_girl_rails", "~> 4.0"
-
 gem 'byebug'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,9 +65,11 @@ end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
+end
 
-  # gem "factory_girl_rails", "~> 4.0"
-
+group :test do
+  # Assist with instances during testing
+  gem "factory_girl_rails", "~> 4.0"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
