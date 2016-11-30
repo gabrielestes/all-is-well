@@ -48,18 +48,9 @@ $detail-icon-color: $seajade;
 
             i {
               margin-right: 5px;
-              color: $detail-icon-color;
+              color: $pop-color;
             }
 
-            span.label {
-              display: none;
-            }
-
-            @media (min-width: 550px) {
-              span.label {
-                display: inline;
-              }
-            }
 
         .entry-view-privacy-info,
         .note-privacy-info {

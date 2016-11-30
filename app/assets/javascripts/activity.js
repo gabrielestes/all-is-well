@@ -125,7 +125,7 @@
 
         // Updates entry detail card with the clicked entry data
           $('#entry-date').text(thisEntryDate);
-          $('#entry-title').text('Subject:  ' + thisEntryTitle);
+          $('#entry-title').text(thisEntryTitle);
           $('#entry-description').text('"' + thisEntryDescription + '"');
 
         // Displays entry detail card against modal
