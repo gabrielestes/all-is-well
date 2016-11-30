@@ -1,35 +1,38 @@
 require "rails_helper"
+require 'factory_girl_rails'
 
 RSpec.describe Therapist, :type => :model do
 
-  subject { Therapist.new(first_name: "test", last_name: "test", cred: "test", phone: "test", email: "test") }
+  before do
+    @therapist = create :therapist
+  end
 
   it "is valid with valid attributes" do
-    expect(subject).to be_valid
+    expect(@therapist).to be_valid
   end
 
   it "is not valid without a first_name" do
-    subject.first_name = nil
-    expect(subject).to_not be_valid
+    @therapist.first_name = nil
+    expect(@therapist).to_not be_valid
   end
 
   it "is not valid without a last_name" do
-    subject.last_name = nil
-    expect(subject).to_not be_valid
+    @therapist.last_name = nil
+    expect(@therapist).to_not be_valid
   end
 
   it "is not valid without a cred" do
-    subject.cred = nil
-    expect(subject).to_not be_valid
+    @therapist.cred = nil
+    expect(@therapist).to_not be_valid
   end
 
   it "is not valid without a phone" do
-    subject.phone = nil
-    expect(subject).to_not be_valid
+    @therapist.phone = nil
+    expect(@therapist).to_not be_valid
   end
 
   it "is not valid without a email" do
-    subject.last_name = nil
-    expect(subject).to_not be_valid
+    @therapist.last_name = nil
+    expect(@therapist).to_not be_valid
   end
 end
