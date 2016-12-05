@@ -29,10 +29,10 @@ Put a picture of journal entries (client and therapist view)
 
 ##Contributors
 
-Julia Donaldson
-Jenn Tustin
-Marian Powell
-Gabriel Estes
+####Julia Donaldson
+####Jenn Tustin
+####Marian Powell
+####Gabriel Estes
 
 ##Special Thanks
 ####The Iron Yard of Durham, NC
